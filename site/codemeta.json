@@ -1,0 +1,30 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "ScholarlyArticle",
+  "identifier": "https://doi.org/10.5281/zenodo.17517141",
+  "name": "Global Time Echoes: 25-Year Temporal Evolution of Distance-Structured Correlations in GNSS Clocks",
+  "description": "Extended 25-year analysis of TEP-GNSS signatures using CODE analysis center data, encompassing 165.2 million station pair measurements.",
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": "Matthew Lukin",
+      "familyName": "Smawfield",
+      "@id": "https://orcid.org/0009-0003-8219-3159"
+    }
+  ],
+  "datePublished": "2025-11-03",
+  "dateModified": "2025-11-30",
+  "version": "0.16",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "codeRepository": "https://github.com/matthewsmawfield/TEP-GNSS-II",
+  "url": "https://matthewsmawfield.github.io/TEP-GNSS-II/",
+  "keywords": [
+    "GNSS",
+    "atomic clocks",
+    "distance correlations",
+    "phase coherence",
+    "temporal equivalence principle",
+    "25-year analysis",
+    "lunar nutation"
+  ]
+}
