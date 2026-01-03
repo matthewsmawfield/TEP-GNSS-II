@@ -4,7 +4,7 @@
 **Version:** v0.16 (Cairo)  
 **Date:** First published: 3 November 2025 · Last updated: 30 November 2025  
 **DOI:** 10.5281/zenodo.17517141  
-**Generated:** 2025-12-31  
+**Generated:** 2026-01-03  
 
 ---
 
