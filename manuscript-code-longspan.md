@@ -4,7 +4,7 @@
 **Version:** v0.16 (Cairo)  
 **Date:** First published: 3 November 2025 · Last updated: 30 November 2025  
 **DOI:** 10.5281/zenodo.17517141  
-**Generated:** 2026-01-03  
+**Generated:** 2026-01-07  
 
 ---
 
@@ -3034,31 +3034,6 @@ Astropy Collaboration, Robitaille, T. P., Tollerud, E. J., et al. (2013). Astrop
     **Matthew Lukin Smawfield**
 
     [matthewsmawfield@gmail.com](mailto:matthewsmawfield@gmail.com)
-
-        [← Home](/)
-        
-### TEP Research Series
-
-        - [Temporal Equivalence Principle: Dynamic Time & Emergent Light Speed 18 Aug 2025](/tep/theory/)
-
-        - [Global Time Echoes: Distance-Structured Correlations in GNSS Clocks 17 Sep 2025](/tep/gnss-i/)
-
-        - [25-Year Temporal Evolution of Distance-Structured Correlations in GNSS 3 Nov 2025](/tep/gnss-ii/)
-
-        - [Global Time Echoes: Raw RINEX Validation 17 Dec 2025](/tep/gnss-iii/)
-
-        - [Temporal-Spatial Coupling in Gravitational Lensing 19 Dec 2025](/tep/gl/)
-
-        - [Global Time Echoes: Empirical Validation of TEP 21 Dec 2025](/tep/gte/)
-
-        - [Universal Critical Density: Unifying Atomic, Galactic, and Compact Object Scales 28 Dec 2025](/tep/ucd/)
-
-        - [The Soliton Wake: Identifying RBH-1 as a Gravitational Soliton 28 Dec 2025](/tep/rbh/)
-
-        - [Global Time Echoes: Optical Validation of TEP via Satellite Laser Ranging 30 Dec 2025](/tep/slr/)
-
-        ← Previous
-        Next →
 
 ---
 
