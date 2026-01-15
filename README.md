@@ -20,56 +20,6 @@ Seven independent signatures are identified: (1) Spatial anisotropy persists wit
 
 Observed patterns are compatible with key a priori TEP predictions: correlation length λ=1,000-10,000 km (observed: 4,201±1,967 km), exponential models remain competitive with the best spatial kernel (exponential ΔAIC=12.8 relative to the Gaussian) and strongly outperform simple power-law forms (power-law ΔAIC > 30), velocity-dependent anisotropy (r=-0.888), and geometric alignment (EW/NS=2.16). The absence of GM/r² scaling is physically consistent with the hypothesis that geometric information is transmitted via the network; raw carrier-phase analysis will test this mechanism. Raw data validation and multi-constellation replication represent critical next steps.
 
-## Summary of Key Results and Findings
-
-### Primary Results Table
-
-| Metric | Value | Uncertainty/CI | Significance |
-|--------|-------|----------------|--------------|
-| **Dataset Size** | 165.2 million station pairs | — | 474 unique receivers |
-| **Temporal Coverage** | 25.3 years | 2000-03-01 to 2025-06-30 | 9,218 days |
-| **Correlation Length (λ)** | 4,201 km | ± 1,967 km | Consistent with Paper 1 |
-| **Spatial Anisotropy (EW/NS)** | 2.16 | Strength = 1.981 | p < 10⁻¹⁵ |
-
-### Seven Independent Signatures
-
-| Signature | Value | p-value/Significance | Notes |
-|-----------|-------|---------------------|-------|
-| **Orbital Velocity Coupling** | r = −0.888 | p < 2×10⁻⁷ (5.1σ) | 0/5M surrogates exceeded |
-| **CMB Frame Alignment** | r = 0.747 | 5,570× variance ratio | 18.2° from CMB dipole |
-| **Semiannual Nutation** | R² = 0.904 | p < 10⁻²⁰ | Strongest geophysical coupling |
-| **18.6-Year Lunar Nutation** | R² = 0.641 | p < 10⁻⁸ | 1.4 cycles observed |
-| **Planetary Event Responses** | 56/156 significant | 25 Bonferroni-corrected | Mercury: 34/80 (42.5%) |
-| **Network Synchronization** | Score = 0.582 | — | Consistent with Paper 1 |
-| **Spatial Anisotropy** | EW > NS (2.16×) | p < 10⁻¹⁵ | Persistent over 25 years |
-
-### Planetary Event Detection Rates
-
-| Planet | Detections | Total Events | Rate |
-|--------|------------|--------------|------|
-| **Mercury** | 34 | 80 | 42.5% |
-| **Jupiter** | 8 | 23 | 34.8% |
-| **Mars** | 4 | 12 | 33.3% |
-| **Saturn** | 7 | 25 | 28.0% |
-| **Venus** | 3 | 16 | 18.8% |
-
-### Reference Frame Discrimination
-
-| Reference Frame | Correlation | Separation | Variance Ratio |
-|-----------------|-------------|------------|----------------|
-| **CMB Rest Frame** | r = 0.747 | 18.2° from dipole | 5,570× (baseline) |
-| **Solar Apex** | r = 0.007 | 89° away | 1× |
-
-### Joint Probability
-
-Combined seven signatures yield **p ≈ 2×10⁻²⁷ (>10σ)**.
-
-### Key Interpretation
-
-The 25-year temporal baseline confirms these correlations are not transient artifacts but persistent features of the global timing network. The detection of seven statistically independent signatures—each with distinct physical mechanisms—provides compelling evidence against coincidental alignment. The CMB frame preference (5,570× variance ratio over Solar Apex) suggests the signal is coupled to the cosmological rest frame rather than local solar system dynamics. The orbital velocity anti-correlation (r = −0.888) indicates the anisotropy modulates with Earth's changing velocity vector, consistent with a Lorentz-violating but observer-independent effect predicted by TEP's conformal sector.
-
----
-
 ## The TEP Research Program
 
 | Paper | Repository | Title | DOI |
