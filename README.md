@@ -20,6 +20,12 @@ Seven independent signatures are identified: (1) Spatial anisotropy persists wit
 
 Observed patterns are compatible with key a priori TEP predictions: correlation length λ=1,000-10,000 km (observed: 4,201±1,967 km), exponential models remain competitive with the best spatial kernel (exponential ΔAIC=12.8 relative to the Gaussian) and strongly outperform simple power-law forms (power-law ΔAIC > 30), velocity-dependent anisotropy (r=-0.888), and geometric alignment (EW/NS=2.16). The absence of GM/r² scaling is physically consistent with the hypothesis that geometric information is transmitted via the network; raw carrier-phase analysis will test this mechanism. Raw data validation and multi-constellation replication represent critical next steps.
 
+## Key Findings
+
+The 25-year temporal baseline confirms seven statistically independent signatures with joint probability p ≈ 2×10⁻²⁷ (>10σ): orbital velocity coupling (r = −0.888, 5.1σ), CMB frame alignment (5,570× variance ratio over Solar Apex), semiannual nutation (R² = 0.904), 18.6-year lunar nutation (R² = 0.641), planetary event responses (56/156 significant), spatial anisotropy (EW/NS = 2.16), and network synchronization (score = 0.582). The CMB-aligned background lies 18.2° from the CMB dipole and explains 55.7% of variance. These correlations are persistent features of the global timing network, not transient artifacts.
+
+---
+
 ## The TEP Research Program
 
 | Paper | Repository | Title | DOI |
