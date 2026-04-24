@@ -7,10 +7,14 @@ authors:
     given-names: "Matthew Lukin"
     orcid: "https://orcid.org/0009-0003-8219-3159"
 abstract: >
-  This study extends the TEP-GNSS analysis to 25.3 years (2000-2025) using CODE analysis center data, encompassing 165.2 million station pair measurements. The temporal extension confirms the stability of originally detected signatures over decadal timescales and leverages the extended baseline to uncover long-period geophysical phenomena. Seven independent signatures converge: (1) Spatial anisotropy (EW:NS=2.16, strength=1.981, p<10⁻¹⁵), (2) orbital velocity coupling (r=-0.888, p<2×10⁻⁷, 5.1σ; 5M surrogates), (3) CMB frame alignment (r=0.747, p<0.001) definitively rejecting galactic motion (5,570× variance ratio; multi-resolution verification across 65,341 directions), (4) 56/156 planetary events significant (≥2σ; 25 Bonferroni-corrected), (5) 18.6-year lunar nutation (R²=0.641, p<10⁻⁸), (6) semiannual nutation (R²=0.904, p<10⁻²⁰), (7) network coherence (score=0.582). All core phenomenology from the multi-center study replicates over 25 years with enhanced statistical power.
+  Analysis of 25.3 years of global GNSS timing data (165.2 million station pairs) documents persistent velocity-dependent correlations in atomic clock networks. Critically, we propose that standard GNSS processing algorithms, designed to remove energetic (common-mode) errors via datum constraints, inadvertently preserve the subtle, geometry-dependent (differential) correlations that are the focus of this work. Building on the multi-centre study's validation (R²=0.92-0.97 between CODE, IGS, ESA), the extended temporal baseline confirms decadal stability and enables investigation of long-period geophysical phenomena inaccessible in shorter baselines.
+
+  Seven independent signatures are identified: (1) Spatial anisotropy persists with EW>NS (global ratio=2.16, strength=1.981, p<10⁻¹⁵), (2) anisotropy ratio correlates with orbital velocity (r=-0.888, p<2×10⁻⁷, 5.1σ; 5 M surrogates) across 25 solar orbits with ≈19% annual geometric ratio modulation, (3) We identify that the annual modulation peaks coincide with Earth's maximal projection onto its motion vector relative to the Cosmic Microwave Background (CMB) rest frame (correlation r=0.747, p < 0.001), suggesting the GNSS network acts as a potential detector for absolute kinematic effects (rejecting galactic motion with 5,570× variance ratio), (4) 35.9% of planetary events show significant response (56/156 ≥2σ; Mercury leading with 34/80), (5) coupling to 18.6-year lunar nutation (R²=0.641, p<10⁻⁸) and semiannual nutation (R²=0.904), (6) network synchronization (score=0.582) replicates multi-centre range, (7) null results for solar rotation (27-day) and lunar standstill are consistent with selectivity for orbital-gravitational phenomena over surface features. The 19% modulation describes changes in the geometric shape of the correlation field (ratio of spatial correlation lengths), not clock frequency variations, which remain at standard sub-nanosecond levels.
+
+  Observed patterns are compatible with key a priori TEP predictions: correlation length λ=1,000-10,000 km (observed: 4,201±1,967 km), exponential models remain competitive with the best spatial kernel (exponential ΔAIC=12.8 relative to the Gaussian) and strongly outperform simple power-law forms (power-law ΔAIC > 30), velocity-dependent anisotropy (r=-0.888), and geometric alignment (EW/NS=2.16). The absence of GM/r² scaling is physically consistent with the hypothesis that energetic couplings are filtered by processing while geometric information is transmitted; raw carrier-phase analysis will test this transmission mechanism. Raw data validation and multi-constellation replication represent critical next steps.
 license: CC-BY-4.0
-version: 0.16
-date-released: 2025-11-30
+version: 0.17
+date-released: 2026-04-24
 keywords:
   - physics
   - GNSS
@@ -21,13 +25,13 @@ keywords:
   - TEP-GNSS
   - 25-year analysis
   - lunar nutation
-repository-code: "https://github.com/matthewsmawfield/TEP-GNSS"
-url: "https://github.com/matthewsmawfield/TEP-GNSS"
+repository-code: "https://github.com/matthewsmawfield/TEP-GNSS-II"
+url: "https://github.com/matthewsmawfield/TEP-GNSS-II"
 doi: 10.5281/zenodo.17517141
 
 preferred-citation:
   type: article
-  title: "Global Time Echoes: 25-Year Temporal Evolution of Distance-Structured Correlations in GNSS Clocks (Cairo v0.16)"
+  title: "Global Time Echoes: 25-Year Temporal Evolution of Distance-Structured Correlations in GNSS Clocks (Cairo v0.17)"
   authors:
     - family-names: Smawfield
       given-names: Matthew Lukin

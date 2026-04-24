@@ -214,7 +214,7 @@ class HTMLToMarkdownConverter {
         const version = versionMatch ? versionMatch[1]
             .replace(/<[^>]+>/g, '')
             .replace(/^Version:\s*/i, '')
-            .trim() : 'v0.16 (Cairo)';
+            .trim() : 'v0.17 (Cairo)';
         
         const dateMatch = html.match(/<div[^>]*class=["'][^"']*date[^"']*["'][^>]*>(.*?)<\/div>/i);
         const date = dateMatch ? dateMatch[1].replace(/<[^>]+>/g, '').trim() : 'First published: 17 September 2025 · Last updated: 13 October 2025';
@@ -278,8 +278,12 @@ class HTMLToMarkdownConverter {
             // Build the complete markdown document
             const markdown = this.buildMarkdownDocument(metadata, markdownContent);
             
-            // Write to file (unique name for Paper 2)
-            const outputPath = path.join(__dirname, '..', 'manuscript-code-longspan.md');
+            // Write to file with dynamic name based on version and codename
+            const versionMatch = metadata.version.match(/v([\d.]+)\s*\(([^)]+)\)/);
+            const versionNum = versionMatch ? versionMatch[1] : '0.17';
+            const codename = versionMatch ? versionMatch[2] : 'Cairo';
+            const outputFilename = `2-TEP-GNSS-II-v${versionNum}-${codename}.md`;
+            const outputPath = path.join(__dirname, '..', outputFilename);
             fs.writeFileSync(outputPath, markdown, 'utf8');
             
             console.log('✅ Markdown conversion complete!');
@@ -305,13 +309,14 @@ class HTMLToMarkdownConverter {
         // Clean up the title to remove the author part
         const cleanTitle = metadata.title.replace(' | Matthew Lukin Smawfield', '');
         
+        // Parse date components for cleaner format
+        const dateStr = metadata.date;
+        
         return `# ${cleanTitle}
-
-**Author:** ${metadata.author}  
-**Version:** ${metadata.version}  
-**Date:** ${metadata.date}  
-**DOI:** ${metadata.doi}  
-**Generated:** ${timestamp}  
+**${metadata.author}**
+Version: ${metadata.version}
+${dateStr}
+DOI: ${metadata.doi}
 
 ---
 

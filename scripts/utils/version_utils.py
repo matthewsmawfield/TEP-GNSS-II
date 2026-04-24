@@ -21,29 +21,29 @@ def get_version_info():
     
     # Fallback if VERSION.json not found
     return {
-        "version": "v0.19",
-        'codename': 'Jaipur',
-        'date': '2025-10-13',
+        "version": "0.17",
+        'codename': 'Cairo',
+        'date': '2026-04-24',
         'description': 'Fallback version - VERSION.json not found'
     }
 
 def get_version_string():
-    """Get formatted version string (e.g., 'v0.18 (Jaipur)')"""
+    """Get formatted version string (e.g., 'v0.17 (Cairo)')"""
     version_data = get_version_info()
     return f"v{version_data['version']} ({version_data['codename']})"
 
 def get_version_number():
-    """Get version number only (e.g., '0.18')"""
+    """Get version number only (e.g., '0.17')"""
     version_data = get_version_info()
     return version_data['version']
 
 def get_codename():
-    """Get codename only (e.g., 'Jaipur')"""
+    """Get codename only (e.g., 'Cairo')"""
     version_data = get_version_info()
     return version_data['codename']
 
 def get_date():
-    """Get release date (e.g., '2025-01-15')"""
+    """Get release date (e.g., '2026-04-24')"""
     version_data = get_version_info()
     return version_data['date']
 
@@ -58,15 +58,14 @@ def get_zenodo_record():
     return version_data.get('zenodo_record', '17216517')
 
 def get_pdf_filename():
-    """Get PDF filename (e.g., 'Smawfield_2025_GlobalTimeEchoes_Preprint_v0.18_Jaipur.pdf')"""
+    """Get PDF filename (e.g., '2-TEP-GNSS-II-v0.17-Cairo.pdf')"""
     version_data = get_version_info()
-    return version_data.get('pdf_filename', f'Smawfield_2025_GlobalTimeEchoes_Preprint_v{get_version_number()}_{get_codename()}.pdf')
+    return version_data.get('pdf_filename', f'2-TEP-GNSS-II-v{get_version_number()}-{get_codename()}.pdf')
 
 def get_pdf_url():
     """Get full PDF URL"""
-    zenodo_record = get_zenodo_record()
-    pdf_filename = get_pdf_filename()
-    return f"https://zenodo.org/records/{zenodo_record}/files/{pdf_filename}?download=1"
+    version_data = get_version_info()
+    return version_data.get('pdf_download_url', f"https://matthewsmawfield.github.io/TEP-GNSS-II/public/docs/{get_pdf_filename()}")
 
 def get_doi_url():
     """Get DOI URL"""

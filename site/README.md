@@ -1,11 +1,10 @@
-# TEP-GNSS Paper 2: CODE Longspan Analysis
+# Global Time Echoes: 25-Year Temporal Evolution of Distance-Structured Correlations in GNSS Clocks
 
-**Publication website for:**  
-"Long-Term Stability and Geophysical Coupling of Temporal-Gravitational Signatures in GNSS: A 25-Year Confirmatory Analysis"
+**Publication website for TEP-GNSS-II (Paper 2)**
 
 **Author:** Matthew Lukin Smawfield  
-**Version:** v0.16 (Cairo)  
-**Date:** 30 November 2025  
+**Version:** v0.17 (Cairo)  
+**Date:** 24 April 2026  
 **Status:** Preprint
 
 ## Overview

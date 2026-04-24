@@ -1,0 +1,5 @@
+v0.17 (Cairo) - Topology Nomenclature Update
+
+- Adopted continuous Temporal Topology framework (replaces "screening theory" terminology)
+- Formalized Temporal Shear nomenclature for field gradient superposition in dense environments  
+- Aligned correlation length predictions with geometric v0.7 (Jakarta) theory framework

@@ -141,9 +141,7 @@ class VersionManager:
     
     def _get_pdf_url(self) -> str:
         """Get PDF URL from version data"""
-        zenodo_record = self.version_data.get('zenodo_record', '17216517')
-        pdf_filename = self.version_data.get('pdf_filename', f'Smawfield_2025_GlobalTimeEchoes_Preprint_v{self.version}_{self.codename}.pdf')
-        return f"https://zenodo.org/records/{zenodo_record}/files/{pdf_filename}?download=1"
+        return self.version_data.get('pdf_download_url', f"https://matthewsmawfield.github.io/TEP-GNSS-II/public/docs/{self._get_pdf_filename()}")
     
     def _get_doi_url(self) -> str:
         """Get DOI URL from version data"""

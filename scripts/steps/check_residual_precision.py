@@ -3,8 +3,9 @@
 Check the actual precision of the mean residual to verify it's not exactly zero.
 """
 
-import numpy as np
 from pathlib import Path
+
+import numpy as np
 from scipy.optimize import curve_fit
 
 # Setup paths
@@ -13,10 +14,10 @@ checkpoint_file = ROOT / "results/tmp/code_longspan/phase_stream_code.npz"
 
 # Load checkpoint
 data = np.load(checkpoint_file, allow_pickle=True)
-agg_sum_coh = data['agg_sum_coh']
-agg_sum_coh_sq = data['agg_sum_coh_sq']
-agg_sum_dist = data['agg_sum_dist']
-agg_count = data['agg_count']
+agg_sum_coh = data["agg_sum_coh"]
+agg_sum_coh_sq = data["agg_sum_coh_sq"]
+agg_sum_dist = data["agg_sum_dist"]
+agg_count = data["agg_count"]
 
 # Compute bin statistics
 num_bins = len(agg_count)
@@ -37,9 +38,17 @@ distances_fit = mean_dist[fit_mask]
 coherences_fit = mean_coh[fit_mask]
 weights_fit = agg_count[fit_mask]
 
-# Correlation model
+
 def correlation_model(r, amplitude, lambda_km, offset):
+    """
+    TEP correlation model: Exponential decay with correlation length.
+
+    The exponential form arises from spatial variations in the temporal field
+    (Temporal Topology), where lambda_km is the characteristic correlation length of
+    field variation in the terrestrial environment.
+    """
     return amplitude * np.exp(-r / lambda_km) + offset
+
 
 # Fit
 p0 = [0.1, 5000, 0.0]
@@ -50,9 +59,9 @@ popt, pcov = curve_fit(
     coherences_fit,
     p0=p0,
     bounds=bounds,
-    sigma=1/np.sqrt(weights_fit),
+    sigma=1 / np.sqrt(weights_fit),
     absolute_sigma=False,
-    maxfev=10000
+    maxfev=10000,
 )
 
 # Compute residuals
@@ -67,7 +76,9 @@ print("RESIDUAL PRECISION CHECK")
 print("=" * 80)
 print(f"\nMean residual (unweighted):     {mean_residual_unweighted:.15e}")
 print(f"Mean residual (weighted):       {mean_residual_weighted:.15e}")
-print(f"\nRMS residual:                   {np.sqrt(np.average(residuals**2, weights=weights_fit)):.15e}")
+print(
+    f"\nRMS residual:                   {np.sqrt(np.average(residuals**2, weights=weights_fit)):.15e}"
+)
 print(f"Standard deviation:             {np.std(residuals):.15e}")
 print(f"\nMin residual:                   {residuals.min():.6f}")
 print(f"Max residual:                   {residuals.max():.6f}")
