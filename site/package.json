@@ -1,7 +1,7 @@
 {
   "name": "tep-gnss-ii-site",
   "version": "1.2.0",
-  "description": "Long-Term Stability and Geophysical Coupling of TEP-GNSS: 25-Year Analysis",
+  "description": "Global Time Echoes: 25-Year Temporal Evolution of Distance-Structured Correlations in GNSS Clocks",
   "main": "index.html",
   "scripts": {
     "dev": "node dev-server.js",
@@ -27,9 +27,9 @@
   "license": "CC-BY-4.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/matthewsmawfield/TEP-GNSS.git"
+    "url": "https://github.com/matthewsmawfield/TEP-GNSS-II.git"
   },
-  "homepage": "https://matthewsmawfield.github.io/TEP-GNSS/",
+  "homepage": "https://matthewsmawfield.github.io/TEP-GNSS-II/",
   "devDependencies": {
     "chokidar": "^4.0.3",
     "live-server": "^1.2.2",

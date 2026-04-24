@@ -6,19 +6,19 @@
 ![Global Time Echoes: 25-Year Analysis](site/public/header-image.webp)
 
 **Author:** Matthew Lukin Smawfield  
-**Version:** v0.16 (Cairo)  
-**Date:** 25 November 2025  
+**Version:** v0.17 (Cairo)  
+**Date:** 24 April 2026  
 **Status:** Preprint  
 **DOI:** [10.5281/zenodo.17517141](https://doi.org/10.5281/zenodo.17517141)  
 **Website:** [https://mlsmawfield.com/tep/gnss-ii/](https://mlsmawfield.com/tep/gnss-ii/)
 
 ## Abstract
 
-Analysis of 25.3 years of global GNSS timing data (165.2 million station pairs) reveals persistent velocity-dependent correlations in atomic clock networks. Building on the multi-centre study's validation (R²=0.92-0.97 between CODE, IGS, ESA), the extended temporal baseline confirms decadal stability and enables investigation of long-period geophysical phenomena inaccessible in shorter baselines.
+Analysis of 25.3 years of global GNSS timing data (165.2 million station pairs) documents persistent velocity-dependent correlations in atomic clock networks. Critically, we propose that standard GNSS processing algorithms, designed to remove energetic (common-mode) errors via datum constraints, inadvertently preserve the subtle, geometry-dependent (differential) correlations that are the focus of this work. Building on the multi-centre study's validation (R²=0.92-0.97 between CODE, IGS, ESA), the extended temporal baseline confirms decadal stability and enables investigation of long-period geophysical phenomena inaccessible in shorter baselines.
 
-Seven independent signatures are identified: (1) Spatial anisotropy persists with EW>NS (global ratio=2.16, strength=1.981, p<10⁻¹⁵), (2) anisotropy ratio correlates with orbital velocity (r=-0.888, p<2×10⁻⁷, 5.1σ; 5M surrogates) across 25 solar orbits with ≈19% annual geometric ratio modulation, (3) The annual modulation peaks coincide with Earth's maximal projection onto its motion vector relative to the Cosmic Microwave Background (CMB) rest frame (correlation r=0.747, p < 0.001), suggesting the GNSS network acts as a potential detector for absolute kinematic effects. (4) 35.9% of planetary events show significant response (56/156 ≥2σ; Mercury leading with 34/80), (5) coupling to 18.6-year lunar nutation (R²=0.641, p<10⁻⁸) and semiannual nutation (R²=0.904), (6) network synchronization (score=0.582) replicates multi-centre range, (7) null results for solar rotation (27-day) and lunar standstill are consistent with selectivity for orbital-gravitational phenomena over surface features.
+Seven independent signatures are identified: (1) Spatial anisotropy persists with EW>NS (global ratio=2.16, strength=1.981, p<10⁻¹⁵), (2) anisotropy ratio correlates with orbital velocity (r=-0.888, p<2×10⁻⁷, 5.1σ; 5 M surrogates) across 25 solar orbits with ≈19% annual geometric ratio modulation, (3) We identify that the annual modulation peaks coincide with Earth's maximal projection onto its motion vector relative to the Cosmic Microwave Background (CMB) rest frame (correlation r=0.747, p < 0.001), suggesting the GNSS network acts as a potential detector for absolute kinematic effects (rejecting galactic motion with 5,570× variance ratio), (4) 35.9% of planetary events show significant response (56/156 ≥2σ; Mercury leading with 34/80), (5) coupling to 18.6-year lunar nutation (R²=0.641, p<10⁻⁸) and semiannual nutation (R²=0.904), (6) network synchronization (score=0.582) replicates multi-centre range, (7) null results for solar rotation (27-day) and lunar standstill are consistent with selectivity for orbital-gravitational phenomena over surface features. The 19% modulation describes changes in the geometric shape of the correlation field (ratio of spatial correlation lengths), not clock frequency variations, which remain at standard sub-nanosecond levels.
 
-Observed patterns are compatible with key a priori TEP predictions: correlation length λ=1,000-10,000 km (observed: 4,201±1,967 km), exponential models remain competitive with the best spatial kernel (exponential ΔAIC=12.8 relative to the Gaussian) and strongly outperform simple power-law forms (power-law ΔAIC > 30), velocity-dependent anisotropy (r=-0.888), and geometric alignment (EW/NS=2.16). The absence of GM/r² scaling is physically consistent with the hypothesis that geometric information is transmitted via the network; raw carrier-phase analysis will test this mechanism. Raw data validation and multi-constellation replication represent critical next steps.
+Observed patterns are compatible with key a priori TEP predictions: correlation length λ=1,000-10,000 km (observed: 4,201±1,967 km), exponential models remain competitive with the best spatial kernel (exponential ΔAIC=12.8 relative to the Gaussian) and strongly outperform simple power-law forms (power-law ΔAIC > 30), velocity-dependent anisotropy (r=-0.888), and geometric alignment (EW/NS=2.16). The absence of GM/r² scaling is physically consistent with the hypothesis that energetic couplings are filtered by processing while geometric information is transmitted; raw carrier-phase analysis will test this transmission mechanism. Raw data validation and multi-constellation replication represent critical next steps.
 
 ## Key Findings
 
@@ -35,11 +35,15 @@ The 25-year temporal baseline confirms seven statistically independent signature
 | **Paper 2** | **TEP-GNSS-II** (This repo) | Global Time Echoes: 25-Year Temporal Evolution of Distance-Structured Correlations in GNSS Clocks | [10.5281/zenodo.17517141](https://doi.org/10.5281/zenodo.17517141) |
 | **Paper 3** | [TEP-GNSS-RINEX](https://github.com/matthewsmawfield/TEP-GNSS-RINEX) | Global Time Echoes: Raw RINEX Validation of Distance-Structured Correlations in GNSS Clocks | [10.5281/zenodo.17860166](https://doi.org/10.5281/zenodo.17860166) |
 | **Paper 4** | [TEP-GL](https://github.com/matthewsmawfield/TEP-GL) | Temporal-Spatial Coupling in Gravitational Lensing: A Reinterpretation of Dark Matter Observations | [10.5281/zenodo.17982540](https://doi.org/10.5281/zenodo.17982540) |
-| **Synthesis** | [TEP-GTE](https://github.com/matthewsmawfield/TEP-GTE) | Global Time Echoes: Empirical Validation of the Temporal Equivalence Principle | [10.5281/zenodo.18004832](https://doi.org/10.5281/zenodo.18004832) |
-| **Paper 7** | [TEP-UCD](https://github.com/matthewsmawfield/TEP-UCD) | Universal Critical Density: Unifying Atomic, Galactic, and Compact Object Scales | [10.5281/zenodo.18064366](https://doi.org/10.5281/zenodo.18064366) |
-| **Paper 8** | [TEP-RBH](https://github.com/matthewsmawfield/TEP-RBH) | The Soliton Wake: A Runaway Black Hole as a Gravitational Soliton | [10.5281/zenodo.18059251](https://doi.org/10.5281/zenodo.18059251) |
-| **Paper 9** | [TEP-SLR](https://github.com/matthewsmawfield/TEP-SLR) | Global Time Echoes: Optical Validation of the Temporal Equivalence Principle via Satellite Laser Ranging | [10.5281/zenodo.18064582](https://doi.org/10.5281/zenodo.18064582) |
-| **Paper 10** | [TEP-EXP](https://github.com/matthewsmawfield/TEP-EXP) | What Do Precision Tests of General Relativity Actually Measure? | [10.5281/zenodo.18109761](https://doi.org/10.5281/zenodo.18109761) |
+| **Paper 5** | [TEP-GTE](https://github.com/matthewsmawfield/TEP-GTE) | Global Time Echoes: Empirical Validation of the Temporal Equivalence Principle | [10.5281/zenodo.18004832](https://doi.org/10.5281/zenodo.18004832) |
+| **Paper 6** | [TEP-UCD](https://github.com/matthewsmawfield/TEP-UCD) | Universal Critical Density: Unifying Atomic, Galactic, and Compact Object Scales | [10.5281/zenodo.18064366](https://doi.org/10.5281/zenodo.18064366) |
+| **Paper 7** | [TEP-RBH](https://github.com/matthewsmawfield/TEP-RBH) | The Soliton Wake: A Runaway Black Hole as a Gravitational Soliton | [10.5281/zenodo.18059251](https://doi.org/10.5281/zenodo.18059251) |
+| **Paper 8** | [TEP-SLR](https://github.com/matthewsmawfield/TEP-SLR) | Global Time Echoes: Optical Validation of the Temporal Equivalence Principle via Satellite Laser Ranging | [10.5281/zenodo.18064582](https://doi.org/10.5281/zenodo.18064582) |
+| **Paper 9** | [TEP-EXP](https://github.com/matthewsmawfield/TEP-EXP) | What Do Precision Tests of General Relativity Actually Measure? | [10.5281/zenodo.18109761](https://doi.org/10.5281/zenodo.18109761) |
+| **Paper 10** | [TEP-COS](https://github.com/matthewsmawfield/TEP-COS) | The Temporal Equivalence Principle: Suppressed Density Scaling in Globular Cluster Pulsars | [10.5281/zenodo.18165798](https://doi.org/10.5281/zenodo.18165798) |
+| **Paper 11** | [TEP-H0](https://github.com/matthewsmawfield/TEP-H0) | The Cepheid Bias: Resolving the Hubble Tension | [10.5281/zenodo.18209702](https://doi.org/10.5281/zenodo.18209702) |
+| **Paper 12** | [TEP-JWST](https://github.com/matthewsmawfield/TEP-JWST) | The Temporal Equivalence Principle: A Unified Resolution to the JWST High-Redshift Anomalies | [10.5281/zenodo.19000827](https://doi.org/10.5281/zenodo.19000827) |
+| **Paper 13** | [TEP-WB](https://github.com/matthewsmawfield/TEP-WB) | The Temporal Equivalence Principle: Density-Dependent Screening in Gaia DR3 Wide Binaries | [10.5281/zenodo.19102062](https://doi.org/10.5281/zenodo.19102062) |
 
 ## Key Results
 
@@ -88,7 +92,7 @@ TEP-GNSS-II/
 │   ├── figures/                    # Generated plots
 │   └── outputs/                    # Analysis results (JSON)
 ├── logs/                           # Execution logs
-├── manuscript-code-longspan.md     # Auto-generated markdown
+├── 2-TEP-GNSS-II-v{version}-{codename}.md  # Auto-generated markdown
 └── VERSION.json                    # Version metadata
 ```
 
@@ -156,7 +160,7 @@ python scripts/steps/step_2_8_draconitic_falsification.py
   year={2025},
   doi={10.5281/zenodo.17517141},
   url={https://doi.org/10.5281/zenodo.17517141},
-  note={Preprint v0.15 (Cairo)}
+  note={Preprint v0.17 (Cairo)}
 }
 ```
 
@@ -184,7 +188,7 @@ This repository is distributed under the **Creative Commons Attribution 4.0 Inte
 
 ## Related Work
 
-- [TEP Theory](https://doi.org/10.5281/zenodo.16921911) - Foundational framework
+- [Paper 0: TEP Theory](https://doi.org/10.5281/zenodo.16921911) - Foundational framework
 - [Paper 1: Multi-Center Validation](https://doi.org/10.5281/zenodo.17127229)
 - [Paper 3: Raw RINEX Validation](https://doi.org/10.5281/zenodo.17860166)
 - [TEP-GTE: Synthesis Manuscript](https://doi.org/10.5281/zenodo.18004832)
