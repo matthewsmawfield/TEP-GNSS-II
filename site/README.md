@@ -1,10 +1,10 @@
-# Global Time Echoes: 25-Year Temporal Evolution of Distance-Structured Correlations in GNSS Clocks
+# Global Time Echoes: 25-Year Analysis of CODE Precise Clock Products
 
 **Publication website for TEP-GNSS-II (Paper 2)**
 
 **Author:** Matthew Lukin Smawfield  
-**Version:** v0.17 (Cairo)  
-**Date:** 24 April 2026  
+**Version:** v0.18 (Cairo)  
+**Date:** 29 April 2026  
 **Status:** Preprint
 
 ## Overview

@@ -214,10 +214,14 @@ class HTMLToMarkdownConverter {
         const version = versionMatch ? versionMatch[1]
             .replace(/<[^>]+>/g, '')
             .replace(/^Version:\s*/i, '')
-            .trim() : 'v0.17 (Cairo)';
-        
+            .replace(/\n/g, ' ')
+            .trim() : 'v0.18 (Cairo)';
+
         const dateMatch = html.match(/<div[^>]*class=["'][^"']*date[^"']*["'][^>]*>(.*?)<\/div>/i);
-        const date = dateMatch ? dateMatch[1].replace(/<[^>]+>/g, '').trim() : 'First published: 17 September 2025 · Last updated: 13 October 2025';
+        const date = dateMatch ? dateMatch[1]
+            .replace(/<[^>]+>/g, '')
+            .replace(/\n/g, ' ')
+            .trim() : 'First published: 17 September 2025 · Last updated: 13 October 2025';
         
         const doiMatch = html.match(/DOI:\s*<a[^>]*href=["']([^"']*)["'][^>]*>(.*?)<\/a>/i);
         const doi = doiMatch ? doiMatch[2] : '10.5281/zenodo.17517141';
@@ -305,22 +309,22 @@ class HTMLToMarkdownConverter {
      */
     buildMarkdownDocument(metadata, content) {
         const timestamp = new Date().toISOString().split('T')[0];
-        
+
         // Clean up the title to remove the author part
         const cleanTitle = metadata.title.replace(' | Matthew Lukin Smawfield', '');
-        
-        // Parse date components for cleaner format
-        const dateStr = metadata.date;
-        
+
+        // Remove leading indentation from content
+        const unindentedContent = content.replace(/^[ \t]+/gm, '');
+
         return `# ${cleanTitle}
 **${metadata.author}**
 Version: ${metadata.version}
-${dateStr}
+${metadata.date}
 DOI: ${metadata.doi}
 
 ---
 
-${content}
+${unindentedContent}
 
 ---
 

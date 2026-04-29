@@ -1,26 +1,20 @@
 {
-  "version": "0.17",
+  "version": "0.18",
   "codename": "Cairo",
-  "date": "2026-04-24",
+  "date": "2026-04-29",
   "paper": "2",
   "changes": [
-    "Version bump to v0.17 - synchronized with TEP v0.7 (Jakarta) theory updates",
-    "Added ecliptic control tests (RA=90°/270°, Dec=0°) to discriminate CMB-specific from generic ecliptic detection",
-    "CMB explains 136× more variance than ecliptic controls (geometric confound falsified)",
-    "Strengthened planetary event analysis with explicit false positive calculation (0.05 expected, not 8)",
-    "Added Mercury dominance explanation via orbital period resonance hypothesis",
-    "Reframed absence of GM/r² scaling as expected feature with falsifiable predictions",
-    "Updated seasonal confound discrimination with CMB frame + ionospheric nulls as primary discriminants",
-    "Corrected F10.7/Kp correlation values to match Paper 1 (r=0.12-0.13, p>0.29)"
+    "Version bump to v0.18",
+    "Updated date to 29 April 2026"
   ],
-  "previous_version": "0.16",
-  "previous_date": "2025-11-30",
-  "description": "Ecliptic control tests and strengthened response to reviewer feedback",
+  "previous_version": "0.17",
+  "previous_date": "2026-04-24",
+  "description": "Paper 2: Global Time Echoes: 25-Year Analysis of CODE Precise Clock Products",
   "impact": "Enhanced manuscript integrity by ensuring all reported analyses have been performed",
-  "short_description": "Global Time Echoes: 25-Year Temporal Evolution of Distance-Structured Correlations in GNSS Clocks. Extended analysis of 165.2M measurements over 25.3 years confirms temporal stability and reveals long-period geophysical coupling including 18.6-year nutation cycle.",
+  "short_description": "Global Time Echoes: 25-Year Analysis of CODE Precise Clock Products. Extended analysis of 165.2M measurements over 25.3 years confirms temporal stability and reveals long-period geophysical coupling including 18.6-year nutation cycle.",
   "long_description": "Analysis of 25.3 years of global GNSS timing data (165.2 million station pairs) documents persistent velocity-dependent correlations in atomic clock networks. Seven independent signatures are identified including spatial anisotropy, orbital velocity coupling, CMB frame alignment, and lunar nutation. Observed patterns are compatible with key a priori TEP predictions.\n\nWebsite: https://matthewsmawfield.github.io/TEP-GNSS-II/",
   "doi": "10.5281/zenodo.17517141",
   "zenodo_record": "17517141",
-  "pdf_filename": "2-TEP-GNSS-II-v0.17-Cairo.pdf",
-  "pdf_download_url": "https://matthewsmawfield.github.io/TEP-GNSS-II/public/docs/2-TEP-GNSS-II-v0.17-Cairo.pdf"
+  "pdf_filename": "2-TEP-GNSS-II-v0.18-Cairo.pdf",
+  "pdf_download_url": "https://matthewsmawfield.github.io/TEP-GNSS-II/public/docs/2-TEP-GNSS-II-v0.18-Cairo.pdf"
 }

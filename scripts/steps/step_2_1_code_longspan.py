@@ -1825,7 +1825,7 @@ def create_station_distances_file(root_dir: Path):
 @ensure_single_instance
 def main():
     """Main function to perform comprehensive geospatial data quality analysis and validation."""
-    print_status("TEP-GNSS Analysis Framework v0.17", "TITLE")
+    print_status("TEP-GNSS Analysis Framework v0.18", "TITLE")
     print_status("STEP 2.1: Comprehensive Geospatial Data Quality Assessment", "TITLE")
     print_status("Performing rigorous quality validation of multi-center GNSS timing correlations", "INFO")
     print_status("Analysis scope: Quality assurance, statistical validation, and methodological transparency", "INFO")

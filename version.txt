@@ -1,5 +1,8 @@
-v0.17 (Cairo) - Topology Nomenclature Update
+v0.18 (Cairo) - Terminology Alignment and Theory Clarification
 
-- Adopted continuous Temporal Topology framework (replaces "screening theory" terminology)
-- Formalized Temporal Shear nomenclature for field gradient superposition in dense environments  
-- Aligned correlation length predictions with geometric v0.7 (Jakarta) theory framework
+- Aligned terminology with TEP framework: introduced λ_T notation for Temporal Topology correlation length
+- Clarified distinction between geometric correlation structure and clock frequency variations
+- Added explicit primary/secondary result designation in abstract
+- Enhanced reference frame identification section (CMB vs galactic motion falsification)
+- Improved Monte Carlo validation methodology explanation
+- Minor formatting and citation consistency updates

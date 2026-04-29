@@ -21,19 +21,19 @@ def get_version_info():
     
     # Fallback if VERSION.json not found
     return {
-        "version": "0.17",
+        "version": "0.18",
         'codename': 'Cairo',
-        'date': '2026-04-24',
+        'date': '2026-04-29',
         'description': 'Fallback version - VERSION.json not found'
     }
 
 def get_version_string():
-    """Get formatted version string (e.g., 'v0.17 (Cairo)')"""
+    """Get formatted version string (e.g., 'v0.18 (Cairo)')"""
     version_data = get_version_info()
     return f"v{version_data['version']} ({version_data['codename']})"
 
 def get_version_number():
-    """Get version number only (e.g., '0.17')"""
+    """Get version number only (e.g., '0.18')"""
     version_data = get_version_info()
     return version_data['version']
 
@@ -43,22 +43,22 @@ def get_codename():
     return version_data['codename']
 
 def get_date():
-    """Get release date (e.g., '2026-04-24')"""
+    """Get release date (e.g., '2026-04-29')"""
     version_data = get_version_info()
     return version_data['date']
 
 def get_doi():
-    """Get DOI (e.g., '10.5281/zenodo.17127229')"""
+    """Get DOI (e.g., '10.5281/zenodo.17517141')"""
     version_data = get_version_info()
-    return version_data.get('doi', '10.5281/zenodo.17127229')
+    return version_data.get('doi', '10.5281/zenodo.17517141')
 
 def get_zenodo_record():
-    """Get Zenodo record ID (e.g., '17216517')"""
+    """Get Zenodo record ID (e.g., '17517141')"""
     version_data = get_version_info()
-    return version_data.get('zenodo_record', '17216517')
+    return version_data.get('zenodo_record', '17517141')
 
 def get_pdf_filename():
-    """Get PDF filename (e.g., '2-TEP-GNSS-II-v0.17-Cairo.pdf')"""
+    """Get PDF filename (e.g., '2-TEP-GNSS-II-v0.19-Dubai.pdf')"""
     version_data = get_version_info()
     return version_data.get('pdf_filename', f'2-TEP-GNSS-II-v{get_version_number()}-{get_codename()}.pdf')
 
