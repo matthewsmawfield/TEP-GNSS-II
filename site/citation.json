@@ -1,7 +1,7 @@
 {
   "id": "smawfield2025globaltime25year",
   "type": "article",
-  "title": "Global Time Echoes: 25-Year Temporal Evolution of Distance-Structured Correlations in GNSS Clocks",
+  "title": "Global Time Echoes: 25-Year Analysis of CODE Precise Clock Products",
   "author": [
     {
       "family": "Smawfield",
@@ -9,10 +9,10 @@
     }
   ],
   "issued": {
-    "date-parts": [[2025, 11, 3]]
+    "date-parts": [[2026, 11, 3]]
   },
   "DOI": "10.5281/zenodo.17517141",
   "URL": "https://doi.org/10.5281/zenodo.17517141",
   "publisher": "Zenodo",
-  "note": "Preprint, Version 0.16 (Cairo)"
+  "note": "Preprint, Version 0.18 (Cairo)"
 }

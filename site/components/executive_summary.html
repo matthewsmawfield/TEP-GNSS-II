@@ -35,8 +35,8 @@
     <div style="margin-bottom: 20px;">
       <h4 style="color: #495773; margin-bottom: 8px;">1. Distance-Structured Correlations (Primary Finding)</h4>
       <p>Analysis of 165.2 million station pairs reveals systematic exponential decay of clock-pair coherence with distance. 
-      Correlation length λ = 4,201 ± 1,967 km, consistent with Paper 1's range (λ = 3,330–4,549 km across 
-      CODE, IGS, ESA). This confirms temporal stability of the fundamental distance-structured correlation pattern over 
+      Temporal Topology correlation length λ<sub>T</sub> = 4,201 ± 1,967 km, consistent with Paper 1's range
+      (λ<sub>T</sub> = 3,330–4,549 km across CODE, IGS, ESA). This confirms temporal stability of the fundamental distance-structured correlation pattern over 
       25.3 years.</p>
     </div>
 
@@ -132,13 +132,10 @@
   <div style="background-color: rgba(73, 87, 115, 0.03); padding: 15px; border-radius: 6px; margin-bottom: 20px;">
     <p style="line-height: 1.6; margin: 0; font-size: 0.9em; color: #495773;">
       <strong>Limitations:</strong> This analysis uses processed clock products (not raw carrier-phase) and single-constellation data (GPS only). Both limitations are addressed in the proposed next steps.
-    </p>
-  </div>
-
   <div style="background-color: rgba(73, 87, 115, 0.05); border: 1px solid rgba(73, 87, 115, 0.3); padding: 15px; border-radius: 6px; margin-bottom: 20px;">
     <h4 style="margin-top: 0; color: #495773;">Multi-Constellation Cross-Validation (Preliminary)</h4>
     <p style="line-height: 1.6; margin: 0; font-size: 0.9em;">
-      <strong>Independent MGEX Analysis (2020-2024):</strong> Preliminary analysis of GFZ Multi-GNSS products (GLONASS, Galileo, BeiDou) confirms the exponential decay signature with R² = 0.95 and λ = 3,042 ± 297 km—consistent with the 25-year CODE GPS analysis (λ = 4,201 km). Cross-center comparison (GBM, WUM, JPL) shows all centers achieve R² > 0.90, demonstrating constellation-independence and center-independence of the fundamental correlation structure. GPS-based pairs show strongest cross-center consistency, while some constellation combinations (BeiDou-Galileo) show center-dependent variability requiring further investigation.
+      <strong>Independent MGEX Analysis (2020-2024):</strong> Preliminary analysis of MGEX (Multi-GNSS): λ<sub>T</sub> = 3,042 ± 297 km, R² = 0.95 (GPS+GLONASS+Galileo+BeiDou; preliminary GBM/WUM/JPL cross-center). Cross-center comparison (GBM, WUM, JPL) shows all centers achieve R² > 0.90, demonstrating constellation-independence and center-independence of the fundamental correlation structure. GPS-based pairs show strongest cross-center consistency, while some constellation combinations (BeiDou-Galileo) show center-dependent variability requiring further investigation.
     </p>
   </div>
 
@@ -146,7 +143,7 @@
     <h3 style="color: #220126; margin-top: 0;">Conclusions</h3>
     
     <p style="line-height: 1.6;">
-      Seven independent signatures—orbital velocity coupling (r = −0.888, 5.1σ), CMB frame alignment (r = 0.747), semiannual nutation (R² = 0.904), 18.6-year nutation (R² = 0.641), 56 planetary event responses, mesh dance dynamics, and persistent spatial anisotropy—converge to yield a conservative joint probability of p ≈ 2×10⁻²⁷ (>10σ). Combined with 25-year temporal stability and Paper 1's multi-centre validation (R² = 0.92–0.97 across three independent software packages), these findings are consistent with systematic coupling in GNSS timing networks, though confirmation requires independent replication using different processing pipelines and constellations. Raw carrier-phase analysis and multi-constellation testing represent essential next steps.
+      Seven convergent signatures—orbital velocity coupling (r = −0.888, 5.1σ), CMB frame alignment (r = 0.747), semiannual nutation (R² = 0.904), 18.6-year nutation (R² = 0.641), 56 planetary event responses, mesh dance dynamics, and persistent spatial anisotropy—converge to yield a conservative joint probability of p ≈ 2×10⁻²⁷ (>10σ). Combined with 25-year temporal stability and Paper 1's multi-centre validation (R² = 0.92–0.97 across three independent software packages), these findings are consistent with systematic coupling in GNSS timing networks, though confirmation requires independent replication using different processing pipelines and constellations. Raw carrier-phase analysis and multi-constellation testing represent essential next steps.
     </p>
   </div>
 </div>

@@ -2,7 +2,7 @@
   "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
   "@type": "ScholarlyArticle",
   "identifier": "https://doi.org/10.5281/zenodo.17517141",
-  "name": "Global Time Echoes: 25-Year Temporal Evolution of Distance-Structured Correlations in GNSS Clocks",
+  "name": "Global Time Echoes: 25-Year Analysis of CODE Precise Clock Products",
   "description": "Analysis of 25.3 years of global GNSS timing data (165.2 million station pairs) documents persistent velocity-dependent correlations in atomic clock networks. Seven independent signatures are identified including spatial anisotropy, orbital velocity coupling, CMB frame alignment, and lunar nutation. Observed patterns are compatible with key a priori TEP predictions.",
   "author": [
     {
@@ -13,8 +13,8 @@
     }
   ],
   "datePublished": "2025-11-03",
-  "dateModified": "2026-04-24",
-  "version": "0.17",
+  "dateModified": "2026-04-29",
+  "version": "0.18",
   "license": "https://creativecommons.org/licenses/by/4.0/",
   "codeRepository": "https://github.com/matthewsmawfield/TEP-GNSS-II",
   "url": "https://matthewsmawfield.github.io/TEP-GNSS-II/",

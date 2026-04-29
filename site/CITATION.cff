@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-title: "Global Time Echoes: 25-Year Temporal Evolution of Distance-Structured Correlations in GNSS Clocks"
+title: "Global Time Echoes: 25-Year Analysis of CODE Precise Clock Products"
 message: "If you use this software, please cite it as below."
 type: article
 authors:
@@ -13,8 +13,8 @@ abstract: >
 
   Observed patterns are compatible with key a priori TEP predictions: correlation length λ=1,000-10,000 km (observed: 4,201±1,967 km), exponential models remain competitive with the best spatial kernel (exponential ΔAIC=12.8 relative to the Gaussian) and strongly outperform simple power-law forms (power-law ΔAIC > 30), velocity-dependent anisotropy (r=-0.888), and geometric alignment (EW/NS=2.16). The absence of GM/r² scaling is physically consistent with the hypothesis that energetic couplings are filtered by processing while geometric information is transmitted; raw carrier-phase analysis will test this transmission mechanism. Raw data validation and multi-constellation replication represent critical next steps.
 license: CC-BY-4.0
-version: 0.17
-date-released: 2026-04-24
+version: 0.18
+date-released: 2025-11-03
 keywords:
   - physics
   - GNSS
@@ -31,7 +31,7 @@ doi: 10.5281/zenodo.17517141
 
 preferred-citation:
   type: article
-  title: "Global Time Echoes: 25-Year Temporal Evolution of Distance-Structured Correlations in GNSS Clocks (Cairo v0.17)"
+  title: "Global Time Echoes: 25-Year Analysis of CODE Precise Clock Products (Cairo v0.18)"
   authors:
     - family-names: Smawfield
       given-names: Matthew Lukin
