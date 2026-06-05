@@ -100,7 +100,7 @@ def copy_pdf_to_docs(source_pdf: Path, docs_dir: Path):
     
     # Load metadata from CITATION.cff
     metadata = load_citation_metadata()
-    version_str = f"v{metadata['version']}_{metadata['codename']}"
+    version_str = f"v{metadata['version']}-{metadata['codename']}"
     
     # Primary PDF name (match manuscript naming pattern)
     target_name = f"2-TEP-GNSS-II-{version_str}.pdf"
@@ -120,7 +120,7 @@ def copy_pdf_to_root(source_pdf: Path, base_dir: Path):
     """Copy PDF to the project root directory."""
     # Load metadata from CITATION.cff
     metadata = load_citation_metadata()
-    version_str = f"v{metadata['version']}_{metadata['codename']}"
+    version_str = f"v{metadata['version']}-{metadata['codename']}"
     
     # Primary PDF name (match manuscript naming pattern)
     target_name = f"2-TEP-GNSS-II-{version_str}.pdf"
@@ -200,7 +200,7 @@ async def generate_pdf(quality: str = 'high', wait_time: float = 5.0, skip_build
         options['prefer_css_page_size'] = True
     elif quality == 'print':
         options = presets['print_ready'].copy()
-        options['scale'] = 0.63
+        options['scale'] = 0.72
         options['device_scale_factor'] = 2.0
     else:
         options = presets['web_optimized'].copy()

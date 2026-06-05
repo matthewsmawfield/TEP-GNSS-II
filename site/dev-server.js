@@ -25,7 +25,7 @@ class DevServer {
     }
 
     // Start Python HTTP server serving the dist directory
-    this.liveServerProcess = spawn("python3", ["-m", "http.server", "8347"], {
+    this.liveServerProcess = spawn("python3", ["-m", "http.server", "8348"], {
       stdio: "pipe",
       cwd: path.join(__dirname, "dist"),
     });
@@ -184,7 +184,7 @@ class DevServer {
     console.log("   • figures/*.png");
     console.log("   • data/*.json");
     console.log("   • public/*");
-    console.log("\n🌐 Server running at: http://localhost:8347");
+    console.log("\n🌐 Server running at: http://localhost:8348");
     console.log("📱 The page will auto-reload when you make changes!");
     console.log("📝 Markdown will be auto-generated after each build!");
     console.log("💡 If auto-reload doesn't work, run: npm run build");

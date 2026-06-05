@@ -6,8 +6,8 @@
 ![Global Time Echoes: 25-Year Analysis](site/public/header-image.webp)
 
 **Author:** Matthew Lukin Smawfield  
-**Version:** v0.18 (Cairo)  
-**Date:** 29 April 2026  
+**Version:** v0.19 (Cairo)  
+**Date:** 4 June 2026  
 **Status:** Preprint  
 **DOI:** [10.5281/zenodo.17517141](https://doi.org/10.5281/zenodo.17517141)  
 **Website:** [https://mlsmawfield.com/tep/gnss-ii/](https://mlsmawfield.com/tep/gnss-ii/)
@@ -163,7 +163,7 @@ python scripts/steps/step_2_8_draconitic_falsification.py
   year={2025},
   doi={10.5281/zenodo.17517141},
   url={https://doi.org/10.5281/zenodo.17517141},
-  note={Preprint v0.18 (Cairo)}
+  note={Preprint v0.19 (Cairo)}
 }
 ```
 

@@ -1,3 +1,8 @@
+v0.19 (Cairo) - Conformal Coupling Definition Correction
+
+- Fixed conformal coupling definition: α(φ) ≡ β/M_Pl and A(φ) = exp(βφ/M_Pl)
+  (was erroneously 2β/M_Pl and exp(2βφ/M_Pl) in manuscript and site HTML)
+
 v0.18 (Cairo) - Terminology Alignment and Theory Clarification
 
 - Aligned terminology with TEP framework: introduced λ_T notation for Temporal Topology correlation length
