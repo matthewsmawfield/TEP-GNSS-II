@@ -1104,11 +1104,11 @@ deviations in scalar-tensor theories through composition-dependent
 couplings. However, TEP's universal conformal coupling ensures that the
 Nordtvedt parameter:
 
-$\eta = 4\beta^2 - \gamma - 3$
+$\eta = 4\beta_A^2 - \gamma - 3$
 
-remains within observational bounds for the coupling strength β ~ 10−3
+remains within observational bounds for the coupling strength β_A ~ 10−3
 required to explain the GNSS correlation length. With γ ≈ 1 (Cassini
-constraint) and β ~ 10−3, the predicted Nordtvedt parameter is η
+constraint) and β_A ~ 10−3, the predicted Nordtvedt parameter is η
 ~ 4 × 10−6, well below the LLR bound.
 
 Furthermore, both Earth and Moon are within each other's screening radii
@@ -2119,7 +2119,7 @@ $r_V = \left(\frac{GM}{\Lambda^3}\right)^{1/3}$
 
 For a spherically symmetric source of mass M, the scalar field profile in the Vainshtein regime (r < rV) is:
 
-$\phi(r) \sim \frac{\beta M_{\text{Pl}}}{M_{\text{Pl}}^2} \frac{GM}{r} \left(\frac{r}{r_V}\right)^3$
+$\phi(r) \sim \frac{\beta_A M_{\text{Pl}}}{M_{\text{Pl}}^2} \frac{GM}{r} \left(\frac{r}{r_V}\right)^3$
 
 This suppresses the fifth force by a factor of (r/rV)3 inside the screening radius, reconciling weak-field cosmological behavior with strong-field solar system constraints. Other completions (e.g., chameleon mechanisms, symmetry-breaking potentials) may produce similar phenomenology.
 

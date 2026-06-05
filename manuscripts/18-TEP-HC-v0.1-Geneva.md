@@ -105,7 +105,7 @@ hi_class requires the EFT property functions $\alpha_i$ that encode metric modif
 The conformal coupling directly determines the running of the effective Planck mass:
 
 \begin{equation} \label{eq:3_theory_02}
-\alpha_M \equiv \frac{d \ln M_{\rm eff}^2}{d \ln a} = \frac{d \ln A^2(\phi)}{d \ln a} = \frac{2\beta}{M_{\rm Pl}} \frac{\phi'}{\mathcal{H}}
+\alpha_M \equiv \frac{d \ln M_{\rm eff}^2}{d \ln a} = \frac{d \ln A^2(\phi)}{d \ln a} = \frac{2\beta_A}{M_{\rm Pl}} \frac{\phi'}{\mathcal{H}}
 \end{equation}
 
 where $\mathcal{H} = aH$ is the conformal Hubble parameter and primes denote derivatives with respect to conformal time.

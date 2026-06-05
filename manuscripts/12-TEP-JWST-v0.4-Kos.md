@@ -4220,7 +4220,7 @@ to which all non-gravitational matter couples. The JWST response normalization
 $K_{\rm gal}$ is informed by the Cepheid response scale $\kappa_{\rm Cep}$
 measured in Paper 11. It is a transferred galaxy-sector effective normalization,
 not the Cepheid coefficient itself and not a microscopic scalar coupling.
-$K_{\rm gal}$ is not identified with bare couplings ($\beta$, $\kappa_{\rm Cep}$,
+$K_{\rm gal}$ is not identified with bare couplings ($\beta_A$, $\kappa_{\rm Cep}$,
 or $\alpha_{\rm clock}$). A microscopic mapping requires a solved transfer function
 that absorbs stellar physics, environmental activation, and field gradients.
 The JWST analysis adopts this observable response normalization for the
@@ -5664,7 +5664,7 @@ the core saturation density $\rho_T \approx 20$ g/cm³, the Sun's deep
 Newtonian potential ($\Phi_N \sim 10^{-6}$) ensures that the field
 gradient vanishes in the interior, with only a narrow outer region
 contributing to the scalar force. The effective coupling is suppressed
-to $\kappa_{\rm eff} \ll \beta$, reducing $\kappa_{\rm eff}$ to
+to $\kappa_{\rm eff} \ll \beta_A$, reducing $\kappa_{\rm eff}$ to
 $\lesssim 10^{-6}$ and satisfying all solar system bounds without
 invoking a rigid thin-shell approximation.
 

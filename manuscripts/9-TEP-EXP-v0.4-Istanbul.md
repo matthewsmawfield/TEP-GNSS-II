@@ -646,7 +646,7 @@ Lunar Laser Ranging (LLR) has measured the Earth-Moon distance to millimeter pre
 
 If gravitational self-energy contributes differently to inertial and gravitational mass, the Earth and Moon would fall toward the Sun at slightly different rates, causing a polarization of the lunar orbit. The Nordtvedt parameter η quantifies this violation:
 
-$\eta = 4\beta - \gamma - 3 - \frac{10}{3}\xi - \alpha_1 +
+$\eta = 4\beta_{\rm PPN} - \gamma - 3 - \frac{10}{3}\xi - \alpha_1 +
 \frac{2}{3}\alpha_2$
 
 Current LLR solutions give (mG/mI)E − (mG/mI)M = (−0.8 ± 1.3) × 10−13, implying |η| ≲ few × 10−4 (conversion depends on the Earth–Moon self-energy difference; Williams et al. 2012).
@@ -759,10 +759,10 @@ Like Shapiro delay, this constrains the conformal factor in the metric (how spat
 
 The Parameterized Post-Newtonian formalism provides a systematic way to compare metric theories of gravity. The PPN metric in isotropic coordinates:
 
-$ds^2 = -(1 - 2U + 2\beta U^2)c^2 dt^2 + (1 + 2\gamma U)(dx^2 + dy^2 +
+$ds^2 = -(1 - 2U + 2\beta_{\rm PPN} U^2)c^2 dt^2 + (1 + 2\gamma U)(dx^2 + dy^2 +
 dz^2)$
 
-where U = GM/rc² is the Newtonian potential. GR predicts β = γ = 1.
+where U = GM/rc² is the Newtonian potential. GR predicts β_{\rm PPN} = γ = 1.
 
 5.3.1 What PPN Tests Constrain
 

@@ -267,7 +267,7 @@ measurement.
 
 Form and Justification of the Conformal Coupling: The TEP framework posits a
 conformal factor $A(\phi) = \exp(\beta_A\phi/M_{\text{Pl}})$, with matter metric $\tilde{g}_{\mu\nu} = A^2(\phi)g_{\mu\nu}$, that rescales
-the matter metric, where $\phi$ is a scalar field, $\beta$ is a
+the matter metric, where $\phi$ is a scalar field, $\beta_A$ is a
 dimensionless coupling constant, and $M_{\text{Pl}}$ is the Planck mass.
 This specific exponential form arises from three fundamental requirements:
 (1) *Dimensional consistency*—β/MPl provides the unique
@@ -287,7 +287,7 @@ while allowing for testable violations in the gravitational sector. In this
 modified spacetime, proper time transforms as dτ̃ = A(φ)dτg. In the weak-field limit, atomic transition frequencies acquire a
 fractional frequency shift:
 
-$y \equiv \frac{\Delta\nu}{\nu} \approx \frac{\beta}{M_{\text{Pl}}}\phi$
+$y \equiv \frac{\Delta\nu}{\nu} \approx \frac{\beta_A}{M_{\text{Pl}}}\phi$
 
 For a screened scalar field with exponential correlation function
 $\text{Cov}[\phi(\mathbf{x}), \phi(\mathbf{x}+\mathbf{r})] \propto

@@ -118,9 +118,9 @@ The TEP framework is not a novel field theory but a
 gravity to gravitational lensing. Specifically:
 
 **Brans-Dicke Theory:** TEP with \(B=0\) and \(A(\phi)
-= e^{\beta\phi/M_{\text{Pl}}}\) reduces to Brans-Dicke gravity in the
+= e^{\beta_A\phi/M_{\text{Pl}}}\) reduces to Brans-Dicke gravity in the
 Jordan frame. The scalar field \(\phi\) plays the role of the
-Brans-Dicke field, with the coupling \(\beta\) related to the
+Brans-Dicke field, with the coupling \(\beta_A\) related to the
 Brans-Dicke parameter \(\omega_{BD}\).
 
 **Horndeski/Galileon Theories:** The Lagrangian in

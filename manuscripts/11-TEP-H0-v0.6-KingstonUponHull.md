@@ -305,10 +305,10 @@ $P_{\rm obs} = P_{\rm true} \cdot A(\phi)^{k_{\rm clock}/2}$
 where $A(\phi) = \exp(\beta_A\phi/M_{\rm Pl})$ is the conformal factor to
 which matter couples (Jakarta v0.8). In the unscreened regime, the scalar
 field tracks the gravitational potential as $\phi/M_{\rm Pl} \approx
-2\beta \Phi/c^2$, yielding a clock rate $d\tau/dt = \exp(2\beta^2 \Phi/c^2)$.
+2\beta_A \Phi/c^2$, yielding a clock rate $d\tau/dt = \exp(2\beta_A^2 \Phi/c^2)$.
 The fitted coefficient $\kappa_{\rm Cep}$ is an observable Cepheid
 period-luminosity response coefficient. It should not be identified with
-the microscopic conformal coupling $\beta$, the scalar-tensor coupling
+the microscopic conformal coupling $\beta_A$, the scalar-tensor coupling
 $\alpha_0$, or a PPN coupling. It absorbs the Cepheid pulsation response,
 the P-L slope, the environmental activation factor, the virial mapping
 between $\sigma^2$ and potential depth, and the calibration geometry
@@ -374,11 +374,11 @@ $\mu_{\rm corr} = \mu_{\rm obs} + \kappa_{\rm Cep} \cdot S(\rho) \cdot
 
 where $\kappa_{\rm Cep}$ is the **Observable Response Coefficient**
 for Cepheid period-luminosity anomalies—an astrophysical response parameter
-that absorbs the intrinsic coupling $\beta$, the virial proportionality
+that absorbs the intrinsic coupling $\beta_A$, the virial proportionality
 between $|\Phi|$ and $\sigma^2$, the P-L slope $b$, the factor $1/\ln 10$,
 stellar physics, environmental activation, and transfer functions. This is
 distinct from a bare scalar coupling: Cassini bounds the bare coupling
-$\beta \lesssim 10^{-3}$, while $\kappa_{\rm Cep} \sim 10^6$ is an
+$\beta_A \lesssim 10^{-3}$, while $\kappa_{\rm Cep} \sim 10^6$ is an
 *observable response* that includes all astrophysical amplification
 mechanisms. $S(\rho)$ encodes the environment-dependent attenuation of Temporal
 Shear. In this convention $\kappa_{\rm Cep}$ has units of magnitude, and with
@@ -2339,7 +2339,7 @@ correction
 $\Delta\mu = \kappa_{\rm Cep} \cdot S(\rho) \cdot \frac{\sigma^2 - \sigma_{\rm ref}^2}{c^2}.$
 
 It should not be identified with the microscopic conformal coupling
-$\beta$, the scalar-tensor coupling $\alpha_0$, or a PPN coupling.
+$\beta_A$, the scalar-tensor coupling $\alpha_0$, or a PPN coupling.
 It absorbs the Cepheid pulsation response, the P-L slope, the environmental
 activation factor, the virial mapping between $\sigma^2$ and potential
 depth, and the calibration geometry of the distance ladder.
@@ -2361,9 +2361,9 @@ source-screening tests.
 This paper does not infer a microscopic coupling from $\kappa_{\rm Cep}$.
 In particular, it does not assume
 
-$\kappa_{\rm Cep} \rightarrow \beta, \quad \kappa_{\rm Cep} \rightarrow \alpha_0, \quad \kappa_{\rm Cep} \rightarrow \alpha_{\rm clock}.$
+$\kappa_{\rm Cep} \rightarrow \beta_A, \quad \kappa_{\rm Cep} \rightarrow \alpha_0, \quad \kappa_{\rm Cep} \rightarrow \alpha_{\rm clock}.$
 
-A microscopic mapping would require a transfer calculation from $\beta$
+A microscopic mapping would require a transfer calculation from $\beta_A$
 through the scalar-field boundary-value problem, environmental activation,
 source screening, and Cepheid pulsation physics. The present result
 should therefore be interpreted as a measurement of the Cepheid response
