@@ -55,7 +55,7 @@ def load_citation_metadata():
         match = re.match(pattern, version_str.strip())
         
         if match:
-            version = match.group(1)
+            version = match.group(1).lstrip('v')
             codename = match.group(2) or 'Cairo'
         else:
             version = version_str
@@ -235,10 +235,54 @@ async def generate_pdf(quality: str = 'high', wait_time: float = 5.0, skip_build
         if not success:
             print("❌ PDF generation failed")
             return False
-        
+
         print(f"✅ PDF generated: {output_pdf}")
         print(f"   Size: {output_pdf.stat().st_size / (1024*1024):.2f} MB")
-        
+
+        # Remove trailing blank pages (Chromium print artifact)
+        try:
+            import fitz
+            doc = fitz.open(str(output_pdf))
+            pages_removed = 0
+            while len(doc) > 1:
+                last_page = doc[len(doc) - 1]
+                text = last_page.get_text().strip()
+                # Remove footer-only pages (contain "Page X of Y" but no real content)
+                lines = [l.strip() for l in text.split('\n') if l.strip()]
+                content_lines = [l for l in lines if not re.match(r'^Pa\s*g\s*e\s+\d+\s+of\s+\d+$', l) and 'Page' not in l]
+                if len(content_lines) == 0:
+                    doc.delete_page(len(doc) - 1)
+                    pages_removed += 1
+                else:
+                    break
+            if pages_removed > 0:
+                # Update page count in footers of remaining pages
+                # Chrome renders "Page X of Y" as text in the footer;
+                # after removing blank pages, we need to fix the "of Y" count.
+                final_page_count = len(doc)
+                for page_num in range(final_page_count):
+                    page = doc[page_num]
+                    # Search for "of N" text and replace with correct count
+                    text_instances = page.search_for(f"of {final_page_count + pages_removed}")
+                    for inst in text_instances:
+                        # Add redaction annotation to replace the text
+                        page.add_redact_annot(inst, text=f"of {final_page_count}")
+                    if text_instances:
+                        page.apply_redactions()
+
+                import tempfile
+                tmp_path = str(output_pdf) + '.tmp'
+                doc.save(tmp_path, deflate=True)
+                doc.close()
+                import shutil
+                shutil.move(tmp_path, str(output_pdf))
+                print(f"   Removed {pages_removed} trailing blank page(s)")
+                print(f"   Updated page count in footers: {final_page_count} pages")
+            else:
+                doc.close()
+        except Exception as e:
+            print(f"   ⚠️  Could not remove blank pages: {e}")
+
         # Load metadata for display
         metadata = load_citation_metadata()
         version_str = f"v{metadata['version']}_{metadata['codename']}"
@@ -247,11 +291,11 @@ async def generate_pdf(quality: str = 'high', wait_time: float = 5.0, skip_build
         # Copy to docs directory
         final_pdf = copy_pdf_to_docs(output_pdf, docs_dir)
         
-        # Copy to root directory
-        copy_pdf_to_root(final_pdf, base_dir)
-        
-        # Process with metadata
+        # Process with metadata and compress
         process_pdf_with_metadata(final_pdf)
+        
+        # Copy to root directory (after compression/metadata so both copies match)
+        copy_pdf_to_root(final_pdf, base_dir)
         
         print(f"\n✅ Complete! PDF available at:")
         print(f"   {final_pdf}")

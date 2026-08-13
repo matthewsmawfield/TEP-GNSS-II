@@ -111,6 +111,80 @@ class HTMLToMarkdownConverter {
         html = html.replace(/&sup3;/g, '³');
         html = html.replace(/&sup1;/g, '¹');
         html = html.replace(/&deg;/g, '°');
+        // Greek letters and math symbols
+        html = html.replace(/&alpha;/g, 'α');
+        html = html.replace(/&beta;/g, 'β');
+        html = html.replace(/&gamma;/g, 'γ');
+        html = html.replace(/&delta;/g, 'δ');
+        html = html.replace(/&epsilon;/g, 'ε');
+        html = html.replace(/&varepsilon;/g, 'ε');
+        html = html.replace(/&zeta;/g, 'ζ');
+        html = html.replace(/&eta;/g, 'η');
+        html = html.replace(/&theta;/g, 'θ');
+        html = html.replace(/&iota;/g, 'ι');
+        html = html.replace(/&kappa;/g, 'κ');
+        html = html.replace(/&lambda;/g, 'λ');
+        html = html.replace(/&mu;/g, 'μ');
+        html = html.replace(/&nu;/g, 'ν');
+        html = html.replace(/&xi;/g, 'ξ');
+        html = html.replace(/&pi;/g, 'π');
+        html = html.replace(/&rho;/g, 'ρ');
+        html = html.replace(/&sigma;/g, 'σ');
+        html = html.replace(/&tau;/g, 'τ');
+        html = html.replace(/&upsilon;/g, 'υ');
+        html = html.replace(/&phi;/g, 'φ');
+        html = html.replace(/&chi;/g, 'χ');
+        html = html.replace(/&psi;/g, 'ψ');
+        html = html.replace(/&omega;/g, 'ω');
+        html = html.replace(/&Alpha;/g, 'Α');
+        html = html.replace(/&Beta;/g, 'Β');
+        html = html.replace(/&Gamma;/g, 'Γ');
+        html = html.replace(/&Delta;/g, 'Δ');
+        html = html.replace(/&Epsilon;/g, 'Ε');
+        html = html.replace(/&Zeta;/g, 'Ζ');
+        html = html.replace(/&Eta;/g, 'Η');
+        html = html.replace(/&Theta;/g, 'Θ');
+        html = html.replace(/&Iota;/g, 'Ι');
+        html = html.replace(/&Kappa;/g, 'Κ');
+        html = html.replace(/&Lambda;/g, 'Λ');
+        html = html.replace(/&Mu;/g, 'Μ');
+        html = html.replace(/&Nu;/g, 'Ν');
+        html = html.replace(/&Xi;/g, 'Ξ');
+        html = html.replace(/&Pi;/g, 'Π');
+        html = html.replace(/&Rho;/g, 'Ρ');
+        html = html.replace(/&Sigma;/g, 'Σ');
+        html = html.replace(/&Tau;/g, 'Τ');
+        html = html.replace(/&Upsilon;/g, 'Υ');
+        html = html.replace(/&Phi;/g, 'Φ');
+        html = html.replace(/&Chi;/g, 'Χ');
+        html = html.replace(/&Psi;/g, 'Ψ');
+        html = html.replace(/&Omega;/g, 'Ω');
+        // Math operators and symbols
+        html = html.replace(/&approx;/g, '≈');
+        html = html.replace(/&asymp;/g, '≈');
+        html = html.replace(/&sim;/g, '∼');
+        html = html.replace(/&equiv;/g, '≡');
+        html = html.replace(/&ne;/g, '≠');
+        html = html.replace(/&le;/g, '≤');
+        html = html.replace(/&ge;/g, '≥');
+        html = html.replace(/&infin;/g, '∞');
+        html = html.replace(/&part;/g, '∂');
+        html = html.replace(/&nabla;/g, '∇');
+        html = html.replace(/&sum;/g, '∑');
+        html = html.replace(/&int;/g, '∫');
+        html = html.replace(/&prod;/g, '∏');
+        html = html.replace(/&radic;/g, '√');
+        html = html.replace(/&prop;/g, '∝');
+        html = html.replace(/&oplus;/g, '⊕');
+        html = html.replace(/&otimes;/g, '⊗');
+        html = html.replace(/&sdot;/g, '⋅');
+        html = html.replace(/&hellip;/g, '…');
+        html = html.replace(/&mdash;/g, '—');
+        html = html.replace(/&ndash;/g, '–');
+        html = html.replace(/&lsquo;/g, '\u2018');
+        html = html.replace(/&rsquo;/g, '\u2019');
+        html = html.replace(/&ldquo;/g, '\u201C');
+        html = html.replace(/&rdquo;/g, '\u201D');
         
         // After decoding, temporarily protect stray '<' that are NOT tag starts (e.g., "p < 0.05", "< 5 minutes")
         // Replace with a placeholder to survive tag-stripping, then restore later.
@@ -118,7 +192,7 @@ class HTMLToMarkdownConverter {
         
         // Convert superscripts and subscripts BEFORE removing HTML tags
         // This preserves scientific notation like 10⁻¹⁰
-        html = html.replace(/<sup[^>]*>(.*?)<\/sup>/gi, (match, content) => {
+        html = html.replace(/<sup[^>]*>(.*?)<\/sup>/gis, (match, content) => {
             // Convert digits to superscript Unicode
             const superscriptMap = {
                 '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴',
@@ -128,7 +202,7 @@ class HTMLToMarkdownConverter {
             return content.split('').map(c => superscriptMap[c] || c).join('');
         });
         
-        html = html.replace(/<sub[^>]*>(.*?)<\/sub>/gi, (match, content) => {
+        html = html.replace(/<sub[^>]*>(.*?)<\/sub>/gis, (match, content) => {
             // Convert digits to subscript Unicode
             const subscriptMap = {
                 '0': '₀', '1': '₁', '2': '₂', '3': '₃', '4': '₄',
@@ -140,7 +214,9 @@ class HTMLToMarkdownConverter {
         
         // Remove remaining HTML tags (but not < or > used as comparison operators)
         // Only match tags that start with < followed by a letter or /
-        html = html.replace(/<\/?[a-zA-Z][^>]*>/g, '');
+        html = html.replace(/<sub[^>]*>([\s\S]*?)<\/sub>/gi, '<sub>$1</sub>');
+        html = html.replace(/<sup[^>]*>([\s\S]*?)<\/sup>/gi, '<sup>$1</sup>');
+        html = html.replace(/<\/?(?!sub|sup)[a-zA-Z][^>]*>/g, '');
         
         // Restore any protected '<' placeholders back to literal '<'
         html = html.replace(/__LT__/g, '<');
@@ -178,7 +254,9 @@ class HTMLToMarkdownConverter {
                 const cellTexts = cells.map(cell => 
                     // Remove only bona fide HTML tags (starting with a letter or '/')
                     // Avoid stripping comparators like '< 0.05' that appear in plain text
-                    cell.replace(/<\/?[a-zA-Z][^>]*>/g, '').trim()
+                    cell.replace(/<sub[^>]*>([\s\S]*?)<\/sub>/gi, '<sub>$1</sub>')
+                        .replace(/<sup[^>]*>([\s\S]*?)<\/sup>/gi, '<sup>$1</sup>')
+                        .replace(/<\/?(?!sub|sup)[a-zA-Z][^>]*>/g, '').trim()
                 );
                 rows.push(cellTexts);
             }

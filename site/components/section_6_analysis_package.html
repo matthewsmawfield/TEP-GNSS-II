@@ -1,7 +1,7 @@
 <h2>6. Analysis Package</h2>
 <p style="font-size: 13px; color: #666; font-style: italic; margin-bottom: 15px;">Complete Reproducible Pipeline for 25-Year Long-Baseline Analysis</p>
 
-<p>This work provides a complete, reproducible 5-step pipeline for testing TEP predictions using 25.3 years of GNSS data (2000-2025), extending the multi-center study to investigate decadal stability and long-period phenomena:</p>
+<p>This work provides a complete, reproducible 5-step pipeline for testing TEP predictions using 25.3 years of GNSS data (2000-2025), extending the multi-centre study to investigate long-baseline consistency and long-period phenomena:</p>
 
 <div class="experimental-section">
     <h2>Pipeline Overview</h2>
@@ -88,10 +88,10 @@ Command: <code style="background: rgba(73, 87, 115, 0.08); padding: 2px 6px; bor
             <ul style="margin: 8px 0; padding-left: 20px; font-size: 12px;">
                 <li><strong>Temporal Coverage:</strong> 25.3 years (1 March 2000 to 30 June 2025)</li>
                 <li><strong>Station Network:</strong> 474 unique GNSS receivers</li>
-                <li><strong>Pair Analysis:</strong> 165,189,605 station pairs</li>
+                <li><strong>Pair Analysis:</strong> 165,189,605 station-pair observations</li>
                 <li><strong>Long-Period Detection:</strong> 18.6-year nutation, Chandler wobble (433-day)</li>
-                <li><strong>Planetary Events:</strong> 56 significant detections (25 Bonferroni-corrected; 33 BY-FDR, primary ±120-day window)</li>
-                <li><strong>Validation Framework:</strong> Temporal holdout (2000-2020 train, 2021-2025 test)</li>
+                <li><strong>Planetary Events:</strong> 56 significant detections (19 Bonferroni-corrected; 28 BY-FDR, 38 BH-FDR, primary ±120-day window)</li>
+                <li><strong>Validation Framework:</strong> Cross-centre consistency (Paper 1) + 25.3-year aggregate consistency + Monte Carlo surrogate testing</li>
             </ul>
         </div>
         <p style="margin: 15px 0 5px 0; font-size: 12px; color: #666;"><strong>Expected Runtime:</strong> ~12-24 hours total (all 5 steps) on 16+ core system</p>
@@ -113,13 +113,13 @@ Command: <code style="background: rgba(73, 87, 115, 0.08); padding: 2px 6px; bor
         <h4 style="margin-top: 0; color: #2C5F77;">Key Differences from Paper 1</h4>
         <ul style="margin: 10px 0; padding-left: 20px; font-size: 13px;">
             <li><strong>Temporal Coverage:</strong> 25.3 years vs 2.5 years (10× extension)</li>
-            <li><strong>Analysis Center:</strong> Single-center (CODE) vs multi-center (CODE/IGS/ESA)</li>
-            <li><strong>Focus:</strong> Decadal stability and long-period phenomena vs cross-center validation</li>
+            <li><strong>Analysis Centre:</strong> Single-centre (CODE) vs multi-centre (CODE/IGS/ESA)</li>
+            <li><strong>Focus:</strong> Long-baseline stability and long-period phenomena vs cross-centre validation</li>
             <li><strong>New Capabilities:</strong> 18.6-year nutation detection, enhanced planetary statistics</li>
-            <li><strong>Validation:</strong> Temporal holdout vs cross-center consistency</li>
+            <li><strong>Validation:</strong> 25.3-year aggregate consistency vs cross-centre consistency</li>
             <li><strong>Computational:</strong> Local HPC vs cloud-based (GCP) deployment</li>
         </ul>
-        <p style="margin: 10px 0 0 0; font-size: 12px; color: #666; font-style: italic;">Note: Paper 1's comprehensive validation framework (388 statistical tests, null testing, cross-center consistency) is adopted and extended with temporal validation.</p>
+        <p style="margin: 10px 0 0 0; font-size: 12px; color: #666; font-style: italic;">Note: Paper 1's comprehensive validation framework (388 statistical tests, null testing, cross-centre consistency) is adopted and extended with temporal validation.</p>
     </div>
 </div>
 
@@ -127,7 +127,7 @@ Command: <code style="background: rgba(73, 87, 115, 0.08); padding: 2px 6px; bor
     <h3 style="margin-top: 0; color: #2D0140;">Citation and Access</h3>
     <p><strong>Repository:</strong> <a href="https://github.com/matthewsmawfield/TEP-GNSS" target="_blank" rel="noopener noreferrer" style="color: #495773;">https://github.com/matthewsmawfield/TEP-GNSS</a></p>
     <p><strong>License:</strong> MIT License - Open source with attribution requirements</p>
-    <p><strong>Data Access:</strong> GNSS clock products from CODE analysis center via IGS FTP servers</p>
+    <p><strong>Data Access:</strong> GNSS clock products from CODE analysis centre via IGS FTP servers</p>
     <p><strong>Documentation:</strong> Complete analysis code, usage examples, validation reports, and analysis results</p>
     <p><strong>Dependencies:</strong> Python 3.8+, NumPy, SciPy, Pandas, Matplotlib, AstroPy (automated installation)</p>
 </div>
@@ -135,7 +135,7 @@ Command: <code style="background: rgba(73, 87, 115, 0.08); padding: 2px 6px; bor
 <h2>Supplementary Materials</h2>
 
 <h3>Supplementary Table S1: Multi-Resolution Convergence Analysis</h3>
-<p style="font-size: 13px; margin-bottom: 15px;">Verification of CMB frame alignment across three independent grid resolutions to demonstrate robustness and rule out resolution-dependent artifacts.</p>
+<p style="font-size: 13px; margin-bottom: 15px;">Verification of CMB-region directional alignment across four grid resolutions to demonstrate robustness and rule out resolution-dependent artifacts. The p-values are directional-rank statistics within the observed dataset; global sky-search surrogate significance has not yet been computed.</p>
 
 <div style="overflow-x: auto; margin: 20px 0;">
     <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
@@ -144,7 +144,7 @@ Command: <code style="background: rgba(73, 87, 115, 0.08); padding: 2px 6px; bor
                 <th style="padding: 8px; border: 1px solid #495773; text-align: left;">Resolution</th>
                 <th style="padding: 8px; border: 1px solid #495773; text-align: center;">Sky Coverage</th>
                 <th style="padding: 8px; border: 1px solid #495773; text-align: center;">r</th>
-                <th style="padding: 8px; border: 1px solid #495773; text-align: center;">p-value</th>
+                <th style="padding: 8px; border: 1px solid #495773; text-align: center;">Directional-rank p</th>
                 <th style="padding: 8px; border: 1px solid #495773; text-align: center;">Best Fit (RA, Dec)</th>
                 <th style="padding: 8px; border: 1px solid #495773; text-align: center;">CMB Sep</th>
                 <th style="padding: 8px; border: 1px solid #495773; text-align: center;">Improvement</th>
@@ -199,11 +199,11 @@ Command: <code style="background: rgba(73, 87, 115, 0.08); padding: 2px 6px; bor
         <li><strong>Monotonic Improvement:</strong> r increases systematically across 93-fold grid density range (0.707 → 0.744 → 0.744 → 0.747)</li>
         <li><strong>Asymptotic Convergence:</strong> Improvement pattern shows diminishing returns (+5.14% → +0.05% → +0.27%), confirming approach to physical limit</li>
         <li><strong>Location Stability:</strong> Best-fit coordinates vary by only 1-2° across all resolutions (RA: 180°→190°→187°→186°; Dec: 0°→-5°→-5°→-4°)</li>
-        <li><strong>Frame Consistency:</strong> All four resolutions strongly prefer CMB frame (18-22° separation) over Solar Apex (86-89° separation)</li>
-        <li><strong>Statistical Significance:</strong> All resolutions achieve p &lt; 0.001 (better than 3.5σ), with 1° reaching highest significance</li>
+        <li><strong>Frame Consistency:</strong> All four resolutions strongly prefer the CMB dipole direction (18-22° separation) over Solar Apex (86-89° separation)</li>
+        <li><strong>Statistical Significance:</strong> All resolutions give directional-rank p &lt; 0.001. These values quantify directional preference within the tested scan; global sky-scan significance is a separate statistic.</li>
         <li><strong>Highest Resolution Verification:</strong> 1° resolution (65,341 directions) provides additional verification with closest CMB alignment (18.2°) and highest correlation (r=0.747)</li>
     </ul>
     <p style="margin: 10px 0 0 0; font-size: 12px; color: #666; font-style: italic;"><strong>Computational Cost vs. Benefit:</strong> While 1° resolution requires 24× longer processing than 5° (65,341 vs 2,701 grid points), it yields only 0.4% total correlation improvement (0.744 → 0.747), confirming 5° captures 99.6% of achievable correlation and represents optimal precision-efficiency balance for routine analysis. The 1° ultra-high resolution verification is used for final publication figures to demonstrate absolute thoroughness.</p>
 </div>
 
-<p><strong>Reproducibility Statement:</strong> This pipeline provides complete reproducibility for the 25-year long-baseline analysis presented in this manuscript. All code, data processing steps, validation procedures, and analysis parameters are fully documented and version-controlled. The analysis builds upon the validated methodology from the multi-center study while extending temporal coverage to enable investigation of decadal stability and long-period geophysical phenomena.</p>
+<p><strong>Reproducibility Statement:</strong> This pipeline provides complete reproducibility for the 25-year long-baseline analysis presented in this manuscript. All code, data processing steps, validation procedures, and analysis parameters are fully documented and version-controlled. The analysis builds upon the validated methodology from the multi-centre study while extending temporal coverage to enable investigation of long-baseline consistency and long-period geophysical phenomena.</p>

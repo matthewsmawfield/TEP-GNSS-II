@@ -1,7 +1,7 @@
-<h2>3. Results: Multi-Signature Convergence Across Decadal Timescales</h2>
+<h2>3. Results: Multi-Signature Convergence Across a 25.3-Year Baseline</h2>
 
 <div style="background-color: rgba(255,255,255,0.9); border: 1px solid #495773; border-radius: 6px; padding: 18px; margin: 18px 0; font-size: 14px;">
-    <p style="margin-top:0; margin-bottom:12px;"><strong>Empirical Overview.</strong> Analysis of 165,189,605 station pairs over 25.3 years (2000-2025) from CODE reveals systematic distance-structured correlations exhibiting temporal stability and multi-signature convergence. Building on the multi-centre study's validated phenomenology, we document strong directional dependence, dynamic coupling to Earth's orbital motion, and newly accessible long-period geophysical signatures:</p>
+    <p style="margin-top:0; margin-bottom:12px;"><strong>Empirical Overview.</strong> Analysis of 165,189,605 station-pair observations over 25.3 years (2000-2025) from CODE reveals systematic distance-structured correlations exhibiting long-baseline consistency and multi-signature convergence. Building on the multi-centre study's validated phenomenology, this study documents strong directional dependence, dynamic coupling to Earth's orbital motion, and newly accessible long-period geophysical signatures:</p>
     <div style="overflow-x:auto;">
         <table style="width:100%; border-collapse:collapse;">
             <thead>
@@ -25,17 +25,17 @@
                 <tr>
                     <td style="padding: 8px; border: 1px solid #495773;">Orbital Velocity Correlation</td>
                     <td style="padding: 8px; border: 1px solid #495773;">r = −0.888 (Primary)</td>
-                    <td style="padding: 8px; border: 1px solid #495773;">p &lt; 2×10⁻⁷ (5.1σ, 5 M surrogates; 0/5M exceeded)</td>
+                    <td style="padding: 8px; border: 1px solid #495773;">surrogate p &lt; 2×10⁻⁷ (0/5M exceeded); t-test p ≈ 2.6×10⁻⁴ (N_eff ≈ 11)</td>
                 </tr>
                 <tr style="background-color: rgba(73,87,115,0.03);">
                     <td style="padding: 8px; border: 1px solid #495773;">CMB Frame Alignment</td>
                     <td style="padding: 8px; border: 1px solid #495773;">r = +0.747 (Best fit 18.2° from CMB, 1° ultra-high resolution)</td>
-                    <td style="padding: 8px; border: 1px solid #495773;">p < 0.0001; 5,570× better than Solar Apex; verified across 4 resolutions</td>
+                    <td style="padding: 8px; border: 1px solid #495773;">r=0.747; directional-rank p < 0.001; global sky-search surrogate not yet evaluated; ~10,300× better than Solar Apex; verified across 4 resolutions</td>
                 </tr>
                 <tr>
                     <td style="padding: 8px; border: 1px solid #495773;">18.6-Year Nutation Coupling</td>
                     <td style="padding:8px; border:1px solid #495773;">R² = 0.641</td>
-                    <td style="padding:8px; border:1px solid #495773;">p < 10⁻⁸</td>
+                    <td style="padding:8px; border:1px solid #495773;">p = 0.010</td>
                 </tr>
                 <tr>
                     <td style="padding:8px; border:1px solid #495773;">Mesh Dance Score</td>
@@ -45,20 +45,20 @@
                 <tr style="background-color: rgba(73,87,115,0.03);">
                     <td style="padding:8px; border:1px solid #495773;">Planetary Events (≥2σ)</td>
                     <td style="padding:8px; border:1px solid #495773;">56/156 detected (30 ≥3σ)</td>
-                    <td style="padding:8px; border:1px solid #495773;">35.9% detection rate (100% FDR survival)</td>
+                    <td style="padding:8px; border:1px solid #495773;">35.9% nominal detection rate; 19 Bonferroni/Holm, 38 BH-FDR, 28 BY-FDR survivors across all 156 tests</td>
                 </tr>
             </tbody>
         </table>
     </div>
     <p style="margin-top:12px; font-style:italic;">Note on amplitude scaling: Processed GNSS clock products remove network-wide offsets through least-squares estimation, so any mass-proportional <em>GM ⁄ r<sup>2</sup></em> signal is largely projected out. The phase-coherent differential metrics used here are sensitive to spatial <em>gradients</em>, not absolute potential, and therefore need not inherit simple <em>GM ⁄ r<sup>2</sup></em> trends (see §4.2).</p>
-    <p style="margin-top:12px;">These findings confirm the temporal stability of multi-centre phenomenology over decadal timescales and reveal new long-period signatures inaccessible in shorter datasets. The convergence of independent evidence streams—from spatial anisotropy to geophysical coupling—provides robust empirical support for systematic gravitational dynamics in GNSS timing networks. Detailed analyses follow.</p>
+    <p style="margin-top:12px;">These findings confirm long-baseline recovery of multi-centre phenomenology over multi-decade timescales and reveal new long-period signatures inaccessible in shorter datasets. The convergence of independent evidence streams—from spatial anisotropy to geophysical coupling—provides robust empirical support for systematic gravitational dynamics in GNSS timing networks. Detailed analyses follow.</p>
 </div>
 
 
 <h3>3.1 Spatial Anisotropy Structure</h3>
-<p><strong>Objective</strong>: Replicate the multi-centre study's directional dependence finding (EW/NS = 2.16) over a 25-year baseline to test temporal stability and establish whether this anisotropy is a persistent feature rather than a transient artifact (Claim A).</p>
+<p><strong>Objective</strong>: Replicate the multi-centre study's directional dependence finding (EW/NS = 2.16) over a 25-year baseline to test long-baseline consistency and establish whether this anisotropy is a persistent feature rather than a transient artifact (Claim A).</p>
 <h4>3.1.1 Directional Correlation Lengths</h4>
-<p>Replicating the multi-centre study, spatial anisotropy was tested by fitting exponential decay models C(d) = A·exp(-d/λ) + B to station pairs binned by azimuth. Analysis of 165,189,605 station pairs reveals pronounced directional variation in correlation decay lengths:</p>
+<p>Replicating the multi-centre study, spatial anisotropy was tested by fitting exponential decay models C(d) = A·exp(-d/λ) + B to station pairs binned by azimuth. Analysis of 165,189,605 station-pair observations reveals pronounced directional variation in correlation decay lengths:</p>
 
 <div style="background-color: rgba(73, 87, 115, 0.05); border: 1px solid #495773; padding: 15px; margin: 15px 0; border-radius: 4px;">
   <h4 style="margin-top: 0; color: #220126;">Physical Context of Correlation Length</h4>
@@ -67,7 +67,7 @@
     <li>Station pairs &lt; 2,000 km: Strong coherence (r &gt; 0.5)</li>
     <li>Station pairs 2,000-6,000 km: Moderate coherence (r ≈ 0.2-0.5)</li>
     <li>Station pairs &gt; 8,000 km: Weak coherence (r &lt; 0.1)</li>
-    <li>This distance dependence persists across all 25 years</li>
+    <li>This distance dependence is recovered from the complete 25.3-year aggregate</li>
     <li>Suggests a global field affecting clock synchronization</li>
   </ul>
   <p style="margin-bottom: 8px;"><strong>Comparison to Conventional Effects:</strong></p>
@@ -165,7 +165,7 @@
   <ul style="margin: 0 0 10px 20px;">
     <li><em>All</em> sectors show R² > 0.5, demonstrating the exponential decay model fits well in every direction</li>
     <li>This is not an artifact of sparse sampling in one direction—the effect is robust and omnidirectional</li>
-    <li>Total of 165.2 million station pairs distributed across all 8 sectors (12-35 million pairs per sector)</li>
+    <li>Total of 165.2 million station-pair observations distributed across all 8 sectors (12-35 million observations per sector)</li>
   </ul>
   <p><strong>2. Enhanced Coupling Along Rotational Plane:</strong></p>
   <ul style="margin: 0 0 10px 20px;">
@@ -177,7 +177,7 @@
   <ul style="margin: 0 0 0 20px;">
     <li>3.3× variation between longest (W: 7,664 km) and shortest (N: 2,314 km) Temporal Topology correlation lengths</li>
     <li>E-W oriented sectors (E, SE, W, SW) consistently show longer λ<sub>T</sub> than N-S oriented sectors (N, NE, S, NW)</li>
-    <li>Pattern persists across 25.3 years with high statistical significance (p < 10⁻¹⁵)</li>
+    <li>Pattern recovered from the 25.3-year aggregate with high statistical significance (p < 10⁻¹⁵)</li>
   </ul>
 </div>
 
@@ -194,7 +194,7 @@
         <li><strong>E-W/N-S Ratio:</strong> 2.16 (rotation-aligned anisotropy)</li>
     </ul>
 </div>
-<p><strong>Finding</strong>: Replicating the multi-centre study, we again observe EW > NS correlation lengths. The correlation structure exhibits statistically significant anisotropy (strength = 1.981 ± 0.23, p < 10⁻¹⁵ vs isotropic null). Magnitudes are consistent with the multi-centre study within uncertainty; the longer record narrows confidence intervals.</p>
+<p><strong>Finding</strong>: Replicating the multi-centre study, EW > NS correlation lengths are again observed. The correlation structure exhibits statistically significant anisotropy (strength = 1.981 ± 0.23, p < 10⁻¹⁵ vs isotropic null). Magnitudes are consistent with the multi-centre study within uncertainty; the longer record narrows confidence intervals.</p>
 
 <h4>3.1.2 Three-Dimensional Spherical Harmonic Analysis</h4>
 <p>To characterize the full 3D structure of anisotropy, Temporal Topology correlation lengths were analyzed across 16 spherical bins (azimuth × elevation) and decomposed into spherical harmonic coefficients:</p>
@@ -238,10 +238,10 @@
 <p><strong>Finding</strong>: The 3D spherical harmonic decomposition confirms the 2D directional analysis, revealing a structured anisotropy field dominated by dipole and quadrupole components. The near-unity ratios indicate the anisotropy is not a minor perturbation but a fundamental characteristic of the correlation field structure. This provides independent confirmation of the rotation-aligned directional preference observed in the 8-sector analysis.</p>
 
 <h4>3.1.3 Model Form Considerations</h4>
-<p>For comparability with the multi-centre study, we retain the exponential decay kernel (C(d) = A·exp(-d/λ) + B) for directional analyses. We also evaluate alternative kernels on the azimuth-averaged <em>C(d)</em> curve (Gaussian, squared-exponential, Matérn, power-law) using AIC/BIC and residual diagnostics; results are summarized in §3.1.4. Directional analyses continue to use the exponential kernel for consistency.</p>
+<p>For comparability with the multi-centre study, the exponential decay kernel (C(d) = A·exp(-d/λ) + B) is retained for directional analyses. Alternative kernels are also evaluated on the azimuth-averaged <em>C(d)</em> curve (Gaussian, squared-exponential, Matérn, power-law) using AIC/BIC and residual diagnostics; results are summarized in §3.1.4. Directional analyses continue to use the exponential kernel for consistency.</p>
 
 <h4>3.1.4 Model-Comparison Results</h4>
-<p>For completeness we evaluated seven candidate spatial-correlation kernels against the azimuth-averaged <em>C(d)</em> curve using weighted least squares. Model selection employed Akaike and Bayesian information criteria (AIC/BIC). The Gaussian kernel provides the best empirical description (lowest AIC/BIC), with the squared-exponential variant statistically indistinguishable (ΔAIC ≈ 0). The traditional exponential model—used in the multi-centre study—remains competitive (ΔAIC&nbsp;≈&nbsp;12.8) and yields a correlation length (λ&nbsp;≈&nbsp;3,210&nbsp;km) comparable to the multi-centre range (3,330–4,549&nbsp;km).</p>
+<p>For completeness, seven candidate spatial-correlation kernels were evaluated against the azimuth-averaged <em>C(d)</em> curve using weighted least squares. Model selection employed Akaike and Bayesian information criteria (AIC/BIC). The Gaussian kernel provides the best empirical description (lowest AIC/BIC), with the squared-exponential variant statistically indistinguishable (ΔAIC ≈ 0). The traditional exponential model—used in the multi-centre study—is retained for cross-paper comparability rather than because it is selected by the present data (ΔAIC&nbsp;≈&nbsp;12.8) and yields a correlation length (λ&nbsp;≈&nbsp;3,210&nbsp;km) comparable to the multi-centre range (3,330–4,549&nbsp;km).</p>
 
 <div style="overflow-x:auto; margin: 20px 0;">
   <table style="width:100%; border-collapse:collapse; font-size:13px;">
@@ -308,21 +308,21 @@
   </table>
 </div>
 
-<p>The Gaussian and squared-exponential kernels offer the most parsimonious fits (ΔAIC&nbsp;≈&nbsp;0). Because the exponential kernel aligns with prior studies and yields comparable correlation lengths, we retain it as the primary model for directional analyses while reporting the Gaussian best-fit parameters in Supplementary Table&nbsp;S2.</p>
+<p>The Gaussian and squared-exponential kernels offer the most parsimonious fits (ΔAIC&nbsp;≈&nbsp;0). Because the exponential kernel aligns with prior studies and yields comparable correlation lengths, it is retained as the primary model for directional analyses while reporting the Gaussian best-fit parameters in Supplementary Table&nbsp;S2.</p>
 
 <h3>3.2 Orbital Velocity Coupling (Primary Detection)</h3>
-<p><strong>Objective</strong>: Replicate and strengthen Paper 1's orbital velocity correlation (r = -0.79 to -0.89 over 2.5 years) by extending to 25 complete solar orbits, testing whether this coupling is temporally stable or degrades over extended timescales (Claim B).</p>
+<p><strong>Objective</strong>: Replicate and strengthen Paper 1's orbital velocity correlation (r = -0.79 to -0.89 over 2.5 years) by extending to a 25.3-year baseline, testing whether this coupling is consistently recovered or degrades over extended timescales (Claim B).</p>
 <h4>3.2.1 Annual Modulation of Anisotropy</h4>
 
-<p>The multi-centre study reported r ≈ −0.57 to −0.79 across centers. Over 25.3 years we find a primary detection: r = −0.888 using the same seasonal phase, validated by 0 out of 5,000,000 Monte Carlo surrogates. The EW/NS anisotropy ratio was computed in 30-day sliding windows and correlated with Earth's orbital velocity.</p>
+<p>The multi-centre study reported r ≈ −0.57 to −0.79 across centers. Over 25.3 years a primary detection is found: r = −0.888 using the same seasonal phase, validated by 0 out of 5,000,000 Monte Carlo surrogates. The EW/NS anisotropy ratio was computed in 30-day sliding windows and correlated with Earth's orbital velocity.</p>
 
 <p><strong>Primary Correlation:</strong></p>
 <ul>
   <li><strong>Metric:</strong> EW/NS ratio vs orbital velocity</li>
   <li><strong>Sample size:</strong> N = 34 overlapping 30-day windows; after autocorrelation correction, N_eff ≈ 11</li>
   <li><strong>Pearson r:</strong> −0.888 (95% CI: [−0.938, −0.805])</li>
-  <li><strong>Nominal p-value (autocorr-corrected):</strong> 2.00e-07</li>
-  <li><strong>Monte Carlo Validation:</strong> 0/5,000,000 surrogates exceeded observed value (empirical p < 2×10⁻⁷, 5.07σ)</li>
+  <li><strong>Parametric p-value (autocorr-corrected t-test, N_eff ≈ 11):</strong> p ≈ 2.6×10⁻⁴</li>
+  <li><strong>Surrogate test:</strong> 0/5,000,000 phase-randomised surrogates exceeded observed value (empirical p &lt; 2×10⁻⁷ under the specified null)</li>
   <li><strong>Temporal samples:</strong> 34 (30-day windows)</li>
 </ul>
 
@@ -347,15 +347,15 @@
   <li>Temporal samples: 34 (30-day windows)</li>
 </ul>
 
-<p><strong>Finding:</strong> The spatial anisotropy structure varies predictably with Earth's orbital velocity (r = −0.888, p < 2×10⁻⁷, 5.1σ; 0/5M surrogates exceeded), representing a robust detection for Claim B. The ≈19% annual modulation of the EW/NS <em>coherence ratio</em> (offset ≈ 1.27, amplitude ≈ 0.24) quantifies how this dimensionless anisotropy ratio of correlation lengths varies with orbital phase; it is distinct from the global sector-averaged anisotropy ratio of 2.16 (which aggregates all data). It does not represent a 19% change in underlying atomic clock frequencies Δf/f, which remain at standard GR levels.</p>
+<p><strong>Finding:</strong> The spatial anisotropy structure varies predictably with Earth's orbital velocity (r = −0.888; t-test p ≈ 2.6×10⁻⁴ with N_eff ≈ 11; surrogate p &lt; 2×10⁻⁷, 0/5M exceeded), representing a robust detection for Claim B. The ≈19% annual modulation of the EW/NS <em>coherence ratio</em> (offset ≈ 1.27, amplitude ≈ 0.24) quantifies how this dimensionless anisotropy ratio of correlation lengths varies with orbital phase; it is distinct from the global sector-averaged anisotropy ratio of 2.16 (which aggregates all data). It does not represent a 19% change in underlying atomic clock frequencies Δf/f, which remain at standard GR levels.</p>
 
 <h4>3.2.2 Physical Interpretation: Orbital Coupling</h4>
 <p><strong>Status and Physical Interpretation:</strong> Orbital velocity and Earth-Sun distance are physically coupled by Kepler's laws (r = −1.000 on Earth's orbit), making them inseparable through partial correlation analysis. The strong correlation between the EW/NS anisotropy ratio and Earth's orbital velocity (r = −0.888, p < 2×10⁻⁷) provides direct evidence for orbital coupling. Hemisphere stratification (§3.2.4) confirms this pattern: Southern stations show strong orbital coupling (r = −0.79, p = 0.006) while Northern stations show weak correlation (r = +0.25, p = 0.49), with both hemispheres peaking within 15 days of perihelion (IN-PHASE). This identical calendar phasing directly falsifies the hypothesis that the correlation arises from local seasonal effects. This test discriminates heliocentric orbital dynamics from seasonal atmospheric/ionospheric confounders.</p>
 
-<p><strong>Directional Structure and Velocity-Dependent Coupling:</strong> The pronounced E–W > N–S anisotropy (EW:NS = 2.16, λ<sub>EW</sub> ≈ 5,400 km vs λ<sub>NS</sub> ≈ 2,500 km) provides mechanistic insight into the coupling. If GNSS clock correlations are sensitive to velocity-dependent modulation of spacetime geometry, station pairs aligned parallel to Earth's orbital motion (E–W) should experience stronger time-flow gradients than pairs aligned perpendicular to it (N–S). This is because the velocity vector points along the ecliptic plane (approximately E–W in local coordinates), so the gradient of any velocity-dependent field would be strongest along that direction. Consequently, E–W pairs would maintain phase coherence over longer distances, while N–S pairs would decorrelate more rapidly. This prediction is exactly what we observe: the correlation length is 2–3× longer in the E–W direction. The fact that this directional preference persists across 25 years and correlates with orbital velocity (rather than local seasonal factors) indicates the effect is fundamentally tied to heliocentric dynamics, not local environmental confounders.</p>
+<p><strong>Directional Structure and Velocity-Dependent Coupling:</strong> The pronounced E–W > N–S anisotropy (EW:NS = 2.16, λ<sub>EW</sub> ≈ 5,400 km vs λ<sub>NS</sub> ≈ 2,500 km) provides mechanistic insight into the coupling. If GNSS clock correlations are sensitive to velocity-dependent modulation of spacetime geometry, station pairs aligned parallel to Earth's orbital motion (E–W) should experience stronger time-flow gradients than pairs aligned perpendicular to it (N–S). This is because the velocity vector points along the ecliptic plane (approximately E–W in local coordinates), so the gradient of any velocity-dependent field would be strongest along that direction. Consequently, E–W pairs would maintain phase coherence over longer distances, while N–S pairs would decorrelate more rapidly. This prediction is exactly what is observed: the correlation length is 2–3× longer in the E–W direction. The fact that this directional preference persists across 25 years and correlates with orbital velocity (rather than local seasonal factors) indicates the effect is fundamentally tied to heliocentric dynamics, not local environmental confounders.</p>
 
 <h4>3.2.3 Seasonal Baseline Comparison</h4>
-<p>To test whether the EW/NS anisotropy ratio could be explained by mundane seasonal factors, we fit a baseline model containing only annual (<em>ω</em><sub>1</sub>) and semi-annual (<em>ω</em><sub>2</sub>) sinusoids plus an offset:
+<p>To test whether the EW/NS anisotropy ratio could be explained by mundane seasonal factors, a baseline model was fit containing only annual (<em>ω</em><sub>1</sub>) and semi-annual (<em>ω</em><sub>2</sub>) sinusoids plus an offset:
 <pre style="background:#f7f7f7; padding:6px;">R<sub>seasonal</sub>(t) = α<sub>0</sub> + α<sub>1</sub>sin(ω<sub>1</sub>t) + β<sub>1</sub>cos(ω<sub>1</sub>t) 
                  + α<sub>2</sub>sin(ω<sub>2</sub>t) + β<sub>2</sub>cos(ω<sub>2</sub>t)</pre>
 
@@ -383,15 +383,15 @@
   </ul>
 </div>
 
-The best-fit seasonal model captures only ≈18.8 % amplitude modulation of the EW/NS ratio (&plusmn;0.24 about a mean of&nbsp;1.274; JSON <code>seasonal_analysis</code> amplitude&nbsp;=&nbsp;0.24; amplitude/mean ≈ 18.8%). In contrast, the orbital-velocity model explains nearly all systematic variance:
+The best-fit seasonal model has amplitude 0.24 about a mean of 1.274 (amplitude/mean ≈ 18.8%). Note that this 18.8% is an <em>amplitude-to-mean ratio</em>, not a variance explained (R²). In contrast, the orbital-velocity model explains nearly all systematic variance:
 <ul>
-  <li><strong>Orbital model:</strong> Pearson r&nbsp;=&nbsp;−0.888, R²&nbsp;=&nbsp;0.746, p&nbsp;&lt;&nbsp;2&nbsp;×&nbsp;10⁻⁷ (5 M surrogates)</li>
-  <li><strong>Seasonal model:</strong> captures &lt; 0.2 of observed variance (no significant correlation residuals remain; orbital signal persists after subtracting seasonal fit).</li>
+  <li><strong>Orbital model:</strong> Pearson r&nbsp;=&nbsp;−0.888, R²&nbsp;=&nbsp;0.746, surrogate p&nbsp;&lt;&nbsp;2&nbsp;×&nbsp;10⁻⁷ (0/5M)</li>
+  <li><strong>Seasonal model:</strong> an unconstrained annual harmonic can reproduce generic annual structure. The orbital-speed template provides the physically constrained fit, explaining 74.6% of the variance with phase and waveform fixed by celestial mechanics.</li>
 </ul>
-<p><strong>Conclusion:</strong> A simple seasonal harmonic cannot reproduce the strength, phase or amplitude of the EW/NS modulation. Orbital velocity remains the dominant explanatory variable across all 25&nbsp;years.</p>
+<p><strong>Conclusion:</strong> The orbital-speed template provides the physically constrained fit, explaining 74.6% of the variance with the phase and waveform fixed by celestial mechanics. Combined with directional anisotropy, same-phase hemispheric response and CMB-region alignment, this supports the TEP interpretation as velocity-dependent Temporal Shear rather than an unconstrained seasonal coincidence. A formal residual comparison reporting R², adjusted R², AIC/BIC, and held-out prediction error for both models on the same observations is a natural next step.</p>
 
 <h4>3.2.4 Control Analyses: Hemisphere &amp; Space Weather Stratification</h4>
-<p>To rigorously test for environmental confounding, we stratified the 25-year dataset by hemisphere and geomagnetic activity (Space Weather). The results confirm the signal's robustness:</p>
+<p>To rigorously test for environmental confounding, the 25-year dataset was stratified by hemisphere and geomagnetic activity (Space Weather). The results confirm the signal's robustness:</p>
 
 <div style="overflow-x: auto; margin: 15px 0;">
     <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
@@ -422,11 +422,11 @@ The best-fit seasonal model captures only ≈18.8 % amplitude modulation of the 
   <h4 style="margin-top: 0; color: #220126;">Kinematic Test: Symmetry Breaking</h4>
   <p>A physical argument for kinematic coupling is the observed symmetry breaking:</p>
   <ol style="margin: 0 0 10px 20px;">
-    <li><strong>Scalar Drivers (Isotropic):</strong> Distance ($r$), temperature, and gravitational potential are scalar quantities. If they were the driver, the effect would be uniform in all directions.</li>
-    <li><strong>Vector Drivers (Anisotropic):</strong> Velocity ($\vec{v}$) is a vector quantity. A kinematic driver produces directional effects aligned with the motion.</li>
+    <li><strong>Purely Isotropic Scalar Model:</strong> If the driver were a scalar field with no spatial gradient (e.g., a uniform temperature or solar-distance effect), the effect would be isotropic—uniform in all directions.</li>
+    <li><strong>Directional Models:</strong> Both a kinematic vector projection (velocity $\vec{v}$) and a directional scalar-field gradient (such as $\Sigma_\mu = \nabla_\mu \ln A$ in the conformal TEP sector) produce anisotropic effects aligned with the gradient or motion direction.</li>
   </ol>
   <p><strong>Observation:</strong> The data shows strong directionality (West > North).</p>
-  <p><strong>Conclusion:</strong> The driver must be kinematic (vector), not environmental (scalar).</p>
+  <p><strong>Conclusion:</strong> The anisotropy rules out a purely isotropic scalar-only model. It remains compatible both with a kinematic vector projection and with a directional scalar-field gradient such as $\Sigma_\mu = \nabla_\mu \ln A$. Discriminating these possibilities requires explicit pairwise projection kernels.</p>
   <p style="margin-bottom: 0;"><strong>Visual Proof:</strong> Look at the "Perihelion Peak" in both hemispheres (§3.2.4). If this were seasonal weather, the hemispheres would be anti-phased (Winter vs. Summer). Instead, they beat in unison with the Earth's orbital speed.</p>
 </div>
 
@@ -434,17 +434,17 @@ The best-fit seasonal model captures only ≈18.8 % amplitude modulation of the 
 
 <div style="background-color: rgba(73, 87, 115, 0.05); border: 1px solid #495773; padding: 15px; margin: 20px 0; border-radius: 4px;">
   <h4 style="margin-top: 0; color: #220126;">Coordinate System Note</h4>
-  <p style="margin-bottom: 0;">This section uses <em>celestial equatorial coordinates (RA/Dec, J2000 epoch)</em> to identify the cosmological reference frame for <em>temporal modulation</em> of the spatial anisotropy pattern. This is distinct from the spatial anisotropy analysis (§3.1), which uses <em>local azimuth coordinates</em> (compass directions) to describe the static geometric pattern. The spatial pattern points west in local coordinates (reflecting ecliptic plane projection onto Earth's surface), while the temporal modulation couples to RA≈180° in celestial coordinates (aligned with the CMB frame). These are complementary measurements in different coordinate systems describing the same underlying coupling mechanism.</p>
+  <p style="margin-bottom: 0;">This section uses <em>celestial equatorial coordinates (RA/Dec, J2000 epoch)</em> to identify the cosmological reference frame for <em>temporal modulation</em> of the spatial anisotropy pattern. This is distinct from the spatial anisotropy analysis (§3.1), which uses <em>local azimuth coordinates</em> (compass directions) to describe the static geometric pattern. The spatial pattern points west in local coordinates (reflecting ecliptic plane projection onto Earth's surface), while the temporal modulation couples to RA≈180° in celestial coordinates (aligned with the CMB dipole direction). These are complementary measurements in different coordinate systems describing the same underlying coupling mechanism.</p>
 </div>
 
-<p><strong>Objective:</strong> The strong orbital velocity correlation (§3.2.1) establishes that Earth's 30 km/s orbital motion modulates the anisotropy. However, this modulation must occur relative to some background reference frame. We test two competing physical hypotheses:</p>
+<p><strong>Objective:</strong> The strong orbital velocity correlation (§3.2.1) establishes that Earth's 30 km/s orbital motion modulates the anisotropy. However, this modulation must occur relative to some background reference frame. Two competing physical hypotheses are tested:</p>
 
 <ul>
-  <li><strong>Galactic Hypothesis:</strong> The Solar System's motion around the galaxy (~20 km/s towards Solar Apex: RA=272°, Dec=+30°)</li>
+  <li><strong>Galactic Hypothesis:</strong> The Solar System's peculiar motion relative to the local standard of rest (~20 km/s towards Solar Apex: RA=272°, Dec=+30°)</li>
   <li><strong>Cosmic Hypothesis:</strong> Earth's motion through the Cosmic Microwave Background rest frame (~369 km/s towards RA=168°, Dec=-7°)</li>
 </ul>
 
-<p><strong>Method:</strong> We performed a comprehensive sky search across 2,701 candidate background velocity vectors (5° grid), calculating the net velocity (orbital + background) for each temporal window and correlating the predicted anisotropy modulation with observed EW/NS ratios. This grid search is blind to both the Solar Apex and CMB Dipole locations, allowing the data itself to identify the preferred reference frame.</p>
+<p><strong>Method:</strong> A comprehensive sky search was performed across 2,701 candidate background velocity vectors (5° grid), calculating the net velocity (orbital + background) for each temporal window and correlating the predicted anisotropy modulation with observed EW/NS ratios. This grid search is blind to both the Solar Apex and CMB Dipole locations, allowing the data itself to identify the preferred reference frame.</p>
 
 <div style="background-color: rgba(73, 87, 115, 0.05); border: 1px solid #495773; padding: 15px; margin: 15px 0; border-radius: 4px;">
   <h4 style="margin-top: 0; color: #220126;">Technical Implementation</h4>
@@ -530,25 +530,25 @@ The best-fit seasonal model captures only ≈18.8 % amplitude modulation of the 
 
 <p><strong>Statistical Validation:</strong></p>
 <ul>
-  <li><strong>Permutation Test:</strong> 10,000 random sky directions tested. Observed correlation (r=0.744) exceeded 99.98% of random directions (p=0.0002, empirical 3.5σ).</li>
+  <li><strong>Permutation Test:</strong> 10,000 random sky directions tested. Observed correlation (r=0.744) exceeded 99.98% of random directions (p=0.0002). Note: this test ranks the observed best-fit direction against random directions in the observed dataset; it is not a full-search surrogate null (which would require repeating the complete 65,341-direction maximization for each surrogate dataset). The directional map and variance ratio are reported as exploratory evidence; a global search-corrected p-value is a natural next step.</li>
   <li><strong>Bootstrap 95% CI:</strong> [0.568, 0.878] from 1,000 resamples, confirming robustness.</li>
-  <li><strong>Variance Ratio:</strong> CMB-aligned backgrounds explain 5,570× more variance than Solar Apex (R²<sub>CMB</sub>/R²<sub>Apex</sub> = 55.7% / 0.01% = 5,570), strongly supporting CMB frame alignment.</li>
-  <li><strong>Resolution Convergence:</strong> Multi-resolution verification across four independent resolutions (10°: r=0.707, 703 directions; 5°: r=0.744, 2,701 directions; 2.5°: r=0.744, 10,585 directions; 1°: r=0.747, 65,341 directions) shows monotonic convergence with diminishing returns (+5.14% → +0.05% → +0.27%), spanning a 93-fold range in grid density. Best-fit locations show stability within 1-2° across all resolutions (RA: 180°→190°→187°→186°; Dec: 0°→-5°→-5°→-4°). The asymptotic convergence pattern, combined with the marginal 0.27% improvement at 1° resolution despite 6× more grid points, indicates convergence toward a physical correlation limit. All four resolutions consistently identify the CMB frame (18-22° separation) over the Solar Apex (86-89° separation), indicating the result is robust across resolution scales.</li>
+  <li><strong>Variance Ratio:</strong> The best-fit directional template explains ~10,300× more variance than Solar Apex (R²<sub>best-fit</sub>/R²<sub>Apex</sub> = 55.7% / 0.0054% ≈ 10,300). The exact CMB-dipole template explains ~6,600× more variance (35.7% / 0.0054%). Both strongly discriminate against the Solar Apex hypothesis.</li>
+  <li><strong>Resolution Convergence:</strong> Multi-resolution verification across four independent resolutions (10°: r=0.707, 703 directions; 5°: r=0.744, 2,701 directions; 2.5°: r=0.744, 10,585 directions; 1°: r=0.747, 65,341 directions) shows monotonic convergence with diminishing returns (+5.14% → +0.05% → +0.27%), spanning a 93-fold range in grid density. Best-fit locations show stability within 1-2° across all resolutions (RA: 180°→190°→187°→186°; Dec: 0°→-5°→-5°→-4°). The asymptotic convergence pattern, combined with the marginal 0.27% improvement at 1° resolution despite 6× more grid points, indicates convergence toward a physical correlation limit. All four resolutions consistently identify the CMB-region direction (18-22° separation) over the Solar-Apex direction (86-89° separation), indicating the result is robust across resolution scales.</li>
 </ul>
 
 <div style="background-color: rgba(73, 87, 115, 0.05); border: 1px solid #495773; padding: 15px; margin: 15px 0; border-radius: 4px;">
   <h4 style="margin-top: 0; color: #220126;">Physical Interpretation</h4>
-  <p><strong>Frame Discrimination:</strong> The Solar Apex hypothesis is not merely statistically disfavored; it is geometrically incompatible. The Solar Apex vector (+30° Dec) predicts N-S anisotropy, directly contradicting the observed E-W dominance (EW/NS = 2.16). Only the CMB vector (−7° Dec) is geometrically consistent with the observed anisotropy plane. This geometric incompatibility, combined with a 5,570-fold variance ratio (R²=55.7% vs 0.01%), strongly discriminates between frames.</p>
-  <p><strong>Velocity Scale Hierarchy:</strong></p>
+  <p><strong>Frame Discrimination:</strong> The Solar Apex hypothesis is not merely statistically disfavored; it is geometrically incompatible. The Solar Apex vector (+30° Dec) predicts N-S anisotropy, directly contradicting the observed E-W dominance (EW/NS = 2.16). The preferred directional region lies near the CMB dipole and strongly excludes the Solar-Apex template. This geometric incompatibility, combined with a ~10,300-fold variance ratio (best-fit R²=55.7% vs Solar Apex R²≈0.005%), strongly discriminates between frames.</p>
+  <p><strong>Directional Alignment:</strong></p>
   <ul style="margin: 0 0 10px 20px;">
-    <li>CMB velocity: ~369 km/s (dominant background)</li>
-    <li>Orbital velocity: ~30 km/s (annual modulator)</li>
-    <li>Galactic velocity: ~20 km/s (subdominant)</li>
+    <li>CMB dipole direction: RA=168°, Dec=-7° (best-fit alignment, 18.2° separation)</li>
+    <li>Orbital velocity: ~30 km/s (annual modulator, direction-only projection)</li>
+    <li>Solar Apex direction: RA=272°, Dec=+30° (rejected, 89° separation)</li>
   </ul>
-  <p>The observed coupling corresponds to the largest velocity scale, not intermediate scales.</p>
+  <p>The observed coupling aligns with the CMB dipole direction, not the Solar Apex direction. Note: the grid scan fixes background speed at 20 km/s and uses a direction-only predictor (cos(Dec<sub>net</sub>)), so it identifies a preferred direction but does not fit the speed magnitude; the 369 km/s interpretation is a physical identification of the best-fit direction with the Planck dipole, not a speed-magnitude measurement (§2.3.5).</p>
   <p><strong>Geometric Alignment:</strong> The best-fit direction (RA=186°, Dec=-4°) is positioned 18.2° from the CMB dipole across 65,341 tested directions at 1° resolution. Multi-resolution analysis shows coordinate stability with RA varying by 1-2° across four independent resolutions (10°, 5°, 2.5°, 1°).</p>
-  <p><strong>Hemisphere Pattern:</strong> The CMB velocity vector points to Dec=-7° (Southern sky). Southern Hemisphere stations show stronger negative correlation (r=-0.79, p<10⁻⁸) compared to Northern stations (r=+0.25, p=0.16), yielding a 3.2× difference in correlation strength. This spatial asymmetry is consistent with the CMB frame geometry.</p>
-  <p style="margin-bottom: 0;"><strong>Geometric Model Selection:</strong> We tested two models: (1) Full tilt-angle rotation (anisotropy ellipse rotates to follow velocity direction) → r=-0.029, p=0.87. (2) Vertical modulation (cos(Dec) captures equatorial vs polar flow) → r=0.744, p=0.0002. The data support the vertical modulation model, indicating the spatial pattern maintains directional stability (West-dominant), with strength modulating based on whether net velocity is in the equatorial plane vs directed toward poles. This pattern is consistent with coupling to a global cosmological reference frame rather than local velocity vectors.</p>
+  <p><strong>Hemisphere Pattern:</strong> The CMB velocity vector points to Dec=-7° (Southern sky). Southern Hemisphere stations show stronger negative correlation (r=-0.79, p=0.006) compared to Northern stations (r=+0.25, p=0.49), yielding a 3.2× difference in correlation strength. This spatial asymmetry is consistent with CMB dipole-direction geometry.</p>
+  <p style="margin-bottom: 0;"><strong>Geometric Model Selection:</strong> Two models were tested: (1) Full tilt-angle rotation (anisotropy ellipse rotates to follow velocity direction) → r=-0.029, p=0.87. (2) Vertical modulation (cos(Dec) captures equatorial vs polar flow) → r=0.744, p=0.0002. The data support the vertical modulation model, indicating the spatial pattern maintains directional stability (West-dominant), with strength modulating based on whether net velocity is in the equatorial plane vs directed toward poles. This pattern is consistent with coupling to a global cosmological reference frame rather than local velocity vectors.</p>
 </div>
 
 <div style="text-align: center; margin: 25px 0;">
@@ -558,26 +558,26 @@ The best-fit seasonal model captures only ≈18.8 % amplitude modulation of the 
         <strong>Top panel:</strong> Observed EW/NS correlation ratios (gray points) across 34 day-of-year windows (each aggregating 25.3 years of data at that orbital phase), overlaid with predictions from CMB dipole model (blue, R²=0.357) and Solar Apex model (red dashed, R²≈0). 
         <strong>Middle panels:</strong> Residual distributions for both models, with shaded ±1σ regions. CMB residuals (σ=0.188) show no systematic bias; Solar Apex residuals (σ=0.296) are 57% larger. 
         <strong>Bottom panels:</strong> Predicted vs observed scatter plots demonstrating strong correlation for CMB model (r=0.597) and near-zero correlation for Solar Apex (r=0.007). 
-        The 1:1 line (dashed) indicates perfect prediction. This comprehensive diagnostic confirms the CMB frame as the operative reference frame for temporal modulation.
+        The 1:1 line (dashed) indicates perfect prediction. This comprehensive diagnostic supports the CMB-directional template as the preferred covariance direction for temporal modulation.
     </p>
 </div>
 
-<p><strong>Alternative Hypothesis Testing:</strong> We systematically ruled out:</p>
+<p><strong>Alternative Hypothesis Testing:</strong> The following alternatives were systematically ruled out:</p>
 <ul>
-  <li><strong>Random Coincidence:</strong> Permutation test shows p=0.0002 (3.5σ significance; not by chance).</li>
+  <li><strong>Random Coincidence:</strong> Permutation test shows p=0.0002 against random sky directions (not a full-search surrogate null).</li>
   <li><strong>Seasonal Environmental:</strong> Hemisphere test (§3.2.4) shows both hemispheres peak at perihelion (heliocentric), not anti-phased (geocentric seasons).</li>
   <li><strong>Galactic Motion:</strong> Solar Apex correlation is negligible (r=0.007), inconsistent with the galactic hypothesis.</li>
   <li><strong>Network Artifacts:</strong> The signal aligns with celestial coordinates (RA/Dec), not terrestrial features.</li>
 </ul>
 
-<p><strong>Finding:</strong> The anisotropy modulation aligns with Earth's motion through the Cosmic Microwave Background rest frame (r=0.744 at RA=190°, Dec=-5°; 22° from CMB dipole; p=0.0002), not the Solar System's galactic motion (r=0.007; 89° from best fit). This CMB alignment represents a 7,140-fold variance ratio advantage over the galactic hypothesis, indicating the coupling mechanism is sensitive to cosmic-scale velocity (~369 km/s) rather than galactic-scale (~20 km/s). The 5° grid resolution (2,701 directions tested) provides finer localization with 3.5σ permutation test significance. This finding represents a seventh independent signature consistent with velocity-dependent temporal coupling. Note: The variance ratio of 5,570× (R²=55.7% vs 0.01%) refers to the Best Fit direction vs Solar Apex; the CMB Dipole itself explains 3,570× more variance than Solar Apex.</p>
+<p><strong>Finding:</strong> The anisotropy modulation aligns with the CMB dipole direction (r=0.744 at RA=190°, Dec=-5°; 22° from CMB dipole; directional-rank p=0.0002), not the Solar Apex direction (r=0.007; 89° from best fit). The best-fit directional template explains R²=55.7% of variance (1° resolution, RA=186°, Dec=-4°, 18.2° from CMB), while the exact CMB-dipole template explains R²=35.7%. Both strongly discriminate against the Solar Apex (R²≈0.005%), with variance ratios of ~10,300× (best-fit) and ~6,600× (exact CMB) respectively. The 5° grid resolution (2,701 directions tested) provides finer localization. This finding represents a seventh independent signature consistent with velocity-dependent temporal coupling. The grid scan fixes background speed and uses a direction-only predictor, so it identifies a preferred direction but does not establish that the coupling amplitude is controlled by the 369 km/s speed magnitude (§2.3.5). The quoted p-value is a directional-rank statistic within the observed dataset; a global sky-search surrogate significance has not yet been computed.</p>
 
 <h3>3.3 Planetary Event Responses</h3>
 <p><strong>Objective</strong>: Test whether the coherence field responds to transient gravitational configurations (Claim D, secondary evidence).</p>
-<p><strong>Note</strong>: We report a statistically robust phenomenological anomaly in processed GNSS clock products: coherence modulations that are statistically associated with planetary alignments. These observations are empirical findings in post-processed data and should not be directly interpreted as probes of physical gravitational coupling strength. Effect sizes (modulation depths) are processing-dependent and show no GM/r²-like scaling. Mechanistic interpretation (whether physical coupling, processing artifacts, or other) is deferred pending raw carrier-phase reanalysis. The multi-centre study tested a small, predeclared set and found 6/8 Bonferroni‑significant responses; here we reproduce that set in our pipeline and then scale to 156 events with dependence‑aware corrections.</p>
+<p><strong>Note</strong>: A statistically robust phenomenological anomaly is reported in processed GNSS clock products: coherence modulations that are statistically associated with planetary alignments. These observations are empirical findings in post-processed data and should not be directly interpreted as probes of physical gravitational coupling strength. Effect sizes (modulation depths) are processing-dependent and show no GM/r²-like scaling. Mechanistic interpretation (whether physical coupling, processing artifacts, or other) is deferred pending raw carrier-phase reanalysis. The multi-centre study tested a small, predeclared set and found 6/8 Bonferroni‑significant responses; that set is reproduced here in the present pipeline and then scaled to 156 events with dependence‑aware corrections.</p>
 <h4>3.3.1 Detection Statistics</h4>
-<p><strong>Inference policy:</strong> All planetary event detection counts and p-values follow the canonical policy in §2.3.3 (primary ±120-day window; robustness-only additional windows; multiplicity across events × windows).</p>
-<p>An analysis of 156 planetary alignment events (oppositions/conjunctions) was performed using the ±120-day window with Gaussian pulse fitting. This yielded 56 statistically significant responses (≥2σ), with 25 surviving Bonferroni correction (45% survival under ultra-conservative α = 0.000746). This high survival rate demonstrates robust, repeatable event responses:</p>
+<p><strong>Inference policy:</strong> All planetary event detection counts and p-values follow the canonical policy in §2.3.3 (primary ±120-day window; robustness-only additional windows; multiplicity correction across the 156 primary-window event tests).</p>
+<p>An analysis of 156 planetary alignment events (oppositions/conjunctions) was performed using the ±120-day window with Gaussian pulse fitting. This yielded 56 statistically significant responses (≥2σ). Family-wide multiple-testing corrections were applied across all 156 tested events: 19 survive Bonferroni correction (α = 0.05/156 = 0.000321), 19 survive Holm step-down correction, 38 survive BH-FDR, and 28 survive dependence-aware BY-FDR. Under the complete null, only 0.05 Bonferroni survivors are expected. This high survival rate demonstrates robust, repeatable event responses:</p>
 
 <div style="overflow-x: auto; margin: 20px 0;">
     <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
@@ -589,7 +589,7 @@ The best-fit seasonal model captures only ≈18.8 % amplitude modulation of the 
                 <th style="padding: 8px; border: 1px solid #495773; text-align: left;">Detection Rate</th>
             </tr>
         </thead>
-        <caption style="caption-side: bottom; font-size: 12px; padding-top: 4px; text-align: left;">Detection counts for 156 events (Bonferroni α = 0.000746)</caption>
+        <caption style="caption-side: bottom; font-size: 12px; padding-top: 4px; text-align: left;">Detection counts for 156 events (family-wide Bonferroni α = 0.05/156 = 0.000321)</caption>
         <tbody>
             <tr>
                 <td style="padding: 8px; border: 1px solid #495773;">Mercury</td>
@@ -634,23 +634,23 @@ The best-fit seasonal model captures only ≈18.8 % amplitude modulation of the 
 <h4>3.3.2 Modulation Depth Distribution</h4>
 
 <div style="background-color: rgba(73, 87, 115, 0.08); border-left: 4px solid #495773; padding: 15px; margin: 15px 0;">
-  <strong>Definition:</strong> <em>Modulation depth</em> quantifies the amplitude of coherence change during a planetary event relative to the baseline coherence level. It is measured in coherence units (dimensionless correlation strength), not in frequency units (Δf/f). Values range from 0.3% to 4.0% of the coherence scale, with median ≈1.1%. These represent subtle but statistically significant changes in the spatial correlation structure of GNSS clock timing.
+  <strong>Definition:</strong> Two quantities are reported. <em>Absolute coherence-scale amplitude</em> (100|A|) ranges from 0.09–10.0%, typically 0.3–4.0%, with mean 1.2%. <em>Normalized modulation depth</em> (D = 100|A|/(|B|+|A|)) ranges from 14–86%, with mean 52.6%. Both are measured in coherence units (dimensionless correlation strength), not in frequency units (Δf/f). The table below reports normalized modulation depth. These represent subtle but statistically significant changes in the spatial correlation structure of GNSS clock timing.
 </div>
 
-<p>Across all 56 significant events, the modulation depths show a wide but meaningful distribution:</p>
+<p>Across all 156 tested events, the normalized modulation depths show a wide but meaningful distribution:</p>
 
 <div style="overflow-x: auto; margin: 20px 0;">
     <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
         <thead>
             <tr style="background-color: rgba(73, 87, 115, 0.1);">
                 <th style="padding: 8px; border: 1px solid #495773; text-align: left;">Planet</th>
-                <th style="padding: 8px; border: 1px solid #495773; text-align: center;">Mean Amplitude (%)</th>
-                <th style="padding: 8px; border: 1px solid #495773; text-align: center;">Max Amplitude (%)</th>
+                <th style="padding: 8px; border: 1px solid #495773; text-align: center;">Mean Normalized Depth (%)</th>
+                <th style="padding: 8px; border: 1px solid #495773; text-align: center;">Max Normalized Depth (%)</th>
                 <th style="padding: 8px; border: 1px solid #495773; text-align: center;">Mean σ Level</th>
                 <th style="padding: 8px; border: 1px solid #495773; text-align: center;">Max σ Level</th>
             </tr>
         </thead>
-        <caption style="caption-side: bottom; font-size: 12px; padding-top: 4px; text-align: left;">Amplitude statistics for significant events (values show pulse amplitude as percentage of baseline coherence)</caption>
+        <caption style="caption-side: bottom; font-size: 12px; padding-top: 4px; text-align: left;">Amplitude statistics for all tested events (values show modulation depth |A|/(|B|+|A|)×100 as percentage of total coherence signal)</caption>
         <tbody>
             <tr>
                 <td style="padding: 8px; border: 1px solid #495773;">Mercury</td>
@@ -689,9 +689,9 @@ The best-fit seasonal model captures only ≈18.8 % amplitude modulation of the 
             </tr>
             <tr style="background-color: rgba(73, 87, 115, 0.05); font-weight: bold;">
                 <td style="padding: 8px; border: 1px solid #495773;">All Planets</td>
-                <td style="padding: 8px; border: 1px solid #495773; text-align: center;">53.8%</td>
+                <td style="padding: 8px; border: 1px solid #495773; text-align: center;">52.6%</td>
                 <td style="padding: 8px; border: 1px solid #495773; text-align: center;">85.8%</td>
-                <td style="padding: 8px; border: 1px solid #495773; text-align: center;">2.36σ</td>
+                <td style="padding: 8px; border: 1px solid #495773; text-align: center;">2.18σ</td>
                 <td style="padding: 8px; border: 1px solid #495773; text-align: center;">7.0σ</td>
             </tr>
         </tbody>
@@ -700,47 +700,51 @@ The best-fit seasonal model captures only ≈18.8 % amplitude modulation of the 
 
 <div style="background-color: rgba(240,248,255,0.6); border: 1px solid #4682B4; padding: 15px; margin: 15px 0; border-radius: 4px; font-size: 13px;">
   <strong>Key Findings:</strong><br>
-  • <strong>Coherence-scale amplitudes:</strong> 0.3–4.0% modulation (median 1.1%) in coherence units<br>
+  • <strong>Modulation depth:</strong> |A|/(|B|+|A|)×100% ranges 14–86% (mean 52.6%) across all tested events<br>
   • <strong>Statistical significance:</strong> Maximum 7.0σ (Mercury), with 30/56 events ≥3σ<br>
-  • <strong>Pulse-to-baseline ratio:</strong> Fitted Gaussian pulse amplitudes range 17–86% of baseline (mean 54%)<br>
+  • <strong>Absolute amplitudes:</strong> |A| ranges 0.09–10.0% of coherence scale (mean 1.2%)<br>
   • <strong>Not marginal:</strong> These are measurable, repeatable changes in global network coherence<br>
   <br>
-  <strong>Amplitude Metric Clarification:</strong><br>
-  <em>Two metrics are reported:</em> (1) <strong>Modulation depth</strong> = amplitude/coherence_scale ≈ 0.3–4.0% (how much the signal changes relative to the full coherence range, 0 to 1). (2) <strong>Pulse-to-baseline ratio</strong> = amplitude/baseline ≈ 17–86% (how much the signal changes relative to the local baseline). The table above shows pulse-to-baseline ratios (the larger percentages). Both metrics describe the <em>same physical changes</em>—the difference is the denominator used for normalization.<br>
+  <strong>Amplitude Metric:</strong> The table reports modulation depth = |A|/(|B|+|A|)×100%, the fraction of total coherence signal contributed by the transient event. This is distinct from the absolute amplitude |A| (typically 0.3–4.0% of the coherence scale) and from the pulse-to-baseline ratio |A|/|B| (which can exceed 100% when the pulse amplitude exceeds the baseline). All three describe the same physical changes with different normalizations.<br>
   <br>
-  <strong>Critical Note:</strong> These values describe <em>correlation structure changes</em>, not absolute clock frequency shifts. The absence of GM/r² scaling (§3.3.3) indicates these are processing-filtered differential metrics, not direct gravitational perturbations.
+  <strong>Critical Note:</strong> These values describe <em>correlation structure changes</em>, not absolute clock frequency shifts. The absence of GM/r² scaling (§3.3.3) is consistent with the datum-projection mechanism: common-mode clock components lie largely in the datum subspace absorbed by GNSS estimation, whereas direction-dependent covariance can survive in residual products. Synthetic injection and covariance propagation provide the direct quantitative test of this selective transfer.
 </div>
 
 <div class="experimental-section" style="background-color: rgba(73, 87, 115, 0.05); border: 2px solid #495773; padding: 20px; margin: 20px 0;">
     <h4 style="margin-top: 0; color: #220126;">Multiple Testing Survival</h4>
     <ul style="line-height: 1.7;">
-        <li><strong>Bonferroni</strong> (α = 0.05/156 = 0.000321): 25/156 (16%) survive ultra-conservative correction
+        <li><strong>Bonferroni</strong> (α = 0.05/156 = 0.000321): 19/156 survive family-wise correction
             <ul style="margin-top: 5px; font-size: 0.95em;">
-                <li><em>Interpretation: Bonferroni is extremely conservative (designed for independent tests). 16% of all tested events survive this stringent threshold—500× more than expected by chance.</em></li>
+                <li><em>Interpretation: Bonferroni controls family-wise error across all 156 tested events. 19 survivors vs 0.05 expected under the complete null—overwhelmingly significant.</em></li>
             </ul>
         </li>
-        <li><strong>Benjamini-Yekutieli (BY-FDR)</strong> (q = 0.05): 33/56 (59%) survive dependence-aware correction
+        <li><strong>Holm step-down</strong> (FWER ≤ 0.05): 19/156 survive
             <ul style="margin-top: 5px; font-size: 0.95em;">
-                <li><em>Interpretation: BY-FDR accounts for correlations between tests (appropriate for orbital dynamics). 33 surviving events represents the most robust core dataset.</em></li>
+                <li><em>Interpretation: Holm is uniformly at least as powerful as Bonferroni while maintaining the same family-wise error guarantee. 19 events survive under both corrections.</em></li>
             </ul>
         </li>
-        <li><strong>False Discovery Rate</strong> (q = 0.05): 56/56 (100%) survive standard BH-FDR control; 33/56 (59%) survive dependence-aware BY-FDR.
+        <li><strong>Benjamini-Hochberg FDR</strong> (q = 0.05): 38/156 survive standard FDR control
             <ul style="margin-top: 5px; font-size: 0.95em;">
-                <li><em>Interpretation: Standard FDR controls expected proportion of false positives assuming independence. BY-FDR accounts for dependency, offering a more conservative lower bound. 100% survival under standard FDR indicates robust detections.</em></li>
+                <li><em>Interpretation: BH-FDR controls expected false discovery rate across all 156 events. 38 survivors indicates robust detections under standard FDR.</em></li>
             </ul>
         </li>
-        <li><strong>Permutation Testing</strong> (p < 0.05): 53/56 (95%) survive empirical null
+        <li><strong>Benjamini-Yekutieli (BY-FDR)</strong> (q = 0.05): 28/156 survive dependence-aware correction
             <ul style="margin-top: 5px; font-size: 0.95em;">
-                <li><em>Interpretation: Empirical null (randomized station pairs) shows 95% of detections are not due to chance spatial patterns.</em></li>
+                <li><em>Interpretation: BY-FDR accounts for arbitrary dependence between tests (appropriate for temporally correlated orbital dynamics). 28 surviving events represents the most robust core dataset.</em></li>
+            </ul>
+        </li>
+        <li><strong>Null Event Control</strong> (Mann-Whitney U): Planetary effect sizes vs 155 random dates — p = 4×10⁻¹⁸, Cohen's d = 1.41
+            <ul style="margin-top: 5px; font-size: 0.95em;">
+                <li><em>Interpretation: Planetary events produce 5.5× larger coherence changes than random dates. This matched-null comparison (identical ±15-day window, identical min-pairs threshold) confirms event specificity.</em></li>
             </ul>
         </li>
     </ul>
-    <p style="margin-top: 12px; font-size: 0.95em; font-style: italic;"><strong>Summary:</strong> The convergence of three independent multiple-testing approaches (Bonferroni, FDR, permutation) indicates that detected planetary event responses are unlikely to be statistical artifacts. The 45% Bonferroni survival rate is noteworthy given the ultra-conservative nature of this correction.</p>
+    <p style="margin-top: 12px; font-size: 0.95em; font-style: italic;"><strong>Summary:</strong> The convergence of Bonferroni, Holm, FDR, and matched-null control indicates that detected planetary event responses are unlikely to be statistical artifacts. 19 events surviving family-wide Bonferroni—versus 0.05 expected by chance—provides robust evidence under the most conservative error control.</p>
 </div>
 
 <div class="experimental-section" style="background-color: rgba(73, 87, 115, 0.05); border: 1px solid #495773; padding: 20px; margin: 20px 0; border-radius: 4px;">
     <h4 style="margin-top: 0; color: #220126;">Null Event Control Validation</h4>
-    <p style="line-height: 1.7;">To test whether planetary event detections are specific to astronomical alignments (rather than random temporal fluctuations), we compared effect size distributions between 40 planetary events and 155 randomly-generated null dates spanning the 25-year analysis period:</p>
+    <p style="line-height: 1.7;">To test whether planetary event detections are specific to astronomical alignments (rather than random temporal fluctuations), effect size distributions were compared between 40 planetary events and 155 randomly-generated null dates spanning the 25-year analysis period. The matched-null validation uses the 40 events satisfying a frozen eligibility criterion: a tighter ±15-day window (vs ±120-day for the main analysis) with a minimum-pairs threshold of 100 per day. This control subset was selected independently of fitted effect size and is separate from the complete 156-event multiplicity analysis. Because the eligibility criterion is data-availability-based, not significance-based, the null comparison is not biased toward already-significant events:</p>
     <table style="width: 100%; border-collapse: collapse; font-size: 13px; margin: 15px 0;">
         <thead>
             <tr style="background-color: rgba(73, 87, 115, 0.1);">
@@ -777,7 +781,7 @@ The best-fit seasonal model captures only ≈18.8 % amplitude modulation of the 
         <li><strong>Statistical significance:</strong> Approximately 8.5σ (probability of random chance < 10⁻¹⁷)</li>
         <li><strong>Interpretation:</strong> Planetary alignments produce coherence changes that are categorically larger than random dates. The effect is robust (median ratio 6.1×) and not driven by outliers.</li>
     </ul>
-    <p style="margin-top: 12px; font-size: 0.95em; font-style: italic;"><strong>Conclusion:</strong> This test definitively validates that detected planetary event responses are specific to astronomical alignments, not artifacts of temporal autocorrelation or Gaussian fitting overfitting noise. The distributions have almost no overlap—planetary events consistently produce 5–6× larger coherence changes than random dates.</p>
+    <p style="margin-top: 12px; font-size: 0.95em; font-style: italic;"><strong>Conclusion:</strong> This matched-null comparison provides strong validation that detected planetary event responses are specific to astronomical alignments, not artifacts of temporal autocorrelation or Gaussian fitting overfitting noise. The distributions have almost no overlap—planetary events consistently produce 5–6× larger coherence changes than random dates.</p>
 </div>
 
 <div class="experimental-section" style="background-color: rgba(255, 255, 255, 0.8); padding: 15px; border-radius: 5px; margin: 15px 0;">
@@ -827,36 +831,20 @@ The best-fit seasonal model captures only ≈18.8 % amplitude modulation of the 
         </table>
     </div>
     <p style="margin: 10px 0 0 0;">
-        <strong>Multiple-testing corrections (primary ±120-day events):</strong> Bonferroni 25/56; BY-FDR 33/56; FDR 56/56. All results above use the pre-specified ±120-day primary window as defined in §2.3.3.
+        <strong>Multiple-testing corrections (primary ±120-day events):</strong> Bonferroni 19/156; Holm 19/156; BH-FDR 38/156; BY-FDR 28/156. All corrections applied across the full 156-event family. All results above use the pre-specified ±120-day primary window as defined in §2.3.3.
     </p>
 </div>
-<h4>3.3.4 Modulation Depth Analysis</h4>
-<p><strong>Methodology:</strong> Modulation depth quantifies the relative amplitude of the Gaussian pulse as a fraction of total signal: modulation_depth = |amplitude| / (|baseline| + |amplitude|) × 100%. This metric is bounded 0-100% and represents the percentage of total coherence signal contributed by the transient event response.</p>
-
-<p>The 56 significant planetary event responses show the following modulation depth distribution:</p>
-
-<div class="experimental-section" style="background-color: rgba(255, 255, 255, 0.8); padding: 15px; border-radius: 5px; margin: 15px 0;">
-    <h4 style="margin-top: 0; color: #495773;">Modulation Depth Distribution</h4>
-    <ul style="line-height: 1.7;">
-        <li><strong>Range:</strong> 0.3% to 4.0% (coherence units)</li>
-        <li><strong>Typical Event:</strong> ~1-2% modulation depth</li>
-    </ul>
-</div>
-
-<p><strong>Interpretation:</strong> The median modulation depth of 1.1% indicates that planetary alignments produce subtle but significant coherence modulations. As clarified in §2.2.2, these percentages refer to changes in the dimensionless coherence metric (and its derived correlation structure), not direct clock-rate shifts Δf/f. The distribution shows variability, with some events producing minimal modulation and others stronger signals, but generally remaining small-amplitude perturbations on the baseline field.</p>
-
-
 <h4>3.3.3 Gravitational Scaling Analysis</h4>
-<p><strong>Objective:</strong> Test whether observed amplitudes correlate with General Relativity predictions based on planetary mass and distance (GM/r²).</p>
+<p><strong>Objective:</strong> Test whether observed amplitudes follow planetary acceleration (M/r²) or tidal-gradient (M/r³) scaling proxies.</p>
 
-<p><strong>Key Finding:</strong> The observed GPS coherence modulations do not directly correlate with GM/r² gravitational scaling:</p>
+<p><strong>Key Finding:</strong> The observed GPS coherence modulations do not correlate with either gravitational (M/r²) or tidal (M/r³) scaling:</p>
 
 <div class="experimental-section" style="padding: 15px; margin: 15px 0;">
     <h4 style="margin-top: 0;">Correlation Analysis (N=56 events)</h4>
     <ul style="line-height: 1.7;">
-        <li><strong>Pearson Correlation (A_obs vs M/r²):</strong> r = -0.053, p = 0.656 (not significant)</li>
-        <li><strong>Spearman Rank Correlation:</strong> ρ = -0.048, p = 0.686 (not significant)</li>
-        <li><strong>Coupling Type:</strong> No Clear Gravitational Scaling</li>
+        <li><strong>Gravitational (M/r²):</strong> Pearson r = -0.042, p = 0.759 (not significant); Spearman ρ = -0.080, p = 0.557 (not significant)</li>
+        <li><strong>Tidal (M/r³):</strong> Pearson r = -0.087, p = 0.522 (not significant); Spearman ρ = -0.069, p = 0.613 (not significant)</li>
+        <li><strong>Coupling Type:</strong> No Clear Gravitational or Tidal Scaling</li>
     </ul>
 </div>
 
@@ -869,13 +857,29 @@ The best-fit seasonal model captures only ≈18.8 % amplitude modulation of the 
  <p><strong>Note on Unit Compatibility:</strong> GPS coherence modulations represent relative timing correlation structure (dimensionless), while GR clock rate predictions (Δf/f) represent absolute frequency shifts. These quantities have different physical dimensions and cannot be meaningfully compared as direct ratios. The analysis therefore focuses on correlation testing to assess whether the phenomenon follows classical gravitational scaling patterns.</p>
 
 <h4>Methodological Note</h4>
-<p><strong>Processing Center Corrections:</strong> This analysis uses processed GNSS clock products from analysis centers (CODE, IGS, ESA) that apply systematic error corrections during data processing.</p>
+<p><strong>Processing Centre Corrections:</strong> This analysis uses processed GNSS clock products from analysis centres (CODE, IGS, ESA) that apply systematic error corrections during data processing.</p>
 
-<p><strong>Potential Impact:</strong> If analysis centers detect and partially correct for planetary gravitational effects without recognizing their physical origin, observed amplitudes could represent residuals from incomplete correction rather than the full physical effect.</p>
+<p><strong>Potential Impact:</strong> If analysis centres detect and partially correct for planetary gravitational effects without recognizing their physical origin, observed amplitudes could represent residuals from incomplete correction rather than the full physical effect.</p>
 
 <p><strong>Critical Next Step:</strong> Raw carrier phase analysis is essential to distinguish between genuine gravitational coupling and processing artifacts. The statistical significance of detections (σ levels, R² values) remains valid, but absolute amplitude estimates require validation with unprocessed measurements.</p>
+
+<h4>3.3.4 Modulation Depth Analysis</h4>
+<p><strong>Methodology:</strong> Modulation depth quantifies the relative amplitude of the Gaussian pulse as a fraction of total signal: modulation_depth = |amplitude| / (|baseline| + |amplitude|) × 100%. This metric is bounded 0-100% and represents the percentage of total coherence signal contributed by the transient event response.</p>
+
+<p>Among the 56 significant events, normalized modulation depth ranges from 36.7–85.1%, with a typical value of approximately 55%. The corresponding absolute pulse amplitude is typically approximately 1.1% of the full coherence scale.</p>
+
+<div class="experimental-section" style="background-color: rgba(255, 255, 255, 0.8); padding: 15px; border-radius: 5px; margin: 15px 0;">
+    <h4 style="margin-top: 0; color: #495773;">Modulation Depth Distribution</h4>
+    <ul style="line-height: 1.7;">
+        <li><strong>Normalized depth range:</strong> 36.7% to 85.1% (of total coherence signal)</li>
+        <li><strong>Absolute amplitude range:</strong> 0.3% to 4.0% of coherence scale (median ≈1.1%)</li>
+        <li><strong>Typical Event:</strong> ~55% normalized modulation depth, ~1.1% absolute amplitude</li>
+    </ul>
+</div>
+
+<p><strong>Interpretation:</strong> The typical absolute amplitude of 1.1% indicates that planetary alignments produce subtle but significant coherence modulations. As clarified in §2.2.2, these percentages refer to changes in the dimensionless coherence metric (and its derived correlation structure), not direct clock-rate shifts Δf/f. The distribution shows variability, with some events producing minimal modulation and others stronger signals, but generally remaining small-amplitude perturbations on the baseline field.</p>
 <h3>3.4 Geophysical Couplings</h3>
-<p><strong>Objective</strong>: Test TEP predictions for coupling to Earth's rotational dynamics, specifically the 18.6-year lunar nutation (predicted R² = 0.6-0.7) and semiannual nutation (predicted R² > 0.85) that were inaccessible in Paper 1's 2.5-year baseline. This represents the first test of genuinely novel predictions requiring >20-year temporal coverage (Claim E).</p>
+<p><strong>Objective</strong>: Test TEP-motivated expectations for coupling to Earth's rotational dynamics, specifically the 18.6-year lunar nutation (expected R² ~ 0.6-0.7) and semiannual nutation (expected R² > 0.85) that were inaccessible in Paper 1's 2.5-year baseline. This represents the first test of genuinely novel expectations requiring >20-year temporal coverage (Claim E).</p>
 <h4>3.4.1 Nutation Signatures</h4>
 
 <p><strong>Why Nutation Coupling Matters:</strong> Nutation is the wobble of Earth's rotational axis caused by the gravitational torques of the Sun and Moon. Detection of coupling to nutation would indicate the phenomenon responds to periodic signals at Earth's rotational timescales. This could reflect either direct coupling to Earth's rotational dynamics or indirect coupling through orbital mechanics (nutation → orbital perturbations → GNSS response). Either interpretation suggests the effect is sensitive to multiple geophysical timescales and is not explained by simple, single-mechanism atmospheric or ionospheric effects.</p>
@@ -897,25 +901,26 @@ The best-fit seasonal model captures only ≈18.8 % amplitude modulation of the 
                 <td style="padding: 8px; border: 1px solid #495773;">Semiannual</td>
                 <td style="padding: 8px; border: 1px solid #495773;">0.5 years (182.6 days)</td>
                 <td style="padding: 8px; border: 1px solid #495773;">0.904</td>
-                <td style="padding: 8px; border: 1px solid #495773;">< 10⁻²⁰</td>
-                <td style="padding: 8px; border: 1px solid #495773;">0.00155 ± 0.0008</td>
+                <td style="padding: 8px; border: 1px solid #495773;">2.7×10⁻⁵</td>
+                <td style="padding: 8px; border: 1px solid #495773;">0.00155 ± 0.00017</td>
             </tr>
             <tr style="background-color: rgba(73, 87, 115, 0.03);">
                 <td style="padding: 8px; border: 1px solid #495773;">Main Nutation (Lunar)</td>
                 <td style="padding: 8px; border: 1px solid #495773;">18.6 years (6,798 days)</td>
                 <td style="padding: 8px; border: 1px solid #495773;">0.641</td>
-                <td style="padding: 8px; border: 1px solid #495773;">< 10⁻⁸</td>
-                <td style="padding: 8px; border: 1px solid #495773;">0.00649 ± 0.0012</td>
+                <td style="padding: 8px; border: 1px solid #495773;">0.010</td>
+                <td style="padding: 8px; border: 1px solid #495773;">−0.00649 ± 0.00162</td>
             </tr>
             <tr>
                 <td style="padding: 8px; border: 1px solid #495773;">Annual</td>
                 <td style="padding: 8px; border: 1px solid #495773;">1.0 year (365.25 days)</td>
                 <td style="padding: 8px; border: 1px solid #495773;">0.0178</td>
-                <td style="padding: 8px; border: 1px solid #495773;">Not significant</td>
-                <td style="padding: 8px; border: 1px solid #495773;">−0.00026 ± 0.00004</td>
+                <td style="padding: 8px; border: 1px solid #495773;">0.92 (not significant)</td>
+                <td style="padding: 8px; border: 1px solid #495773;">−0.00026 ± 0.00064</td>
             </tr>
         </tbody>
     </table>
+    <p style="font-size: 11px; color: #555; margin-top: 4px;"><em>Note: p-values from F-test on the sinusoidal fit to 12 phase-bin means (df = 2, 9). ± values are 1σ standard errors from curve_fit. Each phase bin aggregates ~13.8 million station-pair observations.</em></p>
 </div>
 
 <div style="background-color: rgba(240,248,255,0.6); border: 1px solid #4682B4; padding: 15px; margin: 15px 0; border-radius: 4px; font-size: 13px;">
@@ -925,13 +930,13 @@ The best-fit seasonal model captures only ≈18.8 % amplitude modulation of the 
   <br>
   <strong>1. Semiannual Nutation (6-month period):</strong><br>
   • R² = 0.904 (90.4% variance explained)<br>
-  • p < 10⁻²⁰ (extraordinarily significant)<br>
+  • p = 2.7×10⁻⁵ (F-test, df = 2, 9; 4.2σ equivalent)<br>
   • This is the strongest geophysical coupling among all signatures in the dataset<br>
   • 50 complete cycles observed over 25.3 years<br>
   <br>
   <strong>2. 18.6-Year Lunar Nutation:</strong><br>
   • R² = 0.641 (64.1% variance explained)<br>
-  • p < 10⁻⁸ (highly significant)<br>
+  • p = 0.010 (F-test, df = 2, 9; preliminary, pending red-noise surrogate validation)<br>
   • 1.4 complete cycles observed (enabled by long baseline)<br>
   <br>
   <strong>3. Annual Nutation:</strong><br>
@@ -941,11 +946,11 @@ The best-fit seasonal model captures only ≈18.8 % amplitude modulation of the 
   <strong>Physical Interpretation:</strong> The dominant semiannual coupling (R² = 0.904) represents a robust geophysical signature, surpassing the orbital velocity correlation in variance explained. This suggests the coherence field is sensitive to Earth's rotational dynamics at specific frequencies, with the 6-month nutation period producing strong modulation among geophysical and astronomical phenomena tested.
 </div>
 
-<p><strong>Finding</strong>: Strong coupling detected to both semiannual (R² = 0.904, p < 10⁻²⁰) and 18.6-year lunar nutation cycles (R² = 0.641, p < 10⁻⁸), supporting Claim E. The semiannual component explains 90.4% of variance in the filtered coherence time series. Notably, the annual period shows no significant coupling (R² = 0.0178, not significant), demonstrating specificity—only certain nutation periods are detected, not all periodic phenomena.</p>
+<p><strong>Finding</strong>: Strong coupling detected to the semiannual nutation cycle (R² = 0.904, p = 2.7×10⁻⁵), and a preliminary 18.6-year nutation-aligned component observed (R² = 0.641, 1.4 cycles; p = 0.010, pending red-noise surrogate validation), supporting Claim E. The semiannual component explains 90.4% of variance in the 12 phase-bin means. Notably, the annual period shows no significant coupling (R² = 0.0178, p = 0.92), demonstrating specificity—only certain nutation periods are detected, not all periodic phenomena.</p>
 
 <div style="background-color: rgba(240,248,255,0.6); border: 1px solid #4682B4; padding: 15px; margin: 15px 0; border-radius: 4px; font-size: 13px;">
   <strong>Seasonal Confound Control:</strong><br>
-  Semiannual cycles appear in atmospheric and ionospheric data. While some local seasonal effects would show opposite phases between hemispheres, global ionospheric patterns can show synchronized timing. Primary discriminants against seasonal artifacts: (1) Weak correlation with F10.7 solar flux and Kp geomagnetic indices (r = 0.12-0.13, p > 0.29, Paper 1 ionospheric null controls), well below contamination thresholds, (2) Multi-center consistency across three independent processing centres using different ionospheric models (R² = 0.920-0.970), (3) Persistence across 2.5 solar cycles with no degradation during solar maximum. The convergence of ionospheric independence, multi-centre validation, and solar cycle robustness supports genuine geophysical coupling over seasonal ionospheric artifacts.
+  Semiannual cycles appear in atmospheric and ionospheric data. While some local seasonal effects would show opposite phases between hemispheres, global ionospheric patterns can show synchronized timing. Primary discriminants against seasonal artifacts: (1) Weak correlation with F10.7 solar flux and Kp geomagnetic indices (r = 0.12-0.13, p > 0.29, Paper 1 ionospheric null controls), well below contamination thresholds, (2) Multi-centre consistency across three independent processing centres using different ionospheric models (R² = 0.920-0.970), (3) Persistence across 2.5 solar cycles with no degradation during solar maximum. The convergence of ionospheric independence, multi-centre validation, and solar cycle robustness supports genuine geophysical coupling over seasonal ionospheric artifacts.
 </div>
 <h4>3.4.2 Chandler Wobble</h4>
 <p>Coupling to the ~14-month Chandler wobble was tested using Lomb-Scargle periodogram analysis:</p>
@@ -954,7 +959,7 @@ The best-fit seasonal model captures only ≈18.8 % amplitude modulation of the 
   <li><strong>R²:</strong> 0.096 (below significance threshold of 0.15)</li>
   <li><strong>Complete cycles observed:</strong> ~21.2</li>
 </ul>
-<p><strong>Finding:</strong> Consistent period match. The detected signal matches the known Chandler wobble period precisely (fixed enforcement), and phase stability across ~21.2 complete cycles demonstrates coherent behavior over the full 25-year observation window. While the amplitude coupling (R² = 0.096) is below the arbitrary 0.15 significance threshold, the physical consistency of the period and extended phase coherence indicate detection of a real geophysical phenomenon. This distinguishes the result from random noise, which would not maintain phase coherence at the correct geophysical period for two decades.</p>
+<p><strong>Finding:</strong> At the prescribed 433-day Chandler period, the network exhibits a weak but phase-coherent response across approximately 21 cycles (R² = 0.096, phase stability = 0.72). Its amplitude falls below the primary significance threshold, so it is treated as a Chandler-consistent secondary signature rather than an independent detection. The extended phase coherence at the known geophysical period distinguishes the response from random noise, which would not maintain phase coherence at the correct period for two decades.</p>
 <h4>3.4.3 Solar Rotation (27-day) — Null Result (Falsification Test)</h4>
 <p><strong>Rationale:</strong> TEP predicts <em>no</em> coupling to solar rotation (surface phenomenon), while generic artifact hypotheses predict the network should respond to any strong periodic astronomical signal. This null test discriminates between theoretical selectivity and indiscriminate noise.</p>
 <p><strong>Target period:</strong> 27.0 days</p>
@@ -970,7 +975,7 @@ The best-fit seasonal model captures only ≈18.8 % amplitude modulation of the 
 <p><strong>Significance:</strong> Not significant</p>
 <p><strong>Finding</strong>: No significant Lunar Standstill signals detected.</p>
 <h3>3.5 Network-Wide Phenomena ("Mesh Dance")</h3>
-<p><strong>Objective</strong>: Replicate the multi-centre study's network coordination finding (mesh score = 0.58-0.62 across CODE/IGS/ESA) over 25 years to test whether global coherence is temporally stable or degrades over decadal timescales (Claim F).</p>
+<p><strong>Objective</strong>: Replicate the multi-centre study's network coordination finding (mesh score = 0.58-0.62 across CODE/IGS/ESA) over 25 years to test whether global coherence is consistently recovered or degrades over multi-decade timescales (Claim F).</p>
 
 <p><strong>Why Network Coherence Matters:</strong> If GNSS clock correlations were driven primarily by independent, station-specific effects (equipment noise, local multipath), the network would show incoherent, spatially random patterns. A coherence index of 0.554 across 474 globally distributed stations indicates moderate coordinated behavior across the network. This is consistent with either a global-scale influence affecting multiple stations simultaneously, or with global-scale environmental effects (seasonal ionospheric patterns, solar activity) that affect the network coherently. The moderate level of coherence (58% coordination, 42% incoherence) indicates the phenomenon is not purely local but also not fully global.</p>
 
@@ -1036,7 +1041,7 @@ The best-fit seasonal model captures only ≈18.8 % amplitude modulation of the 
   <li><b>Leave-one-station-out stability:</b> Effect persists with any single station removed</li>
 </ul>
 
-<p><strong>Finding</strong>: The network exhibits globally coordinated behavior with "mesh dance" score = 0.582 (p < 0.001 vs spatially shuffled null), supporting Claim F. This is consistent with the multi-centre study's range (CODE: 0.624, IGS: 0.579, ESA: 0.602) and confirms temporal stability of "mesh dance" dynamics over 25.3 years. The three-component structure (base coherence, spiral motion, collective oscillation) demonstrates the network operates as a unified detector system, not just independent pairwise correlations.</p>
+<p><strong>Finding</strong>: The network exhibits globally coordinated behavior with "mesh dance" score = 0.582 (p < 0.001 vs spatially shuffled null), supporting Claim F. This is consistent with the multi-centre study's range (CODE: 0.624, IGS: 0.579, ESA: 0.602) and confirms long-baseline recovery of "mesh dance" dynamics over 25.3 years. The three-component structure (base coherence, spiral motion, collective oscillation) demonstrates the network operates as a unified detector system, not just independent pairwise correlations.</p>
 
 <div style="margin: 30px 0; text-align: center;">
   <img src="figures/step_2_2_longspan_code_25year_timeseries.png" alt="25-Year Temporal Evolution of Global Coherence" style="max-width: 100%; height: auto; border: 1px solid #ddd; padding: 10px; background: white;">
@@ -1084,19 +1089,19 @@ The best-fit seasonal model captures only ≈18.8 % amplitude modulation of the 
     <tr>
       <td><strong>Orbital Motion Coupling</strong></td>
       <td>Detected</td>
-      <td>r = −0.888, p &lt; 2×10⁻⁷ (5.1σ)</td>
+      <td>r = −0.888, surrogate p &lt; 2×10⁻⁷ (0/5M)</td>
       <td>§3.2</td>
     </tr>
     <tr>
       <td><strong>Planetary Event Responses</strong></td>
       <td>Detected</td>
-      <td>56 significant (≥2σ), 25 Bonferroni-significant</td>
+      <td>56 significant (≥2σ), 19 Bonferroni-significant</td>
       <td>§3.3</td>
     </tr>
     <tr>
       <td><strong>Nutation Coupling</strong></td>
-      <td>Detected</td>
-      <td>Semiannual R² = 0.904, 18.6-yr R² = 0.641</td>
+      <td>Semiannual: Detected; 18.6-yr: Preliminary</td>
+      <td>Semiannual R² = 0.904, p = 2.7×10⁻⁵; Preliminary: 18.6-yr R² = 0.641, p = 0.010; 1.4 cycles, pending red-noise surrogate validation</td>
       <td>§3.4.1</td>
     </tr>
     <tr>
@@ -1113,8 +1118,8 @@ The best-fit seasonal model captures only ≈18.8 % amplitude modulation of the 
     </tr>
     <tr>
       <td><strong>Chandler Wobble (~14 months)</strong></td>
-      <td>Consistent (period confirmed)</td>
-      <td><strong>Period match:</strong> 433.0 days (physically fixed)<br><strong>Statistical amplitude:</strong> R² = 0.096 (statistically consistent)</td>
+      <td>Chandler-consistent secondary signature</td>
+      <td><strong>Prescribed period:</strong> 433.0 days<br><strong>Amplitude:</strong> R² = 0.096 (below threshold)<br><strong>Phase coherence:</strong> 0.72 across 21.2 cycles</td>
       <td>§3.4.2</td>
     </tr>
     <tr>
@@ -1132,4 +1137,4 @@ The best-fit seasonal model captures only ≈18.8 % amplitude modulation of the 
   </tbody>
 </table></div>
 
-<p><strong>Summary:</strong> Seven primary phenomena are robustly detected. The Chandler wobble shows consistent physical characteristics with precise period confirmation (433.0 days (physically fixed), matching the canonical 433 ± 3-day reference) and significant phase coherence (coherence = 0.72 across 21.2 complete cycles, p = 0.002), indicating a genuine periodic component with weak amplitude coupling. While the amplitude coupling (R² = 0.096) does not reach the statistical significance threshold, the precise period match and significant phase coherence demonstrate detection of the actual Chandler wobble signal, likely with reduced amplitude coupling due to its smaller physical amplitude (~0.1 arcsec) compared to forced nutation (~18 arcsec). Two expected null results (solar rotation, lunar standstill) demonstrate specificity of the coupling—the analysis does not detect all periodic phenomena, only those with physical mechanisms for gravitational/geophysical coupling. This selectivity is a strength, not a weakness: it shows the coupling is physically grounded rather than a statistical artifact that would detect any periodic signal. The detection of multiple convergent signatures across orbital, rotational, and planetary domains provides strong multi-faceted evidence for systematic coupling between GNSS clock correlations and gravitational/geophysical dynamics.</p>
+<p><strong>Summary:</strong> Seven primary phenomena are robustly detected. The Chandler wobble shows a weak but phase-coherent response at the prescribed 433-day period (R² = 0.096, coherence = 0.72 across 21.2 complete cycles, p = 0.002), treated as a Chandler-consistent secondary signature rather than an independent detection. Two expected null results (solar rotation, lunar standstill) demonstrate specificity of the coupling—the analysis does not detect all periodic phenomena, only those with physical mechanisms for gravitational/geophysical coupling. This selectivity is a strength, not a weakness: it shows the coupling is physically grounded rather than a statistical artifact that would detect any periodic signal. The detection of multiple convergent signatures across orbital, rotational, and planetary domains provides strong multi-faceted evidence for systematic coupling between GNSS clock correlations and gravitational/geophysical dynamics.</p>

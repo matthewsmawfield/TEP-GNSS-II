@@ -3,8 +3,8 @@
 **Publication website for TEP-GNSS-II (Paper 2)**
 
 **Author:** Matthew Lukin Smawfield  
-**Version:** v0.18 (Cairo)  
-**Date:** 29 April 2026  
+**Version:** v0.19 (Cairo)  
+**Date:** 13 August 2026
 **Status:** Preprint
 
 ## Overview
@@ -13,8 +13,8 @@ This is the website for Paper 2 of the TEP-GNSS project, which presents a 25-yea
 
 ## Key Findings
 
-- Confirms orbital velocity correlation (r = -0.888, p < 2×10⁻⁷, 5.1σ; 5 M surrogates)
-- 56 planetary event responses (25 surviving Bonferroni correction, 33 BY-FDR)
+- Confirms orbital velocity correlation (r = -0.888; surrogate p < 2×10⁻⁷, 0/5M exceeded; t-test p ≈ 2.6×10⁻⁴ with N_eff ≈ 11)
+- 56 planetary event responses (19 surviving family-wide Bonferroni/Holm correction, 38 BH-FDR, 28 BY-FDR across all 156 tests)
 - 18.6-year nutation cycle detection (R² = 0.641)
 - 21+ cycles of Chandler wobble (R² = 0.106)
 - Network coherence over 25.3 years

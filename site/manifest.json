@@ -3,7 +3,7 @@
   "author": "Matthew Lukin Smawfield",
   "version": "v0.19 (Cairo)",
   "first_published": "3 November 2025",
-  "last_updated": "4 June 2026",
+  "last_updated": "13 August 2026",
   "doi": "10.5281/zenodo.17517141",
   "code_repo": "github.com/matthewsmawfield/TEP-GNSS-II",
   "sections": [
@@ -61,5 +61,21 @@
       "title": "References & Contact",
       "order": 9
     }
-  ]
+  ],
+  "icons": [
+    {
+      "src": "public/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "public/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#220126"
 }

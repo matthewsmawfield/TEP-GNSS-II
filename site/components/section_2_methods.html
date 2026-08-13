@@ -13,7 +13,7 @@
     </thead>
     <tbody>
       <tr>
-        <td style="padding: 8px; border: 1px solid #495773;"><strong>Analysis Center</strong></td>
+        <td style="padding: 8px; border: 1px solid #495773;"><strong>Analysis Centre</strong></td>
         <td style="padding: 8px; border: 1px solid #495773;">CODE (Center for Orbit Determination in Europe)</td>
       </tr>
       <tr style="background-color: rgba(73, 87, 115, 0.03);">
@@ -34,7 +34,7 @@
         <td style="padding: 8px; border: 1px solid #495773;">1,574,861</td>
       </tr>
       <tr style="background-color: rgba(73, 87, 115, 0.03);">
-        <td style="padding: 8px; border: 1px solid #495773;"><strong>Total Station Pairs</strong></td>
+        <td style="padding: 8px; border: 1px solid #495773;"><strong>Total Station-Pair Observations</strong></td>
         <td style="padding: 8px; border: 1px solid #495773;">165,189,605</td>
       </tr>
       <tr>
@@ -101,7 +101,7 @@
 <p style="margin-top: 15px;"><strong>Spatial Coverage:</strong> Station separations range from 1.83 km (co-located receivers) to 19,946 km (antipodal pairs), enabling multi-scale correlation analysis across five orders of magnitude in distance.</p>
 
 <div style="background-color: rgba(73, 87, 115, 0.05); border-left: 3px solid #495773; padding: 12px; margin: 15px 0; font-size: 13px;">
-  <strong>Temporal Window Selection (34 windows):</strong> The 25.3-year dataset is divided into 34 temporal windows (~9 months each) for orbital velocity correlation analysis. This window size balances temporal resolution against statistical stability per window. Complementary tests address resolution concerns: (1) Monte Carlo validation uses 5M surrogates on the full time series, (2) CMB frame search spans 65,341 sky directions at multiple resolutions, (3) nutation analysis uses daily coherence values (4,186 samples), and (4) planetary event analysis uses ±120-day windows around 156 events. The convergence of these independent methodologies—each with different temporal granularity—strengthens confidence in the orbital coupling detection.
+  <strong>Temporal Window Selection (34 windows):</strong> The 25.3-year dataset is divided into 34 day-of-year bins (each ~10.7° of orbital phase, pooling all 25.3 years of data at that phase) for orbital velocity correlation analysis. This binning balances temporal resolution against statistical stability per bin. Complementary tests address resolution concerns: (1) Monte Carlo validation uses 5M surrogates on the full time series, (2) CMB frame search spans 65,341 sky directions at multiple resolutions, (3) nutation analysis uses daily coherence values (4,186 samples), and (4) planetary event analysis uses ±120-day windows around 156 events. The convergence of these independent methodologies—each with different temporal granularity—strengthens confidence in the orbital coupling detection. A folded seasonal curve alone does not demonstrate replication across 25 independent orbits; the surrogate test and hemisphere stratification provide that independent validation.
 </div>
 
 <h4>2.1.3 The Processing Filter: Systematic Error Removal in IGS Clock Estimation</h4>
@@ -155,7 +155,7 @@
 <p>Beyond explicit corrections, the fundamental architecture of GNSS clock estimation creates an implicit filter. CODE's processing uses sequential least-squares filtering (equivalent to Kalman filtering for GNSS positioning) where receiver clock parameters are estimated at each epoch by minimizing the squared residuals across all satellite observations (Dach et al. 2015). This design has a critical consequence:</p>
 
 <div style="background-color: rgba(240,248,255,0.6); border-left: 4px solid #4682B4; padding: 15px; margin: 15px 0; font-size: 14px;">
-  <strong>Filter Behavior:</strong> The least-squares objective function preferentially removes network-wide common-mode signals (where all stations shift together) because these manifest as large squared residuals. Conversely, differential signals (where station pairs show correlated fluctuations but the network average remains near zero) contribute less to the squared residual sum and are therefore less aggressively suppressed.
+  <strong>Datum-projection mechanism:</strong> Network-common clock components lie largely in the clock/datum subspace absorbed by GNSS estimation, whereas direction-dependent covariance can survive in residual products. Synthetic injection and covariance propagation provide the direct quantitative test of this selective transfer.
 </div>
 
 <p>This creates a natural dichotomy in how different physical effects survive processing:</p>
@@ -171,9 +171,9 @@
   </thead>
   <tbody>
     <tr>
-      <td style="padding: 8px; border: 1px solid #495773;">Classical gravitational potential (GM/r²)</td>
-      <td style="padding: 8px; border: 1px solid #495773;">Network-wide frequency offset</td>
-      <td style="padding: 8px; border: 1px solid #495773;">Strongly suppressed (large squared residuals)</td>
+      <td style="padding: 8px; border: 1px solid #495773;">Network-common clock component</td>
+      <td style="padding: 8px; border: 1px solid #495773;">Lies largely in the clock/datum subspace</td>
+      <td style="padding: 8px; border: 1px solid #495773;">Absorbed by datum estimation; simple M/r² or M/r³ scaling need not survive in differential covariance</td>
       <td style="padding: 8px; border: 1px solid #495773;">Removed</td>
     </tr>
     <tr style="background-color: rgba(73, 87, 115, 0.03);">
@@ -209,8 +209,8 @@
       <tr>
         <td style="padding: 8px; border: 1px solid #495773;">Mass scaling (GM/r²)</td>
         <td style="padding: 8px; border: 1px solid #495773;">Absent (suppressed by filter)</td>
-        <td style="padding: 8px; border: 1px solid #495773;">Should re-emerge</td>
-        <td style="padding: 8px; border: 1px solid #495773;">Observed: Absent (r=-0.042, p=0.76)</td>
+        <td style="padding: 8px; border: 1px solid #495773;">May be separately recoverable in raw-link observables; not the claimed conformal covariance observable</td>
+        <td style="padding: 8px; border: 1px solid #495773;">Observed: Absent (r=-0.042, p=0.759)</td>
       </tr>
       <tr style="background-color: rgba(73, 87, 115, 0.03);">
         <td style="padding: 8px; border: 1px solid #495773;">Anisotropy structure</td>
@@ -222,7 +222,7 @@
         <td style="padding: 8px; border: 1px solid #495773;">Orbital modulation</td>
         <td style="padding: 8px; border: 1px solid #495773;">Preserved (geometric coupling)</td>
         <td style="padding: 8px; border: 1px solid #495773;">Should persist</td>
-        <td style="padding: 8px; border: 1px solid #495773;">Observed: Present (r=-0.888, 5.1σ)</td>
+        <td style="padding: 8px; border: 1px solid #495773;">Observed: Present (r=-0.888, surrogate p &lt; 2×10⁻⁷)</td>
       </tr>
       <tr style="background-color: rgba(73, 87, 115, 0.03);">
         <td style="padding: 8px; border: 1px solid #495773;">Phase coherence</td>
@@ -234,7 +234,7 @@
   </table>
 </div>
 
-<p>Consequently, the absence of $GM/r^2$ scaling in this dataset is not a failure of detection; it is fully consistent with the expected behavior of the processing filter. We are not failing to see mass scaling; we are successfully isolating the <em>geometric residual</em> that TEP predicts should remain after the energetic bulk effects are removed.</p>
+<p>Consequently, the absence of $GM/r^2$ scaling in this dataset is not a failure of detection; it is consistent with the expected behavior of the datum-projection mechanism. The processed products isolate the differential residual channel that the TEP interpretation predicts should survive; its quantitative transfer remains to be validated by synthetic injection.</p>
 
 <h3>2.2 Data Processing Pipeline</h3>
 <h4>2.2.1 Clock Preprocessing</h4>
@@ -256,11 +256,11 @@
   <li><strong>Correlation Metric:</strong> Band-averaged magnitude with representative phase</li>
  </ol>
 
-<p>This frequency-domain approach preserves phase relationships between station pairs while extracting correlation strength, enabling detection of field-mediated timing correlations predicted by TEP theory. The method is identical to that validated across three independent analysis centers (CODE, IGS, ESA) in the original multi-centre study.</p>
+<p>This frequency-domain approach preserves phase relationships between station pairs while extracting correlation strength, enabling detection of field-mediated timing correlations predicted by TEP theory. The method is identical to that validated across three independent analysis centres (CODE, IGS, ESA) in the original multi-centre study.</p>
 
-<p><strong>Observable Definition:</strong> All subsequent analyses use this band-averaged coherence and its derived correlation lengths as the primary observable. Coherence is a <em>dimensionless</em> correlation metric on [-1,1]; it quantifies the strength of phase-coherent structure between station residuals rather than the absolute clock frequency shift Δf/f. Reported percentage changes (e.g., the ≈19% annual modulation of the EW/NS ratio, or 1–3% planetary modulation depths) therefore describe relative changes in this coherence-based correlation structure and in ratios of correlation lengths, not 10–20% changes in underlying atomic clock rates, which remain at standard GR levels (≈10⁻¹⁶–10⁻¹⁰).</p>
+<p><strong>Observable Definition:</strong> All subsequent analyses use this band-averaged coherence and its derived correlation lengths as the primary observable. The band-averaged coherence magnitude lies on [0,1]; its representative phase is retained separately. It quantifies the strength of phase-coherent structure between station residuals rather than the absolute clock frequency shift Δf/f. Reported percentage changes (e.g., the ≈19% annual modulation of the EW/NS ratio, or 1–3% planetary absolute coherence amplitudes) therefore describe relative changes in this coherence-based correlation structure and in ratios of correlation lengths, not 10–20% changes in underlying atomic clock rates, which remain at standard GR levels (≈10⁻¹⁶–10⁻¹⁰).</p>
 
-<p>Operational GNSS clock products are generated under an implicit objective of network synchronization: analysis centers estimate and remove offsets, drifts, and other deterministic structure so that clocks agree as closely as possible. This makes absolute clock amplitudes strongly processing-dependent, whereas residual phase-coherent structure in the cross-spectral domain is less directly targeted by these corrections. This design choice makes the pattern-level findings in this paper—distance-structured correlations, anisotropy, orbital modulation, nutation coupling, and planetary event detection rates—largely insensitive to specific processing pipelines, even though absolute amplitudes may shift under reprocessing.</p>
+<p>Operational GNSS clock products are generated under an implicit objective of network synchronization: analysis centres estimate and remove offsets, drifts, and other deterministic structure so that clocks agree as closely as possible. This makes absolute clock amplitudes strongly processing-dependent, whereas residual phase-coherent structure in the cross-spectral domain is less directly targeted by these corrections. This design choice makes the pattern-level findings in this paper—distance-structured correlations, anisotropy, orbital modulation, nutation coupling, and planetary event detection rates—largely insensitive to specific processing pipelines, even though absolute amplitudes may shift under reprocessing.</p>
 <h4>2.2.3 Spatial Binning</h4>
 <p>Station pairs were categorized by:</p>
 <ul>
@@ -292,7 +292,7 @@
 </ul>
 
 <p><strong>Enhanced Control:</strong> The multi-centre study's hemisphere stratification analysis (§3.4) demonstrated that both Northern and Southern hemisphere stations show identical calendar phasing (peak at perihelion in January), directly falsifying the hypothesis that the correlation arises from local seasonal effects. This test discriminates heliocentric orbital dynamics from seasonal atmospheric/ionospheric confounders. See §3.2.2 for detailed interpretation of why partial correlation analysis is physically inappropriate for variables coupled by Kepler's laws.</p>
-<p><strong>Significance Estimation:</strong> Because the 30-day windows overlap, the EW/NS–velocity correlation uses an autocorrelation-robust Pearson estimator. Let <em>N</em> be the number of overlapping window samples (here <em>N</em> = 34), and let ρ<sub>x</sub>, ρ<sub>y</sub> be the lag‑1 autocorrelations of the orbital‑speed and EW/NS‑ratio series, respectively. We approximate the effective degrees of freedom using a Bartlett-style correction</p>
+<p><strong>Significance Estimation:</strong> Because the 30-day windows overlap, the EW/NS–velocity correlation uses an autocorrelation-robust Pearson estimator. Let <em>N</em> be the number of overlapping window samples (here <em>N</em> = 34), and let ρ<sub>x</sub>, ρ<sub>y</sub> be the lag‑1 autocorrelations of the orbital‑speed and EW/NS‑ratio series, respectively. The effective degrees of freedom are approximated using a Bartlett-style correction</p>
 <pre style="background:#f7f7f7; padding:6px;">
 N<sub>eff</sub> = N · (1 − ρ<sub>x</sub>ρ<sub>y</sub>) / (1 + ρ<sub>x</sub>ρ<sub>y</sub>)
 </pre>
@@ -300,7 +300,7 @@ N<sub>eff</sub> = N · (1 − ρ<sub>x</sub>ρ<sub>y</sub>) / (1 + ρ<sub>x</sub
 <pre style="background:#f7f7f7; padding:6px;">
 SE<sub>corr</sub> = √[(1 − r²) / (N<sub>eff</sub> − 2)]
 </pre>
-    <p>and the test statistic <em>t</em> = r / SE<sub>corr</sub> is evaluated against a Student‑<em>t</em> distribution with N<sub>eff</sub> − 2 degrees of freedom to obtain the autocorrelation‑corrected p‑value. The autocorrelation-corrected Pearson p-value is p < 2×10⁻⁷ (5.1σ) for reference, but permutation testing provides the stronger bound. A Monte-Carlo surrogate test with 5,000,000 phase-randomised surrogates yields an empirical upper-bound p&nbsp;&lt;&nbsp;2&nbsp;×&nbsp;10⁻⁷ (5.1σ), confirming discovery-level significance.</p>
+    <p>and the test statistic <em>t</em> = r / SE<sub>corr</sub> is evaluated against a Student‑<em>t</em> distribution with N<sub>eff</sub> − 2 degrees of freedom to obtain the autocorrelation‑corrected p‑value. With r = −0.888 and N<sub>eff</sub> ≈ 11, the autocorrelation-corrected Pearson p-value is p ≈ 2.6×10⁻⁴. Separately, a Monte-Carlo surrogate test with 5,000,000 phase-randomised surrogates yields 0 exceedances, giving an empirical upper-bound p &lt; 2×10⁻⁷ under the specified phase-randomisation null. These two p-values test different nulls (parametric t-distribution vs. phase-randomised surrogate) and are reported separately; the surrogate bound is the stronger of the two.</p>
 
 <div style="background-color: rgba(73, 87, 115, 0.05); border: 1px solid #495773; padding: 12px; margin: 12px 0; border-radius: 4px; font-size: 13px;">
   <strong>Surrogate Generation Method:</strong> Phase-randomised surrogates preserve the power spectrum (and hence temporal autocorrelation structure) of the original time series while destroying phase relationships. Implementation: (1) compute FFT of the EW/NS ratio time series, (2) randomise phases uniformly on [0, 2π] while preserving magnitudes, (3) inverse FFT to obtain surrogate. This procedure, following <a href="references.html#ref-theiler" style="color: #220126; text-decoration: underline;">Theiler et al. (1992)</a>, ensures that any correlation with orbital velocity in the surrogates arises purely from spectral overlap rather than genuine phase coupling.
@@ -308,7 +308,7 @@ SE<sub>corr</sub> = √[(1 − r²) / (N<sub>eff</sub> − 2)]
     <h4>2.3.3 Planetary Event Analysis</h4>
 <p><strong>Inference policy:</strong> All primary inferences and multiplicity corrections (Bonferroni across 156 events; FDR q = 0.05) are computed exclusively using the pre-specified ±120-day window. Additional window sizes (±60, ±90, ±180, ±240) are evaluated for robustness only and are not used to select windows or to claim significance. No optimization across windows is performed for any reported p-values. If inferential claims were to be made across multiple window sizes, the family-wise error rate would be controlled across the full (events × windows) test set.</p>
 
-<p>For each planetary alignment (opposition/conjunction), we pre-declare ±120 days as the primary analysis window, with additional window sizes (±60, ±90, ±180, ±240 days) reported as sensitivity analyses:</p>
+<p>For each planetary alignment (opposition/conjunction), ±120 days is pre-declared as the primary analysis window, with additional window sizes (±60, ±90, ±180, ±240 days) reported as sensitivity analyses:</p>
 <ol>
 <li><strong>Primary Window:</strong> ±120 days (pre-registered as primary)</li>
 <li><strong>Sensitivity Windows:</strong> ±60, ±90, ±180, ±240 days (reported as robustness checks; no inferential claims)</li>
@@ -316,7 +316,7 @@ SE<sub>corr</sub> = √[(1 − r²) / (N<sub>eff</sub> − 2)]
   <li><strong>Significance Testing:</strong> Amplitude/standard error ratio (σ level)</li>
   <li><strong>Multiple Testing Correction:</strong> Bonferroni and FDR corrections applied across complete event set</li>
   <li><strong>Amplitude Metric:</strong> Modulation depth = |amplitude| / (|baseline| + |amplitude|) × 100%. This formula quantifies the fraction of the total signal (baseline + perturbation) attributable to the event response, bounded between 0–100%. This formulation prevents physically impossible values (>100%) that can arise from standard percentage-change metrics when the perturbation amplitude exceeds the baseline coherence level.</li>
-  <li><strong>Scaling Tests:</strong> Correlation of observed amplitudes with both gravitational (GM/r²) and tidal (M/r³) predictors (Pearson, Spearman, log-log transforms). Absence of scaling is expected due to processing filter suppression.</li>
+  <li><strong>Scaling Tests:</strong> Correlation of observed amplitudes with both gravitational (GM/r²) and tidal (M/r³) predictors (Pearson, Spearman, log-log transforms). Absence of scaling is expected due to datum-projection suppression.</li>
   <li><strong>Null Event Control:</strong> Effect size distributions compared between planetary events (n=40) and randomly-generated null dates (n=155) using Mann-Whitney U test. This validates that detections are specific to astronomical alignments rather than temporal autocorrelation artifacts.</li>
   </ol>
 
@@ -344,17 +344,17 @@ SE<sub>corr</sub> = √[(1 − r²) / (N<sub>eff</sub> − 2)]
 
 <h4>2.3.5 Dual-Motion Reference Frame Validation</h4>
 
-<p><strong>Objective:</strong> The orbital velocity correlation (§3.2.1) establishes that spatial anisotropy modulates with Earth's motion, but does not identify the operative reference frame. We test two competing physical hypotheses:</p>
+<p><strong>Objective:</strong> The orbital velocity correlation (§3.2.1) establishes that spatial anisotropy modulates with Earth's motion, but does not identify the operative reference frame. Two competing physical hypotheses are tested:</p>
 
 <ul>
-  <li><strong>Galactic Hypothesis:</strong> Modulation driven by Solar System's motion around the galaxy (~20 km/s towards Solar Apex: RA=272°, Dec=+30°)</li>
+  <li><strong>Galactic Hypothesis:</strong> Modulation driven by Solar System's peculiar motion relative to the local standard of rest (~20 km/s towards Solar Apex: RA=272°, Dec=+30°)</li>
   <li><strong>Cosmic Hypothesis:</strong> Modulation driven by Earth's motion through the Cosmic Microwave Background rest frame (~369 km/s towards CMB Dipole: RA=168°, Dec=-7°)</li>
 </ul>
 
 <p><strong>Method - Comprehensive Sky Search:</strong></p>
 
 <div style="background-color: rgba(73, 87, 115, 0.05); border-left: 3px solid #495773; padding: 12px; margin: 12px 0; font-size: 14px;">
-  <strong>Methodological Note:</strong> This grid search is a <em>parameter estimation</em> procedure, not hypothesis testing. We are asking "WHICH direction best explains the observed modulation?" (estimating the directional parameter of a single model) rather than "DOES any direction explain it?" (testing 65,341 independent hypotheses). This is analogous to fitting a Gaussian to find its mean—testing many parameter values does not constitute multiple comparisons. The approach follows standard practice in cosmological frame identification (e.g., Planck CMB dipole fitting). Statistical significance is established via permutation testing against random directions, not via the grid search itself.
+  <strong>Methodological Note:</strong> This grid search is a <em>parameter estimation</em> procedure, not hypothesis testing. The analysis asks "WHICH direction best explains the observed modulation?" (estimating the directional parameter of a single model) rather than "DOES any direction explain it?" (testing 65,341 independent hypotheses). This is analogous to fitting a Gaussian to find its mean—testing many parameter values does not constitute multiple comparisons. The approach follows standard practice in cosmological frame identification (e.g., Planck CMB dipole fitting). Statistical significance is established via permutation testing against random directions, not via the grid search itself.
 </div>
 
 <p>A blind grid search across 2,701 candidate background velocity vectors was performed:</p>
@@ -424,13 +424,17 @@ SE<sub>corr</sub> = √[(1 − r²) / (N<sub>eff</sub> − 2)]
   <li><strong>Variance Ratio Analysis:</strong> Compare R² values between competing models to quantify relative explanatory power</li>
 </ul>
 
-<p><strong>Resolution Verification:</strong> To ensure robustness and rule out resolution-dependent artifacts, we tested four grid resolutions spanning a 93-fold range in grid density: 10° (703 directions), 5° (2,701 directions), 2.5° (10,585 directions), and 1° (65,341 directions). Results converged monotonically (r = 0.707, 0.744, 0.744, 0.747) with diminishing returns (+5.14% → +0.05% → +0.27%), indicating asymptotic approach to a correlation limit. Best-fit locations showed stability within 1-2° across all resolutions (RA: 180°→190°→187°→186°; Dec: 0°→-5°→-5°→-4°). All four resolutions consistently identified the CMB frame as the preferred reference (18-22° separation) over the Solar Apex (86-89° separation), ruling out resolution-dependent artifacts. The 5° resolution captures 99.6% of the achievable correlation while remaining computationally efficient and consistent with standard practice in cosmological frame studies (Planck ~10°; WMAP ~5-10°). Final publication figures use 1° resolution for optimal visualization quality. The systematic monotonic improvement with finer resolution, combined with asymptotic convergence and location stability, indicates the signal is robust rather than a numerical artifact.</p>
+<p><strong>Resolution Verification:</strong> To ensure robustness and rule out resolution-dependent artifacts, four grid resolutions were tested spanning a 93-fold range in grid density: 10° (703 directions), 5° (2,701 directions), 2.5° (10,585 directions), and 1° (65,341 directions). Results converged monotonically (r = 0.707, 0.744, 0.744, 0.747) with diminishing returns (+5.14% → +0.05% → +0.27%), indicating asymptotic approach to a correlation limit. Best-fit locations showed stability within 1-2° across all resolutions (RA: 180°→190°→187°→186°; Dec: 0°→-5°→-5°→-4°). All four resolutions consistently identified the CMB dipole direction as the preferred reference (18-22° separation) over the Solar Apex (86-89° separation), ruling out resolution-dependent artifacts. The 5° resolution captures 99.6% of the achievable correlation while remaining computationally efficient and consistent with standard practice in cosmological frame studies (Planck ~10°; WMAP ~5-10°). Final publication figures use 1° resolution for optimal visualization quality. The systematic monotonic improvement with finer resolution, combined with asymptotic convergence and location stability, indicates the signal is robust rather than a numerical artifact.</p>
 
 <p><strong>Physical Interpretation:</strong> This methodology provides a falsification test. Unlike correlative analyses that can only confirm hypotheses, the grid search can <em>reject</em> the galactic hypothesis if the Solar Apex direction shows no correlation while the CMB direction shows strong correlation. The variance ratio (R²_CMB / R²_Apex) quantifies the relative strength of evidence for each reference frame.</p>
 
+<div style="background-color: rgba(73, 87, 115, 0.05); border-left: 3px solid #495773; padding: 12px; margin: 12px 0; font-size: 14px;">
+  <strong>Scope of the Grid Search — Direction vs Speed:</strong> The grid scan varies <em>direction</em> only (RA, Dec). Background speed is fixed at 20 km/s (Solar Apex magnitude) for every trial, and the predictor is cos(Dec<sub>net</sub>), a purely geometric projection that depends on the <em>direction</em> of the net velocity vector, not its magnitude. The scan therefore identifies a preferred direction but does <em>not</em> fit the background speed and cannot, from this scan alone, discriminate whether the coupling amplitude is controlled by 369 km/s or 20 km/s. The 369 km/s interpretation is a physical identification of the best-fit <em>direction</em> with the Planck CMB dipole, not a speed-magnitude measurement. Establishing speed-magnitude sensitivity would require a separate vector model with background speed as a fitted or tested parameter.
+</div>
+
 <h4>2.3.6 Predictor Selection: Geometric Model Comparison</h4>
 
-<p>To identify the coupling mechanism, we explicitly evaluated two competing geometric models for how velocity might modulate the anisotropy field:</p>
+<p>To identify the coupling mechanism, two competing geometric models were explicitly evaluated for how velocity might modulate the anisotropy field:</p>
 
 <ul>
   <li><strong>Model A (Tilt-Angle Rotation):</strong> Assumes the anisotropy ellipse rotates azimuthally to align its major axis with the net velocity vector direction. Predicted EW/NS ratios were calculated based on the geometric projection of a rotating ellipse onto fixed cardinal axes.</li>
@@ -461,8 +465,8 @@ SE<sub>corr</sub> = √[(1 − r²) / (N<sub>eff</sub> − 2)]
     <li>Maintained identical sampling windows (30-day) and temporal coverage</li>
     <li>Computed Pearson r for each surrogate with same methodology</li>
     <li>0 out of 5,000,000 surrogates exceeded observed r = -0.888</li>
-    <li>Empirical p-value: &lt; 2×10⁻⁷ (5.07σ equivalent)</li>
-    <li>Interpretation: Statistically significant at >5σ level under null hypothesis</li>
+    <li>Empirical p-value: &lt; 2×10⁻⁷ (0/5M exceedances under the specified phase-randomisation null)</li>
+    <li>Interpretation: None of five million phase-randomised surrogates exceeded the observed statistic</li>
   </ul>
   <p style="margin-bottom: 8px;"><strong>Technical Implementation:</strong></p>
   <ul style="margin: 0 0 0 20px;">
@@ -492,9 +496,9 @@ SE<sub>corr</sub> = √[(1 − r²) / (N<sub>eff</sub> − 2)]
   </ul>
   <p><strong>Planetary Events (56/156 significant):</strong></p>
   <ul style="margin: 0 0 10px 20px;">
-    <li>Multiple testing burden: α_Bonferroni = 0.000746</li>
+    <li>Multiple testing burden: α_Bonferroni = 0.05/156 = 0.000321 (family-wide correction across all 156 tested events)</li>
     <li>Required effect size: d > 1.0 for adequate power</li>
-    <li>Observed: 45% Bonferroni survival indicates sufficient power</li>
+    <li>Observed: 19/156 Bonferroni survivors (vs 0.05 expected under null) indicates sufficient power</li>
   </ul>
   <p><strong>Nutation Coupling:</strong></p>
   <ul style="margin: 0 0 10px 20px;">
@@ -505,13 +509,13 @@ SE<sub>corr</sub> = √[(1 − r²) / (N<sub>eff</sub> − 2)]
   <p style="margin-bottom: 0;"><strong>Conclusion:</strong> Analysis has adequate power to detect medium-to-large effects while controlling false discovery rate</p>
 </div>
 
-<h4>2.4.5 Leveraging Multi-Center Validation</h4>
-<p>This study builds upon the comprehensive validation framework established in the multi-centre study (Paper 1). Rather than repeating the full validation suite, we adopt and extend the previously validated methodology:</p>
+<h4>2.4.5 Leveraging Multi-Centre Validation</h4>
+<p>This study builds upon the comprehensive validation framework established in the multi-centre study (Paper 1). Rather than repeating the full validation suite, the previously validated methodology is adopted and extended:</p>
 
 <div style="background-color: rgba(73, 87, 115, 0.05); border: 1px solid #495773; padding: 15px; margin: 15px 0; border-radius: 4px;">
 <h5 style="margin-top: 0; color: #220126;">Adopted from Paper 1 Validation Framework:</h5>
 <ul style="margin-bottom: 0;">
-  <li><strong>Cross-center consistency:</strong> R² = 0.920-0.970 between CODE, IGS, ESA processing centres</li>
+  <li><strong>Cross-centre consistency:</strong> R² = 0.920-0.970 between CODE, IGS, ESA processing centres</li>
   <li><strong>Ionospheric null controls:</strong> TID (Traveling Ionospheric Disturbance) exclusion; weak correlation with F10.7 and Kp indices (r = 0.12-0.13, p > 0.29), well below contamination thresholds</li>
   <li><strong>Comprehensive null testing:</strong> 388 statistical tests across 19 families with temporal/spatial/phase scrambling</li>
   <li><strong>Hemisphere stratification:</strong> Identical calendar phasing in Northern and Southern hemispheres (perihelion peak)</li>

@@ -7,6 +7,9 @@
     lies in their consistent convergence across spatial, temporal, and
     geophysical domains.
 </p>
+
+<!-- include: screening_projection_notice.html -->
+
 <h4>4.1.1 Foundational Phenomenology: 3D Spatial Anisotropy</h4>
 <p>
     This measurement addresses the question:
@@ -22,8 +25,8 @@
     This metric quantifies the deviation from a perfectly isotropic (uniform)
     correlation field. A value of 0 would indicate no directional preference.
     The observed value of 1.981 indicates a strong, structurally significant
-    directional dependence that persists throughout the entire dataset with
-    temporal stability over 25 years.
+    directional dependence that is recovered consistently across the complete
+    25.3-year aggregate.
 </p>
 <p><strong>Directional λ Variation:</strong></p>
 <ul>
@@ -58,11 +61,11 @@
     evidence for velocity-dependent modulation of the correlation structure.
 </p>
 <p>
-    <strong>Statistical Significance:</strong> The correlation (r = -0.888,
-    5.1σ) has been validated through Monte Carlo simulation: 0 out of 5,000,000
+    <strong>Statistical Significance:</strong> The correlation (r = -0.888)
+    has been validated through Monte Carlo simulation: 0 out of 5,000,000
     randomized surrogates exceeded the observed value, yielding strong
-    statistical evidence consistent with temporal-gravitational coupling (p <
-    2×10⁻⁷). The Monte Carlo test is the primary validation method because it
+    statistical evidence consistent with temporal-gravitational coupling
+    (surrogate p &lt; 2×10⁻⁷; t-test p ≈ 2.6×10⁻⁴ with N_eff ≈ 11). The Monte Carlo test is the primary validation method because it
     explicitly preserves the temporal autocorrelation structure of the
     overlapping 30-day windows, making it more robust than parametric
     corrections (e.g., Bartlett adjustment which yields Neff ≈ 11-15). The
@@ -75,10 +78,12 @@
 <p>
     The orbital velocity correlation establishes that anisotropy modulates with
     Earth's motion, but <em>relative to which reference frame?</em> This
-    question has profound implications: galactic-scale coupling (~20 km/s)
-    implies one physical mechanism, while cosmic-scale coupling (~369 km/s)
-    implies fundamentally different physics involving Earth's absolute motion
-    through the Universe's rest frame.
+    question has profound implications: alignment with the Solar Apex (~20 km/s,
+    galactic motion) implies one physical mechanism, while alignment with the
+    CMB dipole (~369 km/s, cosmological background 4-velocity) implies a
+    different physical regime: CMB-frame-aligned covariance—a correlation
+    between the TEP field configuration and the observable cosmological
+    background state, without introducing a fundamental preferred frame.
 </p>
 
 <p><strong>Competing Hypotheses:</strong></p>
@@ -151,19 +156,19 @@
                     ~369 km/s
                 </td>
                 <td style="padding: 8px; border: 1px solid #495773">
-                    Earth's motion through CMB rest frame
+                    Earth's motion through CMB dipole direction
                 </td>
             </tr>
         </tbody>
     </table>
 </div>
 
-<p><strong>Definitive Test Results (§3.2.6):</strong></p>
+<p><strong>Directional Test Results (§3.2.6):</strong></p>
 
 <p>
     A comprehensive multi-resolution grid search (10°, 5°, 2.5°, 1°) spanning
-    65,341 tested directions (§2.3.5, §3.2.6) identifies the operative reference
-    frame:
+    65,341 tested directions (§2.3.5, §3.2.6) identifies a preferred directional
+    template under the fixed-amplitude scan:
 </p>
 
 <div
@@ -174,10 +179,10 @@
         margin: 15px 0;
     "
 >
-    <p style="margin: 0 0 10px 0"><strong>CMB frame alignment:</strong></p>
+    <p style="margin: 0 0 10px 0"><strong>CMB dipole-direction alignment:</strong></p>
     <ul style="margin: 10px 0 10px 20px; font-size: 0.95em">
-        <li>Best-fit direction: RA=186°, Dec=-4° (r = 0.747, p < 0.0001)</li>
-        <li>CMB Dipole (RA=168°, Dec=-7°): r = 0.597, p = 0.0002</li>
+        <li>Best-fit direction: RA=186°, Dec=-4° (r = 0.747; directional-rank p < 0.001; global sky-search surrogate not yet evaluated)</li>
+        <li>CMB Dipole (RA=168°, Dec=-7°): r = 0.597, directional-rank p = 0.0002</li>
         <li>
             Angular separation: 18.2° (within bootstrap 95% CI and grid
             resolution uncertainty)
@@ -188,15 +193,19 @@
             density range (10° → 1°)
         </li>
         <li>
-            Statistical significance: 5,570× variance ratio (Best Fit vs Solar
-            Apex); 3,570× variance ratio (CMB Dipole vs Solar Apex)
+            Statistical significance: ~10,300× variance ratio (Best Fit vs Solar
+            Apex); ~6,600× variance ratio (CMB Dipole vs Solar Apex)
         </li>
     </ul>
     <p style="margin: 10px 0 0 0; font-size: 0.95em">
-        <em>Finding:</em> The anisotropy modulation couples to Earth's motion
-        through the CMB rest frame (~369 km/s). Best-fit location exhibits
+        <em>Finding:</em> The sky scan identifies a preferred covariance
+        direction near the CMB dipole and strongly rejects the Solar-Apex
+        directional template. Best-fit location exhibits
         exceptional stability across all resolutions (RA varies by only 1-2°),
-        with consistent CMB alignment (separation 18-22°). The 18° offset is
+        with consistent CMB alignment (separation 18-22°). Because the present
+        scan fixes the background-vector magnitude, it establishes CMB-directional
+        alignment rather than independently measuring the 369 km/s speed scale.
+        The 18° offset is
         within expected uncertainty (bootstrap CI spans ~20°, grid resolution
         ±2.5°) and represents statistically significant alignment compared to
         alternative frames (Solar Apex 89° away, ecliptic controls show 136×
@@ -224,10 +233,13 @@
         <li>Angular separation from best fit: 88.5°</li>
     </ul>
     <p style="margin: 10px 0 0 0; font-size: 0.95em">
-        <em>Discrimination:</em> The 5,570-fold variance ratio between CMB and
-        Solar Apex provides clear discrimination. The correlation with galactic
-        motion (~20 km/s) is statistically indistinguishable from zero, while
-        coupling to cosmic-scale motion (~369 km/s) is highly significant.
+        <em>Discrimination:</em> The ~10,300-fold variance ratio between the CMB-aligned
+        direction and the Solar Apex provides clear directional discrimination. The
+        correlation with the Solar Apex directional template is statistically
+        indistinguishable from zero, while the CMB-dipole direction shows strong
+        alignment. Note: because background speed is fixed at 20 km/s for all
+        trials, the scan identifies a preferred direction but does not measure
+        coupling to the 369 km/s CMB speed magnitude (§2.3.5).
     </p>
 </div>
 
@@ -256,11 +268,11 @@
         <li>
             <strong>Consistent with CMB:</strong> The offset is statistically
             compatible with CMB alignment given measurement uncertainty. The
-            5,570× variance ratio over Solar Apex and 136× over ecliptic
+            ~10,300× variance ratio over Solar Apex and 136× over ecliptic
             controls strongly favor the CMB-frame region.
         </li>
         <li>
-            <strong>Not uniquely CMB:</strong> We cannot exclude that the signal
+            <strong>Not uniquely CMB:</strong> It cannot be excluded that the signal
             couples to a different cosmological reference frame that happens to
             lie near the CMB dipole (e.g., motion relative to the Local Group
             centroid or Virgo Supercluster, which lie within ~20° of our best
@@ -276,15 +288,15 @@
 
     <p style="margin-bottom: 0">
         <strong>Assessment:</strong> The key finding is not precise CMB
-        localisation, but rather geometric discrimination between
-        cosmological-scale motion (CMB-like, ~370 km/s, near-ecliptic) and
-        galactic-scale motion (Solar Apex, ~20 km/s, high declination). The 89°
-        angular separation and 5,570× variance ratio between these hypotheses is
-        robust regardless of the 18° offset. The CMB rest frame is the most
-        parsimonious interpretation given its well-characterised velocity and
+        localisation, but rather strong directional discrimination between
+        the CMB-dipole template (cosmological-scale, near-ecliptic) and
+        the Solar-Apex template (galactic-scale, high declination). The 89°
+        angular separation and ~10,300× variance ratio between these templates are
+        robust regardless of the 18° offset. The CMB dipole direction is the most
+        parsimonious interpretation given its well-characterised direction and
         geometric proximity to our best fit, but the offset should be treated as
         a parameter requiring refinement with independent data rather than
-        definitive CMB identification.
+        a precise CMB identification.
     </p>
 </div>
 
@@ -312,8 +324,8 @@
 
     <p style="margin-bottom: 10px">
         <strong>Control Test:</strong> To discriminate CMB-specific alignment
-        from generic ecliptic-plane preference, we tested two additional
-        ecliptic-plane directions perpendicular and opposite to the CMB:
+        from generic ecliptic-plane preference, two additional
+        ecliptic-plane directions perpendicular and opposite to the CMB were tested:
     </p>
 
     <table
@@ -611,8 +623,8 @@
 </ul>
 
 <p>
-    <strong>Observation:</strong> Exactly this pattern (r=-0.888, p<2×10⁻⁷). The
-    CMB geometry matches the data precisely.
+    <strong>Observation:</strong> Exactly this pattern (r=-0.888, surrogate p<2×10⁻⁷). The
+    CMB-dipole direction is strongly consistent with the observed anisotropy geometry.
 </p>
 
 <div
@@ -636,8 +648,8 @@
     anisotropy) can and do reveal motion through the cosmic rest frame.<br />
     <br />
     What would constitute a Lorentz violation: If local physics laws changed in
-    the CMB frame, or if light speed varied with CMB-frame motion. What we
-    observe: A global correlation field structure that modulates with Earth's
+    the CMB frame, or if light speed varied with CMB-frame motion. What this analysis
+    observes: A global correlation field structure that modulates with Earth's
     motion through the CMB frame—a network-scale geometric effect, not a local
     physical law change. This is consistent with SR if the coupling operates
     through correlation geometry rather than local dynamics.<br />
@@ -652,7 +664,7 @@
 <p>
     The CMB frame identification also resolves a previously unexplained feature:
     why the Southern Hemisphere shows much stronger orbital correlation
-    (r=-0.79, p<10⁻⁸) than the Northern Hemisphere (r=+0.25, not significant).
+    (r=-0.79, p=0.006) than the Northern Hemisphere (r=+0.25, not significant).
 </p>
 
 <p>
@@ -672,30 +684,39 @@
 </ul>
 
 <p>
-    This directional sensitivity is natural for a field aligned with the CMB
-    frame but would not occur for a scalar (isotropic) effect like seasonal
-    temperature or solar distance. The hemisphere asymmetry, previously
-    puzzling, is now understood as a direct consequence of CMB frame geometry.
+    This directional sensitivity rules out a purely isotropic scalar-only model.
+    It remains compatible both with a kinematic vector projection and with a
+    directional scalar-field gradient such as Σ<sub>μ</sub> = ∇<sub>μ</sub> ln A,
+    which is the central object in the conformal TEP sector. Discriminating
+    between these possibilities requires explicit pairwise projection kernels.
+    The hemisphere asymmetry, previously puzzling, is consistent with CMB-frame
+    geometry under either interpretation.
 </p>
 
 <p><strong>Broader Significance:</strong></p>
 
 <p>
-    This finding elevates the result from "we detect orbital modulation" to "we
-    detect coupling to the Cosmic Microwave Background rest frame." This has
+    This finding elevates the result from "orbital modulation is detected" to "the
+    detection of CMB-frame-aligned covariance." This has
     profound implications:
 </p>
 
 <ol>
     <li>
-        <strong>Scale Hierarchy:</strong> The coupling responds to the
-        <em>largest</em> velocity scale (cosmic, ~369 km/s), not intermediate
-        scales (galactic, ~20 km/s). This suggests a fundamental coupling to the
-        Universe's rest frame.
+        <strong>Directional Alignment:</strong> The best-fit direction aligns
+        with the CMB dipole (cosmological background 4-velocity), not the Solar
+        Apex (galactic motion). The grid scan identifies a preferred
+        <em>direction</em>; because background speed is fixed at 20 km/s and the
+        predictor is direction-only (cos(Dec<sub>net</sub>)), the scan does not
+        fit the speed magnitude and therefore does not, by itself, establish
+        that the coupling amplitude is controlled by 369 km/s rather than 20
+        km/s. The result is a directional identification with the CMB dipole,
+        not a speed-magnitude measurement. This suggests CMB-frame-aligned
+        covariance without introducing a fundamental preferred frame.
     </li>
     <li>
-        <strong>Reference Frame Question:</strong> If confirmed, the CMB rest
-        frame alignment would raise questions about reference frame dependence
+        <strong>Reference Frame Question:</strong> If confirmed, the CMB
+        dipole-direction alignment would raise questions about reference frame dependence
         in temporal correlations, requiring independent replication before
         drawing conclusions about equivalence principle implications.
     </li>
@@ -712,10 +733,12 @@
 </ol>
 
 <p>
-    <strong>Assessment:</strong> The CMB frame alignment (p&lt;0.0001, 5,570×
-    variance ratio) provides a falsification test that transforms the
-    phenomenology from "velocity-dependent" to "CMB-frame-aligned," suggesting
-    the physical scale and reference frame of the coupling mechanism.
+    <strong>Assessment:</strong> The CMB-region directional result (r=0.747,
+    directional-rank p&lt;0.001, ~10,300× variance ratio over the Solar-Apex
+    template) provides strong directional discrimination; global sky-search
+    significance remains to be evaluated. This transforms the phenomenology
+    from "velocity-dependent" to "CMB-directional," suggesting the physical
+    scale and reference frame of the coupling mechanism.
 </p>
 
 <p>
@@ -737,7 +760,7 @@
 
 <p>
     <strong>Interpretation Note:</strong> The observed correlation is consistent
-    with a physical coupling to the CMB rest frame, but the underlying mechanism
+    with a physical coupling to the CMB dipole direction, but the underlying mechanism
     remains to be established. Further investigation is required to determine
     the precise nature of this coupling and its implications for our
     understanding of temporal correlations.
@@ -775,7 +798,7 @@
 >
     <p style="margin: 0 0 10px 0">
         <strong
-            >Quantifying the Amplification: Why 19% from v²/c² ≈ 10⁻⁸?</strong
+            >Scale Comparison: 19% Anisotropy Ratio vs v²/c² ≈ 10⁻⁸</strong
         >
     </p>
     <p style="margin: 0 0 10px 0; font-size: 0.95em">
@@ -793,8 +816,11 @@
         v²/c² ≈ (30 km/s)² / (3×10⁸ m/s)² ≈ 10⁻⁸
     </div>
     <p style="margin: 0 0 10px 0; font-size: 0.95em">
-        Yet we observe ~19% modulation—an apparent "amplification" of ~10⁷. This
-        is resolved by understanding what is being measured:
+        Yet the analysis observes ~19% modulation of the anisotropy ratio. These are different
+        observables: v²/c² is a microscopic energetic amplitude, while the 19% is a
+        macroscopic covariance-shape parameter. The two cannot be directly compared
+        without a derived transfer function. The datum-projection mechanism
+        provides a qualitative framework for understanding this distinction:
     </p>
     <ul style="margin: 0 0 10px 20px; font-size: 0.95em">
         <li>
@@ -839,9 +865,9 @@
 
 <ol>
     <li>
-        <strong>CMB Frame Alignment (§4.1.2.1):</strong> The modulation couples
-        to Earth's motion through the CMB rest frame (~369 km/s, RA=168°,
-        Dec=-7°) with 5,570× variance ratio over galactic motion. Seasonal
+        <strong>CMB-Directional Alignment (§4.1.2.1):</strong> The modulation
+        aligns with the CMB dipole direction (RA=168°,
+        Dec=-7°) with ~10,300× variance ratio over the Solar-Apex directional template. Seasonal
         ionospheric effects do not preferentially align with the CMB dipole
         direction.
     </li>
@@ -856,7 +882,7 @@
 </ol>
 
 <p>
-    The convergence of CMB frame geometry, ionospheric independence, and
+    The convergence of CMB dipole-direction geometry, ionospheric independence, and
     phase-specific coupling supports genuine orbital modulation over seasonal
     artifacts, though independent replication remains essential.
 </p>
@@ -902,9 +928,11 @@
 </p>
 
 <p>
-    <strong>The Result:</strong> We observe a massive correlation of
-    r = -0.888 (p < 10⁻¹²). This is physically impossible for a
-    drifting draconitic signal. The high correlation proves the signal is
+    <strong>The Result:</strong> The analysis observes a massive correlation of
+    r = -0.888; surrogate p&lt;2×10⁻⁷ (0/5 million exceeded), with
+    autocorrelation-adjusted t-test p≈2.6×10⁻⁴. This is physically
+    inconsistent with a
+    drifting draconitic signal. The high correlation demonstrates that the signal is
     frequency-locked to the Solar Year, maintaining a fixed
     phase relationship (Perihelion lock) for the entire 25-year duration.
 </p>
@@ -962,7 +990,7 @@
                     Sun-Satellite Geometry (Local)
                 </td>
                 <td style="padding: 6px; border: 1px solid #495773">
-                    CMB Rest Frame (Cosmic)
+                    CMB-region direction; Solar-Apex rejected
                 </td>
                 <td
                     style="
@@ -1077,8 +1105,8 @@
                     "Could be Draconitic error"
                 </td>
                 <td style="padding: 6px; border: 1px solid #495773">
-                    Beat period cancellation over 25.3yr (r=-0.888 impossible
-                    for drifting signal)
+                    Beat-period cancellation over 25.3 years (r = −0.888, inconsistent with
+                    a drifting signal)
                 </td>
                 <td
                     style="
@@ -1095,7 +1123,7 @@
                     "Seasonal ionospheric artifact"
                 </td>
                 <td style="padding: 6px; border: 1px solid #495773">
-                    CMB frame alignment (5,570× variance ratio); no F10.7/Kp
+                    CMB dipole-direction alignment (~10,300× variance ratio); no F10.7/Kp
                     correlation
                 </td>
                 <td
@@ -1113,7 +1141,7 @@
                     "Processing-specific artifact"
                 </td>
                 <td style="padding: 6px; border: 1px solid #495773">
-                    3-center validation: R² = 0.92-0.97 (Bernese, GIPSY, ESA)
+                    3-centre validation: R² = 0.92-0.97 (Bernese, GIPSY, ESA)
                 </td>
                 <td
                     style="
@@ -1224,7 +1252,7 @@
 
 <h4>4.1.3 Event-Based Evidence: Planetary Alignments</h4>
 <p>
-    We analyze event-locked windows around planetary alignments to test whether
+    Event-locked windows around planetary alignments are analyzed to test whether
     the GNSS network responds to transient changes in the local gravitational
     environment. Using the pre-specified ±120-day window and Gaussian pulse
     fitting (§3.3), 56 statistically significant (≥2σ) responses were detected
@@ -1254,24 +1282,24 @@
 <ul>
     <li>
         <strong>Bonferroni correction:</strong> α_corrected = 0.05/156 =
-        0.000321 per test
+        0.000321 per test (family-wide correction across all 156 tested events)
     </li>
     <li>
         <strong>Expected false positives:</strong> 156 × 0.000321 = 0.05 events
         (not 8 under uncorrected α=0.05)
     </li>
     <li>
-        <strong>Observed:</strong> 25 events survive Bonferroni correction (500×
-        more than expected by chance)
+        <strong>Observed:</strong> 19 events survive family-wide Bonferroni correction
+        (380× more than expected by chance)
     </li>
     <li>
-        <strong>FDR control:</strong> All 56 events survive Benjamini-Hochberg
-        FDR at q = 0.05 (assuming independence); 33 survive BY-FDR (accounting
+        <strong>FDR control:</strong> 38 of 156 events survive Benjamini-Hochberg
+        FDR at q = 0.05 (assuming independence); 28 of 156 survive BY-FDR (accounting
         for dependency)
     </li>
     <li>
-        <strong>Bonferroni survival rate:</strong> 25/56 = 45% of significant
-        detections remain after ultra-conservative correction
+        <strong>Bonferroni survival rate:</strong> 19/156 = 12% of all tested
+        events survive family-wide correction (vs 0.05 expected under null)
     </li>
 </ul>
 
@@ -1298,20 +1326,24 @@
 </p>
 <ul style="margin: 10px 0 10px 20px">
     <li>
-        <strong>Mercury:</strong> 88-day period; ±120-day window spans 2.7
-        orbits (136% coverage)
+        <strong>Mercury:</strong> 88-day period; 240-day window spans 2.73
+        orbital periods (273%)
     </li>
     <li>
-        <strong>Venus:</strong> 225-day period; ±120-day window spans 1.1 orbits
-        (53% coverage)
+        <strong>Venus:</strong> 225-day period; 240-day window spans 1.07
+        orbital periods (107%)
     </li>
     <li>
-        <strong>Mars:</strong> 687-day period; ±120-day window spans 0.35 orbits
-        (17% coverage)
+        <strong>Mars:</strong> 687-day period; 240-day window spans 0.35
+        orbital periods (35%)
     </li>
     <li>
-        <strong>Jupiter:</strong> 4,333-day period; ±120-day window spans 0.06
-        orbits (2.8% coverage)
+        <strong>Jupiter:</strong> 4,333-day period; 240-day window spans 0.055
+        orbital periods (5.5%)
+    </li>
+    <li>
+        <strong>Saturn:</strong> 10,759-day period; 240-day window spans 0.022
+        orbital periods (2.2%)
     </li>
 </ul>
 <p>
@@ -1325,7 +1357,7 @@
 </p>
 
 <p>
-    <strong>Modulation Depths</strong>: The 56 significant events show coherence
+    <strong>Absolute Coherence Amplitudes</strong>: The 56 significant events show coherence
     modulations ranging from 0.3% to 4.0% (median ≈1.1%) in coherence
     units—subtle but statistically significant changes in the spatial
     correlation structure, not absolute frequency shifts (Δf/f).
@@ -1342,7 +1374,7 @@
     "
 >
     <strong>Heterogeneity in Event Amplitudes (30× Range):</strong><br />
-    Modulation depths span 0.3–4.0%, suggesting heterogeneous underlying
+    Absolute coherence amplitudes span 0.3–4.0%, suggesting heterogeneous underlying
     mechanisms. Possible explanations:<br />
     • <strong>Event-dependent resonance:</strong> Different planets have
     different orbital periods; Mars (687 days) may couple differently than
@@ -1522,7 +1554,8 @@
 
 <p>
     <strong>Why This is Expected (Not a Failure):</strong> The absence of mass
-    scaling is a direct consequence of the IGS clock estimation methodology.
+    scaling is consistent with the expected datum projection of common-mode
+    components in IGS clock estimation.
     CODE's processing pipeline (Dach et al. 2024) implements undifferenced
     carrier-phase and pseudorange least-squares adjustment where receiver clock
     parameters are estimated at each epoch by minimizing squared residuals
@@ -1535,7 +1568,7 @@
 <p>
     The observation that planetary response correlates with alignment geometry
     but not mass (e.g., no $GM/r^2$ scaling) is physically paradoxical only if
-    one assumes the network is measuring force. We resolve this by explicitly
+    one assumes the network is measuring force. This is resolved by explicitly
     defining the signal processing transfer function:
 </p>
 
@@ -1548,38 +1581,42 @@
     "
 >
     <p style="margin: 0 0 10px 0">
-        <strong>Thesis: GNSS Processing as a High-Pass Geometric Filter</strong>
+        <strong>Hypothesis: GNSS Processing as a High-Pass Geometric Transfer Channel</strong>
     </p>
     <p style="margin: 0 0 10px 0">
-        Standard GNSS processing algorithms act as a high-pass filter for
-        geometric information, removing energetic (common-mode) signals while
-        transmitting differential structure.
+        The hypothesis is that standard GNSS processing algorithms act as a high-pass
+        filter for geometric information, removing energetic (common-mode) signals
+        while transmitting differential structure. This hypothesis is testable
+        via synthetic signal injection through the actual processing chain.
     </p>
 
     <p style="margin: 0 0 10px 0"><strong>Explanation:</strong></p>
     <ul style="margin: 0 0 10px 20px; font-size: 0.95em">
         <li>
-            The common-mode energetic term (sensitive to potential $GM/r^2$)
-            manifests as a network-wide clock offset.
+            Leading common-mode clock components lie in the datum subspace, while
+            explicitly modelled orbital and relativistic terms are removed a priori.
+            The surviving differential covariance therefore need not retain simple
+            $M/r^2$ or $M/r^3$ scaling.
         </li>
         <li>
             IGS/CODE solutions constrain the network to a stable realization of
-            the terrestrial reference frame (datum), mathematically removing
-            this common mode at every epoch.
+            the terrestrial reference frame (datum), absorbing common-mode
+            components at every epoch.
         </li>
         <li>
-            The "missing" mass signal is not a failure of detection; it is
-            explicitly subtracted by the datum constraint.
+            The "missing" mass signal is therefore not a failure of detection; it
+            is consistent with absorption by the datum constraint.
         </li>
     </ul>
 
-    <p style="margin: 0 0 0 0"><strong>Conclusion:</strong></p>
+    <p style="margin: 0 0 0 0"><strong>Implication (if hypothesis holds):</strong></p>
     <p style="margin: 5px 0 0 0; font-size: 0.95em">
-        The retained signal is therefore the differential kinematic signature
-        relative to the background frame. This residual is sensitive only to the
+        The retained signal would therefore be the differential kinematic signature
+        relative to the background frame. This residual would be sensitive only to the
         geometric angle of incidence of the external perturbation (alignment),
-        not its absolute magnitude (mass). The network is an interferometer, not
-        a gravimeter.
+        not its absolute magnitude (mass). The network would act as an interferometer, not
+        a gravimeter. Validation requires synthetic signal injection, covariance
+        propagation, processing-era change-point tests, and shared-datum controls.
     </p>
 </div>
 
@@ -1620,11 +1657,12 @@
     <ul style="margin: 0 0 0 20px; font-size: 0.95em">
         <li>
             Network-wide frequency offsets (where all stations shift together)
-            create large squared residuals and are aggressively suppressed
+            lie in the datum subspace absorbed by clock estimation
         </li>
         <li>
-            Classical gravitational potential (GM/r²) manifests as such
-            common-mode signals
+            Unmodelled network-common clock components lie in the datum
+            subspace; simple M/r² or M/r³ scaling therefore need not survive
+            in differential covariance
         </li>
         <li>
             Differential signals (station-pair correlations) contribute
@@ -1634,11 +1672,12 @@
 </div>
 
 <p>
-    This dual mechanism creates a natural dichotomy: energetic effects
-    (proportional to gravitational potential) are removed, while geometric
-    effects (correlation structure, anisotropy patterns) are preserved. The
-    processing filter has been independently validated across three analysis
-    centres using fundamentally different software implementations:
+    This hypothesised dual mechanism would create a natural dichotomy: energetic effects
+    (proportional to gravitational potential) would be removed, while geometric
+    effects (correlation structure, anisotropy patterns) would be preserved. The
+    datum-projection mechanism is consistent with cross-centre consistency across three analysis
+    centres using fundamentally different software implementations, though a definitive
+    test requires synthetic signal injection through the actual processing chain:
 </p>
 
 <table
@@ -1658,7 +1697,7 @@
                     text-align: left;
                 "
             >
-                Analysis Center
+                Analysis Centre
             </th>
             <th
                 style="
@@ -1719,7 +1758,7 @@
                 IGS Combined
             </td>
             <td style="padding: 6px; border: 1px solid #495773">
-                Multi-center weighted combination
+                Multi-centre weighted combination
             </td>
             <td
                 style="
@@ -1769,12 +1808,20 @@
 
 <p>
     The consistency across independent processing chains (R² = 0.920-0.970,
-    Paper 1) validates that least-squares suppression is a reproducible feature
-    of GNSS methodology, not a post-hoc rationalization. If the "processing
-    filter removes mass signals" were merely an excuse, different software
-    implementations would show different results. Instead, the identical absence
-    of mass scaling across Bernese, GIPSY, and ESA software confirms this is
-    fundamental to the estimation architecture.
+    Paper 1) supports that datum projection and common-mode suppression are
+    reproducible features of GNSS processing methodology, not a post-hoc
+    rationalization. If the "datum-projection suppresses mass signals" were merely
+    an excuse, different software implementations would show different results.
+    Cross-centre reproducibility shows that this suppression is not specific to
+    one software implementation; it does not by itself establish the physical
+    transfer mechanism.
+</p>
+
+<p>
+    Datum projection and common-mode suppression are reproducible features of
+    GNSS processing methodology; the specific transmission of a TEP covariance
+    signal remains a falsifiable transfer hypothesis to be tested by synthetic
+    signal injection.
 </p>
 
 <p><strong>Predicted Behavior in Processed vs Raw Data:</strong></p>
@@ -1847,7 +1894,7 @@
                     text-align: center;
                 "
             >
-                Should re-emerge
+                May be recoverable in raw-link observables
             </td>
             <td
                 style="
@@ -1960,7 +2007,7 @@
 
 <p><strong>Mechanism of Transmission (Why Signal Survives):</strong></p>
 <p>
-    The survival of these correlation structures is mechanistically explained by
+    The survival of these correlation structures has a concrete candidate mechanistic explanation in
     the specific constraints applied in the Bernese GNSS Software (Dach et al.,
     2015) used by CODE. The estimation process minimizes residuals using the
     <strong>Undifferenced Ionosphere-Free Linear Combination (L3)</strong>—the
@@ -1999,8 +2046,8 @@
     <em>mathematically eliminates</em> common-mode signals (including receiver
     clock biases and network-wide offsets) while preserving differential
     observables. This equivalence confirms that CODE's undifferenced processing
-    inherently removes common-mode structure—exactly as our processing filter
-    hypothesis predicts.
+    inherently removes common-mode structure—exactly as the datum-projection
+    mechanism predicts.
 </div>
 
 <p>
@@ -2011,7 +2058,7 @@
     Crucially, <em>significant residual correlation persists</em> (R ≈ 0.3).
     This quantifies precisely what our argument predicts: common-mode signals
     are suppressed, but differential structure (10-40% of original correlation
-    magnitude) survives the processing chain. The TEP signatures we detect
+    magnitude) survives the processing chain. The TEP signatures detected in this analysis
     occupy this "transmitted" differential channel.
 </p>
 
@@ -2026,13 +2073,13 @@
     "
 >
     <strong
-        >Addressing the "Convenient Shield" Critique: Is the Processing Filter
-        Explanation Falsifiable?</strong
+        >Addressing the "Convenient Shield" Critique: Is the Processing-Transfer
+        Hypothesis Falsifiable?</strong
     ><br />
     <br />
-    A skeptical reviewer might argue: "The processing filter explanation is
+    A skeptical reviewer might argue: "The datum-projection mechanism is
     unfalsifiable—if mass scaling were present, you'd claim victory; since it's
-    absent, you claim the filter removed it."<br />
+    absent, you claim the transfer removed it."<br />
     <br />
     <strong>This critique fails on empirical grounds:</strong><br />
     <br />
@@ -2047,43 +2094,48 @@
     &nbsp;&nbsp;&nbsp;• <em>Same</em> lack of mass-dependent amplitude
     hierarchy<br />
     <br />
-    If the "processing filter removes mass signals" were a post-hoc excuse, we
+    If the "datum-projection suppresses mass signals" were a post-hoc excuse, this study
     would expect different software implementations to show different results.
     Instead, the consistency across independent processing chains
-    <em>validates</em> that least-squares suppression is a real, reproducible
+    <em>supports</em> that datum-projection of common-mode signals is a real, reproducible
     feature of GNSS processing methodology.<br />
     <br />
-    <strong>2. Falsifiable Prediction:</strong> The processing filter hypothesis
+    <strong>2. Falsifiable Prediction:</strong> The datum-projection mechanism
     makes a clear, testable prediction:<br />
     &nbsp;&nbsp;&nbsp;• <strong>Processed data:</strong> No GM/r² scaling
-    (removes network-wide frequency offsets) - Observed<br />
-    &nbsp;&nbsp;&nbsp;• <strong>Raw carrier-phase data:</strong> GM/r² component
-    should re-emerge (no processing suppression)<br />
+    (common-mode components absorbed by datum estimation) - Observed<br />
+    &nbsp;&nbsp;&nbsp;• <strong>Raw carrier-phase data:</strong> Mass-dependent terms
+    are separately recoverable only in an explicitly referenced raw-link analysis;
+    not the claimed conformal covariance observable<br />
     <br />
-    This is explicitly acknowledged as a critical next step (§5.1). If raw data
-    analysis shows no GM/r² scaling, the processing filter explanation would be
-    <em>falsified</em>. This is the opposite of unfalsifiable—it's a concrete,
+    This is explicitly acknowledged as a critical next step (§5.1). The proper test
+    of the datum-projection mechanism is whether injected common-mode and differential
+    signals pass through the processing pipeline as predicted—not merely whether raw
+    data lacks GM/r² scaling. This is the opposite of unfalsifiable—it's a concrete,
     testable hypothesis with clear success/failure criteria.<br />
     <br />
-    <strong>Conclusion:</strong> The processing filter explanation is not a
-    "convenient shield"—it's a validated feature of GNSS processing methodology
-    (confirmed across three independent software implementations) that makes
-    falsifiable predictions about raw data. The consistency across processing
-    centres strengthens, rather than weakens, the case.<br /><br />
+    <strong>Conclusion:</strong> The datum-projection mechanism is not a
+    "convenient shield"—datum projection and common-mode suppression are
+    established features of GNSS processing methodology (confirmed across
+    software-diverse products from three processing centres). Their specific
+    mapping of a TEP covariance signal into the observed residual structure
+    remains a falsifiable transfer hypothesis requiring synthetic-injection
+    validation. The consistency across processing centres strengthens, rather
+    than weakens, the case.<br /><br />
     <strong>Future Validation:</strong> Simulation studies injecting known
     synthetic signals into the GNSS processing pipeline would provide
-    independent verification of the claimed filter behaviour. Such simulations,
+    independent verification of the claimed transfer behaviour. Such simulations,
     while beyond the scope of this empirical study, represent an important
     methodological validation step.
 </div>
 
 <p>
     <strong>Supporting Evidence from GNSS Literature:</strong> The GNSS
-    community has independently documented the exact phenomena we detect—without
+    community has independently documented the exact phenomena detected in this analysis—without
     recognizing their physical significance. Li et al. (2024) note that "as the
     distance increases, the impact of CME between stations gradually decreases"
     with correlation diminishing "beyond approximately 2000 km"—precisely the
-    distance-dependent structure we measure (λ<sub>T</sub> = 4,201 km). Crucially, they
+    distance-dependent structure measured in this analysis (λ<sub>T</sub> = 4,201 km). Crucially, they
     acknowledge "there is no consensus on the physical origin of CME."
     Similarly, Chanard et al. (2020) report that surface loading models explain
     only 30-50% of seasonal GNSS signals, with the remainder "only partially
@@ -2105,21 +2157,22 @@
         modulated by the 6‑month wobble of Earth's axis caused by the Sun.
     </li>
     <li>
-        <strong>Main Nutation (18.6 years):</strong> R² = 0.641. A strong
-        detection of coupling to the long-period lunar-induced precession of
-        Earth's rotational axis. This confirms sensitivity to multi-decadal
-        astronomical cycles.
+        <strong>Main Nutation (18.6 years):</strong> R² = 0.641. A
+        preliminary nutation-aligned component is observed over 1.4 cycles,
+        providing candidate evidence for sensitivity to multi-decadal
+        astronomical structure pending red-noise validation.
     </li>
 </ul>
 <p><strong>Chandler Wobble (14-month polar motion):</strong></p>
 <ul>
     <li>
-        R² = 0.096. This is a borderline but physically consistent detection.
-        The signal shows the correct period (433 days, physically fixed) and
-        phase stability across 21 complete cycles, but doesn't cross the strict
-        significance threshold (R² > 0.15). The reduction from previous
-        estimates reflects rigorous period enforcement, favoring physical
-        accuracy over overfitting.
+        R² = 0.096. At the prescribed 433-day Chandler period, the network
+        exhibits a weak but phase-coherent response across approximately 21
+        cycles (phase stability = 0.72). Its amplitude falls below the primary
+        significance threshold (R² > 0.15), so it is treated as a
+        Chandler-consistent secondary signature rather than an independent
+        detection. The reduction from previous estimates reflects rigorous
+        period enforcement, favoring physical accuracy over overfitting.
     </li>
 </ul>
 <p>
@@ -2153,8 +2206,8 @@
 </p>
 <h4>4.1.6 Convergence and Physical Interpretation</h4>
 <p>
-    We summarize how the independent evidence streams converge on systematic
-    patterns:
+    The convergence of independent evidence streams on systematic
+    patterns is summarized:
 </p>
 <ol>
     <li>
@@ -2166,10 +2219,10 @@
         heliocentric dynamics
     </li>
     <li>
-        <strong>CMB Frame Alignment</strong> identifies the operative reference
-        frame (cosmic rest frame, not galactic motion), resolving the hemisphere
-        asymmetry and establishing coupling to the largest observable velocity
-        scale
+        <strong>CMB-Directional Alignment</strong> identifies a preferred
+        directional template near the CMB dipole (not the Solar Apex direction), resolving the hemisphere
+        asymmetry. The present fixed-magnitude directional scan does not measure the
+        relevant background-speed amplitude (§2.3.5)
     </li>
     <li>
         <strong>Planetary Events</strong> reveal responses to transient
@@ -2190,11 +2243,11 @@
 </ol>
 <p>
     Taken together, these seven independent findings are consistent with
-    systematic coupling effects in GNSS timing networks. The CMB frame
-    identification (§4.1.2.1) is particularly significant: it transforms the
-    phenomenology from "velocity-dependent modulation" to "coupling to Earth's
-    motion through the CMB rest frame," providing both a definitive
-    falsification test (Solar Apex rejected at 5,570× variance ratio;
+    systematic coupling effects in GNSS timing networks. The CMB-directional
+    alignment (§4.1.2.1) is particularly significant: it transforms the
+    phenomenology from "velocity-dependent modulation" to "CMB-frame-aligned
+    covariance candidate," providing strong directional discrimination between
+    the CMB-dipole and Solar-Apex templates (Solar Apex rejected at ~10,300× variance ratio;
     multi-resolution verified) and resolution of previously unexplained features
     (hemisphere asymmetry). The convergence of spatial, temporal, geophysical,
     and reference-frame signatures—each surviving rigorous statistical
@@ -2297,8 +2350,8 @@
                     year" (Ray et al. 2007, cited in Chanard 2020)
                 </td>
                 <td style="padding: 8px; border: 1px solid #495773">
-                    Strong orbital coupling (r = -0.888, 5.1σ Monte Carlo
-                    validated)
+                    Strong orbital coupling (r = -0.888, surrogate p &lt; 2×10⁻⁷
+                    Monte Carlo validated)
                 </td>
             </tr>
             <tr>
@@ -2352,7 +2405,7 @@
     <strong>Implications:</strong> If TEP is correct, decades of GNSS data
     contain systematic temporal-gravitational signatures that have been
     inadvertently filtered as "errors." The raw carrier-phase analysis proposed
-    in §5.1 would not only validate the processing filter hypothesis but
+    in §5.1 would not only test the datum-projection mechanism but
     potentially recover the full amplitude of these effects before common-mode
     suppression. This represents a paradigm shift: the "noise" that geodesists
     have spent years removing may itself be the signal of a new physical
@@ -2372,7 +2425,7 @@
     be required to test mass-scaling directly.
 </p>
 <p>
-    A critical validation of temporal stability requires comparing this 25-year
+    A critical validation of long-baseline recovery requires comparing this 25-year
     CODE analysis to the multi-centre study. The multi-centre study established
     comprehensive validation through 388 statistical tests across 19 families,
     extensive null testing (temporal shuffle, spatial shuffle, phase
@@ -2394,8 +2447,8 @@
     </li>
     <li>
         <strong>Planetary Event Responses</strong>: Multi-centre study found 6/8
-        Bonferroni-significant; we confirm and extend to 56/156 events ≥2σ, of
-        which 25 remain Bonferroni-significant.
+        Bonferroni-significant; this study confirms and extends to 56/156 events ≥2σ, of
+        which 19 remain family-wide Bonferroni-significant.
         <em
             >Null event control validation (§3.3.1) confirms planetary events
             show 5.5× larger effect sizes than 155 random dates (p < 10⁻¹⁷,
@@ -2410,7 +2463,7 @@
         156-event comprehensive survey
     </li>
     <li>
-        <strong>Orbital Coupling</strong>: 25 complete solar orbits vs 2.5
+        <strong>Orbital Coupling</strong>: 25.3-year baseline vs 2.5
         strengthens velocity correlation inference
     </li>
 </ul>
@@ -2418,28 +2471,31 @@
 <p><strong>New (Long-Period Access)</strong>:</p>
 <ul>
     <li>
-        <strong>18.6-Year Nutation</strong>: R² = 0.641, p < 10⁻⁸ (multi-centre
+        <strong>18.6-Year Nutation</strong>: Preliminary — R² = 0.641, p = 0.010 (1.4 cycles; pending red-noise validation; multi-centre
         study: inaccessible)
     </li>
     <li>
-        <strong>Decadal Stability</strong>: Confirms signatures across 2+ solar
+        <strong>Long-baseline Stability</strong>: Confirms signatures across 2+ solar
         cycles
     </li>
 </ul>
 <p><strong>Replicated (Confirms Temporal Stability)</strong>:</p>
 <ul>
     <li>
-        <strong>Network Synchronization (Mesh Dance)</strong>: Index = 0.582,
+        <strong>Network Covariance Score (Mesh Dance)</strong>: Index = 0.582,
         consistent with multi-centre range (CODE: 0.624, IGS: 0.579, ESA: 0.602)
     </li>
 </ul>
 <p>
     <strong>Cross-Centre Validation Status</strong>: The multi-centre study's
     critical contribution was cross-centre validation (R² = 0.920-0.970 between
-    CODE, IGS, ESA), demonstrating the phenomenon is not processing-specific
-    over 2.5 years. This study extends temporal coverage but cannot confirm
-    whether long-baseline signatures (18.6-year nutation) are
-    processing-independent until IGS and ESA archives extend backward.
+    CODE, IGS, ESA), demonstrating the phenomenon is reproducible across the
+    processed products examined so far over 2.5 years. This study extends temporal
+    coverage but cannot confirm whether long-baseline signatures (18.6-year
+    nutation) are reproducible across other processing centres until IGS and ESA
+    archives extend backward. Cross-centre agreement establishes robustness across
+    processed-product pipelines, but does not alone determine the physical origin
+    because the centres share observations, conventions and some modeling assumptions.
 </p>
 <h3>4.3 Physical Interpretation</h3>
 <p>
@@ -2467,10 +2523,11 @@
 >
     <p style="margin: 0 0 8px 0">
         <strong>Predicted:</strong> Correlation length modulation with velocity
+        (qualitative; magnitude not yet derived from the conformal transfer law)
     </p>
     <p style="margin: 0; padding-left: 20px; font-size: 0.95em">
-        <strong>Observed:</strong> λ varies with orbital velocity (r = -0.888, p
-        < 2×10⁻⁷, 5.1σ; autocorr-corrected)
+        <strong>Observed:</strong> λ varies with orbital velocity (r = -0.888;
+        surrogate p &lt; 2×10⁻⁷; t-test p ≈ 2.6×10⁻⁴, autocorr-corrected)
     </p>
     <p
         style="
@@ -2480,7 +2537,8 @@
             color: #495773;
         "
     >
-        Assessment: Consistent with TEP expectations
+        Assessment: Qualitatively consistent with conformal-sector TEP
+        expectations; quantitative transfer law open (§5)
     </p>
 </div>
 
@@ -2525,6 +2583,7 @@
 >
     <p style="margin: 0 0 8px 0">
         <strong>Predicted:</strong> Geometric anisotropy aligned with motion
+        (qualitative; 2.16 ratio not yet derived)
     </p>
     <p style="margin: 0; padding-left: 20px; font-size: 0.95em">
         <strong>Observed:</strong> E-W elongation (2.16:1 ratio) consistent with
@@ -2538,7 +2597,8 @@
             color: #495773;
         "
     >
-        Assessment: Consistent with TEP expectations
+        Assessment: Qualitatively consistent with conformal-sector TEP
+        expectations; quantitative transfer law open (§5)
     </p>
 </div>
 
@@ -2596,41 +2656,28 @@
     </p>
 </div>
 
-<h4>4.3.1.1 Order-of-Magnitude TEP Predictions</h4>
+<h4>4.3.1.1 Order-of-Magnitude Considerations</h4>
 <p>
-    The 19% geometric modulation observed in EW/NS ratios exceeds naive v²/c²
-    estimates by ~10⁵, resolved by the processing-filter transmission mechanism.
-    Least-squares clock estimation suppresses common-mode frequency shifts
-    (where the ~10⁻⁶ energetic effect would appear) while transmitting
-    differential phase-coherence structure (where geometric ratios manifest).
-    For the detailed filter architecture, see §2.1.3.2.
+    The 19% geometric modulation observed in EW/NS ratios is a network-level
+    anisotropy ratio rather than a fractional clock-frequency amplitude. A naive
+    v²/c² estimate yields ~10⁻⁸ for orbital speeds, but this quantity is not
+    directly comparable to the observed anisotropy ratio because the two are
+    different observables: one is a microscopic energetic amplitude, the other
+    is a macroscopic covariance-shape parameter projected through the GNSS
+    measurement and processing chain. The magnitude and sign of the GNSS
+    transfer function remain to be calibrated with raw/RINEX data and
+    end-to-end signal injection. For the detailed architecture, see §2.1.3.2.
 </p>
 
 <p>
-    <strong>Context - The Naive Prediction:</strong> From the TEP framework, the
-    conformal coupling A(φ) = exp(βφ/M<sub>Pl</sub>) implies a naive energetic
-    modulation:
-</p>
-
-<div
-    style="
-        background-color: rgba(248, 249, 250, 0.8);
-        border: 1px solid #dee2e6;
-        padding: 15px;
-        margin: 15px 0;
-        border-radius: 4px;
-        font-family: monospace;
-        font-size: 14px;
-    "
->
-    ΔC/C ~ (α₀ × Δv/c) × exp(-r/λ<sub>scr</sub>)
-</div>
-
-<p>
-    With α₀ ≈ 10⁻³ and Δv/c ≈ 10⁻⁴, this predicts ~10⁻⁷. The discrepancy between
-    this value and the observed 19% is a category error: the naive estimate
-    applies to the <em>filtered</em> energetic amplitude, while the observation
-    captures the <em>transmitted</em> geometric structure.
+    <strong>Context:</strong> A naive kinematic benchmark at orbital velocity is
+    v²/c² ≈ 10⁻⁸. The observed 19% anisotropy ratio is a geometric
+    covariance-shape parameter, not a direct measurement of this microscopic
+    amplitude. Because the 19% observable is a network-level anisotropy ratio
+    rather than a fractional clock-frequency amplitude, it cannot presently be
+    compared directly with a microscopic conformal coupling estimate. The
+    measurement-transfer law mapping Σ<sub>μ</sub><sup>obs</sup> to the observed
+    anisotropy ratio remains open (§5).
 </p>
 
 <div
@@ -2647,7 +2694,7 @@
     ><br />
     The large observed modulation (19% change in anisotropy shape) arising from
     a tiny kinematic input ($\Delta v/c \approx 10^{-4}$) is physically
-    intuitive when interpreted geometrically rather than energetically:<br />
+    intuitive as a geometric analogy, though not a quantitative derivation:<br />
     <br />
     <strong>Interferometer, not Gravimeter:</strong> A gravimeter measures
     <em>potential energy</em> (amplitude), which requires massive energy
@@ -2661,21 +2708,27 @@
     the grid is negligible, but the structural consequence (the fringe shift) is
     huge.<br />
     <br />
-    The GNSS correlation field behaves like such a "stiff" geometric structure.
-    The 19% modulation is not a massive energetic fluctuation; it is a Moiré
+    By analogy, the GNSS correlation field may behave like such a "stiff" geometric structure.
+    The 19% modulation would then be a Moiré-like
     fringe shift in the correlation pattern driven by the subtle kinematic
-    rotation of Earth's orbital velocity vector.
+    rotation of Earth's orbital velocity vector. This analogy provides physical
+    intuition but does not constitute a quantitative resolution of the
+    $10^{-7}$-to-19% gap; that requires end-to-end signal injection through the
+    actual processing chain.
 </div>
 
 <p><strong>Resolution: Information Resonance vs. Force Coupling</strong></p>
 <p>
-    This distinction resolves the apparent conflict between the "stiff" response
+    This distinction provides a possible qualitative interpretation of the
+    apparent conflict between the "stiff" response
     (19% modulation) and the "weak" coupling (no mass scaling):
 </p>
 <ul>
     <li>
-        <strong>Amplitude = Energy (Suppressed):</strong> Energetic couplings
-        ($GM/r^2$) are filtered out by the processing chain (see §2.1.3).
+        <strong>Amplitude = Energy (Suppressed):</strong> Simple energetic
+        couplings ($GM/r^2$) are consistent with absorption by datum estimation
+        (see §2.1.3); their absence in differential covariance is expected
+        under a priori relativistic modelling.
     </li>
     <li>
         <strong>Phase = Information (Transmitted):</strong> The network detects
@@ -2684,10 +2737,10 @@
     </li>
 </ul>
 <p>
-    This explains why Mars (low mass) is detected as reliably as Jupiter (high
-    mass). The network is not weighing the planets (force coupling); it is
-    detecting the coherence resonance of their alignment events (information
-    resonance).
+    This could account for why the observed response does not follow a simple
+    planetary-mass hierarchy. The network may not be weighing the planets (force
+    coupling); it may be detecting the coherence resonance of their alignment
+    events (information resonance).
 </p>
 
 <div
@@ -2704,7 +2757,7 @@
     </h4>
 
     <p style="margin-bottom: 10px">
-        While the processing filter resolves the <em>apparent</em> discrepancy
+        While the datum-projection mechanism is consistent with the <em>apparent</em> discrepancy
         by distinguishing energetic from geometric observables, a complete
         theoretical framework should derive the expected magnitude of geometric
         coupling (correlation ratio modulation) from first principles. The
@@ -2718,7 +2771,7 @@
         </li>
         <li>
             <strong>Qualitative:</strong> Anisotropy should align with motion ✓
-            (confirmed: EW > NS, CMB frame)
+            (confirmed: EW > NS, CMB dipole direction)
         </li>
         <li>
             <strong>Quantitative:</strong> Magnitude of ratio modulation →
@@ -2738,8 +2791,9 @@
 <p>
     These mechanisms remain hypotheses requiring validation through raw
     carrier-phase analysis and multi-constellation comparison. The phase
-    relationships (orbital coupling, CMB alignment, planetary events) are
-    robustly detected and processing-independent; the amplitude scaling remains
+    relationships (orbital coupling, CMB-directional alignment, planetary events) are
+    reproducible across the processed products examined so far; their raw-data origin
+    remains to be established, and the amplitude scaling remains
     an open question addressed in §5.1-5.2.
 </p>
 
@@ -2751,8 +2805,8 @@
     parameters (M/r³) or gravitational field strength (M/r²):
 </p>
 <ul>
-    <li><strong>Amplitude vs Tidal (M/r³):</strong> r = -0.058 (p = 0.47)</li>
-    <li><strong>Amplitude vs Gravity (M/r²):</strong> r = -0.096 (p = 0.23)</li>
+    <li><strong>Amplitude vs Tidal (M/r³):</strong> r = -0.087 (p = 0.522)</li>
+    <li><strong>Amplitude vs Gravity (M/r²):</strong> r = -0.042 (p = 0.759)</li>
 </ul>
 <p>
     This empirical result confirms that the coupling is not a simple linear
@@ -2763,12 +2817,13 @@
 </p>
 
 <p>
-    <strong>Consistent with Processing Filters (§2.1.3):</strong> The absence of
-    mass scaling is fully consistent with the high-pass filter nature of GNSS
-    processing described in §2.1.3. Since the energetic component (proportional
+    <strong>Consistent with Processing-Transfer Hypothesis (§2.1.3):</strong> The absence of
+    mass scaling is consistent with the hypothesised high-pass transfer nature of GNSS
+    processing described in §2.1.3. If the energetic component (proportional
     to $GM/r^2$) is suppressed by least-squares adjustment, the surviving signal
-    is pure phase-coherence geometry, which depends on alignment rather than
-    mass.
+    would be phase-coherence geometry, which depends on alignment rather than
+    mass. This interpretation remains a hypothesis pending synthetic signal injection
+    through the actual processing chain.
 </p>
 
 <div
@@ -2781,38 +2836,50 @@
     "
 >
     <h4 style="margin-top: 0; color: #220126">
-        Theoretical Interpretation: The Network as a Holonomy Detector
+        Theoretical Interpretation: The Network as a Covariance-Stress Detector
     </h4>
     <p>
-        The TEP framework predicts that time is locally integrable (GR-like) but
-        globally path-dependent. Standard GNSS processing imposes a global
-        synchronization constraint (datum) on this non-integrable field. The
-        resulting residuals—the "stress" in the network solution—map the failure
-        of global synchronization, directly revealing the non-integrable
-        structure (holonomy) of the temporal field.
+        Standard GNSS processing imposes a global synchronization solution on a
+        spatially structured temporal-covariance field. The residual covariance
+        can therefore probe open-path conformal Temporal Shear. It does not by
+        itself establish synchronization non-integrability; residual closed-loop
+        holonomy remains a separate B/non-exact-sector observable. In the purely
+        conformal subclass of TEP, the synchronization holonomy vanishes
+        ($\oint d\ln A = 0$ for a smooth field); nonzero holonomy at leading
+        order requires the disformal sector $B \neq 0$ (Smawfield, 2025). The
+        GNSS covariance channel measures the A-sector (conformal) response, not
+        the B-sector (disformal) holonomy that would manifest in closed-loop
+        triangle tests.
     </p>
 
-    <p><strong>Why Processed Data is the Correct Observable:</strong></p>
+    <p><strong>Processed Data as a Covariance Observable:</strong></p>
     <ul style="margin: 0 0 10px 20px">
         <li>
             <strong>Raw Carrier Phase (Local):</strong> Dominated by classical
-            GR (~10⁻¹⁰) and atmospheric delays. TEP predicts local physics is
-            identical to GR, so raw data should show no deviation.
+            GR (~10⁻¹⁰) and atmospheric delays. Local pointlike physics retains
+            the GR/Lorentz limit and locally measured c remains invariant.
+            Nevertheless, raw multi-station and open-path observables may retain
+            conformal Temporal-Shear covariance. Raw analysis therefore provides
+            a direct test of the covariance before analysis-centre transfer.
         </li>
         <li>
             <strong>Processed Residuals (Global):</strong> By removing local
             effects (where TEP=GR) and enforcing network closure, processing
-            acts as a band-pass filter for the global correlation structure
-            (where TEP≠GR).
+            acts as a band-pass channel for the global covariance structure
+            (where the conformal Temporal Shear produces distance-structured
+            correlations).
         </li>
     </ul>
 
     <p>
         In this view, the processed network solution is not merely a data
         source, but the interferometer itself, with the residuals representing
-        the interference pattern of dynamical time. This validates TEP
-        prediction §10.3 (distance-dependent correlations) using precisely the
-        phase-coherent network analysis specified by the theory.
+        the covariance pattern of the conformal Temporal Shear projected through
+        the GNSS measurement channel. This is consistent with the TEP
+        prediction of distance-dependent correlations (Paper 0, §10.3) using precisely the
+        phase-coherent network analysis specified by the theory. The disformal
+        holonomy prediction (Paper 0, §10.2) requires dedicated closed-loop experiments
+        and is not tested by this open-path covariance channel.
     </p>
 </div>
 
@@ -2979,10 +3046,12 @@
     <p style="margin-bottom: 0">
         This selectivity profile defines the network as an inertial
         interferometer—measuring velocity-dependent correlation geometry—not a
-        gravimeter measuring force. The CMB frame alignment (5,570× variance
-        ratio over galactic motion) identifies the operative kinematic reference
-        at cosmic scales: Earth's ~369 km/s motion through the universe's rest
-        frame.
+        gravimeter measuring force. The CMB-directional alignment (~10,300× variance
+        ratio over the Solar-Apex template) identifies a preferred covariance direction
+        at cosmic scales: alignment with the cosmological background 4-velocity
+        (CMB dipole direction). The scan fixes the background-speed magnitude
+        and therefore establishes directional alignment rather than independently
+        measuring the 369 km/s speed scale.
     </p>
 </div>
 
@@ -3014,14 +3083,14 @@
                 <td><strong>Orbital velocity correlation</strong></td>
                 <td>Strong (r > 0.85)</td>
                 <td>Weak/absent (random)</td>
-                <td>r = -0.888, 5.1σ</td>
+                <td>r = -0.888, surrogate p &lt; 2×10⁻⁷</td>
                 <td>TEP-compatible; random fluctuation disfavoured</td>
             </tr>
             <tr style="background-color: rgba(73, 87, 115, 0.03)">
                 <td><strong>Mass scaling (GM/r²)</strong></td>
-                <td>Absent (filtered by processing)</td>
+                <td>Absent (absorbed by datum-projection)</td>
                 <td>Present (classical gravity)</td>
-                <td>No correlation (r=-0.053, p=0.66)</td>
+                <td>No correlation (r=-0.042, p=0.76)</td>
                 <td>TEP-compatible; classical scaling disfavoured</td>
             </tr>
             <tr>
@@ -3046,14 +3115,14 @@
                 <td>TEP-compatible; ionospheric hypothesis disfavoured</td>
             </tr>
             <tr style="background-color: rgba(73, 87, 115, 0.03)">
-                <td><strong>Processing-center consistency</strong></td>
+                <td><strong>Processing-centre consistency</strong></td>
                 <td>High (physical signal)</td>
                 <td>Low (software-specific artifact)</td>
                 <td>R² = 0.92-0.97 (Bernese/GIPSY/ESA)</td>
                 <td>TEP-compatible; simple artifact hypothesis disfavoured</td>
             </tr>
             <tr>
-                <td><strong>Anisotropy temporal stability</strong></td>
+                <td><strong>Anisotropy long-baseline consistency</strong></td>
                 <td>Stable over decades</td>
                 <td>Degrading (transient artifact)</td>
                 <td>Stable 25 years (EW:NS = 2.16)</td>
@@ -3080,8 +3149,8 @@
 <h4>4.3.4 Null-Model Systematics: Explicit tests that fail</h4>
 <p>
     To address the possibility that the observed signatures arise from artefacts
-    of network geometry or simple temporal structure, we evaluated explicit null
-    models and compared their qualitative predictions against the data. Each
+    of network geometry or simple temporal structure, explicit null
+    models were evaluated and their qualitative predictions compared against the data. Each
     model fails to reproduce the core triad of observations: (i) persistent E–W
     > N–S anisotropy (EW:NS = 2.16), (ii) strong orbital-velocity coupling (r =
     -0.888 with perihelion/aphelion phasing), and (iii) identical calendar
@@ -3232,7 +3301,7 @@
                     <li>
                         <strong>CMB Frame Alignment:</strong> Ionospheric
                         effects do not preferentially couple to the CMB dipole
-                        direction (RA=168°, Dec=-7°). The 5,570× variance ratio
+                        direction (RA=168°, Dec=-7°). The ~10,300× variance ratio
                         between CMB and Solar Apex frames provides geometric
                         discrimination.
                     </li>
@@ -3278,7 +3347,7 @@
 
 <h4>4.3.5 Processing-Chain Bounds (qualitative)</h4>
 <p>
-    We qualitatively assess whether plausible processing steps could jointly
+    The analysis qualitatively assesses whether plausible processing steps could jointly
     account for the observed patterns. The following classes were considered:
 </p>
 <ul>
@@ -3351,8 +3420,9 @@
 
     <strong>Systematic Consistency:</strong><br />
     The robustness of the findings lies in the simultaneous presence of seven
-    convergent signatures within this preserved differential structure (p ≈
-    10⁻¹¹⁴):
+    convergent signatures within this preserved differential structure. Because
+    several signatures share annual or longer-period structure, their probabilities
+    are not combined into a single joint p-value:
     <ul style="margin: 8px 0 0 20px; font-size: 0.95em">
         <li>
             E-W > N-S anisotropy (2.16:1) —
@@ -3380,7 +3450,7 @@
         </li>
         <li>
             433-day Chandler wobble period —
-            <em>independent geophysical verify</em>
+            <em>Chandler-consistent secondary response at the prescribed period</em>
         </li>
     </ul>
     The convergence of these signatures, each orthogonal to specific processing
@@ -3390,7 +3460,7 @@
 
 <p>
     <strong
-        >Software Independence: Evidence Against Algorithmic Artifacts</strong
+        >Software Diversity and Cross-Centre Reproducibility: Evidence Against Algorithmic Artifacts</strong
     >
 </p>
 <p>
@@ -3418,7 +3488,7 @@
     estimation: different state vector formulations, different stochastic
     models, different convergence criteria, and independent codebases with no
     shared source code. The "Kalman filter resonance" hypothesis would require
-    that three independent software packages, developed by different
+    that software-diverse products from three processing centres, developed by different
     institutions using different algorithms, all accidentally produce nearly
     identical artifacts (R² > 0.92 over 2.5 years in Paper 1) and that these
     patterns persist in CODE-only analysis over 25 years (this study). This is
@@ -3455,7 +3525,7 @@
     </li>
     <li>
         <strong>Planetary Event Responses:</strong> The observed 56 significant
-        responses (25 Bonferroni-corrected) with coherence modulations 0.3–4.0%
+        responses (19 Bonferroni-corrected) with coherence modulations 0.3–4.0%
         (median 1.1%, in coherence units) show no correlation with GM/r²
         gravitational scaling. This absence of classical scaling patterns
         requires further investigation through raw data analysis and physical
@@ -3477,9 +3547,7 @@
         >Clarifying Effect Size: Correlation Topology vs Frequency Shift</strong
     ><br /><br />
     The ≈19% annual modulation and 0.3–4% planetary event responses describe
-    changes in <em>correlation structure</em> (the ratio λ<sub>EW</sub>/λ<sub
-        >NS</sub
-    >
+    changes in <em>correlation structure</em> (the ratio λ<sub>EW</sub>/λ<sub>NS</sub>
     and coherence between station pairs), not clock frequency shifts. Individual
     clock frequencies remain at standard GR levels (Δf/f ~ 10⁻¹⁶–10⁻¹⁰). The
     distinction is fundamental: frequency is a scalar quantity measured at
@@ -3521,17 +3589,15 @@
             coherence structure represents a macroscopic change in network
             correlation, not a microscopic frequency shift. This structural
             modulation is orders of magnitude above the instrumental noise floor
-            (Allan deviation &sigma;<sub>y</sub>(&tau;) &approx; 10<sup
-                >-15</sup
-            >
+            (Allan deviation &sigma;<sub>y</sub>(&tau;) &approx; 10<sup>-15</sup>
             for IGS H-masers), ruling out simple thermal noise or oscillator
             instability as the cause.
         </li>
     </ul>
-    <strong>Conclusion:</strong> The absence of GM/r² scaling in the
-    <em>processed</em> products is expected because the linear gravitational
-    potential term is effectively filtered out. The signal that survives—and
-    which correlates with planetary events—is therefore necessarily non-linear
+    <strong>Conclusion:</strong> The absence of simple M/r² or M/r³ scaling
+    is consistent with a priori relativistic modelling and datum absorption
+    of network-common clock components. The signal that survives—and
+    which correlates with planetary events—is therefore non-linear
     or structural (vector/tensor), consistent with the TEP prediction of
     geometric correlation coupling rather than energetic potential coupling.
 </div>
@@ -3556,7 +3622,7 @@
         <tbody>
             <tr>
                 <td><strong>Gravitational time dilation</strong></td>
-                <td>Δf/f ~ 10⁻¹⁰ (1 cm altitude)</td>
+                <td>Δf/f ~ gh/c² ≈ 1.1×10⁻¹⁸ (1 cm altitude)</td>
                 <td>N/A (different observable)</td>
                 <td>-</td>
             </tr>
@@ -3606,17 +3672,17 @@
 
     <li>
         <strong>Anisotropy modulation exceeds naive predictions:</strong> The
-        19% annual variation is ~10² larger than first-order v²/c² ~ 10⁻⁸
-        predictions, suggesting either nonlinear coupling, collective
-        amplification, or processing-dependent amplitude scaling.
+        19% anisotropy ratio is a macroscopic covariance-shape parameter, not
+        directly comparable to the microscopic v²/c² ~ 10⁻⁸ energetic amplitude.
+        The transfer function between these observables remains to be derived.
     </li>
 
     <li>
         <strong>Planetary event amplitudes are dimensionally distinct:</strong>
         GPS coherence modulations (dimensionless correlation structure) cannot
         be directly compared to GR clock rate predictions (Δf/f). The absence of
-        GM/r² scaling indicates either novel physics or processing transfer
-        functions, testable via raw data analysis.
+        GM/r² scaling indicates either novel physics or datum-projection
+        transfer, testable via raw data analysis.
     </li>
 
     <li>
@@ -3710,7 +3776,7 @@
     </li>
 </ol>
 
-<h5>Processing Center Correction Considerations</h5>
+<h5>Processing Centre Correction Considerations</h5>
 
 <p>
     GNSS analysis centres (CODE, IGS, ESA) apply systematic error corrections
@@ -3730,7 +3796,7 @@
         incomplete corrections rather than full physical signal
     </li>
     <li>
-        <strong>Multi-center correlation (R²=0.920-0.970):</strong> Similar
+        <strong>Multi-centre correlation (R²=0.920-0.970):</strong> Similar
         correction strategies across centers produce consistent residual
         patterns
     </li>
@@ -3745,7 +3811,7 @@
     absence of GM/r² scaling in planetary event amplitudes, and (ii) the robust
     detection of distance-structured correlations and orbital modulation in
     phase-coherence metrics. If amplitude-like components of the underlying
-    signal are preferentially removed by analysis-center corrections, while
+    signal are preferentially removed by analysis-centre corrections, while
     residual coherence structure survives in the cross-spectral domain, then one
     expects weak or distorted amplitude scaling but persistent, reproducible
     patterns in the correlation field. The methodology adopted here—focusing
@@ -3763,7 +3829,7 @@
 <ol>
     <li>
         <strong>Raw carrier phase analysis:</strong> Bypass all processing
-        center corrections to measure unprocessed signal amplitudes
+        centre corrections to measure unprocessed signal amplitudes
     </li>
     <li>
         <strong>Processing documentation review:</strong> Examine systematic
@@ -3776,7 +3842,7 @@
     </li>
     <li>
         <strong>Multi-constellation testing:</strong> Compare GNSS, GLONASS,
-        Galileo, BeiDou to verify processing-independence
+        Galileo, BeiDou to verify cross-centre reproducibility
     </li>
 </ol>
 
@@ -3785,15 +3851,15 @@
 <p><strong>Robust findings (independent of processing):</strong></p>
 <ul>
     <li>
-        Statistical significance: 56/156 events ≥2σ, 25 survive Bonferroni
-        correction (45% of significant responses)
+        Statistical significance: 56/156 events ≥2σ, 19 survive family-wide
+        Bonferroni correction (α = 0.05/156)
     </li>
     <li>
         Detection rates (primary ±120-day window): Mercury 42.5%, Venus 18.8%,
-        Mars 33.3%, Jupiter 34.8%, Saturn 28.0% (Table 3.3.1)
+        Mars 33.3%, Jupiter 34.8%, Saturn 28.0% (§3.3.1)
     </li>
     <li>Absence of GM/r² scaling (see §3.3)</li>
-    <li>Multi-center consistency in detection patterns</li>
+    <li>Multi-centre consistency in detection patterns</li>
 </ul>
 
 <p>
@@ -3812,7 +3878,7 @@
     correlations across multiple analysis centres provides evidence consistent
     with gravitational coupling effects in GNSS timing networks. Raw data
     analysis is essential to determine whether observed amplitudes represent the
-    full physical signal or residuals from processing center corrections.
+    full physical signal or residuals from processing centre corrections.
 </p>
 
 <ol start="3">
@@ -3824,7 +3890,7 @@
         determined through multi-constellation and raw-data analysis.
     </li>
     <li>
-        <strong>Global Coordination:</strong> Network synchronization (index =
+        <strong>Global Coordination:</strong> Network covariance score (index =
         0.582) demonstrates coordinated behavior across the 474-station network.
         This could indicate a global field-like influence, though alternative
         explanations (correlated processing, shared reference frames,
@@ -3896,15 +3962,15 @@
     <strong>Relationship to TEP Framework:</strong> The observed phenomenology
     is qualitatively consistent with TEP predictions of velocity-dependent
     correlation modulation and distance-structured anisotropy. The absence of
-    GM/r² scaling in planetary event amplitudes is expected: GNSS least-squares
-    processing explicitly removes network-wide frequency offsets (where
-    gravitational mass scaling would manifest), while preserving phase-coherence
-    structure (where the observed correlations reside). This processing
-    characteristic explains why amplitude predictions fail while correlation
-    structure persists—a feature, not a flaw. These results are consistent with
-    TEP's core predictions and establish quantitative targets (e.g., the 2.16:1
-    anisotropy ratio, the -0.888 orbital correlation coefficient) for future
-    independent validation.
+    GM/r² scaling in planetary event amplitudes is consistent with the
+    datum-projection transfer hypothesis: GNSS least-squares processing removes
+    network-wide frequency offsets (where gravitational mass scaling would
+    manifest), while preserving phase-coherence structure (where the observed
+    correlations reside). This provides a candidate explanation for why amplitude
+    scaling is absent while correlation structure persists—a feature, not a flaw.
+    These results are consistent with TEP's core predictions and establish
+    quantitative targets (e.g., the 2.16:1 anisotropy ratio, the -0.888 orbital
+    correlation coefficient) for future independent validation.
 </p>
 
 <h3>4.5.1 Researcher Degrees of Freedom</h3>
@@ -3940,7 +4006,7 @@
     • Primary inferences use pre-declared ±120-day window for planetary
     events<br />
     • Multi-window analyses explicitly labelled "robustness-only"<br />
-    • Cross-center validation (Paper 1) provides independent confirmation of
+    • Cross-centre validation (Paper 1) provides independent confirmation of
     core findings<br />
     • Null results (solar rotation, lunar standstill) demonstrate selectivity,
     not universal detection
@@ -3959,31 +4025,33 @@
 >
     <strong>Note on Multiple Testing Structure:</strong> This study involves
     multiple analyses with different statistical frameworks: (1)
-    <em>Pre-specified hypothesis tests</em> (orbital correlation, nutation
-    periods) with explicit corrections, (2) <em>Parameter estimation</em> (grid
-    search for reference frame direction—not 65,341 independent hypothesis
-    tests), (3) <em>Exploratory analyses</em> (8-sector spatial
-    structure—descriptive, not inferential), (4)
-    <em>Confirmatory tests</em> (156 planetary events with Bonferroni
-    correction). The overall family-wise error rate across all analyses is not
+    <em>Pre-specified core tests</em>, including orbital correlation;
+    (2) <em>Targeted exploratory geophysical tests</em>, including the
+    nutation periods; (3) <em>Parameter estimation</em> (grid search for
+    reference frame direction—not 65,341 independent hypothesis tests);
+    (4) <em>Confirmatory planetary-event tests</em> with family-wide
+    correction. The overall family-wise error rate across all analyses is not
     straightforward to calculate because different analyses test different
-    hypotheses using different methodologies. Primary claims rest on
-    pre-specified tests (orbital correlation p<2×10⁻⁷; nutation R²=0.904,
-    p<10⁻²⁰) and Bonferroni-corrected planetary events (25/156 significant,
-    expected FP=0.05). Exploratory findings (CMB frame alignment, 8-sector
-    anisotropy) are presented as hypothesis-generating rather than definitive.
+    hypotheses using different methodologies. The primary pre-specified
+    statistical claim is the orbital correlation (p&lt;2×10⁻⁷), supplemented
+    by the family-wide corrected planetary-event analysis (19/156 significant,
+    expected FP=0.05). The nutation results (semiannual R²=0.904,
+    p=2.7×10⁻⁵; 18.6-year R²=0.641, p=0.010) provide targeted geophysical
+    evidence, with the 18.6-year component explicitly preliminary.
+    Exploratory findings (CMB directional alignment, 8-sector anisotropy)
+    are presented as hypothesis-generating rather than definitive.
 </div>
 
 <ol>
     <li>
-        <strong>Single Analysis Center (Temporal Depth Trade-off):</strong> This
+        <strong>Single Analysis Centre (Temporal Depth Trade-off):</strong> This
         study uses only CODE data to access the 25-year archive required for
         long-period analysis (18.6-year nutation, 21 Chandler cycles). While the
         multi-centre study established cross-centre validation (R² =
         0.920-0.970) over 2.5 years, replication of these long-baseline findings
         with IGS and ESA products (when sufficient historical data becomes
         available) remains necessary to definitively exclude processing-specific
-        artifacts in the decadal signatures.
+        artifacts in the long-baseline signatures.
     </li>
     <li>
         <strong
@@ -3995,9 +4063,9 @@
         checks. However, orbital velocity correlates with many annual phenomena
         (solar distance, ionospheric TEC, network participation). Three
         independent discriminants support genuine orbital coupling over seasonal
-        artifacts: (1) <strong>CMB Frame Alignment:</strong> The modulation
-        couples to Earth's motion through the CMB rest frame (RA=168°, Dec=-7°)
-        with 5,570× variance ratio over galactic motion—ionospheric effects do
+        artifacts: (1) <strong>CMB-Directional Alignment:</strong> The modulation
+        aligns with the CMB dipole direction (RA=168°, Dec=-7°)
+        with ~10,300× variance ratio over the Solar Apex directional template—ionospheric effects do
         not preferentially align with the CMB dipole; (2)
         <strong>Ionospheric Null Controls:</strong> No correlation with F10.7
         solar flux or Kp geomagnetic indices (Paper 1 validation); (3)
@@ -4005,13 +4073,13 @@
         centres using different ionospheric models show identical patterns (R² =
         0.920-0.970). Note: Hemisphere stratification alone is insufficient to
         rule out global ionospheric TEC (which peaks in January for both
-        hemispheres); the CMB frame geometry provides the primary geometric
+        hemispheres); the CMB dipole-direction geometry provides the primary geometric
         discriminant.
     </li>
     <li>
         <strong>Planetary Event Analysis - Physical Predictor Modeling:</strong>
         The planetary event analysis documents 56 statistically significant
-        event-associated modulations (25 surviving conservative Bonferroni
+        event-associated modulations (19 surviving family-wide Bonferroni
         correction), with detection rates consistent across 25 years. The
         original study established these are not artifacts of processing or
         random chance through extensive Monte Carlo permutation testing.

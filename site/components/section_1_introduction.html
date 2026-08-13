@@ -24,13 +24,13 @@
 </p>
 
 <p>
-    Critically, we propose that standard GNSS processing algorithms, designed to
+    Critically, this work proposes that standard GNSS processing algorithms, designed to
     remove energetic (common-mode) errors via datum constraints, inadvertently
     preserve the subtle, geometry-dependent (differential) correlations that are
     the focus of this work. This transforms the use of processed data from a
     limitation into a mechanistic filter: the absence of classical gravitational
-    scaling (GM/r²) is not a failure of detection, but a predicted consequence
-    of the processing chain, while the geometric signatures (anisotropy,
+    scaling (GM/r²) is not a failure of detection, but an expected consequence
+    under the datum-projection transfer hypothesis, while the geometric signatures (anisotropy,
     alignment) are transmitted.
 </p>
 
@@ -67,13 +67,14 @@
     <em>TEP in one line:</em> The Temporal Equivalence Principle (TEP) treats
     proper time as a dynamical field: instead of a fixed background parameter,
     time behaves like a scalar field woven through spacetime, whose local
-    configuration and gradients govern clock rates, correlations, and the
-    effective speed of light.
+    configuration and gradients govern clock rates, temporal correlations and
+    global light-time relations, while the locally measured speed of light
+    remains invariant.
 </p>
 <p>
-    This investigation is fundamentally grounded in empirical phenomenology: we
-    systematically document systematic patterns in GNSS timing correlations over
-    decadal timescales, then interpret these findings through established
+    This investigation is grounded in empirical phenomenology: it
+    systematically documents patterns in GNSS timing correlations over
+    multi-decade timescales and interprets them through established
     theoretical frameworks. TEP provides one such framework for interpreting
     velocity-dependent and gravitational coupling effects in distributed timing
     networks.
@@ -83,23 +84,24 @@
     permeating spacetime. Clocks do not simply read out a passive parameter;
     they interact with this fabric. Variations in the temporal field, and in the
     system's motion through it, offer a potential explanation for the
-    correlation structure modulations we document empirically.
+    correlation structure modulations documented empirically in this work.
 </p>
 <p>
-    Formally, the temporal field is treated as a covariant scalar; it does not
-    introduce a preferred frame.
+    Formally, the temporal field is covariant and introduces no fundamental
+    preferred frame; a non-zero environmental or cosmological field
+    configuration may nevertheless define an observational covariance direction.
 </p>
 <p>
     The Temporal Equivalence Principle extends Einstein's equivalence principle
     to temporal dynamics. Key predictions—velocity-dependent anisotropy and
-    event responses—provide testable signatures that we investigate empirically.
+    event responses—provide testable signatures that are investigated empirically.
     The framework proposes that:
 </p>
 <ol>
     <li>
         <strong>Velocity-Dependent Coupling:</strong> The correlation decay
         length between synchronized clocks should depend on their collective
-        velocity relative to the dominant gravitational frame
+        velocity relative to the relevant cosmological/background covariance frame
     </li>
     <li>
         <strong>Gravitational Modulation:</strong> Changes in the local
@@ -122,8 +124,10 @@
         gravitational potential (Δf/f ~ GM/rc²)
     </li>
     <li>
-        TEP predicts correlation <em>structure</em> modulation with
-        characteristic decay length λ ~ λ₀(1 + v²/c²)
+        TEP predicts correlation <em>structure</em> modulation: a
+        conformal-sector covariance with characteristic decay length λ<sub>T</sub>,
+        whose velocity/orientation dependence is a channel response whose
+        microscopic transfer law is not yet closed (§1.2)
     </li>
 </ul>
 
@@ -162,14 +166,13 @@
     <p>
         where matter couples to the disformal metric
         <em
-            >ğ<sub>μν</sub> = A(φ)g<sub>μν</sub> +
-            B(φ)∂<sub>μ</sub>φ∂<sub>ν</sub>φ</em
-        >.
+            >ğ<sub>μν</sub> = A²(φ)g<sub>μν</sub> +
+            B(φ)∇<sub>μ</sub>φ∇<sub>ν</sub>φ</em
+        >, with universal conformal factor <em>A(φ) = exp(β<sub>A</sub>φ/M<sub>Pl</sub>)</em>.
     </p>
 
     <p>
-        <strong>2. Field Equation:</strong> Variation yields the sourced wave
-        equation:
+        <strong>2. Field Equation:</strong> Variation of the action with respect to φ yields a sourced scalar equation. Schematically, the scalar equation contains conformal trace sourcing together with disformal derivative sourcing:
     </p>
     <div
         style="
@@ -179,18 +182,17 @@
             font-style: italic;
         "
     >
-        □φ − V'(φ) = −α(φ)T + ∇<sub>μ</sub>(B T<sup>μν</sup> ∂<sub>ν</sub>φ)
+        K(φ)□φ + ½K<sub>,φ</sub>(∂φ)² − V<sub>,φ</sub> = −𝒬
     </div>
     <p>
-        where the coupling strength is <em>α(φ) ≡ β/M<sub>Pl</sub></em
-        >.
+        where the source <em>𝒬 = AA<sub>,φ</sub> g<sub>μν</sub> 𝒯<sup>μν</sup> + ½ B<sub>,φ</sub> 𝒯<sup>μν</sup> ∇<sub>μ</sub>φ ∇<sub>ν</sub>φ − ∇<sub>μ</sub>(B 𝒯<sup>μν</sup> ∇<sub>ν</sub>φ)</em> displays the leading conformal–disformal matter coupling explicitly, with <em>𝒯<sup>μν</sup></em> the matter-frame stress-energy and the effective scalar coupling <em>α(φ) ≡ d ln A/dφ = β<sub>A</sub>/M<sub>Pl</sub></em>. In the conformal limit <em>B → 0</em> the source reduces to the trace coupling <em>α(φ)T</em>; the full disformal source is derived in the foundational paper (Smawfield, 2025).
     </p>
 
     <p>
-        <strong>3. Predicted Correlation Function:</strong> Arising from the
-        velocity-dependent disformal metric, the timing correlation
-        <em>C(r,v)</em> in a frame moving with velocity <em>v</em> is derived to
-        be:
+        <strong>3. Conformal-Dominant Covariance Channel:</strong> GNSS-II
+        measures a reduced GNSS covariance-channel response to the
+        environmentally projected Temporal Shear. The locally observable shear
+        is the conformal-sector gradient
     </p>
     <div
         style="
@@ -200,9 +202,21 @@
             font-style: italic;
         "
     >
-        C(r, v) = C₀ exp( -r / λ(v) )
+        Σ<sub>μ</sub><sup>obs</sup> = S<sub>Σ</sub>(E) ∇<sub>μ</sub> ln A(φ),
     </div>
-    <p>where the correlation decay length λ(v) modulates with velocity:</p>
+    <p>
+        where S<sub>Σ</sub>(E) is the environmental screening operator that
+        unifies density, compactness, proximity, and covariance-channel
+        projections across the TEP corpus (Smawfield, 2025, Paper 6). The
+        disformal function B(φ) governs cone tilts, one-way non-reciprocity, and
+        closed-loop synchronization holonomy; it is <em>not</em> the sector
+        tested by open-path GNSS covariance, and is reserved for dedicated
+        closed-loop / one-way asymmetry experiments (Paper 8).
+    </p>
+    <p>
+        The measured two-point timing covariance is represented
+        phenomenologically as
+    </p>
     <div
         style="
             text-align: center;
@@ -211,12 +225,21 @@
             font-style: italic;
         "
     >
-        λ(v) ≈ λ₀ [ 1 + (B/A)(v/c)² sin²θ ]
+        C(r) = C₀ exp( -r / λ<sub>T</sub> ) + C<sub>∞</sub>,
     </div>
     <p>
-        This predicts a ~0.01% modulation of the correlation structure at
-        Earth's orbital velocity (v/c ≈ 10⁻⁴), which is amplified to observable
-        levels by the network-scale constructive interference (§4.3.1).
+        with spatial decay length λ<sub>T</sub> (the Temporal Topology
+        covariance scale) and asymptotic floor C<sub>∞</sub>. The observed
+        velocity/orientation dependence of the correlation structure (the
+        ≈19% annual modulation of the EW/NS ratio, §3.2) is treated as a
+        channel response function of the conformal shear projected through the
+        GNSS processing transfer function. Its microscopic transfer law—mapping
+        Σ<sub>μ</sub><sup>obs</sup> to the measured anisotropy ratio (2.16) and
+        orbital-correlation magnitude (r = −0.888)—is <em>not yet closed</em>.
+        The observed 19% modulation is a network-level covariance-shape
+        observable and cannot presently be compared directly with a microscopic
+        conformal amplitude. The transfer law mapping Σ<sub>μ</sub><sup>obs</sup>
+        to the measured anisotropy remains to be derived (§4.3.1.1, §5).
     </p>
 </div>
 
@@ -286,16 +309,16 @@
             </tr>
             <tr style="background-color: rgba(73, 87, 115, 0.03)">
                 <td style="padding: 8px; border: 1px solid #495773">
-                    <strong>Exponential spatial decay</strong>
+                    <strong>Distance-structured decay</strong>
                 </td>
                 <td style="padding: 8px; border: 1px solid #495773">
-                    C(r) ∝ exp(-r/λ) preferred over power-law
+                    Finite covariance scale within pre-specified TEP range; exponential preferred over power-law
                 </td>
                 <td style="padding: 8px; border: 1px solid #495773">
-                    Exponential ΔAIC = 12.8 vs power-law ΔAIC > 30
+                    Gaussian/squared-exponential preferred by AIC; exponential ΔAIC = 12.8 vs power-law ΔAIC > 30
                 </td>
                 <td style="padding: 8px; border: 1px solid #495773">
-                    <strong>Consistent</strong>
+                    <strong>Decay scale: Confirmed. Exact kernel: Not selected</strong>
                 </td>
             </tr>
             <tr>
@@ -303,14 +326,15 @@
                     <strong>Velocity-dependent anisotropy</strong>
                 </td>
                 <td style="padding: 8px; border: 1px solid #495773">
-                    Correlation structure modulates with v/c
+                    Correlation structure modulates with v/c (qualitative;
+                    magnitude not yet derived)
                 </td>
                 <td style="padding: 8px; border: 1px solid #495773">
-                    r = -0.888 (95% CI: [-0.94, -0.81]), p < 2×10⁻⁷, 5.1σ; 0/5M
-                    surrogates
+                    r = -0.888 (95% CI: [-0.94, -0.81]); surrogate p &lt; 2×10⁻⁷
+                    (0/5M); t-test p ≈ 2.6×10⁻⁴ (N_eff ≈ 11)
                 </td>
                 <td style="padding: 8px; border: 1px solid #495773">
-                    <strong>Consistent</strong>
+                    <strong>Qualitatively Consistent</strong>
                 </td>
             </tr>
             <tr style="background-color: rgba(73, 87, 115, 0.03)">
@@ -318,13 +342,14 @@
                     <strong>Geometric alignment with motion</strong>
                 </td>
                 <td style="padding: 8px; border: 1px solid #495773">
-                    EW > NS in ecliptic frame
+                    EW > NS in ecliptic frame (qualitative; 2.16 ratio not yet
+                    derived)
                 </td>
                 <td style="padding: 8px; border: 1px solid #495773">
                     EW/NS = 2.16 (±0.23)
                 </td>
                 <td style="padding: 8px; border: 1px solid #495773">
-                    <strong>Consistent</strong>
+                    <strong>Qualitatively Consistent</strong>
                 </td>
             </tr>
             <tr>
@@ -357,10 +382,10 @@
             </tr>
             <tr>
                 <td style="padding: 8px; border: 1px solid #495773">
-                    <strong>GM/r² scaling absent</strong> (null prediction)
+                    <strong>GM/r² scaling absent</strong> (measurement-channel prediction)
                 </td>
                 <td style="padding: 8px; border: 1px solid #495773">
-                    Classical mass scaling filtered by processing
+                    Classical mass scaling suppressed by datum-projection
                 </td>
                 <td style="padding: 8px; border: 1px solid #495773">
                     No M/r² or M/r³ correlation (all p > 0.5)
@@ -374,23 +399,37 @@
 </div>
 
 <p>
-    <strong>Key Finding:</strong> All seven TEP predictions are
-    <em>consistent with</em> GNSS observations—including the critical null
-    prediction that classical gravitational scaling (GM/r²) should be absent in
-    processed data due to common-mode filtering (§2.1.3). This discriminating
-    prediction distinguishes TEP from naive gravitational coupling hypotheses.
-    The geometric modulation amplitude (19% in correlation ratios) exceeds naive
-    energetic estimates (~10⁻⁶), but this discrepancy is resolved by the
-    processing filter mechanism: energetic signals are filtered while geometric
-    structure is transmitted (§4.3.1.1).
+    <strong>Key Finding:</strong> The TEP interpretation of the GNSS covariance
+    is conformal-dominant: the observed data confirm a finite, distance-structured
+    covariance scale within the pre-specified TEP range (λ<sub>T</sub>), and the
+    absence of GM/r² scaling is consistent with the conformal-sector Temporal
+    Topology. The exponential kernel strongly outperforms simple power-law models
+    and is retained for cross-paper comparability, although Gaussian-family kernels
+    provide the preferred empirical fit in the present dataset (ΔAIC = 12.8). The
+    velocity-dependent anisotropy (r = −0.888) and geometric
+    alignment (EW/NS = 2.16) are <em>qualitatively</em> consistent with a
+    conformal shear projected through the GNSS processing transfer function,
+    but their magnitudes are not yet derived from first principles—the
+    microscopic transfer law mapping Σ<sub>μ</sub><sup>obs</sup> to the observed
+    anisotropy ratio and orbital-correlation coefficient remains open (§5). The
+    observed 19% modulation is a network-level covariance-shape observable and
+    cannot presently be compared directly with a microscopic conformal amplitude.
+    The datum-projection mechanism provides a qualitative framework: the data
+    are consistent with a processing architecture that suppresses common-mode
+    amplitude information while retaining differential covariance structure. The
+    magnitude and sign of this transfer must be calibrated using raw/RINEX data
+    and synthetic end-to-end processing (§4.3.1.1). The disformal sector B(φ) is
+    not tested by this
+    open-path covariance channel and is reserved for dedicated closed-loop
+    holonomy and one-way asymmetry experiments (Paper 8).
 </p>
 <h3>1.3 Previous Work</h3>
 <p>
     The multi-centre study established the phenomenon across independent
-    analysis centers (CODE, IGS, ESA), reducing the likelihood of
-    center-specific processing artifacts over 2.5 years. That study demonstrated
+    analysis centres (CODE, IGS, ESA), reducing the likelihood of
+    centre-specific processing artifacts over 2.5 years. That study demonstrated
     velocity-dependent anisotropy and anomalous planetary event responses, using
-    rigorous cross-center validation and null tests. However, the limited
+    rigorous cross-centre validation and null tests. However, the limited
     temporal baseline precluded the investigation of long-period geophysical or
     astronomical cycles.
 </p>
@@ -404,9 +443,10 @@
 <p>
     <strong>TEP-motivated empirical test:</strong> This work was explicitly
     conceived as a theory-driven empirical test of the Temporal Equivalence
-    Principle using long-span GNSS clock products. The analysis pipeline, choice
-    of observables (anisotropy, orbital modulation, planetary events, nutation,
-    mesh coherence), and the a priori prediction table in §1.2 were defined to
+    Principle using long-span GNSS clock products. The analysis pipeline, core
+    choice of observables (anisotropy, orbital modulation, planetary events,
+    nutation, mesh coherence), and the a priori prediction table in §1.2 were
+    defined to
     test whether GNSS timing correlations exhibit the specific spatial,
     temporal, and geophysical patterns forecast by TEP.
 </p>
@@ -414,7 +454,7 @@
 <p>
     <strong>Methodological Foundation:</strong> This study builds upon Paper 1
     (multi-centre study)'s comprehensive validation framework, which established
-    cross-center consistency (R² = 0.920-0.970 between CODE, IGS, ESA) through
+    cross-centre consistency (R² = 0.920-0.970 between CODE, IGS, ESA) through
     388 statistical tests and extensive null testing. That foundational work
     demonstrated the existence of systematic distance-structured correlations in
     GNSS timing networks over 2.5 years across three independent processing
@@ -464,8 +504,8 @@
 
     <p style="margin-bottom: 12px">
         <strong>Q2. Long-Period Signatures (Extension/Prediction Test):</strong>
-        Can we detect TEP coupling to geophysical cycles that require >20-year
-        baselines?
+        Can TEP coupling to geophysical cycles that require >20-year baselines be
+        detected?
     </p>
     <ul style="margin: 0 0 15px 20px; font-size: 0.95em">
         <li>
@@ -474,8 +514,8 @@
             test possible
         </li>
         <li>
-            <strong>TEP Prediction:</strong> Inertial orientation coupling
-            should produce R² = 0.6-0.7 (based on semiannual nutation analogy)
+            <strong>TEP-motivated expectation:</strong> Inertial orientation coupling
+            should produce R² ~ 0.6-0.7, based on the semiannual analogy.
         </li>
         <li>
             <strong>Semiannual Nutation:</strong> Expected R² > 0.85
@@ -492,7 +532,7 @@
             >Q3. Reference Frame Identification and Theoretical Selectivity
             (Falsification Tests):</strong
         >
-        Can we identify the operative reference frame for orbital modulation,
+        Can the operative reference frame for orbital modulation be identified,
         and does the network respond to all periodic signals or specifically to
         orbital/inertial dynamics?
     </p>
@@ -506,22 +546,23 @@
             <ul style="margin: 5px 0 5px 20px; font-size: 0.95em">
                 <li>
                     <strong>Physical Question:</strong> Does orbital modulation
-                    occur relative to the Solar System's galactic motion (~20
-                    km/s toward RA=272°, Dec=+30°) or Earth's motion through the
-                    Cosmic Microwave Background rest frame (~369 km/s toward
+                    align with the Solar System's peculiar motion (~20
+                    km/s toward RA=272°, Dec=+30°) or with the
+                    CMB dipole direction (~369 km/s toward
                     RA=168°, Dec=-7°)?
                 </li>
                 <li>
-                    <strong>Method:</strong> Comprehensive grid search across
-                    703 sky directions to identify which cosmological reference
+                    <strong>Method:</strong> Comprehensive multi-resolution grid search across
+                    65,341 sky directions (10°, 5°, 2.5°, 1°) to identify which cosmological reference
                     frame best predicts the temporal modulation of spatial
                     anisotropy
                 </li>
                 <li>
-                    <strong>TEP Prediction:</strong> Coupling should occur at
-                    the largest velocity scale (cosmic ~369 km/s, not galactic
-                    ~20 km/s), consistent with field-theoretic frameworks where
-                    local dynamics couple to the Universe's matter distribution
+                    <strong>TEP Prediction:</strong> The preferred direction
+                    should align with the CMB dipole rather than the Solar Apex,
+                    consistent with field-theoretic frameworks where the TEP
+                    field configuration may be correlated with the cosmological
+                    background state
                 </li>
                 <li>
                     <strong>Falsification Power:</strong> Can reject the
@@ -573,20 +614,21 @@
     >
         <strong>Study Classification:</strong> This is a
         <em>replication + extension + falsification</em> study. Q1 tests
-        temporal stability (replication). Q2 tests genuinely new predictions
-        accessible only with this dataset (extension). Q3A provides definitive
-        falsification between competing physical hypotheses (CMB vs galactic
-        frames), while Q3B tests theoretical specificity via null controls
+        long-baseline consistency (replication). Q2 tests genuinely new predictions
+        accessible only with this dataset (extension). Q3A provides strong
+        directional discrimination between the CMB-dipole and Solar-Apex
+        hypotheses, while Q3B tests theoretical specificity via null controls
         (solar rotation). Together, they distinguish genuine physical coupling
-        from transient processing artifacts and identify the operative
-        cosmological scale.
+        from transient processing artifacts and identify a preferred covariance
+        direction, strongly discriminating between the CMB-dipole and Solar-Apex
+        directional templates.
     </p>
 </div>
 
 <p><strong>Primary Empirical Objectives</strong>:</p>
 <ol>
     <li>
-        <strong>Objective A (Replication):</strong> Document temporal stability
+        <strong>Objective A (Replication):</strong> Document long-baseline consistency
         of core phenomenology (anisotropy, orbital coupling, event responses)
         over 25.3 years.
     </li>
@@ -607,7 +649,7 @@
     </li>
 </ol>
 
-<h3>1.5 Evidence Handoff: Building on Multi-Center Validation</h3>
+<h3>1.5 Evidence Handoff: Building on Multi-Centre Validation</h3>
 <p>
     This study builds directly on the multi-centre study's comprehensive
     validation framework. The table below maps each major claim to its
@@ -627,13 +669,13 @@
             <tr>
                 <td><strong>EW > NS Anisotropy</strong></td>
                 <td>
-                    Validated across 3 centers (CODE, IGS, ESA)<br />Cross-center
+                    Validated across 3 centres (CODE, IGS, ESA)<br />Cross-centre
                     R² = 0.920–0.970<br />388 statistical tests, 40–52% survive
                     MCC
                 </td>
                 <td>
-                    <strong>Replicated:</strong> EW:NS = 2.16, strength =
-                    1.981<br />Consistent magnitude within uncertainty<br />Decadal
+                    <strong>Replicated:</strong> EW/NS = 2.16, strength =
+                    1.981<br />Consistent magnitude within uncertainty<br />Long-baseline
                     stability confirmed
                 </td>
             </tr>
@@ -644,8 +686,8 @@
                     nulls passed<br />Hemisphere &amp; seasonal controls
                 </td>
                 <td>
-                    <strong>Strengthened:</strong> r = −0.888 (5.1σ, p < 2×10⁻⁷;
-                    5 M surrogates)<br />25 complete solar orbits<br />Hemisphere
+                    <strong>Strengthened:</strong> r = −0.888 (surrogate p &lt; 2×10⁻⁷,
+                    0/5M; t-test p ≈ 2.6×10⁻⁴)<br />25.3-year baseline<br />Hemisphere
                     stratification is the proper discriminant (see §3.2.2;
                     partial correlation is inappropriate for coupled orbital
                     variables)
@@ -659,16 +701,16 @@
                 <td>
                     <strong>Multi-Resolution Verification:</strong> Grid search
                     across 65,341 sky directions (§2.3.5, §3.2.6)<br />
-                    <strong>Best fit:</strong> RA=186°, Dec=-4° (r=0.747, p <
-                    0.0001)<br />
+                    <strong>Best fit:</strong> RA=186°, Dec=-4° (r=0.747;
+                    directional-rank p &lt; 0.001)<br />
                     <strong>CMB Dipole:</strong> RA=168°, Dec=-7° → 18.2° from
                     best fit<br />
                     <strong>Solar Apex:</strong> RA=272°, Dec=+30° → r=0.007,
                     p=0.97<br />
-                    <strong>Variance Ratio: 5,570×</strong> |
+                    <strong>Variance Ratio: ~10,300×</strong> |
                     <strong>Convergence verified</strong> across 10°, 5°, 2.5°,
                     1° resolutions<br />
-                    Identifies cosmic-scale coupling (~369 km/s), resolves
+                    Identifies CMB-dipole directional alignment, resolves
                     hemisphere asymmetry
                 </td>
             </tr>
@@ -679,7 +721,7 @@
                     Carlo permutation validated<br />3–6σ confidence
                 </td>
                 <td>
-                    <strong>Extended:</strong> 56/156 events ≥2σ; 25
+                    <strong>Extended:</strong> 56/156 events ≥2σ; 19
                     Bonferroni-significant<br />Amplitude metrics
                     processing-dependent<br />Null event control validates
                     specificity (§3.3)
@@ -689,33 +731,33 @@
                 <td><strong>Chandler Wobble</strong></td>
                 <td>
                     R² = 0.377–0.471 across centers<br />433-day period
-                    detected<br />Limited to ~6 cycles
+                    tested<br />Limited to ~6 cycles
                 </td>
                 <td>
-                    <strong>Extended:</strong> R² = 0.096 (borderline)<br />21+
-                    complete cycles observed<br />Phase stability = 0.72
+                    <strong>Extended:</strong> R² = 0.096 (below threshold)<br />21+
+                    complete cycles observed<br />Phase stability = 0.72<br />Chandler-consistent secondary signature
                 </td>
             </tr>
             <tr>
                 <td><strong>18.6-Year Nutation</strong></td>
                 <td><em>Not testable (baseline < 2.5 years)</em></td>
                 <td>
-                    <strong>New Detection:</strong> R² = 0.641, p < 10⁻⁸<br />1.4
-                    complete cycles observed<br />First detection at this period
+                    <strong>Preliminary:</strong> R² = 0.641, p = 0.010<br />1.4
+                    complete cycles observed<br />Preliminary — requires longer-baseline or red-noise validation
                 </td>
             </tr>
             <tr>
                 <td><strong>Semiannual Nutation</strong></td>
                 <td><em>Not explicitly tested</em></td>
                 <td>
-                    <strong>New Detection:</strong> R² = 0.904, p < 10⁻²⁰<br />50+
+                    <strong>New Detection:</strong> R² = 0.904, p = 2.7×10⁻⁵<br />50+
                     complete cycles
                 </td>
             </tr>
             <tr>
-                <td><strong>Network Synchronization</strong></td>
+                <td><strong>Network Covariance Score</strong></td>
                 <td>
-                    Mesh dance detected across 3 centers<br />CODE: 0.624, IGS:
+                    Mesh dance detected across 3 centres<br />CODE: 0.624, IGS:
                     0.579, ESA: 0.602<br />Consistent global coordination
                 </td>
                 <td>
@@ -730,11 +772,11 @@
 
 <p>
     <strong>Key Empirical Insight:</strong> All core phenomenology from Paper 1
-    is re-observed here with enhanced statistical power and temporal stability.
+    is re-observed here with enhanced statistical power and long-baseline consistency.
     The multi-centre study's comprehensive validation framework—including 388
     statistical tests, extensive null testing, ionospheric controls, and
-    cross-center consistency—provides the methodological foundation upon which
+    cross-centre consistency—provides the methodological foundation upon which
     these temporal extensions are built. The convergence of independent findings
-    across multiple analysis centers and extended timescales strongly counters
+    across multiple analysis centres and extended timescales strongly counters
     artifact concerns.
 </p>

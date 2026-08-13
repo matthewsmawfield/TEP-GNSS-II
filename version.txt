@@ -1,13 +1,12 @@
-v0.19 (Cairo) - Conformal Coupling Definition Correction
+v0.19 (Cairo) - Theoretical Reporting Corrections and Statistical Honesty
 
-- Fixed conformal coupling definition: α(φ) ≡ β/M_Pl and A(φ) = exp(βφ/M_Pl)
-  (was erroneously 2β/M_Pl and exp(2βφ/M_Pl) in manuscript and site HTML)
-
-v0.18 (Cairo) - Terminology Alignment and Theory Clarification
-
-- Aligned terminology with TEP framework: introduced λ_T notation for Temporal Topology correlation length
-- Clarified distinction between geometric correlation structure and clock frequency variations
-- Added explicit primary/secondary result designation in abstract
-- Enhanced reference frame identification section (CMB vs galactic motion falsification)
-- Improved Monte Carlo validation methodology explanation
-- Minor formatting and citation consistency updates
+- Corrected theoretical reporting: metric prefactor (A → A²), exact scalar field
+  equation source, and conformal coupling definition aligned with Jakarta
+- Clarified that GNSS covariance measures open-path conformal Temporal Shear, not
+  synchronization non-integrability (conformal holonomy vanishes; disformal sector
+  reserved for closed-loop experiments)
+- Separated surrogate and parametric p-values throughout, removed the combined joint
+  p-value, and reframed the processing mechanism as a testable hypothesis rather than
+  a resolved explanation
+- Reframed CMB result as directional alignment with the dipole, not a speed-magnitude
+  measurement, and updated dates and metadata to August 13, 2026
