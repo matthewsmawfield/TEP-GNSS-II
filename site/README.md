@@ -3,7 +3,7 @@
 **Publication website for TEP-GNSS-II (Paper 2)**
 
 **Author:** Matthew Lukin Smawfield  
-**Version:** v0.19 (Cairo)  
+**Version:** v0.20 (Cairo)  
 **Date:** 13 August 2026
 **Status:** Preprint
 
@@ -46,8 +46,8 @@ cd ..
 
 ## URLs
 
-- **Production**: https://matthewsmawfield.github.io/TEP-GNSS/code-longspan/
-- **Paper 1**: https://matthewsmawfield.github.io/TEP-GNSS/ (root)
+- **Production**: https://mlsmawfield.com/tep/gnss-ii/
+- **Paper 1**: https://mlsmawfield.com/tep/gnss-i/
 
 ## Structure
 

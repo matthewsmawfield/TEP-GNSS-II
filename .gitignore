@@ -130,3 +130,4 @@ site-code-longspan/dist/
 *.code-workspace
 
 .devin/
+manuscripts/

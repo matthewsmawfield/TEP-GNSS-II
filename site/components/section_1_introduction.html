@@ -246,8 +246,13 @@
 <h4>TEP Predictions vs. Observations</h4>
 <p>
     The TEP framework makes specific quantitative predictions that can be tested
-    against GNSS observations. Table 1 summarizes these a priori predictions and
-    their experimental verification:
+    against GNSS observations. The spatial search band of 1,000–10,000 km was established
+    in Paper 0 (§11) and Paper 1 (§1.1) as an order-of-magnitude window anchored by the
+    terrestrial geometric saturation radius <em>R</em><sub><em>T</em></sub>(<em>M</em><sub>⊕</sub>) = (3<em>M</em><sub>⊕</sub> / 4πρ<sub><em>T</em></sub>)<sup>1/3</sup> ≈ 4,146 km,
+    derived from the material screening density ρ<sub><em>T</em></sub> ≈ 20 g/cm<sup>3</sup> (Paper 6).
+    The empirical test therefore distinguishes between scale-free power laws and bounded physical decay,
+    evaluating kernel structure, velocity modulation, and directional anisotropy.
+    Table 1 summarizes these a priori predictions and their experimental verification:
 </p>
 
 <div style="overflow-x: auto; margin: 20px 0">
@@ -298,13 +303,13 @@
                     <strong>Temporal Topology Correlation Length (λ<sub>T</sub>)</strong>
                 </td>
                 <td style="padding: 8px; border: 1px solid #495773">
-                    1,000–10,000 km (from Temporal Topology scale)
+                    Order-of-magnitude search band 1,000–10,000 km; geometric saturation anchor <em>R</em><sub><em>T</em></sub>(<em>M</em><sub>⊕</sub>) ≈ 4,146 km (Paper 0 §11, Paper 6; cross-product family ~1.9–4.5×10³ km, Paper 14)
                 </td>
                 <td style="padding: 8px; border: 1px solid #495773">
-                    4,201 ± 1,967 km
+                    Azimuth-averaged λ = 3,210 ± 389 km (cross-sector dispersion: 4,201 ± 1,967 km, spread 2,314–7,664 km)
                 </td>
                 <td style="padding: 8px; border: 1px solid #495773">
-                    <strong>Consistent</strong>
+                    <strong>Order-of-magnitude consistent; empirical calibration point</strong>
                 </td>
             </tr>
             <tr style="background-color: rgba(73, 87, 115, 0.03)">
@@ -312,13 +317,13 @@
                     <strong>Distance-structured decay</strong>
                 </td>
                 <td style="padding: 8px; border: 1px solid #495773">
-                    Finite covariance scale within pre-specified TEP range; exponential preferred over power-law
+                    Finite covariance scale within pre-specified TEP range; exponential/Gaussian preferred over power-law
                 </td>
                 <td style="padding: 8px; border: 1px solid #495773">
                     Gaussian/squared-exponential preferred by AIC; exponential ΔAIC = 12.8 vs power-law ΔAIC > 30
                 </td>
                 <td style="padding: 8px; border: 1px solid #495773">
-                    <strong>Decay scale: Confirmed. Exact kernel: Not selected</strong>
+                    <strong>Decay scale confirmed; power-law ruled out</strong>
                 </td>
             </tr>
             <tr>
@@ -425,9 +430,12 @@
 </p>
 <h3>1.3 Previous Work</h3>
 <p>
-    The multi-centre study established the phenomenon across independent
-    analysis centres (CODE, IGS, ESA), reducing the likelihood of
-    centre-specific processing artifacts over 2.5 years. That study demonstrated
+    The multi-centre study established the phenomenon across three
+    software-diverse analysis centres (CODE, IGS, ESA) whose products derive
+    from substantially the same tracking network (83&ndash;90% pairwise station
+    overlap), reducing the likelihood of centre-specific processing artifacts
+    over 2.5 years; common-mode network and datum-level systematics are not
+    bounded by that comparison alone. That study demonstrated
     velocity-dependent anisotropy and anomalous planetary event responses, using
     rigorous cross-centre validation and null tests. However, the limited
     temporal baseline precluded the investigation of long-period geophysical or
@@ -457,8 +465,8 @@
     cross-centre consistency (R² = 0.920-0.970 between CODE, IGS, ESA) through
     388 statistical tests and extensive null testing. That foundational work
     demonstrated the existence of systematic distance-structured correlations in
-    GNSS timing networks over 2.5 years across three independent processing
-    centers. This study extends the temporal baseline by a factor of 10× (25.3
+    GNSS timing networks over 2.5 years across three processing centres running
+    different software packages on the shared IGS tracking network. This study extends the temporal baseline by a factor of 10× (25.3
     years) to address three critical scientific questions that distinguish
     transient artifacts from genuine physical coupling:
 </p>
@@ -484,12 +492,11 @@
     </p>
     <ul style="margin: 0 0 15px 20px; font-size: 0.95em">
         <li>
-            <strong>Paper 1 Baseline:</strong> EW/NS = 2.16, orbital r = -0.89,
-            mesh = 0.58-0.62
+            <strong>Paper 1 Baseline:</strong> Directional anisotropy typical λ<sub>EW</sub>/λ<sub>NS</sub> ≈ 0.55–2.03 (peaks up to ~4.75, discussion quoting ~2.75×), orbital velocity r = −0.571 to −0.793 across centres, mesh coherence = 0.58–0.62
         </li>
         <li>
             <strong>Expected if genuine:</strong> Patterns should be temporally
-            stable (values within uncertainty)
+            stable (recovered with consistent directional structure and coupling sign)
         </li>
         <li>
             <strong>Expected if artifact:</strong> Patterns should vary with
@@ -529,8 +536,8 @@
 
     <p style="margin-bottom: 12px">
         <strong
-            >Q3. Reference Frame Identification and Theoretical Selectivity
-            (Falsification Tests):</strong
+            >Q3. Reference Frame Discrimination and Theoretical Selectivity
+            (Template &amp; Null Tests):</strong
         >
         Can the operative reference frame for orbital modulation be identified,
         and does the network respond to all periodic signals or specifically to
@@ -540,8 +547,8 @@
     <ul style="margin: 0 0 8px 20px; font-size: 0.95em">
         <li>
             <strong
-                >A) CMB Frame vs Galactic Frame (Primary Falsification
-                Test):</strong
+                >A) CMB Frame vs Galactic Frame (Directional Template
+                Discrimination):</strong
             >
             <ul style="margin: 5px 0 5px 20px; font-size: 0.95em">
                 <li>
@@ -553,22 +560,25 @@
                 </li>
                 <li>
                     <strong>Method:</strong> Comprehensive multi-resolution grid search across
-                    65,341 sky directions (10°, 5°, 2.5°, 1°) to identify which cosmological reference
-                    frame best predicts the temporal modulation of spatial
+                    79,330 sky directions across four grids (10°, 5°, 2.5°, with 65,341 at 1°) to identify which reference
+                    direction best predicts the temporal modulation of spatial
                     anisotropy
                 </li>
                 <li>
-                    <strong>TEP Prediction:</strong> The preferred direction
-                    should align with the CMB dipole rather than the Solar Apex,
-                    consistent with field-theoretic frameworks where the TEP
-                    field configuration may be correlated with the cosmological
-                    background state
+                    <strong>Interpretive Hypothesis:</strong> If an operative
+                    cosmological covariance direction exists, the CMB dipole is the
+                    most plausible candidate under TEP (as local temporal gradients
+                    couple to the cosmological background 4-velocity rather than local
+                    galactic peculiar motion). The covariant master action contains no
+                    fundamental preferred frame; an environmental or cosmological field
+                    configuration sets the observational covariance direction.
                 </li>
                 <li>
-                    <strong>Falsification Power:</strong> Can reject the
-                    galactic hypothesis if the CMB frame shows strong
-                    correlation while the galactic frame shows none. Variance
-                    ratio quantifies relative explanatory power.
+                    <strong>Template Discrimination Power:</strong> Direct head-to-head
+                    comparison between the two candidate physical templates. The Solar Apex
+                    vector (+30° Dec) predicts N-S anisotropy, which is geometrically
+                    incompatible with the observed E-W dominance. The variance ratio
+                    quantifies relative explanatory power.
                 </li>
                 <li>
                     <strong>Expected Outcome:</strong> If galactic: R² ≈
@@ -669,20 +679,20 @@
             <tr>
                 <td><strong>EW > NS Anisotropy</strong></td>
                 <td>
-                    Validated across 3 centres (CODE, IGS, ESA)<br />Cross-centre
+                    Validated across 3 centres (CODE, IGS, ESA; typical λ<sub>EW</sub>/λ<sub>NS</sub> ≈ 0.55–2.03, peaks up to ~4.75, discussion quoting ~2.75×)<br />Cross-centre
                     R² = 0.920–0.970<br />388 statistical tests, 40–52% survive
                     MCC
                 </td>
                 <td>
-                    <strong>Replicated:</strong> EW/NS = 2.16, strength =
-                    1.981<br />Consistent magnitude within uncertainty<br />Long-baseline
+                    <strong>Long-baseline recovery:</strong> EW/NS = 2.16, strength =
+                    1.981 ± 0.23 (SE)<br />Consistent with Paper 1 E-W dominance and discussion scale (~2.75×)<br />Long-baseline
                     stability confirmed
                 </td>
             </tr>
             <tr>
                 <td><strong>Orbital Velocity Coupling</strong></td>
                 <td>
-                    r ≈ −0.57 to −0.79 across centers<br />Ionosphere/solar
+                    r = −0.571 to −0.793 across centres<br />Ionosphere/solar
                     nulls passed<br />Hemisphere &amp; seasonal controls
                 </td>
                 <td>
@@ -700,7 +710,7 @@
                 </td>
                 <td>
                     <strong>Multi-Resolution Verification:</strong> Grid search
-                    across 65,341 sky directions (§2.3.5, §3.2.6)<br />
+                    across 79,330 sky directions (65,341 at 1° resolution; §2.3.5, §3.2.6)<br />
                     <strong>Best fit:</strong> RA=186°, Dec=-4° (r=0.747;
                     directional-rank p &lt; 0.001)<br />
                     <strong>CMB Dipole:</strong> RA=168°, Dec=-7° → 18.2° from
@@ -762,7 +772,7 @@
                 </td>
                 <td>
                     <strong>Replicated:</strong> Index = 0.582<br />Consistent
-                    with multi-centre range<br />104 temporal windows over 25
+                    with multi-centre range<br />102 non-overlapping 90-day windows (104 pipeline bins) over 25
                     years
                 </td>
             </tr>
@@ -776,7 +786,7 @@
     The multi-centre study's comprehensive validation framework—including 388
     statistical tests, extensive null testing, ionospheric controls, and
     cross-centre consistency—provides the methodological foundation upon which
-    these temporal extensions are built. The convergence of independent findings
+    these temporal extensions are built. The convergence of consistent findings
     across multiple analysis centres and extended timescales strongly counters
     artifact concerns.
 </p>

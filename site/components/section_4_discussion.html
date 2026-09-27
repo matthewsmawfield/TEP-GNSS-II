@@ -56,9 +56,12 @@
 <h4>4.1.2 Kinematic Evidence: Orbital Velocity Coupling</h4>
 <p>
     This analysis links the spatial anisotropy to Earth's motion through the
-    solar system. While the flagship prediction of the TEP framework is a
-    non-zero synchronization holonomy, the orbital correlation provides direct
-    evidence for velocity-dependent modulation of the correlation structure.
+    solar system. While the primary prediction of the TEP framework is a
+    non-zero synchronization holonomy (a closed-loop observable), the orbital
+    correlation reported here is an open-path observable consistent with the
+    holonomy prediction, not a direct holonomy measurement. The orbital
+    correlation provides direct evidence for velocity-dependent modulation
+    of the correlation structure.
 </p>
 <p>
     <strong>Statistical Significance:</strong> The correlation (r = -0.888)
@@ -167,7 +170,7 @@
 
 <p>
     A comprehensive multi-resolution grid search (10°, 5°, 2.5°, 1°) spanning
-    65,341 tested directions (§2.3.5, §3.2.6) identifies a preferred directional
+    79,330 total tested directions across four resolutions (with 65,341 directions evaluated at the finest 1° resolution; §2.3.5, §3.2.6) identifies a preferred directional
     template under the fixed-amplitude scan:
 </p>
 
@@ -275,7 +278,7 @@
             <strong>Not uniquely CMB:</strong> It cannot be excluded that the signal
             couples to a different cosmological reference frame that happens to
             lie near the CMB dipole (e.g., motion relative to the Local Group
-            centroid or Virgo Supercluster, which lie within ~20° of our best
+            centroid or Virgo Supercluster, which lie within ~20° of the best
             fit).
         </li>
         <li>
@@ -294,7 +297,7 @@
         angular separation and ~10,300× variance ratio between these templates are
         robust regardless of the 18° offset. The CMB dipole direction is the most
         parsimonious interpretation given its well-characterised direction and
-        geometric proximity to our best fit, but the offset should be treated as
+        geometric proximity to the best fit, but the offset should be treated as
         a parameter requiring refinement with independent data rather than
         a precise CMB identification.
     </p>
@@ -558,8 +561,7 @@
         <li>CMB / Ecliptic East: 136× variance ratio</li>
         <li>CMB / Ecliptic West: 135× variance ratio</li>
         <li>
-            CMB / Solar Apex: 3,570× variance ratio (using actual CMB Dipole
-            direction)
+            CMB / Solar Apex: ~6,600× variance ratio (using unrounded R²<sub>Apex</sub> = 5.37 × 10⁻⁵ vs R²<sub>CMB</sub> = 0.357; rounding R²<sub>Apex</sub> to the table precision of 0.01% yields 3,570×)
         </li>
     </ul>
 
@@ -762,7 +764,7 @@
     <strong>Interpretation Note:</strong> The observed correlation is consistent
     with a physical coupling to the CMB dipole direction, but the underlying mechanism
     remains to be established. Further investigation is required to determine
-    the precise nature of this coupling and its implications for our
+    the precise nature of this coupling and its implications for the
     understanding of temporal correlations.
 </p>
 <p><strong>What is being correlated?</strong></p>
@@ -894,7 +896,7 @@
     <strong>"Draconitic Errors"</strong>. First characterized by Ray et al.
     (2007) and linked to Solar Radiation Pressure (SRP) modeling deficiencies by
     Rodriguez-Solano et al. (2014), these errors manifest as spurious signals at
-    harmonics of the <strong>GPS Draconitic Year (~351.4 days)</strong>. Given
+    harmonics of the <em>GPS Draconitic Year (~351.4 days)</em>. Given
     the proximity of this period to the Solar Year (365.25 days), discriminating
     between true heliocentric coupling and this known systematic artifact is the
     most critical validity test for the orbital correlation finding.
@@ -918,7 +920,7 @@
     T<sub>beat</sub> = (365.25 × 351.4) / (365.25 - 351.4) ≈ 25.4 years
 </div>
 <p>
-    <strong>The Trap:</strong> Our dataset covers 25.3 years
+    <strong>The Trap:</strong> The dataset covers 25.3 years
     (2000–2025)—matching the beat cycle to within 0.4% (0.1 years). This
     serendipitous duration acts as a perfect filter. Over exactly one beat
     cycle, a draconitic signal drifts through a full 360° of phase relative to
@@ -1193,7 +1195,7 @@
                     "Station density bias"
                 </td>
                 <td style="padding: 6px; border: 1px solid #495773">
-                    Anisotropy strengthens after density normalization (Ratio ≈
+                    Anisotropy persists and strengthens after post-hoc density normalization (Normalized Ratio ≈
                     2.40)
                 </td>
                 <td
@@ -1229,8 +1231,7 @@
                     "Single-constellation limitation"
                 </td>
                 <td style="padding: 6px; border: 1px solid #495773">
-                    MGEX multi-GNSS validation confirms exponential decay
-                    (R²=0.95, λ=3042km)
+                    MGEX multi-GNSS replication (Paper 14) confirms distance-structured spatial decay on combined multi-GNSS clocks (canonical isotropic λ = 1,862 ± 112 km, R² = 0.70–0.92; earlier 2020–2024 pilot λ = 3,042 ± 297 km, R² = 0.95); orbital coupling in MGEX is exploratory (model-free r = −0.716, p = 0.0018) while primary monthly metrics are null
                 </td>
                 <td
                     style="
@@ -1807,8 +1808,8 @@
 </table>
 
 <p>
-    The consistency across independent processing chains (R² = 0.920-0.970,
-    Paper 1) supports that datum projection and common-mode suppression are
+    The consistency across software-diverse processing chains (R² = 0.920-0.970,
+    Paper 1; shared tracking network) supports that datum projection and common-mode suppression are
     reproducible features of GNSS processing methodology, not a post-hoc
     rationalization. If the "datum-projection suppresses mass signals" were merely
     an excuse, different software implementations would show different results.
@@ -2056,7 +2057,7 @@
     (2024) report that after common-mode filtering, interstation correlation
     coefficients decrease from 0.50–0.71 to 0.29–0.38—a ~50% reduction.
     Crucially, <em>significant residual correlation persists</em> (R ≈ 0.3).
-    This quantifies precisely what our argument predicts: common-mode signals
+    This quantifies precisely what the argument predicts: common-mode signals
     are suppressed, but differential structure (10-40% of original correlation
     magnitude) survives the processing chain. The TEP signatures detected in this analysis
     occupy this "transmitted" differential channel.
@@ -2083,8 +2084,9 @@
     <br />
     <strong>This critique fails on empirical grounds:</strong><br />
     <br />
-    <strong>1. Multi-Centre Validation (Paper 1):</strong> Three independent
-    analysis centres using different software packages (CODE: Bernese GNSS
+    <strong>1. Multi-Centre Validation (Paper 1):</strong> Three
+    software-diverse analysis centres over substantially the same tracking
+    network (CODE: Bernese GNSS
     Software; IGS: weighted multi-centre combination; ESA: proprietary software)
     all showed:<br />
     &nbsp;&nbsp;&nbsp;• <em>Identical</em> absence of GM/r² scaling in planetary
@@ -2096,7 +2098,7 @@
     <br />
     If the "datum-projection suppresses mass signals" were a post-hoc excuse, this study
     would expect different software implementations to show different results.
-    Instead, the consistency across independent processing chains
+    Instead, the consistency across software-diverse processing chains
     <em>supports</em> that datum-projection of common-mode signals is a real, reproducible
     feature of GNSS processing methodology.<br />
     <br />
@@ -2134,13 +2136,13 @@
     community has independently documented the exact phenomena detected in this analysis—without
     recognizing their physical significance. Li et al. (2024) note that "as the
     distance increases, the impact of CME between stations gradually decreases"
-    with correlation diminishing "beyond approximately 2000 km"—precisely the
-    distance-dependent structure measured in this analysis (λ<sub>T</sub> = 4,201 km). Crucially, they
+    with correlation diminishing "beyond approximately 2000 km"—qualitatively
+    consistent with the distance-dependent decay measured in this analysis (azimuth-averaged decay scale λ ≈ 3,210 km, cross-sector mean 4,201 km). Crucially, they
     acknowledge "there is no consensus on the physical origin of CME."
     Similarly, Chanard et al. (2020) report that surface loading models explain
     only 30-50% of seasonal GNSS signals, with the remainder "only partially
-    understood." These documented but unexplained anomalies align precisely with
-    our findings (see §4.1.7 for detailed correspondence).
+    understood." These documented but unexplained anomalies align qualitatively with
+    the present findings (see §4.1.7 for detailed correspondence).
 </p>
 
 <h4>4.1.4 Geophysical Couplings: Earth's Own Rhythms</h4>
@@ -2152,15 +2154,17 @@
 <p><strong>Nutation Signatures:</strong></p>
 <ul>
     <li>
-        <strong>Semiannual Nutation:</strong> R² = 0.904. A strong and clean
-        signal, indicating that the daily coherence of the network is strongly
-        modulated by the 6‑month wobble of Earth's axis caused by the Sun.
+        <strong>Semiannual Nutation:</strong> R² = 0.904 (permutation p = 0.00027, F-test p = 2.7×10⁻⁵). A strong and clean signal indicating that the daily coherence of the network is strongly modulated at the 6‑month period. The fitted phase (φ₀ = −13.6°) peaks on January 7 and July 8, aligning within 2–4 days of Earth's orbital apsidal line (perihelion January 3–5, aphelion July 4–6), while placing the coherence minimum at the equinoxes, directly in anti-phase to the equinoctial ionospheric anomaly.
     </li>
     <li>
-        <strong>Main Nutation (18.6 years):</strong> R² = 0.641. A
-        preliminary nutation-aligned component is observed over 1.4 cycles,
-        providing candidate evidence for sensitivity to multi-decadal
-        astronomical structure pending red-noise validation.
+        <strong>Main Nutation (18.6 years):</strong> R² = 0.641 &plusmn; 0.10. A
+        preliminary nutation-aligned component is observed over 1.36 cycles —
+        each phase bin carries at most two independent cycle realizations, so
+        amplitude and phase are single-cycle-dominated — with the detection
+        priced against the phase-shuffled permutation null (p = 0.0016; the
+        point estimate exceeds the 99th null percentile), providing candidate
+        evidence for sensitivity to multi-decadal
+        astronomical structure pending full red-noise surrogate replication.
     </li>
 </ul>
 <p><strong>Chandler Wobble (14-month polar motion):</strong></p>
@@ -2206,43 +2210,65 @@
 </p>
 <h4>4.1.6 Convergence and Physical Interpretation</h4>
 <p>
-    The convergence of independent evidence streams on systematic
-    patterns is summarized:
+    The convergence of multiple signatures on systematic patterns is
+    summarized, with the data stream underlying each analysis made
+    explicit. The phenomenology is carried by two base observables: the
+    directional EW/NS anisotropy-ratio series (34 overlapping 30-day
+    windows) and the daily network-coherence series. Signatures derived
+    from the same observable are characterizations of one dataset, not
+    independent evidence streams:
 </p>
 <ol>
     <li>
         <strong>Spatial Anisotropy</strong> establishes a stable geometric
-        structure persisting over decades
+        structure persisting over decades (anisotropy-ratio observable,
+        §3.1)
     </li>
     <li>
-        <strong>Orbital Motion</strong> shows this structure varies with Earth's
-        heliocentric dynamics
+        <strong>Orbital Motion</strong> shows this structure varies with
+        Earth's heliocentric dynamics (annual modulation of the same
+        anisotropy-ratio series, §3.2.1)
     </li>
     <li>
         <strong>CMB-Directional Alignment</strong> identifies a preferred
         directional template near the CMB dipole (not the Solar Apex direction), resolving the hemisphere
-        asymmetry. The present fixed-magnitude directional scan does not measure the
+        asymmetry — a directional characterization of the same modulated
+        anisotropy series (§3.2.6), as is the hemisphere stratification
+        control (§3.2.4). The present fixed-magnitude directional scan does not measure the
         relevant background-speed amplitude (§2.3.5)
     </li>
     <li>
         <strong>Planetary Events</strong> reveal responses to transient
-        gravitational configurations
+        gravitational configurations (independent channel: event-locked
+        modulation depth on the daily-coherence series, §3.3)
     </li>
     <li>
         <strong>Nutation/Chandler Wobble</strong> show coupling to Earth's
-        rotational dynamics
+        rotational dynamics (daily-coherence series at prescribed
+        geophysical periods, §3.4)
     </li>
     <li>
         <strong>Network Coherence</strong> shows coordinated behavior at global
-        scales
+        scales (daily-coherence series, network-covariance statistic,
+        §3.5.1)
     </li>
     <li>
         <strong>Continuous Correlation</strong> reveals sustained gravitational
-        influences
+        influences (daily-coherence series, planetary-configuration
+        predictor, §3.5.2)
     </li>
 </ol>
 <p>
-    Taken together, these seven independent findings are consistent with
+    Taken together, these seven convergent findings reduce to two base
+    observables — the anisotropy-ratio modulation (items 1–3) and the
+    daily network-coherence series (items 4–7, each applying a distinct
+    physical predictor or prescribed period) — plus the genuinely
+    external replication supplied by Paper 1's multi-centre products and
+    the MGEX analysis. The evidence structure is therefore one strongly
+    modulated directional observable with several geometric
+    characterizations, a second independent coherence observable tested
+    against four distinct geophysical and planetary predictors, and
+    cross-dataset replication — consistent with
     systematic coupling effects in GNSS timing networks. The CMB-directional
     alignment (§4.1.2.1) is particularly significant: it transforms the
     phenomenology from "velocity-dependent modulation" to "CMB-frame-aligned
@@ -2299,7 +2325,7 @@
                         width: 35%;
                     "
                 >
-                    Our TEP Finding
+                    TEP Finding
                 </th>
             </tr>
         </thead>
@@ -2313,7 +2339,7 @@
                     <em>"no consensus on physical origin"</em>
                 </td>
                 <td style="padding: 8px; border: 1px solid #495773">
-                    λ<sub>T</sub> = 4,201 ± 1,967 km exponential decay (R² > 0.95)
+                    λ ≈ 3,210 ± 389 km (azimuth-averaged exponential R² = 0.945; Gaussian R² = 0.965); sector dispersion 4,201 ± 1,967 km
                 </td>
             </tr>
             <tr style="background-color: rgba(73, 87, 115, 0.03)">
@@ -2438,12 +2464,10 @@
 <p><strong>Replicated (Confirms Temporal Stability)</strong>:</p>
 <ul>
     <li>
-        <strong>Spatial Anisotropy</strong>: EW > NS structure confirmed;
-        magnitudes consistent within uncertainty
+        <strong>Spatial Anisotropy</strong>: EW > NS structure confirmed (Paper 1 typical λ<sub>EW</sub>/λ<sub>NS</sub> ≈ 0.55–2.03, peaks up to ~4.75, discussion quoting ~2.75×; this study EW/NS = 2.16 ± 0.23)
     </li>
     <li>
-        <strong>Orbital Velocity Correlation</strong>: Multi-centre study r ≈
-        -0.57 to -0.79; long-span r = -0.888 (see §3.2 for numeric values)
+        <strong>Orbital Velocity Correlation</strong>: Multi-centre study r = −0.571 to −0.793 across centres; long-span r = −0.888 (see §3.2 for numeric values)
     </li>
     <li>
         <strong>Planetary Event Responses</strong>: Multi-centre study found 6/8
@@ -2471,7 +2495,7 @@
 <p><strong>New (Long-Period Access)</strong>:</p>
 <ul>
     <li>
-        <strong>18.6-Year Nutation</strong>: Preliminary — R² = 0.641, p = 0.010 (1.4 cycles; pending red-noise validation; multi-centre
+        <strong>18.6-Year Nutation</strong>: Preliminary — R² = 0.641 &plusmn; 0.10, permutation p = 0.0016 (1.36 cycles; cycle-limited amplitude; multi-centre
         study: inaccessible)
     </li>
     <li>
@@ -2614,8 +2638,7 @@
         <strong>Predicted:</strong> Global field-like behavior
     </p>
     <p style="margin: 0; padding-left: 20px; font-size: 0.95em">
-        <strong>Observed:</strong> Network coherence score 0.582 across 104
-        temporal windows
+        <strong>Observed:</strong> Network coherence score 0.582 across 102 non-overlapping 90-day windows (104 pipeline bins)
     </p>
     <p
         style="
@@ -2876,9 +2899,9 @@
         source, but the interferometer itself, with the residuals representing
         the covariance pattern of the conformal Temporal Shear projected through
         the GNSS measurement channel. This is consistent with the TEP
-        prediction of distance-dependent correlations (Paper 0, §10.3) using precisely the
+        prediction of distance-dependent correlations (Paper 0, §10.E) using precisely the
         phase-coherent network analysis specified by the theory. The disformal
-        holonomy prediction (Paper 0, §10.2) requires dedicated closed-loop experiments
+        holonomy prediction (Paper 0, §10.A–B) requires dedicated closed-loop experiments
         and is not tested by this open-path covariance channel.
     </p>
 </div>
@@ -3313,8 +3336,9 @@
                     </li>
                     <li>
                         <strong>Multi-Centre Consistency:</strong> Three
-                        independent processing centres using different
-                        ionospheric models show identical correlation patterns
+                        software-diverse processing centres on the shared
+                        tracking network, using different
+                        ionospheric models, show identical correlation patterns
                         (R² = 0.920-0.970).
                     </li>
                 </ul>
@@ -3499,7 +3523,7 @@
     <strong>Contrast with known artifacts:</strong> Well-documented GNSS
     processing artifacts (multipath, antenna phase center errors, tropospheric
     modeling) exhibit centre-specific signatures precisely because each software
-    handles them differently. Our findings show the opposite: centre-independent
+    handles them differently. The present findings show the opposite: centre-independent
     patterns (R² > 0.92), globally coherent structure (mesh score 0.58), and
     orbital phase-locking (r = -0.888).
 </p>
@@ -3722,7 +3746,7 @@
     ><br /><br />
     Critiques suggest the orbital velocity correlation (r = -0.888) might arise
     from global seasonal effects (e.g., ionospheric TEC) or solar activity
-    cycles. The data provides three specific discriminators that rule these out:
+    cycles. The data provides four specific discriminators that rule these out:
     <br /><br />
     <ul style="margin: 8px 0 8px 20px; font-size: 0.95em">
         <li>
@@ -3734,6 +3758,9 @@
             <em>annual</em> Perihelion-Aphelion cycle (peaking January 4). This
             phase mismatch (Jan vs March) falsifies the hypothesis that global
             ionospheric seasonal averages drive the signal.
+        </li>
+        <li>
+            <strong>Phase Discriminant in the Semiannual Channel:</strong> The Russell–McPherron semiannual ionospheric anomaly produces peak disturbance at the Equinoxes (March 20/21 and September 22/23), with minima at the solstices. In contrast, the fitted semiannual coherence sinusoid (R² = 0.904) has a phase offset of φ₀ = −13.6° (relative to 2000-01-01), placing its maxima on January 7 and July 8, within 2–4 days of Earth's orbital apsidal line (perihelion January 3–5 and aphelion July 4–6). At the March equinox (Day 79), the fitted semiannual value is cos(142.1°) = −0.789, placing clock coherence in a deep negative trough (79% of the way to minimum), directly in anti-phase to the equinoctial ionospheric peak. At the September equinox (Day 265), the value is cos = −0.844, similarly deep in the trough. This anti-phase timing directly excludes the equinox-peaking ionospheric anomaly as the driver. Furthermore, non-parametric permutation of phase-bin means yields p = 0.00027 across 100,000 iterations (null 99th percentile R² = 0.724), and the daily coherence time series exhibits a lag-1 autocorrelation of −0.058 (white noise), verifying that the detection is not a red-noise artifact.
         </li>
         <li>
             <strong>Solar Cycle Stability:</strong> The dataset spans 2.5 solar
@@ -3749,8 +3776,13 @@
             multiplicity, the ±120-day window was pre-declared based on the
             pilot study's detection range. Sensitivity analyses (±60, ±180 days)
             are post-hoc robustness checks, not multiple comparisons. This
-            adheres to standard "look-elsewhere" controls, ensuring the 56/156
-            detection rate is statistically valid.
+            adheres to standard "look-elsewhere" controls for window
+            selection. The shared dependence structure is priced separately:
+            because all 156 tests draw on the same daily coherence series,
+            adjacent ±120-day windows overlap, and a maximal
+            non-overlapping-window subset contains 29 events — of which 13
+            are significant versus a null expectation of 1.3 (binomial tail
+            p ≈ 10⁻¹⁰; Step 2.9).
         </li>
     </ul>
 </div>
@@ -3852,7 +3884,9 @@
 <ul>
     <li>
         Statistical significance: 56/156 events ≥2σ, 19 survive family-wide
-        Bonferroni correction (α = 0.05/156)
+        Bonferroni correction (α = 0.05/156); dependence-aware count: 13/29
+        non-overlapping windows significant (null expectation 1.3, binomial
+        p ≈ 10⁻¹⁰)
     </li>
     <li>
         Detection rates (primary ±120-day window): Mercury 42.5%, Venus 18.8%,
@@ -4006,8 +4040,8 @@
     • Primary inferences use pre-declared ±120-day window for planetary
     events<br />
     • Multi-window analyses explicitly labelled "robustness-only"<br />
-    • Cross-centre validation (Paper 1) provides independent confirmation of
-    core findings<br />
+    • Cross-centre validation (Paper 1) provides corroboration of core findings
+    across software-diverse processing chains on the shared tracking network<br />
     • Null results (solar rotation, lunar standstill) demonstrate selectivity,
     not universal detection
 </div>
@@ -4063,13 +4097,13 @@
         checks. However, orbital velocity correlates with many annual phenomena
         (solar distance, ionospheric TEC, network participation). Three
         independent discriminants support genuine orbital coupling over seasonal
-        artifacts: (1) <strong>CMB-Directional Alignment:</strong> The modulation
+        artifacts: (1) CMB-Directional Alignment: The modulation
         aligns with the CMB dipole direction (RA=168°, Dec=-7°)
         with ~10,300× variance ratio over the Solar Apex directional template—ionospheric effects do
         not preferentially align with the CMB dipole; (2)
-        <strong>Ionospheric Null Controls:</strong> No correlation with F10.7
+        Ionospheric Null Controls: No correlation with F10.7
         solar flux or Kp geomagnetic indices (Paper 1 validation); (3)
-        <strong>Multi-Centre Consistency:</strong> Three independent processing
+        Multi-Centre Consistency: Three independent processing
         centres using different ionospheric models show identical patterns (R² =
         0.920-0.970). Note: Hemisphere stratification alone is insufficient to
         rule out global ionospheric TEC (which peaks in January for both
@@ -4132,7 +4166,7 @@
 <ol start="6">
     <li>
         <strong>Temporal Coverage:</strong> The 18.6-year nutation cycle has
-        only 1.4 complete cycles in our 25.3-year dataset, limiting statistical
+        only 1.4 complete cycles in the 25.3-year dataset, limiting statistical
         power for this specific signature. Longer baselines (50+ years) would
         provide definitive confirmation.
     </li>

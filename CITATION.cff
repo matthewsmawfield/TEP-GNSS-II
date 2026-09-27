@@ -70,7 +70,7 @@ abstract: 'Analysis of 25.3 years of global GNSS timing data (165.2 million stat
 license: CC-BY-4.0
 repository-code: https://github.com/matthewsmawfield/TEP-GNSS-II
 url: https://mlsmawfield.com/tep/gnss-ii
-version: v0.19 (Cairo)
+version: v0.20 (Cairo)
 date-released: 2025-11-03
 doi: 10.5281/zenodo.17517141
 preferred-citation:

@@ -248,8 +248,12 @@ def create_timeseries_visualization(combined_df, results):
         ax3.plot(dates, norm_coherence, color=colors['secondary'], linewidth=3,
                  label='Normalized Temporal Field Pattern', alpha=0.8)
         
-        r, p = stats.pearsonr(smoothed_stacked, smoothed_coherence_std)
-        ax3.text(0.02, 0.95, f'Pattern Correlation: r = {r:.3f}, p = {p:.2e}',
+        r, p_raw = stats.pearsonr(smoothed_stacked, smoothed_coherence_std)
+        # Compute autocorrelation-corrected p-value matching step 2.2 methodology (N_eff ≈ 472.4)
+        n_eff = 472.4
+        t_stat = r * np.sqrt((n_eff - 2) / (1 - r**2))
+        p_corr = 2 * stats.t.sf(np.abs(t_stat), n_eff - 2)
+        ax3.text(0.02, 0.95, f'Pattern Correlation: r = {r:.3f}, p_adj = {p_corr:.3f} (N_eff ≈ 472; p_raw = {p_raw:.2e})',
                  transform=ax3.transAxes, fontsize=12, fontweight='bold', color='#220126',
                  bbox=dict(boxstyle='round,pad=0.4', facecolor='#F8F8FF',
                           edgecolor='#2D0140', alpha=0.95, linewidth=1))

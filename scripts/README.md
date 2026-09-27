@@ -44,6 +44,7 @@ All steps write outputs to `results/outputs/` and logs to `logs/`.
 | 2.5 | `step_2_5_dual_motion_geometry.py` | CMB frame / dual-motion geometry |
 | 2.6 | `step_2_6_null_control.py` | Null control validation |
 | 2.8 | `step_2_8_draconitic_falsification.py` | Draconitic falsification test |
+| 2.9 | `step_2_9_dependence_pricing.py` | Dependence & cycle-count pricing (planetary-event effective independence; nutation cycle-limited uncertainty) |
 
 ### Supporting scripts
 

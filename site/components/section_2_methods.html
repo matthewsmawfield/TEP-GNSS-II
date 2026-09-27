@@ -44,6 +44,68 @@
     </tbody>
   </table>
 </div>
+
+<p><strong>Data provenance and shared error budgets.</strong> The CODE final product line analysed here belongs to the IGS analysis-centre ecosystem and is not an independent data layer relative to the companion papers. The provenance matrix across the GNSS papers is:</p>
+
+<div style="overflow-x: auto; margin: 20px 0;">
+  <table style="width: 100%; border-collapse: collapse; font-size: 12.5px;">
+    <thead>
+      <tr style="background-color: rgba(73, 87, 115, 0.1);">
+        <th style="padding: 7px; border: 1px solid #495773; text-align: left;">Paper</th>
+        <th style="padding: 7px; border: 1px solid #495773; text-align: left;">Data layer</th>
+        <th style="padding: 7px; border: 1px solid #495773; text-align: left;">Product / processing chain</th>
+        <th style="padding: 7px; border: 1px solid #495773; text-align: left;">Epoch</th>
+        <th style="padding: 7px; border: 1px solid #495773; text-align: left;">Stations</th>
+        <th style="padding: 7px; border: 1px solid #495773; text-align: left;">Error budget shared with</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding: 7px; border: 1px solid #495773;">1</td>
+        <td style="padding: 7px; border: 1px solid #495773;">AC precise clocks</td>
+        <td style="padding: 7px; border: 1px solid #495773;">CODE final, IGS combined, ESA final (Bernese / IGS combination / NAPEOS)</td>
+        <td style="padding: 7px; border: 1px solid #495773;">2023-01 to 2025-06</td>
+        <td style="padding: 7px; border: 1px solid #495773;">364</td>
+        <td style="padding: 7px; border: 1px solid #495773;">CODE family shared with Papers 2, 14; AC ecosystem shared with Paper 33's centre arms</td>
+      </tr>
+      <tr style="background-color: rgba(73, 87, 115, 0.03);">
+        <td style="padding: 7px; border: 1px solid #495773;"><strong>2 (this study)</strong></td>
+        <td style="padding: 7px; border: 1px solid #495773;">AC precise clocks</td>
+        <td style="padding: 7px; border: 1px solid #495773;">CODE IGS-final 30 s clocks (Bernese)</td>
+        <td style="padding: 7px; border: 1px solid #495773;">2000-03 to 2025-06</td>
+        <td style="padding: 7px; border: 1px solid #495773;">474</td>
+        <td style="padding: 7px; border: 1px solid #495773;">Same CODE product family as Papers 1 and 14; epoch superset of Paper 1</td>
+      </tr>
+      <tr>
+        <td style="padding: 7px; border: 1px solid #495773;">3</td>
+        <td style="padding: 7px; border: 1px solid #495773;">Raw RINEX</td>
+        <td style="padding: 7px; border: 1px solid #495773;">Broadcast ephemerides + own RTKLIB SPP</td>
+        <td style="padding: 7px; border: 1px solid #495773;">2022 to 2024</td>
+        <td style="padding: 7px; border: 1px solid #495773;">539</td>
+        <td style="padding: 7px; border: 1px solid #495773;">Estimation-chain independent; shares the physical tracking network</td>
+      </tr>
+      <tr style="background-color: rgba(73, 87, 115, 0.03);">
+        <td style="padding: 7px; border: 1px solid #495773;">14</td>
+        <td style="padding: 7px; border: 1px solid #495773;">AC combined clocks</td>
+        <td style="padding: 7px; border: 1px solid #495773;">CODE COD0MGXFIN (WUM/GRG fallback &asymp;6% of days)</td>
+        <td style="padding: 7px; border: 1px solid #495773;">2025-01 to 2026-05</td>
+        <td style="padding: 7px; border: 1px solid #495773;">418</td>
+        <td style="padding: 7px; border: 1px solid #495773;">Same CODE centre as Papers 1&ndash;2; epoch largely held out</td>
+      </tr>
+      <tr>
+        <td style="padding: 7px; border: 1px solid #495773;">33</td>
+        <td style="padding: 7px; border: 1px solid #495773;">Mixed</td>
+        <td style="padding: 7px; border: 1px solid #495773;">Own RTKLib SPP arms + AC receiver clocks (COD/GFZ/GRG/JPL)</td>
+        <td style="padding: 7px; border: 1px solid #495773;">2022 to 2025</td>
+        <td style="padding: 7px; border: 1px solid #495773;">5&ndash;160 per arm</td>
+        <td style="padding: 7px; border: 1px solid #495773;">AC arms share the IGS/MGEX ecosystem; SPP arms are estimation-independent</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>Agreement between this study and the CODE arm of Paper 1, the MGEX product of Paper 14, or the analysis-centre arms of Paper 33 therefore constitutes corroboration within a shared product ecosystem &mdash; different epochs, estimators and product lines over substantially the same tracking network &mdash; rather than replication on independent data. Within-ecosystem agreement excludes software- and implementation-specific artifacts but cannot exclude systematics of the shared tracking network, constellation geometry, or IGS datum conventions. The estimation-chain-independent axis in the corpus is Paper 3 (raw RINEX observations, broadcast ephemerides, own processing); Paper 33's broadcast-SPP arms provide a second such axis.</p>
+
 <h4>2.1.2 Station Distribution</h4>
 <p><strong>Station Code Methodology:</strong> The analysis database contains 814 total station codes, representing 474 unique physical receivers. Many stations appear with both 4-character legacy codes (e.g., "VILL") and 9-character extended codes (e.g., "VILL00ESP") in the coordinate catalog. The analysis uses the actual observed station codes from CODE data, yielding 474 unique receivers with valid clock observations over the 25.3-year period.</p>
 
@@ -101,7 +163,7 @@
 <p style="margin-top: 15px;"><strong>Spatial Coverage:</strong> Station separations range from 1.83 km (co-located receivers) to 19,946 km (antipodal pairs), enabling multi-scale correlation analysis across five orders of magnitude in distance.</p>
 
 <div style="background-color: rgba(73, 87, 115, 0.05); border-left: 3px solid #495773; padding: 12px; margin: 15px 0; font-size: 13px;">
-  <strong>Temporal Window Selection (34 windows):</strong> The 25.3-year dataset is divided into 34 day-of-year bins (each ~10.7° of orbital phase, pooling all 25.3 years of data at that phase) for orbital velocity correlation analysis. This binning balances temporal resolution against statistical stability per bin. Complementary tests address resolution concerns: (1) Monte Carlo validation uses 5M surrogates on the full time series, (2) CMB frame search spans 65,341 sky directions at multiple resolutions, (3) nutation analysis uses daily coherence values (4,186 samples), and (4) planetary event analysis uses ±120-day windows around 156 events. The convergence of these independent methodologies—each with different temporal granularity—strengthens confidence in the orbital coupling detection. A folded seasonal curve alone does not demonstrate replication across 25 independent orbits; the surrogate test and hemisphere stratification provide that independent validation.
+  <strong>Temporal Window Selection (34 windows):</strong> The 25.3-year dataset is partitioned into 34 day-of-year bins (each ~10.7° of orbital phase, pooling all 25.3 years of data at that phase) for orbital velocity correlation analysis. This binning evaluates the phase-coherent annual modulation of directional anisotropy integrated across the complete 25.3-year baseline. It is emphasized that a folded annual curve demonstrates phase-coherent modulation over the integrated baseline rather than 25 independent single-year fits. Integration over 25.3 years spans approximately one full cycle of the 25.4-year GPS draconitic beat period (359.4° phase drift relative to the solar year), which mathematically cancels draconitic orbit-repeat harmonics (|r| &lt; 0.15), confirming heliocentric origin. The surrogate test (0 out of 5,000,000 exceeded) tests spectral coincidence against phase-randomized profiles, while hemisphere stratification confirms spatial consistency and rules out local insolation. Continuous temporal stability is corroborated by the 104-window (90-day) time series, which shows steady East-West collective motion (θ ≈ 180°) and consistent mesh coherence (0.58 ± 0.02) across all three solar cycles. A fine-grained era-block decomposition (e.g., decade or 5-year rolling windows of r) remains an objective for future pipelines that maintain pairwise cross-spectra without day-of-year accumulation.
 </div>
 
 <h4>2.1.3 The Processing Filter: Systematic Error Removal in IGS Clock Estimation</h4>
@@ -256,7 +318,7 @@
   <li><strong>Correlation Metric:</strong> Band-averaged magnitude with representative phase</li>
  </ol>
 
-<p>This frequency-domain approach preserves phase relationships between station pairs while extracting correlation strength, enabling detection of field-mediated timing correlations predicted by TEP theory. The method is identical to that validated across three independent analysis centres (CODE, IGS, ESA) in the original multi-centre study.</p>
+<p>This frequency-domain approach preserves phase relationships between station pairs while extracting correlation strength, enabling detection of field-mediated timing correlations predicted by TEP theory. The method is identical to that validated across three software-diverse analysis centres (CODE, IGS, ESA) in the original multi-centre study; because the three products derive from substantially the same tracking network, that validation bounds software- and implementation-specific artifacts rather than network-level common modes.</p>
 
 <p><strong>Observable Definition:</strong> All subsequent analyses use this band-averaged coherence and its derived correlation lengths as the primary observable. The band-averaged coherence magnitude lies on [0,1]; its representative phase is retained separately. It quantifies the strength of phase-coherent structure between station residuals rather than the absolute clock frequency shift Δf/f. Reported percentage changes (e.g., the ≈19% annual modulation of the EW/NS ratio, or 1–3% planetary absolute coherence amplitudes) therefore describe relative changes in this coherence-based correlation structure and in ratios of correlation lengths, not 10–20% changes in underlying atomic clock rates, which remain at standard GR levels (≈10⁻¹⁶–10⁻¹⁰).</p>
 
@@ -497,13 +559,14 @@ SE<sub>corr</sub> = √[(1 − r²) / (N<sub>eff</sub> − 2)]
   <p><strong>Planetary Events (56/156 significant):</strong></p>
   <ul style="margin: 0 0 10px 20px;">
     <li>Multiple testing burden: α_Bonferroni = 0.05/156 = 0.000321 (family-wide correction across all 156 tested events)</li>
+    <li>Effective independence count: because all tests draw on one daily coherence series, adjacent ±120-day windows overlap; a maximal non-overlapping-window subset contains 29 events (disjoint-cell bound 38), of which 13 are significant versus 1.3 expected (binomial tail p ≈ 10⁻¹⁰; Step 2.9)</li>
     <li>Required effect size: d > 1.0 for adequate power</li>
     <li>Observed: 19/156 Bonferroni survivors (vs 0.05 expected under null) indicates sufficient power</li>
   </ul>
   <p><strong>Nutation Coupling:</strong></p>
   <ul style="margin: 0 0 10px 20px;">
     <li>Semiannual: 50 cycles observed (very high power)</li>
-    <li>18.6-year: 1.4 cycles observed (moderate power)</li>
+    <li>18.6-year: 1.36 cycles observed (cycle-limited power; R² standard error &plusmn;0.10, each phase bin carrying at most two independent cycle realizations)</li>
     <li>R² values > 0.64 indicate strong effects</li>
   </ul>
   <p style="margin-bottom: 0;"><strong>Conclusion:</strong> Analysis has adequate power to detect medium-to-large effects while controlling false discovery rate</p>

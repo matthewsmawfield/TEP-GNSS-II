@@ -1,8 +1,8 @@
 {
   "name": "tep-gnss-ii-site",
-  "version": "0.19.0",
+  "version": "0.20.0",
   "description": "Global Time Echoes: 25-Year Analysis of CODE Precise Clock Products",
-  "_comment": "Package version matches manuscript version v0.19 (Cairo)",
+  "_comment": "Package version matches manuscript version v0.20 (Cairo)",
   "main": "index.html",
   "scripts": {
     "dev": "node dev-server.js",
@@ -30,7 +30,7 @@
     "type": "git",
     "url": "https://github.com/matthewsmawfield/TEP-GNSS-II.git"
   },
-  "homepage": "https://matthewsmawfield.github.io/TEP-GNSS-II/",
+  "homepage": "https://mlsmawfield.com/tep/gnss-ii/",
   "devDependencies": {
     "chokidar": "^4.0.3",
     "live-server": "^1.2.2",

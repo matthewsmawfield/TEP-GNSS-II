@@ -1,0 +1,86 @@
+{
+  "step": "2.9",
+  "name": "Dependence and Cycle-Count Pricing",
+  "timestamp": "2026-09-26T09:23:42.116798",
+  "planetary_event_dependence": {
+    "n_events_catalog": 156,
+    "n_events_analyzed_primary_window": 128,
+    "n_significant_ge2sigma": 56,
+    "inference_window_days": 120,
+    "sigma_threshold": 2.0,
+    "alpha_per_event_twosided": 0.04550026389635842,
+    "effective_independence": {
+      "method": "Greedy maximal subset of events whose +-120-day inference windows share no calendar days (successive dates >240 days apart); window overlap is the dominant dependence channel because every test draws on the same daily coherence series.",
+      "n_independent_windows": 29,
+      "n_significant_independent": 13,
+      "independent_hit_rate": 0.4482758620689655,
+      "disjoint_cell_upper_bound": 38,
+      "span_days_first_to_last_event": 9308
+    },
+    "null_expectation": {
+      "under_independence_156": 7.098041167831913,
+      "under_independence_29": 1.319507652994394
+    },
+    "hit_pricing": {
+      "binomial_tail_full_catalog": 0.0,
+      "binomial_tail_independent_subset": 1.2200718213506434e-10,
+      "interpretation": "Even under the most conservative independence count (29 non-overlapping windows), the observed 13 detections exceed the null expectation (1.32) by an order of magnitude (binomial tail p = 1.22e-10)."
+    }
+  },
+  "nutation_cycle_pricing": {
+    "data_span_days": 9253,
+    "cycles_per_period": {
+      "main_nutation_18p6y": {
+        "period_days": 6798.4,
+        "cycles_observed": 1.3610555424805837
+      },
+      "annual_nutation": {
+        "period_days": 365.25,
+        "cycles_observed": 25.333333333333332
+      },
+      "semiannual_nutation": {
+        "period_days": 182.6,
+        "cycles_observed": 50.673603504928806
+      }
+    },
+    "main_nutation": {
+      "r_squared": 0.640719384394548,
+      "r_squared_standard_error": 0.09619659291159491,
+      "r_squared_approx_2sigma_band": [
+        0.4483261985713582,
+        0.8331125702177378
+      ],
+      "n_phase_bins": 12,
+      "phase_bin_replication": {
+        "cycles_observed": 1.3610555424805837,
+        "max_independent_cycle_realizations_per_bin": 2,
+        "est_cycles_per_bin_from_pair_counts": [
+          1.816,
+          1.775,
+          1.688,
+          2.0,
+          0.948,
+          0.259,
+          0.26,
+          0.252,
+          0.253,
+          0.296,
+          0.352,
+          1.817
+        ],
+        "pair_count_range": [
+          3545857,
+          28196452
+        ],
+        "note": "Phase-bin pair counts span ~7x, reflecting partial second-cycle phase coverage: each bin is effectively one or two cycle realizations, so the fitted amplitude and phase are single-cycle-dominated.  The detection itself is priced by the phase-shuffled permutation null (observed R^2 above the 99th null percentile), which already accounts for the limited cycle count."
+      }
+    },
+    "permutation_null_context": {
+      "null_r_squared_mean": 0.1816358281122491,
+      "null_r_squared_95th": 0.45910093401272295,
+      "null_r_squared_99th": 0.5675317386341668,
+      "permutation_p_value": 0.0016
+    }
+  },
+  "success": true
+}

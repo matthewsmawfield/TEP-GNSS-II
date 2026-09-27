@@ -29,8 +29,8 @@
       <tbody>
         <tr>
           <td style="padding: 8px; border: 1px solid #495773;"><strong>Temporal Topology Correlation Length (λ<sub>T</sub>)</strong></td>
-          <td style="padding: 8px; border: 1px solid #495773;">λ<sub>T</sub> = 4,201 ± 1,967 km (exponential decay)</td>
-          <td style="padding: 8px; border: 1px solid #495773;">Replicated</td>
+          <td style="padding: 8px; border: 1px solid #495773;">Azimuth-averaged λ = 3,210 ± 389 km (cross-sector dispersion: 4,201 ± 1,967 km, spread 2,314–7,664 km; Gaussian/squared-exponential preferred, R² = 0.965 vs exponential R² = 0.945; consistent with terrestrial saturation anchor <em>R</em><sub><em>T</em></sub>(<em>M</em><sub>⊕</sub>) ≈ 4,146 km; cross-product family ~1.9–4.5×10<sup>3</sup> km, Paper 14)</td>
+          <td style="padding: 8px; border: 1px solid #495773;">Consistent with terrestrial saturation anchor; power-law ruled out</td>
         </tr>
         <tr style="background-color: rgba(73, 87, 115, 0.03);">
           <td style="padding: 8px; border: 1px solid #495773;"><strong>Spatial Anisotropy</strong></td>
@@ -59,7 +59,7 @@
         </tr>
         <tr style="background-color: rgba(73, 87, 115, 0.03);">
           <td style="padding: 8px; border: 1px solid #495773;"><strong>Semiannual Nutation</strong></td>
-          <td style="padding: 8px; border: 1px solid #495773;">R² = 0.904, p = 2.7×10⁻⁵ (50 cycles observed)</td>
+          <td style="padding: 8px; border: 1px solid #495773;">R² = 0.904, p = 2.7×10⁻⁵ (perm. p = 0.00027, 50 cycles observed; phase aligned with apsides and anti-phase to equinoctial anomaly)</td>
           <td style="padding: 8px; border: 1px solid #495773;">New Detection</td>
         </tr>
         <tr>
@@ -82,7 +82,7 @@
 
 <p>The planetary event analysis documents 56 statistically significant event-associated modulations (19 surviving family-wide Bonferroni correction at α = 0.05/156, 19 surviving Holm step-down correction, 38 surviving BH-FDR, 28 surviving dependency-aware BY-FDR), demonstrating repeatability across 25 years. The 19 Bonferroni survivors—versus 0.05 expected under the complete null—indicate robust, repeatable event responses. Critically, null event control testing (Step 2.6) confirms that planetary events produce effect sizes 5.5× larger than 155 random dates (Mann-Whitney p < 10⁻¹⁷, Cohen's d = 1.41, ~8.5σ), validating that detected responses are specific to astronomical alignments rather than temporal autocorrelation artifacts.</p>
 
-<p>The nutation coupling (R² = 0.904 semiannual; preliminary R² = 0.641 for 18.6-year, pending red-noise validation), network covariance score (index = 0.582), and persistent anisotropic structure (EW/NS = 2.16 over 25 years) provide independent evidence for systematic, globally coordinated patterns in the GNSS timing correlation field.</p>
+<p>The nutation coupling (R² = 0.904 semiannual; preliminary R² = 0.641 for 18.6-year, pending red-noise validation), network covariance score (index = 0.582), and persistent anisotropic structure (EW/NS = 2.16 over 25 years) — three distinct observables — provide convergent evidence for systematic, globally coordinated patterns in the GNSS timing correlation field.</p>
 
 <div style="background-color: rgba(240,248,255,0.6); border: 2px solid #4682B4; padding: 18px; margin: 20px 0; border-radius: 6px;">
   <h4 style="margin-top: 0; color: #2C5F77;">Convergence Argument: Multi-Signature Synthesis</h4>
@@ -115,19 +115,20 @@
   </ul>
   
   <p style="margin-top: 12px;"><strong>Multi-Signature Convergence:</strong> The individual signatures (orbital velocity, nutation, CMB-directional alignment, planetary events) are each statistically significant on their own. Because the orbital and semiannual signals share annual structure, their probabilities cannot be multiplied without a joint covariance model; they are therefore not combined into a single joint p-value. Combined with 25.3-year aggregate consistency (this study), Paper 1's software diversity and cross-centre reproducibility (Bernese, GIPSY-OASIS, ESA proprietary), and successful falsification tests (solar rotation null), this multi-signature convergence is consistent with systematic physical coupling rather than random chance or processing artifacts, though confirmation awaits independent replication using different processing pipelines and constellations.
+  </p>
 </div>
 <p><strong>Study Scope:</strong> This temporal extension builds on the multi-centre study's rigorous validation to demonstrate long-baseline recovery and access long-period signatures. (1) Single-centre analysis (CODE) provides the 25-year baseline necessary for 18.6-year nutation detection; the multi-centre study established cross-centre reproducibility over 2.5 years. (2) Orbital velocity coupling is established through hemisphere stratification (Paper 1 §3.4), which discriminates heliocentric effects from local seasonal confounders. (3) Null event control validates planetary event specificity (5.5× effect size ratio, p < 10⁻¹⁷).</p>
 
 <div style="background-color: rgba(73, 87, 115, 0.05); border: 1px solid rgba(73, 87, 115, 0.3); padding: 15px; margin: 15px 0; border-radius: 6px;">
-  <h4 style="margin-top: 0; color: #495773;">Multi-Constellation Cross-Validation (Preliminary)</h4>
-  <p style="margin-bottom: 10px;">Independent analysis of GFZ Multi-GNSS (MGEX) products (2020-2024) provides preliminary constellation-independence validation:</p>
+  <h4 style="margin-top: 0; color: #495773;">Multi-Constellation Replication (Paper 14)</h4>
+  <p style="margin-bottom: 10px;">Dedicated analysis of multi-GNSS products provides multi-constellation validation:</p>
   <ul style="margin: 0 0 10px 20px; line-height: 1.6;">
-    <li><strong>Exponential Decay Confirmed:</strong> R² = 0.95, λ<sub>T</sub> = 3,042 ± 297 km (consistent with CODE λ<sub>T</sub> = 4,201 km)</li>
-    <li><strong>Cross-Centre Consistency:</strong> GBM (GFZ), WUM (Wuhan), JPL (NASA) all achieve R² > 0.90</li>
-    <li><strong>Constellation Coverage:</strong> GPS, GLONASS, BeiDou pairs analyzed</li>
-    <li><strong>Strongest Pairs:</strong> GPS-GPS, GLONASS-GPS, GPS-BeiDou show consistent positive coherence across centers</li>
+    <li><strong>Canonical Multi-GNSS Decay:</strong> In the dedicated multi-GNSS study (Paper 14) on the CODE MGEX product (COD0MGXFIN, 2025–2026, 418 stations, 1.83 million pair-days), the bounded spatial decay is recovered with canonical isotropic correlation length λ = 1,862 ± 112 km (R² = 0.699 overall, rising to R² = 0.85–0.92 for baselines above 500 km).</li>
+    <li><strong>Pilot Cross-Centre Analyses:</strong> Earlier exploratory multi-centre pilot analyses (2020–2024) across GFZ (GBM), Wuhan (WUM), and JPL products yielded λ = 3,042 ± 297 km (R² = 0.95), with consistent spatial coherence across GPS, GLONASS, and BeiDou pairs.</li>
+    <li><strong>Scale Dependence and Invariance:</strong> As established in Paper 14, the fitted numerical value of λ depends on the observable definition and clock-combination filter (multi-GNSS joint clock combination vs single-constellation PPP), whereas the bounded thousands-of-kilometres exponential decay structure is preserved across all products, excluding scale-free power laws.</li>
+    <li><strong>Orbital Metric Status:</strong> Primary pre-specified monthly spatial and directional metrics in Paper 14 are null under Bonferroni correction (p > 0.5), whereas orbital-velocity coupling is recovered via an exploratory model-free phase-alignment difference metric (r = −0.716, p = 0.0018).</li>
   </ul>
-  <p style="margin: 0; font-size: 0.9em; font-style: italic;">This independent validation on a completely different dataset (2020-2024 MGEX vs 2000-2025 CODE GPS) substantially strengthens the case for constellation-independent physical coupling.</p>
+  <p style="margin: 0; font-size: 0.9em; font-style: italic;">This replication across independent multi-GNSS processing chains and multi-constellation networks confirms that bounded thousands-of-kilometres spatial correlation is an intrinsic property of GNSS timing residuals rather than an artifact of single-constellation GPS processing.</p>
 </div>
 <p>The convergence of long-baseline recovery (25.3 years), multi-signature consistency (orbital, planetary, nutation, network), Paper 1's cross-centre validation (R²=0.92-0.97 across software-diverse products from three processing centres), and Monte Carlo validation (0/5M surrogates) is consistent with systematic gravitational coupling, pending independent confirmation. The orbital velocity correlation (r=-0.888, surrogate p &lt; 2×10⁻⁷) persists across a 25.3-year baseline with statistically robust validation. The 18.6-year nutation coupling (R²=0.641, observed over 1.4 cycles; p=0.010 pending red-noise surrogate validation) provides preliminary evidence for GNSS-based detection at this period. Raw carrier-phase analysis and multi-constellation testing represent logical extensions for distinguishing between competing theoretical frameworks.</p>
 
@@ -151,7 +152,7 @@
 <ol>
   <li><strong>Raw Carrier Phase Analysis (Testing Ξ Asymmetry):</strong> Collaborate with IGS to access unprocessed measurements to test a <em>different</em> TEP prediction:
    <ul>
-     <li><strong>Objective:</strong> Detect one-way link asymmetry Ξ_AB (Paper 0, §10.2) rather than network correlation C(r) (Paper 0, §10.3)</li>
+     <li><strong>Objective:</strong> Detect one-way link asymmetry Ξ_AB (Paper 0, §10.D) rather than network correlation C(r) (Paper 0, §10.E)</li>
      <li><strong>Challenge:</strong> Separating TEP signal from ~10⁸× larger classical effects (GR, atmosphere)</li>
      <li><strong>Outcome:</strong> If null, favours a conformal-dominant Earth-scale branch and places a stronger bound on the non-exact/disformal (B) sector; if positive, provides evidence for one-way non-reciprocal transport</li>
    </ul>
@@ -219,7 +220,7 @@
 </ol>
 <h3>5.2 Final Remarks</h3>
 <p>The global GNSS infrastructure, designed for navigation, provides a tool for investigating systematic patterns in distributed timing networks. Building on the multi-centre study's comprehensive validation, this 25-year analysis shows that the detected signatures are recovered consistently across the 25.3-year aggregate and extend to long-period geophysical phenomena. The orbital velocity correlation (r = -0.888, p < 2×10⁻⁷) and the preliminary 18.6-year nutation-aligned component (R² = 0.641, pending red-noise validation) provide empirical evidence consistent with a phenomenology involving velocity-dependent spacetime-geometry modulation, but they do not by themselves establish a unique underlying theory.</p>
-<p>The convergence of independent evidence streams—spatial anisotropy, orbital coupling, geophysical integration, and network coordination—creates a robust phenomenological framework that substantially constrains simple artifact explanations. Paper 1's software diversity and cross-centre reproducibility (three different packages: Bernese, GIPSY-OASIS, ESA proprietary achieving R²>0.92 over 2.5 years) combined with this study's 25.3-year aggregate consistency and successful falsification tests (solar rotation null) strengthen the case for physical coupling. The datum-projection mechanism provides a concrete candidate mechanism: datum constraints and common-mode estimation can absorb network-wide offsets while retaining differential phase structure. Cross-centre reproducibility is consistent with this mechanism, but synthetic signal injection through the actual processing pipelines is required to calibrate and validate the transfer quantitatively. These findings are consistent with theories predicting velocity-dependent spacetime-geometry modulation (e.g., TEP), though confirmation requires independent replication by other groups using different processing pipelines and constellations. Raw carrier-phase analysis and multi-constellation testing represent natural extensions that will further constrain theoretical interpretations and may distinguish between competing physical frameworks.</p>
+<p>The convergence of multiple signatures—spatial anisotropy, orbital coupling, geophysical integration, and network coordination, distributed across two base observables per the dependence map of §4.1.6—creates a robust phenomenological framework that substantially constrains simple artifact explanations. Paper 1's software diversity and cross-centre reproducibility (three different packages: Bernese, GIPSY-OASIS, ESA proprietary achieving R²>0.92 over 2.5 years) combined with this study's 25.3-year aggregate consistency and successful falsification tests (solar rotation null) strengthen the case for physical coupling. The datum-projection mechanism provides a concrete candidate mechanism: datum constraints and common-mode estimation can absorb network-wide offsets while retaining differential phase structure. Cross-centre reproducibility is consistent with this mechanism, but synthetic signal injection through the actual processing pipelines is required to calibrate and validate the transfer quantitatively. These findings are consistent with theories predicting velocity-dependent spacetime-geometry modulation (e.g., TEP), though confirmation requires independent replication by other groups using different processing pipelines and constellations. Raw carrier-phase analysis and multi-constellation testing represent natural extensions that will further constrain theoretical interpretations and may distinguish between competing physical frameworks.</p>
 
 <div style="background-color: rgba(73, 87, 115, 0.05); border: 2px solid #495773; padding: 20px; margin: 20px 0; border-radius: 6px;">
   <p style="font-size: 1.05em; line-height: 1.6; margin: 0;">Perhaps the deepest insight is methodological: the Earth itself has been transformed into an interferometer. By distributing 474 atomic clocks across the planet's surface and observing their correlation structure over a quarter century, a planetary-scale detector has been constructed—sensitive not to the energetic <em>weight</em> of gravity, but to the geometric <em>shape</em> of spacetime. The network measures not gravitational force, but synchronization geometry. In doing so, it reveals that time, at its most fundamental, does not flow uniformly but <em>dances</em> with the motion of celestial bodies—a pirouetting rhythm woven through matter, motion, and the fabric of spacetime itself.</p>

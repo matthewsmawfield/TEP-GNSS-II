@@ -1,4 +1,4 @@
-v0.19 (Cairo) - Theoretical Reporting Corrections and Statistical Honesty
+v0.20 (Cairo) — 13 September 2026 — Theoretical Reporting Corrections and Statistical Honesty
 
 - Corrected theoretical reporting: metric prefactor (A → A²), exact scalar field
   equation source, and conformal coupling definition aligned with Jakarta

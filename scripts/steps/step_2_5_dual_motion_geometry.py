@@ -1318,7 +1318,7 @@ def analyze_dual_motion(data):
         earth_vectors, 
         vector_search['best_ra'], 
         vector_search['best_dec'],
-        n_permutations=10000
+        n_permutations=100000
     )
     results['permutation_test'] = permutation_result
     

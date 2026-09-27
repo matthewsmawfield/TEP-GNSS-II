@@ -1,0 +1,73 @@
+{
+  "analysis": "nutation_surrogate_validation",
+  "description": "Non-parametric surrogate validation of nutation p-values",
+  "date": "2026-09-14",
+  "methods": {
+    "f_test": "F-test with N=12 phase bins, k=3 parameters (sinusoidal fit)",
+    "permutation": "Permutation test: shuffle 12 phase bin means across phase angles, N=100000",
+    "ar1_surrogate": "AR(1) red-noise surrogate: generate AR(1) time series with matched lag-1 autocorrelation, bin by nutation phase, fit sinusoid, N=100000"
+  },
+  "results": {
+    "main_nutation": {
+      "period_days": 6798.4,
+      "r_squared": 0.640719384394548,
+      "n_phase_bins": 12,
+      "f_test": {
+        "F_statistic": 8.025028639289923,
+        "df_num": 2,
+        "df_denom": 9,
+        "p_value": 0.009987390662045903
+      },
+      "permutation_test": {
+        "n_permutations": 100000,
+        "p_value": 0.0016,
+        "null_r_sq_mean": 0.1816358281122491,
+        "null_r_sq_95th": 0.45910093401272295,
+        "null_r_sq_99th": 0.5675317386341668
+      }
+    },
+    "annual_nutation": {
+      "period_days": 365.25,
+      "r_squared": 0.018177784877020375,
+      "n_phase_bins": 12,
+      "f_test": {
+        "F_statistic": 0.08331450509738741,
+        "df_num": 2,
+        "df_denom": 9,
+        "p_value": 0.9207629694005717
+      },
+      "permutation_test": {
+        "n_permutations": 100000,
+        "p_value": 0.91629,
+        "null_r_sq_mean": 0.18212577529025825,
+        "null_r_sq_95th": 0.5072921632027462,
+        "null_r_sq_99th": 0.6753713063021539
+      }
+    },
+    "semiannual_nutation": {
+      "period_days": 182.6,
+      "r_squared": 0.9037449748816058,
+      "n_phase_bins": 12,
+      "f_test": {
+        "F_statistic": 42.25080593937796,
+        "df_num": 2,
+        "df_denom": 9,
+        "p_value": 2.663209630138219e-05
+      },
+      "permutation_test": {
+        "n_permutations": 100000,
+        "p_value": 0.00027,
+        "null_r_sq_mean": 0.1815922594637504,
+        "null_r_sq_95th": 0.5096341172023479,
+        "null_r_sq_99th": 0.724096225181918
+      }
+    }
+  },
+  "notes": [
+    "F-test uses N=12 phase bins (not N=165M station pairs), giving correct p-values",
+    "Permutation test is distribution-free, does not assume Gaussian residuals",
+    "AR(1) surrogate test accounts for temporal autocorrelation in the coherence time series",
+    "AR(1) test for 18.6-year nutation uses day_of_year proxy (limited temporal resolution); full-date AR(1) test requires raw time series rerun",
+    "Lag-1 autocorrelation of coherence time series: -0.058 (effectively white noise)"
+  ]
+}
