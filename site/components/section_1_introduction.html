@@ -150,7 +150,10 @@
 
     <p>
         <strong>1. Action and Coupling:</strong> The scalar time field φ is
-        governed by the Einstein-frame action:
+        governed by the Einstein-frame action, where the baseline action displays the
+        canonical kinetic form $X - V(\phi)$ and the operative non-canonical kinetic completion
+        $P(X,\phi) = X - V(\phi) + X|X|/\Lambda_X^4$ (Paper 0 §2.2) provides the screening mechanism
+        in high-acceleration regimes:
     </p>
     <div
         style="
@@ -189,25 +192,12 @@
     </p>
 
     <p>
-        <strong>3. Conformal-Dominant Covariance Channel:</strong> GNSS-II
-        measures a reduced GNSS covariance-channel response to the
-        environmentally projected Temporal Shear. The locally observable shear
-        is the conformal-sector gradient
-    </p>
-    <div
-        style="
-            text-align: center;
-            margin: 10px 0;
-            font-family: &quot;Times New Roman&quot;, serif;
-            font-style: italic;
-        "
-    >
-        Σ<sub>μ</sub><sup>obs</sup> = S<sub>Σ</sub>(E) ∇<sub>μ</sub> ln A(φ),
-    </div>
-    <p>
-        where S<sub>Σ</sub>(E) is the environmental screening operator that
-        unifies density, compactness, proximity, and covariance-channel
-        projections across the TEP corpus (Smawfield, 2025, Paper 6). The
+        <strong>3. Conformal-Dominant Covariance Channel:</strong> In TEP, GNSS clocks
+        read the value of the temporal field $\ln A$ at each station, and the measured
+        covariance $C_A(r) = \langle \delta \ln A(x) \delta \ln A(x') \rangle$ describes how that
+        value varies between stations; the screening that keeps local trajectories GR-like
+        acts on the field's effect on matter (the source-charge projection $\mathcal{S}_\Sigma\nabla\ln A$),
+        not on clock rates (Paper 0 §7). The
         disformal function B(φ) governs cone tilts, one-way non-reciprocity, and
         closed-loop synchronization holonomy; it is <em>not</em> the sector
         tested by open-path GNSS covariance, and is reserved for dedicated
@@ -232,13 +222,13 @@
         covariance scale) and asymptotic floor C<sub>∞</sub>. The observed
         velocity/orientation dependence of the correlation structure (the
         ≈19% annual modulation of the EW/NS ratio, §3.2) is treated as a
-        channel response function of the conformal shear projected through the
+        channel response function of the conformal clock-sector covariance projected through the
         GNSS processing transfer function. Its microscopic transfer law—mapping
-        Σ<sub>μ</sub><sup>obs</sup> to the measured anisotropy ratio (2.16) and
+        the solved clock covariance $C_A(\mathbf{r}, t)$ to the measured anisotropy ratio (2.16) and
         orbital-correlation magnitude (r = −0.888)—is <em>not yet closed</em>.
         The observed 19% modulation is a network-level covariance-shape
         observable and cannot presently be compared directly with a microscopic
-        conformal amplitude. The transfer law mapping Σ<sub>μ</sub><sup>obs</sup>
+        conformal amplitude. The transfer law mapping $C_A(\mathbf{r}, t)$
         to the measured anisotropy remains to be derived (§4.3.1.1, §5).
     </p>
 </div>
@@ -247,9 +237,9 @@
 <p>
     The TEP framework makes specific quantitative predictions that can be tested
     against GNSS observations. The spatial search band of 1,000–10,000 km was established
-    in Paper 0 (§11) and Paper 1 (§1.1) as an order-of-magnitude window anchored by the
+    in Paper 0 (§10.E) and Paper 1 (§1.1) as an order-of-magnitude window compared against the empirically calibrated
     terrestrial geometric saturation radius <em>R</em><sub><em>T</em></sub>(<em>M</em><sub>⊕</sub>) = (3<em>M</em><sub>⊕</sub> / 4πρ<sub><em>T</em></sub>)<sup>1/3</sup> ≈ 4,146 km,
-    derived from the material screening density ρ<sub><em>T</em></sub> ≈ 20 g/cm<sup>3</sup> (Paper 6).
+    evaluated using ρ<sub><em>T</em></sub> ≈ 20 g/cm<sup>3</sup> calibrated on the GNSS scale (Paper 6); this is a consistency comparison, not an independent prediction.
     The empirical test therefore distinguishes between scale-free power laws and bounded physical decay,
     evaluating kernel structure, velocity modulation, and directional anisotropy.
     Table 1 summarizes these a priori predictions and their experimental verification:
@@ -303,7 +293,7 @@
                     <strong>Temporal Topology Correlation Length (λ<sub>T</sub>)</strong>
                 </td>
                 <td style="padding: 8px; border: 1px solid #495773">
-                    Order-of-magnitude search band 1,000–10,000 km; geometric saturation anchor <em>R</em><sub><em>T</em></sub>(<em>M</em><sub>⊕</sub>) ≈ 4,146 km (Paper 0 §11, Paper 6; cross-product family ~1.9–4.5×10³ km, Paper 14)
+                    Order-of-magnitude search band 1,000–10,000 km; geometric saturation anchor <em>R</em><sub><em>T</em></sub>(<em>M</em><sub>⊕</sub>) ≈ 4,146 km (Paper 0 §10.E, Paper 6; cross-product family ~1.0–4.8×10³ km, Paper 14)
                 </td>
                 <td style="padding: 8px; border: 1px solid #495773">
                     Azimuth-averaged λ = 3,210 ± 389 km (cross-sector dispersion: 4,201 ± 1,967 km, spread 2,314–7,664 km)
@@ -335,7 +325,7 @@
                     magnitude not yet derived)
                 </td>
                 <td style="padding: 8px; border: 1px solid #495773">
-                    r = -0.888 (95% CI: [-0.94, -0.81]); surrogate p &lt; 2×10⁻⁷
+                    r = -0.888 (95% CI: [-0.94, -0.81]); surrogate p $\lt$ 2×10⁻⁷
                     (0/5M); t-test p ≈ 2.6×10⁻⁴ (N_eff ≈ 11)
                 </td>
                 <td style="padding: 8px; border: 1px solid #495773">
@@ -351,7 +341,7 @@
                     derived)
                 </td>
                 <td style="padding: 8px; border: 1px solid #495773">
-                    EW/NS = 2.16 (±0.23)
+                    EW/NS = 2.16; strength = 1.981 ± 0.23 (SE)
                 </td>
                 <td style="padding: 8px; border: 1px solid #495773">
                     <strong>Qualitatively Consistent</strong>
@@ -409,13 +399,19 @@
     covariance scale within the pre-specified TEP range (λ<sub>T</sub>), and the
     absence of GM/r² scaling is consistent with the conformal-sector Temporal
     Topology. The exponential kernel strongly outperforms simple power-law models
-    and is retained for cross-paper comparability, although Gaussian-family kernels
-    provide the preferred empirical fit in the present dataset (ΔAIC = 12.8). The
+    and is retained for cross-paper comparability. Gaussian-family kernels
+    provide the preferred empirical fit in the present dataset (ΔAIC = 12.8).
+    This meets the disfavouring condition of Paper 1's pre-specified criterion
+    (iii), under which a Gaussian-family preference counts against a directly
+    exponential screened-field covariance. Whether a screened profile passed
+    through the GNSS processing transfer function yields a Gaussian-like
+    empirical kernel is untested; until it is, the kernel shape is not counted
+    as support for the screening reading. The
     velocity-dependent anisotropy (r = −0.888) and geometric
     alignment (EW/NS = 2.16) are <em>qualitatively</em> consistent with a
-    conformal shear projected through the GNSS processing transfer function,
+    conformal clock-sector covariance projected through the GNSS processing transfer function,
     but their magnitudes are not yet derived from first principles—the
-    microscopic transfer law mapping Σ<sub>μ</sub><sup>obs</sup> to the observed
+    microscopic transfer law mapping the solved clock covariance $C_A(\mathbf{r}, t)$ into the GNSS estimator to yield the observed
     anisotropy ratio and orbital-correlation coefficient remains open (§5). The
     observed 19% modulation is a network-level covariance-shape observable and
     cannot presently be compared directly with a microscopic conformal amplitude.
@@ -432,7 +428,7 @@
 <p>
     The multi-centre study established the phenomenon across three
     software-diverse analysis centres (CODE, IGS, ESA) whose products derive
-    from substantially the same tracking network (83&ndash;90% pairwise station
+    from substantially the same tracking network (83–90% pairwise station
     overlap), reducing the likelihood of centre-specific processing artifacts
     over 2.5 years; common-mode network and datum-level systematics are not
     bounded by that comparison alone. That study demonstrated
@@ -547,22 +543,24 @@
     <ul style="margin: 0 0 8px 20px; font-size: 0.95em">
         <li>
             <strong
-                >A) CMB Frame vs Galactic Frame (Directional Template
+                >A) Fixed-Frame Templates vs Orbital Phase (Directional Template
                 Discrimination):</strong
             >
             <ul style="margin: 5px 0 5px 20px; font-size: 0.95em">
                 <li>
                     <strong>Physical Question:</strong> Does orbital modulation
                     align with the Solar System's peculiar motion (~20
-                    km/s toward RA=272°, Dec=+30°) or with the
+                    km/s toward RA=272°, Dec=+30°), with the
                     CMB dipole direction (~369 km/s toward
-                    RA=168°, Dec=-7°)?
+                    RA=168°, Dec=-7°), or with Earth's own orbital-velocity
+                    geometry (the annual phase itself)?
                 </li>
                 <li>
                     <strong>Method:</strong> Comprehensive multi-resolution grid search across
                     79,330 sky directions across four grids (10°, 5°, 2.5°, with 65,341 at 1°) to identify which reference
                     direction best predicts the temporal modulation of spatial
-                    anisotropy
+                    anisotropy, using the corrected prograde orbital-velocity
+                    convention verified against independent ephemeris checks
                 </li>
                 <li>
                     <strong>Interpretive Hypothesis:</strong> If an operative
@@ -575,7 +573,8 @@
                 </li>
                 <li>
                     <strong>Template Discrimination Power:</strong> Direct head-to-head
-                    comparison between the two candidate physical templates. The Solar Apex
+                    comparison between the candidate physical templates, including
+                    in-ecliptic orbital-velocity controls. The Solar Apex
                     vector (+30° Dec) predicts N-S anisotropy, which is geometrically
                     incompatible with the observed E-W dominance. The variance ratio
                     quantifies relative explanatory power.
@@ -607,7 +606,7 @@
                 </li>
                 <li>
                     <strong>Falsification Criterion:</strong> If solar rotation
-                    shows R² > 0.10 or p < 0.01, the artifact hypothesis gains
+                    shows R² &gt; 0.10 or p $\lt$ 0.01, the artifact hypothesis gains
                     support over physical coupling
                 </li>
             </ul>
@@ -625,13 +624,12 @@
         <strong>Study Classification:</strong> This is a
         <em>replication + extension + falsification</em> study. Q1 tests
         long-baseline consistency (replication). Q2 tests genuinely new predictions
-        accessible only with this dataset (extension). Q3A provides strong
-        directional discrimination between the CMB-dipole and Solar-Apex
-        hypotheses, while Q3B tests theoretical specificity via null controls
+        accessible only with this dataset (extension). Q3A provides directional
+        discrimination among the CMB-dipole, Solar-Apex, and in-ecliptic
+        orbital-phase templates, while Q3B tests theoretical specificity via null controls
         (solar rotation). Together, they distinguish genuine physical coupling
-        from transient processing artifacts and identify a preferred covariance
-        direction, strongly discriminating between the CMB-dipole and Solar-Apex
-        directional templates.
+        from transient processing artifacts and identify the preferred covariance
+        direction, strongly discriminating among the directional templates.
     </p>
 </div>
 
@@ -653,7 +651,7 @@
     </li>
     <li>
         <strong>Objective D (Falsification):</strong> Identify operative
-        cosmological reference frame (CMB vs galactic) via grid search and test
+        reference direction (CMB vs galactic vs orbital-phase) via grid search and test
         theoretical selectivity with null controls (solar rotation) and
         robustness checks (hemisphere stratification).
     </li>
@@ -696,7 +694,7 @@
                     nulls passed<br />Hemisphere &amp; seasonal controls
                 </td>
                 <td>
-                    <strong>Strengthened:</strong> r = −0.888 (surrogate p &lt; 2×10⁻⁷,
+                    <strong>Strengthened:</strong> r = −0.888 (surrogate p $\lt$ 2×10⁻⁷,
                     0/5M; t-test p ≈ 2.6×10⁻⁴)<br />25.3-year baseline<br />Hemisphere
                     stratification is the proper discriminant (see §3.2.2;
                     partial correlation is inappropriate for coupled orbital
@@ -704,24 +702,26 @@
                 </td>
             </tr>
             <tr>
-                <td><strong>CMB Frame Alignment</strong></td>
+                <td><strong>Directional Search (Orbital Phase)</strong></td>
                 <td>
                     <em>Not testable (methodology not developed in Paper 1)</em>
                 </td>
                 <td>
                     <strong>Multi-Resolution Verification:</strong> Grid search
                     across 79,330 sky directions (65,341 at 1° resolution; §2.3.5, §3.2.6)<br />
-                    <strong>Best fit:</strong> RA=186°, Dec=-4° (r=0.747;
-                    directional-rank p &lt; 0.001)<br />
-                    <strong>CMB Dipole:</strong> RA=168°, Dec=-7° → 18.2° from
-                    best fit<br />
-                    <strong>Solar Apex:</strong> RA=272°, Dec=+30° → r=0.007,
+                    <strong>Best fit:</strong> RA=6°, Dec=+4° (r=0.746;
+                    permutation p $\lt$ 10⁻⁵)<br />
+                    <strong>Aphelion tangent:</strong> ~6° from best fit — the
+                    orbital-phase readout<br />
+                    <strong>CMB Dipole:</strong> RA=168°, Dec=-7° → 162° from
+                    best fit (template anti-correlates, r=−0.55)<br />
+                    <strong>Solar Apex:</strong> RA=272°, Dec=+30° → r=0.006,
                     p=0.97<br />
-                    <strong>Variance Ratio: ~10,300×</strong> |
+                    <strong>Variance Ratio: ~16,000×</strong> |
                     <strong>Convergence verified</strong> across 10°, 5°, 2.5°,
                     1° resolutions<br />
-                    Identifies CMB-dipole directional alignment, resolves
-                    hemisphere asymmetry
+                    Identifies the heliocentric-orbital phase direction,
+                    excludes both named fixed-frame templates
                 </td>
             </tr>
             <tr>
@@ -733,8 +733,8 @@
                 <td>
                     <strong>Extended:</strong> 56/156 events ≥2σ; 19
                     Bonferroni-significant<br />Amplitude metrics
-                    processing-dependent<br />Null event control validates
-                    specificity (§3.3)
+                    processing-dependent<br />Matched-null validates 40-event
+                    opposition subset; catalogue counts descriptive (§3.3)
                 </td>
             </tr>
             <tr>
@@ -750,7 +750,7 @@
             </tr>
             <tr>
                 <td><strong>18.6-Year Nutation</strong></td>
-                <td><em>Not testable (baseline < 2.5 years)</em></td>
+                <td><em>Not testable (baseline $\lt$ 2.5 years)</em></td>
                 <td>
                     <strong>Preliminary:</strong> R² = 0.641, p = 0.010<br />1.4
                     complete cycles observed<br />Preliminary — requires longer-baseline or red-noise validation

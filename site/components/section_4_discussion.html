@@ -68,7 +68,7 @@
     has been validated through Monte Carlo simulation: 0 out of 5,000,000
     randomized surrogates exceeded the observed value, yielding strong
     statistical evidence consistent with temporal-gravitational coupling
-    (surrogate p &lt; 2×10⁻⁷; t-test p ≈ 2.6×10⁻⁴ with N_eff ≈ 11). The Monte Carlo test is the primary validation method because it
+    (surrogate p $\lt$ 2×10⁻⁷; t-test p ≈ 2.6×10⁻⁴ with N_eff ≈ 11). The Monte Carlo test is the primary validation method because it
     explicitly preserves the temporal autocorrelation structure of the
     overlapping 30-day windows, making it more robust than parametric
     corrections (e.g., Bartlett adjustment which yields Neff ≈ 11-15). The
@@ -81,12 +81,12 @@
 <p>
     The orbital velocity correlation establishes that anisotropy modulates with
     Earth's motion, but <em>relative to which reference frame?</em> This
-    question has profound implications: alignment with the Solar Apex (~20 km/s,
-    galactic motion) implies one physical mechanism, while alignment with the
-    CMB dipole (~369 km/s, cosmological background 4-velocity) implies a
-    different physical regime: CMB-frame-aligned covariance—a correlation
-    between the TEP field configuration and the observable cosmological
-    background state, without introducing a fundamental preferred frame.
+    question motivates explicit fixed-frame controls. A Solar-Apex template
+    tests a galactic-motion phase, while a CMB-apex template tests a
+    cosmological-background phase. Under the corrected orbital convention,
+    neither named direction reproduces the observed phase: the CMB-apex
+    template is anti-phase and the Solar-Apex template is null. The recovered
+    direction instead follows Earth's aphelion-velocity tangent.
 </p>
 
 <p><strong>Competing Hypotheses:</strong></p>
@@ -182,13 +182,12 @@
         margin: 15px 0;
     "
 >
-    <p style="margin: 0 0 10px 0"><strong>CMB dipole-direction alignment:</strong></p>
+    <p style="margin: 0 0 10px 0"><strong>In-ecliptic orbital-phase direction:</strong></p>
     <ul style="margin: 10px 0 10px 20px; font-size: 0.95em">
-        <li>Best-fit direction: RA=186°, Dec=-4° (r = 0.747; directional-rank p < 0.001; global sky-search surrogate not yet evaluated)</li>
-        <li>CMB Dipole (RA=168°, Dec=-7°): r = 0.597, directional-rank p = 0.0002</li>
+        <li>Best-fit direction: RA=6°, Dec=+4° (r = 0.746; permutation p $\lt$ 10⁻⁵; global sky-search surrogate not yet evaluated)</li>
+        <li>Aphelion velocity tangent (RA≈12°, Dec≈+5°): 6.0° from best fit</li>
         <li>
-            Angular separation: 18.2° (within bootstrap 95% CI and grid
-            resolution uncertainty)
+            CMB Dipole (RA=168°, Dec=-7°): r = −0.546 (anti-phase), 162° separation
         </li>
         <li>Variance explained: R² = 55.7%</li>
         <li>
@@ -196,23 +195,23 @@
             density range (10° → 1°)
         </li>
         <li>
-            Statistical significance: ~10,300× variance ratio (Best Fit vs Solar
-            Apex); ~6,600× variance ratio (CMB Dipole vs Solar Apex)
+            Statistical significance: ~16,000× variance ratio (Best Fit vs Solar
+            Apex); Solar Apex itself consistent with null (r=0.006)
         </li>
     </ul>
     <p style="margin: 10px 0 0 0; font-size: 0.95em">
         <em>Finding:</em> The sky scan identifies a preferred covariance
-        direction near the CMB dipole and strongly rejects the Solar-Apex
-        directional template. Best-fit location exhibits
-        exceptional stability across all resolutions (RA varies by only 1-2°),
-        with consistent CMB alignment (separation 18-22°). Because the present
-        scan fixes the background-vector magnitude, it establishes CMB-directional
-        alignment rather than independently measuring the 369 km/s speed scale.
-        The 18° offset is
-        within expected uncertainty (bootstrap CI spans ~20°, grid resolution
-        ±2.5°) and represents statistically significant alignment compared to
-        alternative frames (Solar Apex 89° away, ecliptic controls show 136×
-        weaker correlation).
+        direction in the ecliptic plane coincident with Earth's orbital
+        velocity tangent at aphelion, and strongly rejects both the Solar-Apex
+        and CMB-dipole directional templates — the dipole-anchored template
+        anti-correlates (r=−0.546), placing the recovered phase anti-aligned
+        with the dipole apex. Best-fit location exhibits
+        exceptional stability across all resolutions (RA varies by a few degrees),
+        with consistent ~160° separation from the CMB dipole. Because the present
+        scan fixes the background-vector magnitude and the predictor is
+        phase-dominated by the orbital term, the direction encodes the annual
+        phase of the orbital-velocity-coupled modulation rather than a
+        cosmological rest frame.
     </p>
 </div>
 
@@ -229,20 +228,22 @@
     </p>
     <ul style="margin: 10px 0 10px 20px; font-size: 0.95em">
         <li>
-            Correlation with Solar Apex (RA=272°, Dec=+30°): r = 0.007, p =
-            0.967
+            Correlation with Solar Apex (RA=272°, Dec=+30°): r = 0.006, p =
+            0.974
         </li>
-        <li>Variance explained: R² = 0.01%</li>
-        <li>Angular separation from best fit: 88.5°</li>
+        <li>Variance explained: R² = 0.003%</li>
+        <li>Angular separation from best fit: 91.5°</li>
     </ul>
     <p style="margin: 10px 0 0 0; font-size: 0.95em">
-        <em>Discrimination:</em> The ~10,300-fold variance ratio between the CMB-aligned
-        direction and the Solar Apex provides clear directional discrimination. The
-        correlation with the Solar Apex directional template is statistically
-        indistinguishable from zero, while the CMB-dipole direction shows strong
-        alignment. Note: because background speed is fixed at 20 km/s for all
+        <em>Discrimination:</em> The ~16,000-fold variance ratio between the
+        best-fit direction and the Solar Apex provides clear rejection of the
+        galactic template. The correlation with the Solar Apex directional template is statistically
+        indistinguishable from zero. Under the corrected convention the CMB-dipole
+        template is likewise rejected in phase (r=−0.546, anti-aligned), so the
+        operative direction is identified with the orbital-velocity tangent, not
+        a fixed external frame. Note: because background speed is fixed at 20 km/s for all
         trials, the scan identifies a preferred direction but does not measure
-        coupling to the 369 km/s CMB speed magnitude (§2.3.5).
+        any physical speed magnitude (§2.3.5).
     </p>
 </div>
 
@@ -256,50 +257,61 @@
     "
 >
     <h4 style="margin-top: 0; color: #2c5282">
-        Interpretive Caveat: The 18° Offset
+        Interpretive Caveat: Orbital-Vector Convention Correction
     </h4>
 
     <p style="margin-bottom: 10px">
-        The 18.2° angular separation between the best-fit direction (RA=186°,
-        Dec=-4°) and the CMB dipole (RA=168°, Dec=-7°) represents ~5% of the
-        full sky. While this offset falls within the bootstrap 95% confidence
-        region (~20° span) and grid resolution uncertainty (±2.5°), it warrants
-        explicit acknowledgment:
+        An earlier pipeline version implemented Earth's orbital velocity with
+        the antiparallel (retrograde) sign convention. Because the predictor
+        cos(Dec<sub>net</sub>) is invariant under V<sub>net</sub> →
+        −V<sub>net</sub>, the recovered correlation landscape is identical
+        under either convention but mirrored through the origin — every
+        direction reads at its antipode (verified numerically to ~10⁻¹⁵).
+        The pre-correction result (RA=186°, Dec=−4°, 18.2° from the CMB dipole)
+        and the corrected result (RA=6°, Dec=+4°, 162° from the dipole) are
+        exactly this antipodal pair. The convention was corrected after
+        verification against independent ephemeris checks (velocity toward
+        ecliptic longitude 270° at the March equinox; RA≈192°, Dec≈−5° at
+        perihelion), and the corrected interpretation follows:
     </p>
 
     <ul style="margin: 0 0 10px 20px; font-size: 0.95em">
         <li>
-            <strong>Consistent with CMB:</strong> The offset is statistically
-            compatible with CMB alignment given measurement uncertainty. The
-            ~10,300× variance ratio over Solar Apex and 136× over ecliptic
-            controls strongly favor the CMB-frame region.
+            <strong>Orbital-phase readout:</strong> The corrected best fit lies
+            ~6° from Earth's velocity tangent at aphelion — the direction the
+            template returns for the annual-phase extremum of the
+            orbital-velocity-coupled modulation (§3.2.1–3.2.4). The directional
+            search is therefore a phase measurement, not a frame
+            identification.
         </li>
         <li>
-            <strong>Not uniquely CMB:</strong> It cannot be excluded that the signal
-            couples to a different cosmological reference frame that happens to
-            lie near the CMB dipole (e.g., motion relative to the Local Group
-            centroid or Virgo Supercluster, which lie within ~20° of the best
+            <strong>CMB excluded in phase:</strong> The dipole-anchored template
+            anti-correlates (r=−0.546). The observed modulation is in anti-phase
+            with the CMB-apex prediction; what earlier versions read as
+            ~18° alignment is, under the corrected convention, ~162°
+            anti-alignment (the CMB <em>antipode</em> lies ~18° from the best
             fit).
         </li>
         <li>
-            <strong>Resolution limited:</strong> With N=34 temporal samples and
-            bootstrap CI spanning ~20°, finer discrimination between nearby
-            cosmological frames requires either longer baselines or independent
-            validation.
+            <strong>Solar Apex excluded:</strong> r=+0.006 (~16,000× variance
+            ratio) — geometrically expected, since the Apex sits 53° off the
+            ecliptic and predicts N-S anisotropy, contradicting the observed
+            E-W dominance.
         </li>
     </ul>
 
     <p style="margin-bottom: 0">
-        <strong>Assessment:</strong> The key finding is not precise CMB
-        localisation, but rather strong directional discrimination between
-        the CMB-dipole template (cosmological-scale, near-ecliptic) and
-        the Solar-Apex template (galactic-scale, high declination). The 89°
-        angular separation and ~10,300× variance ratio between these templates are
-        robust regardless of the 18° offset. The CMB dipole direction is the most
-        parsimonious interpretation given its well-characterised direction and
-        geometric proximity to the best fit, but the offset should be treated as
-        a parameter requiring refinement with independent data rather than
-        a precise CMB identification.
+        <strong>Assessment:</strong> The corrected result strengthens rather
+        than weakens the internal coherence of the orbital-coupling picture:
+        §3.2.1–3.2.4 measured an anti-correlation with orbital speed that
+        peaks in phase at aphelion, and the directional template's best fit
+        lands within degrees of the aphelion velocity tangent. What the scan
+        establishes is a stable, resolution-convergent annual phase
+        expressible as an in-ecliptic preferred direction — not a
+        cosmological-frame detection. Discriminating a cosmological frame from
+        the orbital tangent would require a predictor sensitive to more than
+        the velocity-declination phase, or baselines long enough to separate
+        fixed in-ecliptic directions from the orbital phase.
     </p>
 </div>
 
@@ -326,9 +338,9 @@
     </p>
 
     <p style="margin-bottom: 10px">
-        <strong>Control Test:</strong> To discriminate CMB-specific alignment
+        <strong>Control Test:</strong> To discriminate direction-specific alignment
         from generic ecliptic-plane preference, two additional
-        ecliptic-plane directions perpendicular and opposite to the CMB were tested:
+        ecliptic-plane directions were tested alongside the named frames:
     </p>
 
     <table
@@ -418,7 +430,7 @@
                         text-align: center;
                     "
                 >
-                    <strong>0.357</strong>
+                    <strong>0.298 (anti-phase)</strong>
                 </td>
                 <td
                     style="
@@ -427,7 +439,7 @@
                         text-align: center;
                     "
                 >
-                    <strong>35.7%</strong>
+                    <strong>29.8%</strong>
                 </td>
             </tr>
             <tr>
@@ -558,18 +570,26 @@
 
     <p style="margin-bottom: 10px"><strong>Discrimination Ratios:</strong></p>
     <ul style="margin: 0 0 10px 20px; font-size: 0.95em">
-        <li>CMB / Ecliptic East: 136× variance ratio</li>
-        <li>CMB / Ecliptic West: 135× variance ratio</li>
+        <li>Best fit / Ecliptic East: ~210× variance ratio</li>
+        <li>Best fit / Ecliptic West: ~210× variance ratio</li>
         <li>
-            CMB / Solar Apex: ~6,600× variance ratio (using unrounded R²<sub>Apex</sub> = 5.37 × 10⁻⁵ vs R²<sub>CMB</sub> = 0.357; rounding R²<sub>Apex</sub> to the table precision of 0.01% yields 3,570×)
+            Best fit / Solar Apex: ~16,000× variance ratio (R²<sub>best</sub> = 0.557 vs R²<sub>Apex</sub> = 3.5 × 10⁻⁵)
+        </li>
+        <li>
+            CMB-dipole template: R² = 0.298 but r = −0.546 — the variance it
+            captures belongs to its <em>antipodal</em> region (RA≈348°), which is
+            where the corrected best fit lies.
         </li>
     </ul>
 
     <p style="margin-bottom: 0">
-        <strong>Conclusion:</strong> The CMB direction explains ~136× more
-        variance than other ecliptic-plane directions (East/West at Dec=0°).
-        This is CMB-specific alignment, not generic ecliptic-plane detection.
-        The geometric confound hypothesis is falsified.
+        <strong>Conclusion:</strong> The modulation is direction-specific, not
+        generic ecliptic-plane detection — the ecliptic East/West controls at
+        Dec=0° capture ~0.3% variance each while the best fit captures 55.7%.
+        The direction the template selects is antipodal to the CMB apex and ~6°
+        from the aphelion velocity tangent: the annual-phase readout of the
+        orbital-velocity coupling. The generic-ecliptic confound is falsified;
+        the CMB-apex identification is also falsified.
     </p>
 </div>
 
@@ -590,7 +610,7 @@
         velocity onto polar axis
     </li>
     <li><strong>Weak E-W correlation:</strong> Low equatorial component</li>
-    <li><strong>Prediction:</strong> EW/NS ratio < 1 (N-S dominates)</li>
+    <li><strong>Prediction:</strong> EW/NS ratio $\lt$ 1 (N-S dominates)</li>
 </ul>
 
 <p>
@@ -600,33 +620,36 @@
     pattern.
 </p>
 
-<p><strong>Physical Interpretation - Why CMB Succeeds:</strong></p>
+<p><strong>Physical Interpretation - Why the Orbital-Phase Direction Fits:</strong></p>
 
 <p>
-    The CMB Dipole points to Dec=-7° (equatorial/southern sky). Adding Earth's
-    orbital velocity to this low-declination vector produces a net velocity that
-    modulates between Dec=-22° and Dec=+8° throughout the year. This geometry
-    predicts:
+    The recovered best-fit direction (RA=6°, Dec=+4°) lies in the ecliptic
+    plane near the aphelion velocity tangent. A low-declination background
+    vector added to Earth's orbital velocity produces a net velocity whose
+    declination oscillates through the year with the annual phase — reaching
+    minimum declination (maximum equatorial projection) when the orbital
+    velocity aligns with the background direction. This geometry predicts:
 </p>
 
 <ul>
     <li>
-        <strong>E-W dominance at perihelion:</strong> When Earth moves fastest,
-        net declination is lowest → Strong equatorial projection
+        <strong>E-W dominance peaking near aphelion:</strong> when the net
+        velocity is most equatorial, the E-W projection is strongest —
+        matching the observed EW/NS maximum at the velocity minimum
+        (r=−0.888 anti-correlation with orbital speed)
     </li>
     <li>
-        <strong>N-S strengthening at aphelion:</strong> When Earth moves
-        slowest, net declination increases → Stronger polar component
-    </li>
-    <li>
-        <strong>Annual modulation:</strong> EW/NS ratio oscillates with orbital
-        velocity
+        <strong>Annual modulation:</strong> EW/NS ratio oscillates with the
+        orbital phase, and the template's best-fit direction lands on the
+        velocity tangent at that phase extremum
     </li>
 </ul>
 
 <p>
-    <strong>Observation:</strong> Exactly this pattern (r=-0.888, surrogate p<2×10⁻⁷). The
-    CMB-dipole direction is strongly consistent with the observed anisotropy geometry.
+    <strong>Observation:</strong> Exactly this pattern (r=-0.888 orbital-speed
+    anti-correlation; best-fit direction 6° from the aphelion tangent). The
+    orbital-phase direction is strongly consistent with the observed anisotropy
+    geometry; the CMB-apex template is in anti-phase and the Solar Apex is null.
 </p>
 
 <div
@@ -639,51 +662,39 @@
         font-size: 13px;
     "
 >
-    <strong>Note on Lorentz Invariance and CMB Frame:</strong><br />
+    <strong>Note on Lorentz Invariance:</strong><br />
     <br />
-    The CMB rest frame is an observationally defined cosmic rest frame (Earth's
-    motion ~369 km/s, RA=168°, Dec=-7°, measured by Planck satellite). Detecting
-    motion relative to this frame does not violate Lorentz invariance—it is
-    analogous to measuring Earth's velocity relative to any other reference
-    frame. Special Relativity forbids <em>local</em> experiments from detecting
-    absolute motion, but <em>global</em> observations (like CMB dipole
-    anisotropy) can and do reveal motion through the cosmic rest frame.<br />
+    The corrected result does not identify coupling to the CMB rest frame — the
+    recovered direction is ~162° from the dipole and encodes Earth's orbital
+    velocity phase. For completeness: detecting motion relative to a cosmic
+    rest frame would not by itself violate Lorentz invariance (it is analogous
+    to measuring Earth's velocity relative to any other reference frame), and
+    the directional test here is, in any case, a measurement of the modulation
+    phase rather than detection of absolute motion. The hemisphere asymmetry
+    and direction stability establish that the coupling geometry is
+    network-scale and orbital, not a local physical-law change.<br />
     <br />
-    What would constitute a Lorentz violation: If local physics laws changed in
-    the CMB frame, or if light speed varied with CMB-frame motion. What this analysis
-    observes: A global correlation field structure that modulates with Earth's
-    motion through the CMB frame—a network-scale geometric effect, not a local
-    physical law change. This is consistent with SR if the coupling operates
-    through correlation geometry rather than local dynamics.<br />
-    <br />
-    This distinction is critical: detecting motion through CMB frame ≠ violating
-    SR. However, the physical mechanism enabling this coupling remains to be
-    established and requires theoretical development beyond current frameworks.
+    This distinction is critical: a preferred <em>direction</em> in a global
+    correlation field (the annual phase direction) ≠ detection of a preferred
+    <em>frame</em>. The physical mechanism enabling the orbital coupling remains
+    to be established and requires theoretical development beyond current frameworks.
 </div>
 
 <p><strong>Hemisphere Asymmetry - Resolution:</strong></p>
 
 <p>
-    The CMB frame identification also resolves a previously unexplained feature:
-    why the Southern Hemisphere shows much stronger orbital correlation
+    The Southern Hemisphere shows much stronger orbital correlation
     (r=-0.79, p=0.006) than the Northern Hemisphere (r=+0.25, not significant).
 </p>
 
 <p>
-    <strong>Explanation:</strong> The CMB velocity vector points to Dec=-7°
-    (Southern sky). This creates a geometric asymmetry:
+    <strong>Explanation:</strong> Under the corrected convention the recovered
+    direction is nearly equatorial (Dec=+4°), so a simple "stations face the
+    dipole" argument does not apply. The asymmetry instead reflects the
+    projection of the orbital velocity field onto the hemispheric distribution
+    of baselines — the network's northern station concentration (§3.2.2)
+    weights the coupling differently in the two hemispheres.
 </p>
-
-<ul>
-    <li>
-        <strong>Southern stations:</strong> Face toward the CMB dipole direction
-        → Strong geometric coupling
-    </li>
-    <li>
-        <strong>Northern stations:</strong> Face away from the CMB dipole
-        direction → Weaker geometric coupling
-    </li>
-</ul>
 
 <p>
     This directional sensitivity rules out a purely isotropic scalar-only model.
@@ -691,56 +702,57 @@
     directional scalar-field gradient such as Σ<sub>μ</sub> = ∇<sub>μ</sub> ln A,
     which is the central object in the conformal TEP sector. Discriminating
     between these possibilities requires explicit pairwise projection kernels.
-    The hemisphere asymmetry, previously puzzling, is consistent with CMB-frame
-    geometry under either interpretation.
+    The hemisphere asymmetry, previously puzzling, is consistent with
+    orbital-velocity-coupled geometry under either interpretation.
 </p>
 
 <p><strong>Broader Significance:</strong></p>
 
 <p>
     This finding elevates the result from "orbital modulation is detected" to "the
-    detection of CMB-frame-aligned covariance." This has
-    profound implications:
+    orbital modulation carries a stable, direction-specific annual phase." This has
+    important implications:
 </p>
 
 <ol>
     <li>
-        <strong>Directional Alignment:</strong> The best-fit direction aligns
-        with the CMB dipole (cosmological background 4-velocity), not the Solar
-        Apex (galactic motion). The grid scan identifies a preferred
-        <em>direction</em>; because background speed is fixed at 20 km/s and the
-        predictor is direction-only (cos(Dec<sub>net</sub>)), the scan does not
-        fit the speed magnitude and therefore does not, by itself, establish
-        that the coupling amplitude is controlled by 369 km/s rather than 20
-        km/s. The result is a directional identification with the CMB dipole,
-        not a speed-magnitude measurement. This suggests CMB-frame-aligned
-        covariance without introducing a fundamental preferred frame.
+        <strong>Directional Identification:</strong> The best-fit direction
+        (RA=6°, Dec=+4°) coincides with Earth's velocity tangent at aphelion
+        (~6°), not the CMB dipole (162°, anti-phase) or the Solar Apex (92°,
+        null). The grid scan identifies a preferred <em>direction</em>; because
+        background speed is fixed at 20 km/s and the predictor is
+        direction-only (cos(Dec<sub>net</sub>)), the scan does not fit the speed
+        magnitude and cannot distinguish a cosmological background vector from
+        the orbital-phase encoding. The result identifies the phase direction
+        of the orbit-coupled modulation.
     </li>
     <li>
-        <strong>Reference Frame Question:</strong> If confirmed, the CMB
-        dipole-direction alignment would raise questions about reference frame dependence
-        in temporal correlations, requiring independent replication before
-        drawing conclusions about equivalence principle implications.
+        <strong>Reference Frame Question:</strong> The directional result
+        answers a weaker question than originally posed: it constrains where
+        the modulation phase points on the sky, not which cosmological frame
+        couples. Separating a cosmological-frame direction from the orbital
+        tangent requires a predictor sensitive to more than velocity-declination
+        phase.
     </li>
     <li>
-        <strong>Mach's Principle:</strong> The finding is consistent with
-        Machian frameworks where local inertial/temporal properties are
-        determined by the matter distribution of the entire Universe
-        (represented observationally by the CMB).
+        <strong>Mach's Principle:</strong> The orbital-phase identification is
+        neutral with respect to Machian frameworks; a cosmological-frame
+        coupling is neither established nor excluded by this directional test.
     </li>
     <li>
         <strong>Falsifiable Physics:</strong> This falsification test rejects
-        the galactic hypothesis while supporting the cosmic hypothesis.
+        both the galactic hypothesis (Solar Apex null) and the CMB-apex
+        hypothesis (anti-phase template), while identifying the
+        heliocentric-orbital direction.
     </li>
 </ol>
 
 <p>
-    <strong>Assessment:</strong> The CMB-region directional result (r=0.747,
-    directional-rank p&lt;0.001, ~10,300× variance ratio over the Solar-Apex
+    <strong>Assessment:</strong> The directional result (r=0.746,
+    permutation p$\lt$ 10⁻⁵, ~16,000× variance ratio over the Solar-Apex
     template) provides strong directional discrimination; global sky-search
-    significance remains to be evaluated. This transforms the phenomenology
-    from "velocity-dependent" to "CMB-directional," suggesting the physical
-    scale and reference frame of the coupling mechanism.
+    significance remains to be evaluated. It specifies the phase direction of
+    the orbital coupling mechanism rather than the rest frame of the coupling.
 </p>
 
 <p>
@@ -751,18 +763,18 @@
     A subtle but critical finding from the geometric model comparison (§2.3.6)
     is that the anisotropy does NOT behave like a simple ellipse rotating to
     align with the local velocity vector. The explicit tilt-angle model failed
-    (r=-0.029), while the vertical modulation model succeeded (r=0.747). This
+    (r=-0.029), while the vertical modulation model succeeded (r=0.746). This
     implies the spatial anisotropy pattern is relatively stable in azimuthal
     direction (West-dominant), but its <em>strength</em> (EW/NS ratio) modulates
-    based on the vertical component of the net velocity relative to the CMB
-    frame. This fixed-pattern behavior suggests the coupling is anchored to the
-    global cosmological reference frame rather than simply following local
-    velocity vectors.
+    based on the vertical component of the net orbital velocity. This
+    fixed-pattern behavior is consistent with coupling to the orbital velocity
+    field geometry rather than rotation of the local anisotropy pattern.
 </p>
 
 <p>
     <strong>Interpretation Note:</strong> The observed correlation is consistent
-    with a physical coupling to the CMB dipole direction, but the underlying mechanism
+    with a physical coupling to Earth's orbital velocity field (phase-locked to
+    the annual cycle), but the underlying mechanism
     remains to be established. Further investigation is required to determine
     the precise nature of this coupling and its implications for the
     understanding of temporal correlations.
@@ -782,9 +794,9 @@
 <p>
     <strong>Physical Interpretation</strong>: The shape of the spatial
     anisotropy systematically changes over the course of a year, in lockstep
-    with Earth's orbital velocity. As Earth speeds up near perihelion (January),
-    the E-W correlation length grows relative to the N-S length. As it slows
-    near aphelion (July), the ratio decreases. This ≈19% annual geometric
+    with Earth's orbital velocity. As Earth speeds up near perihelion
+    (January), the EW/NS ratio decreases (≈1.03); as it slows near aphelion
+    (July), the ratio increases (≈1.51). This ≈19% annual geometric
     modulation (offset ≈ 1.27, amplitude ≈ 0.24) describes the change in the
     <em>shape</em> of the coherence field (λ<sub>EW</sub>/λ<sub>NS</sub>)—a
     topological shift in correlation structure, not a clock frequency variation.
@@ -867,11 +879,11 @@
 
 <ol>
     <li>
-        <strong>CMB-Directional Alignment (§4.1.2.1):</strong> The modulation
-        aligns with the CMB dipole direction (RA=168°,
-        Dec=-7°) with ~10,300× variance ratio over the Solar-Apex directional template. Seasonal
-        ionospheric effects do not preferentially align with the CMB dipole
-        direction.
+        <strong>Orbital-Phase Direction (§4.1.2.1):</strong> The modulation's
+        recovered direction lies ~6° from Earth's aphelion-velocity tangent
+        with ~16,000× variance ratio over the Solar-Apex directional template. Seasonal
+        ionospheric effects do not imprint a celestial annual-phase direction
+        phase-locked to the orbital velocity field.
     </li>
 
     <li>
@@ -884,7 +896,7 @@
 </ol>
 
 <p>
-    The convergence of CMB dipole-direction geometry, ionospheric independence, and
+    The convergence of a stable in-ecliptic phase direction, ionospheric independence, and
     phase-specific coupling supports genuine orbital modulation over seasonal
     artifacts, though independent replication remains essential.
 </p>
@@ -902,7 +914,7 @@
     most critical validity test for the orbital correlation finding.
 </p>
 
-<p><strong>The "Irrefutable" Beat Period Test:</strong></p>
+<p><strong>The Beat-Period Discriminator:</strong></p>
 <p>
     The interaction between the Solar Year (365.25d) and the GPS Draconitic Year
     (351.4d) creates a mathematical "Beat Cycle" of approximately 25.4 years:
@@ -922,21 +934,24 @@
 <p>
     <strong>The Trap:</strong> The dataset covers 25.3 years
     (2000–2025)—matching the beat cycle to within 0.4% (0.1 years). This
-    serendipitous duration acts as a perfect filter. Over exactly one beat
-    cycle, a draconitic signal drifts through a full 360° of phase relative to
+    serendipitous duration acts as a near-complete phase filter. Over exactly one beat
+    cycle, a stationary draconitic signal drifts through a full 360° of phase relative to
     the solar calendar. Integrating the correlation over this full cycle causes
     these alternating phases to
-    mathematically cancel out (theoretical max |r| < 0.15).
+    mathematically cancel out (theoretical max |r| $\lt$ 0.15).
 </p>
 
 <p>
     <strong>The Result:</strong> The analysis observes a massive correlation of
-    r = -0.888; surrogate p&lt;2×10⁻⁷ (0/5 million exceeded), with
-    autocorrelation-adjusted t-test p≈2.6×10⁻⁴. This is physically
-    inconsistent with a
-    drifting draconitic signal. The high correlation demonstrates that the signal is
-    frequency-locked to the Solar Year, maintaining a fixed
-    phase relationship (Perihelion lock) for the entire 25-year duration.
+    r = -0.888; surrogate p$\lt$ 2×10⁻⁷ (0/5 million exceeded), with
+    autocorrelation-adjusted t-test p≈2.6×10⁻⁴. The 25.3-year integration
+    therefore strongly suppresses a stationary GPS-draconitic contaminant and
+    disfavors a simple fixed-phase/fixed-amplitude draconitic explanation. More
+    general nonstationary orbit-model systematics—harmonics, changing
+    constellation geometry, or era-dependent amplitudes—are not excluded by this
+    test alone; nor does the 27-day solar-rotation null exclude every plausible
+    SRP signature, since orbit-error spectra need not track the surface-rotation
+    period.
 </p>
 
 <div
@@ -948,7 +963,7 @@
     "
 >
     <p style="margin: 0 0 10px 0">
-        <strong>Summary of Falsification Tests (5/5 Passed):</strong>
+        <strong>Summary of Draconitic Discriminators:</strong>
     </p>
     <table style="width: 100%; border-collapse: collapse; font-size: 13px">
         <thead>
@@ -981,7 +996,7 @@
                         color: #1a5f1a;
                     "
                 >
-                    <strong>FALSIFIED</strong>
+                    <strong>REJECTED</strong>
                 </td>
             </tr>
             <tr style="background-color: rgba(73, 87, 115, 0.03)">
@@ -992,7 +1007,7 @@
                     Sun-Satellite Geometry (Local)
                 </td>
                 <td style="padding: 6px; border: 1px solid #495773">
-                    CMB-region direction; Solar-Apex rejected
+                    In-ecliptic orbital-phase direction; Solar-Apex and CMB-apex rejected
                 </td>
                 <td
                     style="
@@ -1001,7 +1016,7 @@
                         color: #1a5f1a;
                     "
                 >
-                    <strong>FALSIFIED</strong>
+                    <strong>DISFAVOURED</strong>
                 </td>
             </tr>
             <tr>
@@ -1012,7 +1027,7 @@
                     175.7 days (2nd Harmonic)
                 </td>
                 <td style="padding: 6px; border: 1px solid #495773">
-                    182.6 days (Physical Nutation)
+                    182.6 days (semiannual component)
                 </td>
                 <td
                     style="
@@ -1021,7 +1036,7 @@
                         color: #1a5f1a;
                     "
                 >
-                    <strong>FALSIFIED</strong>
+                    <strong>DISFAVOURED</strong>
                 </td>
             </tr>
             <tr style="background-color: rgba(73, 87, 115, 0.03)">
@@ -1041,15 +1056,18 @@
                         color: #1a5f1a;
                     "
                 >
-                    <strong>FALSIFIED</strong>
+                    <strong>DISFAVOURED</strong>
                 </td>
             </tr>
         </tbody>
     </table>
     <p style="margin: 10px 0 0 0; font-size: 0.95em">
-        <strong>Conclusion:</strong> The observed correlation is heliocentric,
-        physical, and cosmic in origin. It cannot be explained by the draconitic
-        error mechanism described in the literature.
+        <strong>Conclusion:</strong> The observed correlation is frequency-locked
+        to the solar calendar year at heliocentric orbital phase. The one-beat-cycle
+        integration strongly suppresses a stationary draconitic contaminant and
+        disfavors the fixed-phase/fixed-amplitude SRP mechanism described in the
+        literature; it does not bound every possible nonstationary orbit-model
+        systematic.
     </p>
 </div>
 
@@ -1125,7 +1143,8 @@
                     "Seasonal ionospheric artifact"
                 </td>
                 <td style="padding: 6px; border: 1px solid #495773">
-                    CMB dipole-direction alignment (~10,300× variance ratio); no F10.7/Kp
+                    Orbital-phase direction locked to celestial coordinates
+                    (~16,000× variance ratio vs Solar Apex); no F10.7/Kp
                     correlation
                 </td>
                 <td
@@ -1143,7 +1162,7 @@
                     "Processing-specific artifact"
                 </td>
                 <td style="padding: 6px; border: 1px solid #495773">
-                    3-centre validation: R² = 0.92-0.97 (Bernese, GIPSY, ESA)
+                    3-centre validation: R² = 0.92-0.97 (Bernese, NAPEOS, IGS combination)
                 </td>
                 <td
                     style="
@@ -1178,7 +1197,7 @@
                     "Random chance"
                 </td>
                 <td style="padding: 6px; border: 1px solid #495773">
-                    0/5M Monte Carlo surrogates exceeded r=-0.888 (p < 2×10⁻⁷)
+                    0/5M Monte Carlo surrogates exceeded r=-0.888 (p $\lt$ 2×10⁻⁷)
                 </td>
                 <td
                     style="
@@ -1213,8 +1232,8 @@
                     "Generic ecliptic detection"
                 </td>
                 <td style="padding: 6px; border: 1px solid #495773">
-                    CMB explains 136× more variance than other ecliptic
-                    directions
+                    Best-fit direction explains ~210× more variance than other
+                    ecliptic directions
                 </td>
                 <td
                     style="
@@ -1231,7 +1250,7 @@
                     "Single-constellation limitation"
                 </td>
                 <td style="padding: 6px; border: 1px solid #495773">
-                    MGEX multi-GNSS replication (Paper 14) confirms distance-structured spatial decay on combined multi-GNSS clocks (canonical isotropic λ = 1,862 ± 112 km, R² = 0.70–0.92; earlier 2020–2024 pilot λ = 3,042 ± 297 km, R² = 0.95); orbital coupling in MGEX is exploratory (model-free r = −0.716, p = 0.0018) while primary monthly metrics are null
+                    MGEX multi-GNSS replication (Paper 14) confirms distance-structured spatial decay on combined multi-GNSS clocks (canonical isotropic λ = 1,862 ± 155 km, R² = 0.70–0.92; earlier 2020–2024 pilot λ = 3,042 ± 297 km, R² = 0.95); orbital coupling in MGEX is exploratory (model-free r = −0.716, p = 0.0018) while primary monthly metrics are null
                 </td>
                 <td
                     style="
@@ -1303,6 +1322,15 @@
         events survive family-wide correction (vs 0.05 expected under null)
     </li>
 </ul>
+<p style="font-size: 0.95em; font-style: italic;">
+    These counts describe the repeatability of the pre-specified free-centre
+    pulse statistic on this series. Because the fitted pulse centre may sit
+    tens of days off-event on the autocorrelated seasonal curve, and because
+    the season-destroying shuffled null under-controls for calendar position,
+    event-locked specificity is established only for the 40-event opposition
+    subset under the ±15-day model-free control; the season-preserving check
+    is provided by Paper 3 (Step 2.6b).
+</p>
 
 <p><strong>Per-Planet Detection Rates (Primary ±120-day Window):</strong></p>
 <ul>
@@ -1320,10 +1348,12 @@
         >Mercury Dominance - Why Lowest Mass Shows Highest Detection:</strong
     >
     Mercury's high detection rate (42.5%) relative to more massive planets
-    (Jupiter 34.8%, Saturn 28.0%) directly demonstrates the absence of classical
-    gravitational (GM/r²) scaling. If mass were the driver, Jupiter (318 M⊕)
+    (Jupiter 34.8%, Saturn 28.0%) is inconsistent with a classical
+    gravitational (GM/r²) ordering. If mass were the driver, Jupiter (318 M⊕)
     should dominate over Mercury (0.055 M⊕). Instead, the pattern is consistent
-    with orbital period resonance:
+    with orbital period resonance (and with Mercury's short synodic spacing
+    producing heavily overlapping inference windows that share the same
+    seasonal crests):
 </p>
 <ul style="margin: 10px 0 10px 20px">
     <li>
@@ -2011,7 +2041,7 @@
     The survival of these correlation structures has a concrete candidate mechanistic explanation in
     the specific constraints applied in the Bernese GNSS Software (Dach et al.,
     2015) used by CODE. The estimation process minimizes residuals using the
-    <strong>Undifferenced Ionosphere-Free Linear Combination (L3)</strong>—the
+    Undifferenced Ionosphere-Free Linear Combination (L3)—the
     convention for all IGS precise clock products (Kouba, 2015). To resolve the
     inherent rank deficiency in undifferenced processing, a
     datum constraint must be applied: either a single reference
@@ -2042,7 +2072,7 @@
     <strong>Critical Technical Confirmation:</strong> The Bernese GNSS Software
     documentation explicitly states that "zero-difference network solution
     solving for all receiver and satellite clock parameters" is
-    <strong>"equivalent to a consistent double difference solution"</strong>
+    "equivalent to a consistent double difference solution"
     (Dach et al., 2015). Double-differencing is the standard technique that
     <em>mathematically eliminates</em> common-mode signals (including receiver
     clock biases and network-wide offsets) while preserving differential
@@ -2104,8 +2134,10 @@
     <br />
     <strong>2. Falsifiable Prediction:</strong> The datum-projection mechanism
     makes a clear, testable prediction:<br />
-    &nbsp;&nbsp;&nbsp;• <strong>Processed data:</strong> No GM/r² scaling
-    (common-mode components absorbed by datum estimation) - Observed<br />
+    &nbsp;&nbsp;&nbsp;• <strong>Processed data:</strong> No GM/r² ordering of
+    event amplitudes (common-mode components absorbed by datum estimation) - Observed;
+    a weak continuous M/r² correlation persists in the daily series
+    (r = −0.099, p = 0.032)<br />
     &nbsp;&nbsp;&nbsp;• <strong>Raw carrier-phase data:</strong> Mass-dependent terms
     are separately recoverable only in an explicitly referenced raw-link analysis;
     not the claimed conformal covariance observable<br />
@@ -2154,7 +2186,7 @@
 <p><strong>Nutation Signatures:</strong></p>
 <ul>
     <li>
-        <strong>Semiannual Nutation:</strong> R² = 0.904 (permutation p = 0.00027, F-test p = 2.7×10⁻⁵). A strong and clean signal indicating that the daily coherence of the network is strongly modulated at the 6‑month period. The fitted phase (φ₀ = −13.6°) peaks on January 7 and July 8, aligning within 2–4 days of Earth's orbital apsidal line (perihelion January 3–5, aphelion July 4–6), while placing the coherence minimum at the equinoxes, directly in anti-phase to the equinoctial ionospheric anomaly.
+        <strong>Semiannual Coherence Component (nutation/orbital harmonic):</strong> R² = 0.904 (permutation p = 0.00027, F-test p = 2.7×10⁻⁵). A strong 182.6-day coherence component whose fitted phase (φ₀ = −13.6°) peaks on January 7 and July 8, aligning within 2–4 days of Earth's orbital apsidal line (perihelion January 3–5, aphelion July 4–6), while placing the coherence minimum at the equinoxes, in anti-phase to the equinoctial ionospheric anomaly. The phase is compatible with both an orbital second harmonic and the semiannual nutation term; phase alone does not discriminate against an equinox-linked coherence-degradation mechanism, and the ionospheric channel is bounded instead by the local-night and F10.7/Kp null controls.
     </li>
     <li>
         <strong>Main Nutation (18.6 years):</strong> R² = 0.641 &plusmn; 0.10. A
@@ -2230,17 +2262,21 @@
         anisotropy-ratio series, §3.2.1)
     </li>
     <li>
-        <strong>CMB-Directional Alignment</strong> identifies a preferred
-        directional template near the CMB dipole (not the Solar Apex direction), resolving the hemisphere
-        asymmetry — a directional characterization of the same modulated
+        <strong>Directional Search</strong> identifies a preferred
+        directional template at Earth's aphelion-velocity tangent (rejecting both
+        the CMB-dipole and Solar-Apex templates), characterizing the annual
+        phase of the same modulated
         anisotropy series (§3.2.6), as is the hemisphere stratification
         control (§3.2.4). The present fixed-magnitude directional scan does not measure the
         relevant background-speed amplitude (§2.3.5)
     </li>
     <li>
-        <strong>Planetary Events</strong> reveal responses to transient
-        gravitational configurations (independent channel: event-locked
-        modulation depth on the daily-coherence series, §3.3)
+        <strong>Planetary Events</strong> characterize the catalogue of
+        event-window responses to transient
+        gravitational configurations (a second observable: event-window
+        modulation depth on the daily-coherence series, §3.3 — estimator
+        repeatability, with event-locked specificity validated only for the
+        40-event opposition subset)
     </li>
     <li>
         <strong>Nutation/Chandler Wobble</strong> show coupling to Earth's
@@ -2269,14 +2305,15 @@
     characterizations, a second independent coherence observable tested
     against four distinct geophysical and planetary predictors, and
     cross-dataset replication — consistent with
-    systematic coupling effects in GNSS timing networks. The CMB-directional
-    alignment (§4.1.2.1) is particularly significant: it transforms the
-    phenomenology from "velocity-dependent modulation" to "CMB-frame-aligned
-    covariance candidate," providing strong directional discrimination between
-    the CMB-dipole and Solar-Apex templates (Solar Apex rejected at ~10,300× variance ratio;
-    multi-resolution verified) and resolution of previously unexplained features
-    (hemisphere asymmetry). The convergence of spatial, temporal, geophysical,
-    and reference-frame signatures—each surviving rigorous statistical
+    systematic coupling effects in GNSS timing networks. The directional
+    result (§4.1.2.1) is particularly significant: it transforms the
+    phenomenology from "velocity-dependent modulation" to "phase-locked
+    orbital-directional covariance," providing strong directional discrimination —
+    the Solar-Apex template is rejected at ~16,000× variance ratio and the
+    CMB-dipole template is anti-phase — while identifying the recovered
+    direction with the heliocentric-orbital phase (multi-resolution verified).
+    The convergence of spatial, temporal, geophysical,
+    and directional signatures—each surviving rigorous statistical
     validation—creates a phenomenological framework that warrants theoretical
     interpretation. Several conventional explanations fail to reproduce this
     multi-signature convergence, though further replication and raw-data
@@ -2351,8 +2388,8 @@
                     2020); <em>"remain only partially understood"</em>
                 </td>
                 <td style="padding: 8px; border: 1px solid #495773">
-                    Orbital velocity r = -0.888 (annual); Semiannual nutation R²
-                    = 0.904
+                    Orbital velocity r = -0.888 (annual); Semiannual coherence
+                    component R² = 0.904
                 </td>
             </tr>
             <tr>
@@ -2376,7 +2413,7 @@
                     year" (Ray et al. 2007, cited in Chanard 2020)
                 </td>
                 <td style="padding: 8px; border: 1px solid #495773">
-                    Strong orbital coupling (r = -0.888, surrogate p &lt; 2×10⁻⁷
+                    Strong orbital coupling (r = -0.888, surrogate p $\lt$ 2×10⁻⁷
                     Monte Carlo validated)
                 </td>
             </tr>
@@ -2443,9 +2480,10 @@
     <strong>Amplitude-scaling note (see §2.1.3).</strong> Processed GNSS clock
     products eliminate common-mode frequency shifts; consequently any
     mass-proportional <em>GM ⁄ r<sup>2</sup></em> signature is largely removed.
-    The phase-coherent, differential metrics employed here respond to spatial
-    gradients of the temporal field (Temporal Shear), not to absolute potential.
-    Temporal Shear suppression in dense environments therefore decouples the
+    The phase-coherent, differential metrics employed here respond to differential
+    clock-sector covariance $C_A$ — a fluctuation-transfer channel distinct from
+    the static conformal-depth factor $S_A^{(\oplus)} \approx 0.65$ — not to absolute potential.
+    The datum-projection filter and pairwise screening decouple the
     observed geometric amplitudes from simple
     <em>GM ⁄ r<sup>2</sup></em> expectations. Future raw-carrier analyses will
     be required to test mass-scaling directly.
@@ -2464,19 +2502,24 @@
 <p><strong>Replicated (Confirms Temporal Stability)</strong>:</p>
 <ul>
     <li>
-        <strong>Spatial Anisotropy</strong>: EW > NS structure confirmed (Paper 1 typical λ<sub>EW</sub>/λ<sub>NS</sub> ≈ 0.55–2.03, peaks up to ~4.75, discussion quoting ~2.75×; this study EW/NS = 2.16 ± 0.23)
+        <strong>Spatial Anisotropy</strong>: EW > NS structure confirmed (Paper 1 typical λ<sub>EW</sub>/λ<sub>NS</sub> ≈ 0.55–2.03, peaks up to ~4.75, discussion quoting ~2.75×; this study EW/NS = 2.16, strength = 1.981 ± 0.23)
     </li>
     <li>
         <strong>Orbital Velocity Correlation</strong>: Multi-centre study r = −0.571 to −0.793 across centres; long-span r = −0.888 (see §3.2 for numeric values)
     </li>
     <li>
         <strong>Planetary Event Responses</strong>: Multi-centre study found 6/8
-        Bonferroni-significant; this study confirms and extends to 56/156 events ≥2σ, of
+        Bonferroni-significant; this study extends to 56/156 events ≥2σ under
+        the free-centre pulse statistic, of
         which 19 remain family-wide Bonferroni-significant.
         <em
-            >Null event control validation (§3.3.1) confirms planetary events
-            show 5.5× larger effect sizes than 155 random dates (p < 10⁻¹⁷,
-            Cohen's d = 1.41, ~8.5σ significance).</em
+            >Matched-null control (§3.3.1): for the 40-event outer-planet
+            opposition subset under the ±15-day model-free window, planetary
+            events show 5.5× larger effect sizes than 155 random dates (p $\lt$ 10⁻¹⁷,
+            Cohen's d = 1.41). Catalogue-wide event-locked inference requires a
+            season-preserving null; the free-centre fits and date-shuffled nulls
+            bound rather than prove specificity for the full 156 events
+            (see §3.3, Paper 3 Step 2.6b).</em
         >
     </li>
 </ul>
@@ -2484,7 +2527,7 @@
 <ul>
     <li>
         <strong>Event Statistics</strong>: Expanded from 8 predeclared events to
-        156-event comprehensive survey
+        156-event comprehensive survey (catalogue counts descriptive — §3.3)
     </li>
     <li>
         <strong>Orbital Coupling</strong>: 25.3-year baseline vs 2.5
@@ -2499,8 +2542,8 @@
         study: inaccessible)
     </li>
     <li>
-        <strong>Long-baseline Stability</strong>: Confirms signatures across 2+ solar
-        cycles
+        <strong>Long-baseline Aggregate Phase Coherence</strong>: Signatures recovered consistently in the pooled 25.3-year day-of-year aggregate across 2+ solar
+        cycles (era-block decomposition pending)
     </li>
 </ul>
 <p><strong>Replicated (Confirms Temporal Stability)</strong>:</p>
@@ -2551,7 +2594,7 @@
     </p>
     <p style="margin: 0; padding-left: 20px; font-size: 0.95em">
         <strong>Observed:</strong> λ varies with orbital velocity (r = -0.888;
-        surrogate p &lt; 2×10⁻⁷; t-test p ≈ 2.6×10⁻⁴, autocorr-corrected)
+        surrogate p $\lt$ 2×10⁻⁷; t-test p ≈ 2.6×10⁻⁴, autocorr-corrected)
     </p>
     <p
         style="
@@ -2794,7 +2837,7 @@
         </li>
         <li>
             <strong>Qualitative:</strong> Anisotropy should align with motion ✓
-            (confirmed: EW > NS, CMB dipole direction)
+            (confirmed: EW > NS, orbital-phase direction in ecliptic)
         </li>
         <li>
             <strong>Quantitative:</strong> Magnitude of ratio modulation →
@@ -2804,7 +2847,7 @@
 
     <p style="margin-bottom: 0">
         Raw carrier-phase analysis (§5.1) will provide critical constraints: if
-        the 19% modulation persists in unprocessed data, it reflects genuine
+        the 19% modulation persists in minimally processed raw data, it reflects genuine
         physical coupling; if it diminishes, the processing chain may contribute
         to the observed amplitude through differential transmission effects.
         Either outcome advances theoretical understanding.
@@ -2814,7 +2857,7 @@
 <p>
     These mechanisms remain hypotheses requiring validation through raw
     carrier-phase analysis and multi-constellation comparison. The phase
-    relationships (orbital coupling, CMB-directional alignment, planetary events) are
+    relationships (orbital coupling, the orbital-phase direction, planetary events) are
     reproducible across the processed products examined so far; their raw-data origin
     remains to be established, and the amplitude scaling remains
     an open question addressed in §5.1-5.2.
@@ -2864,7 +2907,7 @@
     <p>
         Standard GNSS processing imposes a global synchronization solution on a
         spatially structured temporal-covariance field. The residual covariance
-        can therefore probe open-path conformal Temporal Shear. It does not by
+        can therefore probe open-path conformal clock-sector covariance $C_A$. It does not by
         itself establish synchronization non-integrability; residual closed-loop
         holonomy remains a separate B/non-exact-sector observable. In the purely
         conformal subclass of TEP, the synchronization holonomy vanishes
@@ -2882,14 +2925,14 @@
             GR (~10⁻¹⁰) and atmospheric delays. Local pointlike physics retains
             the GR/Lorentz limit and locally measured c remains invariant.
             Nevertheless, raw multi-station and open-path observables may retain
-            conformal Temporal-Shear covariance. Raw analysis therefore provides
+            conformal clock-sector covariance. Raw analysis therefore provides
             a direct test of the covariance before analysis-centre transfer.
         </li>
         <li>
             <strong>Processed Residuals (Global):</strong> By removing local
             effects (where TEP=GR) and enforcing network closure, processing
             acts as a band-pass channel for the global covariance structure
-            (where the conformal Temporal Shear produces distance-structured
+            (where the conformal clock-rate field produces distance-structured
             correlations).
         </li>
     </ul>
@@ -2897,7 +2940,7 @@
     <p>
         In this view, the processed network solution is not merely a data
         source, but the interferometer itself, with the residuals representing
-        the covariance pattern of the conformal Temporal Shear projected through
+        the clock-sector covariance $C_A$ projected through
         the GNSS measurement channel. This is consistent with the TEP
         prediction of distance-dependent correlations (Paper 0, §10.E) using precisely the
         phase-coherent network analysis specified by the theory. The disformal
@@ -3049,8 +3092,10 @@
     </p>
     <ul style="margin: 0 0 10px 20px">
         <li>
-            <strong>Blind to gravitational amplitude:</strong> No GM/r² scaling
-            (Mercury ≈ Jupiter response rates)
+            <strong>Amplitude-blind at event level, weakly coupled at baseline level:</strong>
+            No GM/r² ordering across planetary events (Mercury ≈ Jupiter
+            response rates), while a weak continuous M/r² correlation persists
+            in the daily series (r = −0.099, p = 0.032)
         </li>
         <li>
             <strong>Unresponsive to solar surface phenomena:</strong> 27-day
@@ -3062,19 +3107,20 @@
         </li>
         <li>
             <strong>Exquisitely sensitive to kinematic dynamics:</strong>
-            Orbital velocity (r=-0.888), nutation (R²=0.904), CMB-frame motion
-            (r=0.747)
+            Orbital velocity (r=-0.888), nutation (R²=0.904), orbital-phase
+            direction (r=0.746)
         </li>
     </ul>
     <p style="margin-bottom: 0">
         This selectivity profile defines the network as an inertial
         interferometer—measuring velocity-dependent correlation geometry—not a
-        gravimeter measuring force. The CMB-directional alignment (~10,300× variance
+        gravimeter measuring force. The directional result (~16,000× variance
         ratio over the Solar-Apex template) identifies a preferred covariance direction
-        at cosmic scales: alignment with the cosmological background 4-velocity
-        (CMB dipole direction). The scan fixes the background-speed magnitude
-        and therefore establishes directional alignment rather than independently
-        measuring the 369 km/s speed scale.
+        in the ecliptic plane: the aphelion-velocity tangent — the phase of the
+        orbit-coupled modulation, not the CMB dipole direction (162° away,
+        anti-phase). The scan does not fix the background-speed magnitude
+        and therefore measures the annual-phase direction rather than a
+        physical speed scale.
     </p>
 </div>
 
@@ -3106,7 +3152,7 @@
                 <td><strong>Orbital velocity correlation</strong></td>
                 <td>Strong (r > 0.85)</td>
                 <td>Weak/absent (random)</td>
-                <td>r = -0.888, surrogate p &lt; 2×10⁻⁷</td>
+                <td>r = -0.888, surrogate p $\lt$ 2×10⁻⁷</td>
                 <td>TEP-compatible; random fluctuation disfavoured</td>
             </tr>
             <tr style="background-color: rgba(73, 87, 115, 0.03)">
@@ -3141,7 +3187,7 @@
                 <td><strong>Processing-centre consistency</strong></td>
                 <td>High (physical signal)</td>
                 <td>Low (software-specific artifact)</td>
-                <td>R² = 0.92-0.97 (Bernese/GIPSY/ESA)</td>
+                <td>R² = 0.92-0.97 (software-diverse products within the shared IGS ecosystem)</td>
                 <td>TEP-compatible; simple artifact hypothesis disfavoured</td>
             </tr>
             <tr>
@@ -3227,12 +3273,13 @@
             </tr>
             <tr>
                 <td><strong>Random temporal structure</strong></td>
-                <td>~5% false positives (α=0.05)</td>
+                <td>~5% false positives under an independent-points null (α=0.05) — invalid on the autocorrelated seasonal series; season-preserving null ~53–66% (Paper 3, Step 2.6b)</td>
                 <td>
-                    35.9% event detection rate (56/156; ≥2σ in primary ±120-day
-                    window)
+                    35.9% catalogue detection rate (estimator repeatability);
+                    40-event opposition subset validated at 5.5× over random
+                    dates (p $\lt$ 10⁻¹⁷)
                 </td>
-                <td>No</td>
+                <td>Bounded / descriptive (opposition subset distinct)</td>
             </tr>
             <tr>
                 <td><strong>Isotropic noise</strong></td>
@@ -3322,10 +3369,11 @@
                 <em>Primary Discriminants:</em>
                 <ul>
                     <li>
-                        <strong>CMB Frame Alignment:</strong> Ionospheric
-                        effects do not preferentially couple to the CMB dipole
-                        direction (RA=168°, Dec=-7°). The ~10,300× variance ratio
-                        between CMB and Solar Apex frames provides geometric
+                        <strong>Directional Specificity:</strong> Ionospheric
+                        effects do not imprint a celestial direction locked to
+                        the orbital-velocity phase (best fit ~6° from the
+                        aphelion tangent). The ~16,000× variance ratio
+                        over the Solar Apex template provides geometric
                         discrimination.
                     </li>
                     <li>
@@ -3338,7 +3386,7 @@
                         <strong>Multi-Centre Consistency:</strong> Three
                         software-diverse processing centres on the shared
                         tracking network, using different
-                        ionospheric models, show identical correlation patterns
+                        ionospheric models, show consistent correlation patterns
                         (R² = 0.920-0.970).
                     </li>
                 </ul>
@@ -3361,7 +3409,7 @@
             <li>
                 <em>Mismatch:</em>
                 <strong>Step 2.2 Geomagnetic Stratification:</strong> Anisotropy
-                persists robustly in "Quiet" conditions (Kp &lt; 3) and is
+                persists robustly in "Quiet" conditions (Kp $\lt$ 3) and is
                 present across all 2.5 solar cycles. The signal is not a
                 byproduct of storm-time ionospheric turbulence.
             </li>
@@ -3461,12 +3509,12 @@
             <em>rules out local station-dependent errors</em>
         </li>
         <li>
-            Planetary event responses (56/156 detected) —
+            Planetary event responses (56/156 under free-centre statistic; opposition subset null-validated) —
             <em>transient vs continuous background</em>
         </li>
         <li>
-            Semiannual nutation coupling (R² = 0.904) —
-            <em>geophysical frequency matching</em>
+            Semiannual coherence component (R² = 0.904) —
+            <em>geophysical frequency matching (nutation/orbital harmonic)</em>
         </li>
         <li>
             18.6-year lunar nutation coupling (R² = 0.641) —
@@ -3489,9 +3537,9 @@
 </p>
 <p>
     Paper 1's multi-centre cross-validation (R² = 0.920-0.970 over 2.5 years)
-    provides evidence against processing artifacts, as the three analysis
-    centres use fundamentally different software packages with independent
-    algorithmic implementations:
+    demonstrates software- and estimator-diverse corroboration within the
+    shared IGS tracking ecosystem. The three product families employ
+    different estimation architectures:
 </p>
 <ul>
     <li>
@@ -3499,8 +3547,9 @@
         processing)
     </li>
     <li>
-        <strong>IGS:</strong> GIPSY-OASIS II (undifferenced processing,
-        fiducial-free network)
+        <strong>IGS combined:</strong> analysis-centre combination product
+        (clock-combination of the contributing AC submissions, not a
+        standalone estimator)
     </li>
     <li>
         <strong>ESA:</strong> Proprietary processing chain (distinct Kalman
@@ -3508,16 +3557,17 @@
     </li>
 </ul>
 <p>
-    These represent completely different mathematical approaches to clock
-    estimation: different state vector formulations, different stochastic
-    models, different convergence criteria, and independent codebases with no
-    shared source code. The "Kalman filter resonance" hypothesis would require
-    that software-diverse products from three processing centres, developed by different
-    institutions using different algorithms, all accidentally produce nearly
-    identical artifacts (R² > 0.92 over 2.5 years in Paper 1) and that these
-    patterns persist in CODE-only analysis over 25 years (this study). This is
-    statistically implausible—analogous to three independent random number
-    generators producing identical sequences.
+    These products employ different state-vector formulations, stochastic
+    models, and convergence criteria, and agreement between them
+    substantially reduces the likelihood of a CODE/Bernese-specific
+    implementation artifact. However — consistent with the provenance matrix
+    of §2.1.1 — all analysis-centre products draw on substantially the same
+    tracking network, constellation geometry, and IGS datum conventions;
+    within-ecosystem agreement therefore cannot exclude shared-network
+    systematics. It is this residual shared error budget, not a hypothesis of
+    identical artifacts across independent estimators, that motivates the
+    raw-RINEX (Paper 3) and broadcast-SPP (Paper 33) estimation-chain-independent
+    tests.
 </p>
 <p>
     <strong>Contrast with known artifacts:</strong> Well-documented GNSS
@@ -3613,7 +3663,7 @@
             coherence structure represents a macroscopic change in network
             correlation, not a microscopic frequency shift. This structural
             modulation is orders of magnitude above the instrumental noise floor
-            (Allan deviation &sigma;<sub>y</sub>(&tau;) &approx; 10<sup>-15</sup>
+            (Allan deviation σ<sub>y</sub>(τ) ≈ 10<sup>-15</sup>
             for IGS H-masers), ruling out simple thermal noise or oscillator
             instability as the cause.
         </li>
@@ -3760,7 +3810,7 @@
             ionospheric seasonal averages drive the signal.
         </li>
         <li>
-            <strong>Phase Discriminant in the Semiannual Channel:</strong> The Russell–McPherron semiannual ionospheric anomaly produces peak disturbance at the Equinoxes (March 20/21 and September 22/23), with minima at the solstices. In contrast, the fitted semiannual coherence sinusoid (R² = 0.904) has a phase offset of φ₀ = −13.6° (relative to 2000-01-01), placing its maxima on January 7 and July 8, within 2–4 days of Earth's orbital apsidal line (perihelion January 3–5 and aphelion July 4–6). At the March equinox (Day 79), the fitted semiannual value is cos(142.1°) = −0.789, placing clock coherence in a deep negative trough (79% of the way to minimum), directly in anti-phase to the equinoctial ionospheric peak. At the September equinox (Day 265), the value is cos = −0.844, similarly deep in the trough. This anti-phase timing directly excludes the equinox-peaking ionospheric anomaly as the driver. Furthermore, non-parametric permutation of phase-bin means yields p = 0.00027 across 100,000 iterations (null 99th percentile R² = 0.724), and the daily coherence time series exhibits a lag-1 autocorrelation of −0.058 (white noise), verifying that the detection is not a red-noise artifact.
+            <strong>Phase Discriminant in the Semiannual Channel:</strong> The Russell–McPherron semiannual ionospheric anomaly produces peak disturbance at the Equinoxes (March 20/21 and September 22/23), with minima at the solstices. In contrast, the fitted semiannual coherence sinusoid (R² = 0.904) has a phase offset of φ₀ = −13.6° (relative to 2000-01-01), placing its maxima on January 7 and July 8, within 2–4 days of Earth's orbital apsidal line (perihelion January 3–5 and aphelion July 4–6). At the March equinox (Day 79), the fitted semiannual value is cos(142.1°) = −0.789, placing clock coherence in a deep negative trough (79% of the way to minimum), directly in anti-phase to the equinoctial ionospheric peak. At the September equinox (Day 265), the value is cos = −0.844, similarly deep in the trough. This phase pattern favours an apsidal-locked (orbital/nutational) driver over an equinox-locked one; it does not, by itself, exclude an ionospheric mechanism, since an ionospheric disturbance could equally lower coherence at the equinoxes — the operative discriminant is the local-night persistence bound and the F10.7/Kp null controls (§3.4.1, Paper 1), which limit any ionospheric share of the coherence signal to a small fraction. Furthermore, non-parametric permutation of phase-bin means yields p = 0.00027 across 100,000 iterations (null 99th percentile R² = 0.724), and the daily coherence time series exhibits a lag-1 autocorrelation of −0.058 (white noise), verifying that the detection is not a red-noise artifact.
         </li>
         <li>
             <strong>Solar Cycle Stability:</strong> The dataset spans 2.5 solar
@@ -3861,7 +3911,7 @@
 <ol>
     <li>
         <strong>Raw carrier phase analysis:</strong> Bypass all processing
-        centre corrections to measure unprocessed signal amplitudes
+        centre corrections to measure signal amplitudes in minimally processed raw data
     </li>
     <li>
         <strong>Processing documentation review:</strong> Examine systematic
@@ -3883,10 +3933,12 @@
 <p><strong>Robust findings (independent of processing):</strong></p>
 <ul>
     <li>
-        Statistical significance: 56/156 events ≥2σ, 19 survive family-wide
+        Statistical significance under the free-centre pulse statistic: 56/156 events ≥2σ, 19 survive family-wide
         Bonferroni correction (α = 0.05/156); dependence-aware count: 13/29
         non-overlapping windows significant (null expectation 1.3, binomial
-        p ≈ 10⁻¹⁰)
+        p ≈ 10⁻¹⁰). These quantify estimator repeatability; event-locked
+        specificity is validated only for the 40-event opposition subset
+        under the ±15-day model-free control (§3.3.1).
     </li>
     <li>
         Detection rates (primary ±120-day window): Mercury 42.5%, Venus 18.8%,
@@ -3921,7 +3973,11 @@
         (E-W:N-S = 2.16) persists across 25 years and aligns approximately with
         Earth's orbital plane. Whether this reflects propagation effects,
         processing biases, or a genuine geometric coupling remains to be
-        determined through multi-constellation and raw-data analysis.
+        further resolved by raw carrier-phase analysis, separately processed
+        per-constellation tests, synthetic end-to-end injection through the
+        actual processing chain, and independent external replication —
+        raw-RINEX/SPP consistency and combined multi-GNSS product tests are
+        reported in Papers 3 and 14.
     </li>
     <li>
         <strong>Global Coordination:</strong> Network covariance score (index =
@@ -3980,9 +4036,9 @@
     • Suggests field-like influence operating at planetary scales<br />
     • Not explainable by local environmental factors alone<br />
     <br />
-    <strong>3. Information Resonance Phenomenon:</strong><br />
-    • Planetary events trigger coherence changes without GM/r² scaling<br />
-    • Suggests information-based coupling rather than classical force<br />
+    <strong>3. Non-Classical Event Catalogue:</strong><br />
+    • Planetary event windows show repeatable coherence modulation without GM/r² scaling<br />
+    • Event-locked specificity is established only for the opposition subset; the catalogue statistic suggests coupling channels beyond classical force<br />
     • May indicate novel gravitational interaction mechanism<br />
     <br />
     <strong>4. Constraints on Theories:</strong><br />
@@ -4067,12 +4123,12 @@
     correction. The overall family-wise error rate across all analyses is not
     straightforward to calculate because different analyses test different
     hypotheses using different methodologies. The primary pre-specified
-    statistical claim is the orbital correlation (p&lt;2×10⁻⁷), supplemented
+    statistical claim is the orbital correlation (p$\lt$ 2×10⁻⁷), supplemented
     by the family-wide corrected planetary-event analysis (19/156 significant,
     expected FP=0.05). The nutation results (semiannual R²=0.904,
     p=2.7×10⁻⁵; 18.6-year R²=0.641, p=0.010) provide targeted geophysical
     evidence, with the 18.6-year component explicitly preliminary.
-    Exploratory findings (CMB directional alignment, 8-sector anisotropy)
+    Exploratory findings (the in-ecliptic directional search, 8-sector anisotropy)
     are presented as hypothesis-generating rather than definitive.
 </div>
 
@@ -4092,31 +4148,37 @@
             >Orbital Velocity Correlation - Seasonal Confound
             Discrimination:</strong
         >
-        The orbital correlation (r = -0.888, p < 2×10⁻⁷) survives window size
+        The orbital correlation (r = -0.888, p $\lt$ 2×10⁻⁷) survives window size
         variations, multiple detrending methods, and bootstrap robustness
         checks. However, orbital velocity correlates with many annual phenomena
         (solar distance, ionospheric TEC, network participation). Three
         independent discriminants support genuine orbital coupling over seasonal
-        artifacts: (1) CMB-Directional Alignment: The modulation
-        aligns with the CMB dipole direction (RA=168°, Dec=-7°)
-        with ~10,300× variance ratio over the Solar Apex directional template—ionospheric effects do
-        not preferentially align with the CMB dipole; (2)
+        artifacts: (1) Directional Specificity: The modulation's
+        recovered direction lies ~6° from the aphelion-velocity tangent
+        with ~16,000× variance ratio over the Solar Apex directional template—ionospheric effects do
+        not imprint a celestial annual-phase direction; (2)
         Ionospheric Null Controls: No correlation with F10.7
         solar flux or Kp geomagnetic indices (Paper 1 validation); (3)
-        Multi-Centre Consistency: Three independent processing
-        centres using different ionospheric models show identical patterns (R² =
-        0.920-0.970). Note: Hemisphere stratification alone is insufficient to
+        Multi-Centre Consistency: Three software- and estimator-diverse
+        products within the shared IGS tracking ecosystem, using different
+        ionospheric models, show identical patterns (R² =
+        0.920-0.970) — reducing the likelihood of a CODE-specific artifact,
+        though shared network/datum systematics remain live alternatives. Note: Hemisphere stratification alone is insufficient to
         rule out global ionospheric TEC (which peaks in January for both
-        hemispheres); the CMB dipole-direction geometry provides the primary geometric
+        hemispheres); the orbital-phase direction provides the primary geometric
         discriminant.
     </li>
     <li>
         <strong>Planetary Event Analysis - Physical Predictor Modeling:</strong>
         The planetary event analysis documents 56 statistically significant
-        event-associated modulations (19 surviving family-wide Bonferroni
+        event-associated modulations under the free-centre pulse statistic
+        (19 surviving family-wide Bonferroni
         correction), with detection rates consistent across 25 years. The
-        original study established these are not artifacts of processing or
-        random chance through extensive Monte Carlo permutation testing.
+        multi-centre study's permutation testing and this study's matched-null
+        control validate event specificity for the 40-event outer-planet
+        opposition subset; for the full catalogue, free-centre fits and
+        season-destroying nulls bound rather than prove event-locked responses
+        (§3.3).
         However, modeling against physically grounded predictors (e.g., tidal
         potential ∝ M/r³, distance-normalized metrics) would enhance
         interpretation of the observed non-classical scaling behavior (no GM/r²

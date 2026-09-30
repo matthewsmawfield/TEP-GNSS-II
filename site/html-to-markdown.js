@@ -40,13 +40,13 @@ class HTMLToMarkdownConverter {
         html = html.replace(/<div[^>]*class=["'][^"']*manuscript-section[^"']*["'][^>]*data-section=["']([^"']*)["'][^>]*>/gi, '\n\n## $1\n\n');
         
         // Convert headers
-        html = html.replace(/<h1[^>]*>(.*?)<\/h1>/gis, '\n# $1\n\n');
-        html = html.replace(/<h2[^>]*>(.*?)<\/h2>/gis, '\n## $1\n\n');
-        html = html.replace(/<h3[^>]*>(.*?)<\/h3>/gis, '\n### $1\n\n');
-        html = html.replace(/<h4[^>]*>(.*?)<\/h4>/gis, '\n#### $1\n\n');
+        html = html.replace(/<h([1-6])[^>]*>([\s\S]*?)<\/h\1>/gi, (match, level, content) => {
+            const heading = content.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+            return `\n${'#'.repeat(Number(level))} ${heading}\n\n`;
+        });
         
         // Convert paragraphs - preserve internal line breaks
-        html = html.replace(/<p[^>]*>(.*?)<\/p>/gis, (match, content) => {
+        html = html.replace(/<p\b[^>]*>(.*?)<\/p>/gis, (match, content) => {
             // Trim leading/trailing whitespace but preserve internal structure
             return content.trim() + '\n\n';
         });
@@ -71,7 +71,8 @@ class HTMLToMarkdownConverter {
         html = html.replace(/<blockquote[^>]*>(.*?)<\/blockquote>/gi, '\n> $1\n\n');
         
         // Convert code blocks
-        html = html.replace(/<pre[^>]*><code[^>]*>(.*?)<\/code><\/pre>/gi, '\n```\n$1\n```\n\n');
+        html = html.replace(/<pre[^>]*>\s*<code[^>]*>([\s\S]*?)<\/code>\s*<\/pre>/gi, '\n```\n$1\n```\n\n');
+        html = html.replace(/<pre[^>]*>([\s\S]*?)<\/pre>/gi, '\n```\n$1\n```\n\n');
         html = html.replace(/<code[^>]*>(.*?)<\/code>/gi, '`$1`');
         
         // Convert line breaks
@@ -223,7 +224,7 @@ class HTMLToMarkdownConverter {
         
         // Restore MathJax expressions
         mathExpressions.forEach((expr, index) => {
-            html = html.replace(`__MATH_EXPRESSION_${index}__`, expr);
+            html = html.replace(`__MATH_EXPRESSION_${index}__`, () => expr);
         });
         
         // Clean up whitespace
@@ -293,7 +294,7 @@ class HTMLToMarkdownConverter {
             .replace(/<[^>]+>/g, '')
             .replace(/^Version:\s*/i, '')
             .replace(/\n/g, ' ')
-            .trim() : 'v0.18 (Cairo)';
+            .trim() : 'v0.20 (Cairo)';
 
         const dateMatch = html.match(/<div[^>]*class=["'][^"']*date[^"']*["'][^>]*>(.*?)<\/div>/i);
         const date = dateMatch ? dateMatch[1]
@@ -404,13 +405,15 @@ class HTMLToMarkdownConverter {
      * Build the complete markdown document with metadata
      */
     buildMarkdownDocument(metadata, content) {
-        const timestamp = new Date().toISOString().split('T')[0];
-
         // Clean up the title to remove the author part
         const cleanTitle = metadata.title.replace(' | Matthew Lukin Smawfield', '');
 
-        // Remove leading indentation from content
-        const unindentedContent = content.replace(/^[ \t]+/gm, '');
+        // Remove leading indentation from content (outside code fences)
+        let inFence = false;
+        const unindentedContent = content.split('\n').map((line) => {
+            if (line.trimStart().startsWith('```')) inFence = !inFence;
+            return inFence ? line : line.replace(/^[ \t]+/, '');
+        }).join('\n');
 
         return `# ${cleanTitle}
 **${metadata.author}**
@@ -424,7 +427,7 @@ ${unindentedContent}
 
 ---
 
-*This document was automatically generated from the TEP-GNSS research site. For the interactive version with figures and enhanced formatting, visit: https://matthewsmawfield.github.io/TEP-GNSS/*
+*This document was automatically generated from the TEP-GNSS research site. For the interactive version with figures and enhanced formatting, visit: https://mlsmawfield.com/tep/gnss-ii/*
 
 *Source code and data available at: https://github.com/matthewsmawfield/TEP-GNSS*
 `;

@@ -4,7 +4,7 @@
 
 **Author:** Matthew Lukin Smawfield  
 **Version:** v0.20 (Cairo)  
-**Date:** 13 August 2026
+**Date:** 29 September 2026
 **Status:** Preprint
 
 ## Overview

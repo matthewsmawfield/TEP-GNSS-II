@@ -101,15 +101,15 @@ def calculate_3d_velocity_vectors(day_of_year, orbital_speed_kms,
     # Orbit Angle in Ecliptic Plane (0° = aligned with Vernal Equinox vector)
     # Velocity direction rotates 360° per year.
     # At Vernal Equinox (Day 80), Earth is at 180°. Velocity points to 270° (-Y in Ecliptic).
-    
+
     orbit_progress = (day_of_year - 80) / 365.25 * 2 * np.pi
     # Velocity direction in Ecliptic coordinates (X points to Vernal Equinox)
-    # v_ecl = [-sin(theta), cos(theta), 0] * speed
-    # Check: Day 80 (theta=0). Earth at 180. Velocity points -90 (270). 
+    # v_ecl = [+sin(theta), -cos(theta), 0] * speed
+    # Check: Day 80 (theta=0). Earth at 180. Velocity points -90 (270).
     # Correct: V_ecl_x = 0, V_ecl_y = -1.
-    
-    v_ecl_x = -orbital_speed_kms * np.sin(orbit_progress)
-    v_ecl_y = orbital_speed_kms * np.cos(orbit_progress)
+
+    v_ecl_x = orbital_speed_kms * np.sin(orbit_progress)
+    v_ecl_y = -orbital_speed_kms * np.cos(orbit_progress)
     v_ecl_z = 0.0
     
     # Rotate Ecliptic -> Equatorial
@@ -386,6 +386,13 @@ def geometric_validation(extracted_data, velocity_time_series):
     }
 
 
+def great_circle_sep_deg(ra1, dec1, ra2, dec2):
+    """Great-circle angular separation in degrees (0-180)."""
+    r1, d1, r2, d2 = map(np.radians, (ra1, dec1, ra2, dec2))
+    cos_sep = np.sin(d1)*np.sin(d2) + np.cos(d1)*np.cos(d2)*np.cos(r1 - r2)
+    return float(np.degrees(np.arccos(np.clip(cos_sep, -1.0, 1.0))))
+
+
 def compare_background_models(temporal_data, best_fit_ra, best_fit_dec):
     """
     Test multiple background velocity hypotheses systematically.
@@ -456,8 +463,8 @@ def compare_background_models(temporal_data, best_fit_ra, best_fit_dec):
             'r': float(r),
             'p': float(p),
             'r_squared': float(r**2),
-            'angular_sep_from_best': float(np.sqrt((bg['ra'] - best_fit_ra)**2 + 
-                                                   (bg['dec'] - best_fit_dec)**2))
+            'angular_sep_from_best': float(great_circle_sep_deg(
+                bg['ra'], bg['dec'], best_fit_ra, best_fit_dec))
         }
         
         print_status(f"  {bg['name']:25s}: r = {r:7.4f}, p = {p:.6f}", 
@@ -625,6 +632,14 @@ def visualize_vector_search(search_results, output_path):
             markersize=8, markerfacecolor='#F39C12',
             markeredgecolor='black', markeredgewidth=1.5,
             clip_on=False, zorder=10)
+
+    # Earth's orbital-velocity tangent at aphelion - Green diamond
+    aphelion_ra = 11.9
+    aphelion_dec = 5.1
+    ax.plot(aphelion_ra, aphelion_dec, 'D',
+            markersize=7, markerfacecolor='#2ECC71',
+            markeredgecolor='black', markeredgewidth=1.2,
+            clip_on=False, zorder=10)
     
     # Add letter labels close to markers
     ax.text(best_ra + 3, best_dec + 3, 'a', 
@@ -636,6 +651,9 @@ def visualize_vector_search(search_results, output_path):
     ax.text(271.96 + 3, 30.0 + 3, 'c', 
             fontsize=10, color='white', fontweight='bold',
             ha='left', va='bottom')
+    ax.text(aphelion_ra + 3, aphelion_dec - 5, 'd',
+            fontsize=10, color='white', fontweight='bold',
+            ha='left', va='top')
     
     # === MINIMAL FORMATTING ===
     
@@ -666,13 +684,13 @@ def visualize_vector_search(search_results, output_path):
     plt.rcParams.update(plt.rcParamsDefault)
     
     print_status(f"Saved ultra-minimal heatmap: {output_path}", "SUCCESS")
-    print_status("Figure caption: (a) Best fit, (b) CMB dipole, (c) Solar apex", "INFO")
+    print_status("Figure caption: (a) Best fit, (b) CMB dipole control, (c) Solar apex control, (d) aphelion velocity tangent", "INFO")
 
 
-def visualize_time_series_prediction(temporal_data, earth_vectors, model_comparison, output_path):
+def visualize_time_series_prediction(temporal_data, earth_vectors, model_comparison, best_direction, output_path):
     """
     Create comprehensive time-series visualization showing:
-    1. Observed vs Predicted modulation (CMB and Solar Apex)
+    1. Observed vs predicted modulation (best-fit annual phase and fixed-frame controls)
     2. Residuals
     3. Phase diagram
     
@@ -689,39 +707,32 @@ def visualize_time_series_prediction(temporal_data, earth_vectors, model_compari
     days = np.array([x['day_of_year'] for x in temporal_data])
     obs_ratios = np.array([x['ew_ns_ratio'] for x in temporal_data])
     
-    # CMB predictions
+    def scaled_directional_template(ra_deg, dec_deg):
+        """Return the direction-only template scaled to the observed mean and variance."""
+        ra_rad = np.radians(ra_deg)
+        dec_rad = np.radians(dec_deg)
+        vg_x = SOLAR_APEX_SPEED_KMS * np.cos(dec_rad) * np.cos(ra_rad)
+        vg_y = SOLAR_APEX_SPEED_KMS * np.cos(dec_rad) * np.sin(ra_rad)
+        vg_z = SOLAR_APEX_SPEED_KMS * np.sin(dec_rad)
+        vn_x = earth_vectors[:, 0] + vg_x
+        vn_y = earth_vectors[:, 1] + vg_y
+        vn_z = earth_vectors[:, 2] + vg_z
+        vn_mag = np.sqrt(vn_x**2 + vn_y**2 + vn_z**2)
+        raw = np.cos(np.arcsin(vn_z / vn_mag))
+        return ((raw - np.mean(raw)) / np.std(raw) * np.std(obs_ratios)
+                + np.mean(obs_ratios))
+
+    # Best-fit annual-phase template
+    best_preds = scaled_directional_template(
+        best_direction['best_ra'], best_direction['best_dec'])
+
+    # CMB-apex control template
     CMB_RA = model_comparison['cmb_dipole']['ra']
     CMB_DEC = model_comparison['cmb_dipole']['dec']
-    ra_rad = np.radians(CMB_RA)
-    dec_rad = np.radians(CMB_DEC)
-    vg_x = SOLAR_APEX_SPEED_KMS * np.cos(dec_rad) * np.cos(ra_rad)
-    vg_y = SOLAR_APEX_SPEED_KMS * np.cos(dec_rad) * np.sin(ra_rad)
-    vg_z = SOLAR_APEX_SPEED_KMS * np.sin(dec_rad)
-    
-    vn_x = earth_vectors[:, 0] + vg_x
-    vn_y = earth_vectors[:, 1] + vg_y
-    vn_z = earth_vectors[:, 2] + vg_z
-    vn_mag = np.sqrt(vn_x**2 + vn_y**2 + vn_z**2)
-    vn_dec_rad = np.arcsin(vn_z / vn_mag)
-    cmb_preds_raw = np.cos(vn_dec_rad)
-    
-    # Scale predictions to match observed mean and std
-    cmb_preds = (cmb_preds_raw - np.mean(cmb_preds_raw)) / np.std(cmb_preds_raw) * np.std(obs_ratios) + np.mean(obs_ratios)
+    cmb_preds = scaled_directional_template(CMB_RA, CMB_DEC)
     
     # Solar Apex predictions
-    ra_rad = np.radians(SOLAR_APEX_RA_DEG)
-    dec_rad = np.radians(SOLAR_APEX_DEC_DEG)
-    vg_x = SOLAR_APEX_SPEED_KMS * np.cos(dec_rad) * np.cos(ra_rad)
-    vg_y = SOLAR_APEX_SPEED_KMS * np.cos(dec_rad) * np.sin(ra_rad)
-    vg_z = SOLAR_APEX_SPEED_KMS * np.sin(dec_rad)
-    
-    vn_x = earth_vectors[:, 0] + vg_x
-    vn_y = earth_vectors[:, 1] + vg_y
-    vn_z = earth_vectors[:, 2] + vg_z
-    vn_mag = np.sqrt(vn_x**2 + vn_y**2 + vn_z**2)
-    vn_dec_rad = np.arcsin(vn_z / vn_mag)
-    apex_preds_raw = np.cos(vn_dec_rad)
-    apex_preds = (apex_preds_raw - np.mean(apex_preds_raw)) / np.std(apex_preds_raw) * np.std(obs_ratios) + np.mean(obs_ratios)
+    apex_preds = scaled_directional_template(SOLAR_APEX_RA_DEG, SOLAR_APEX_DEC_DEG)
     
     # Set consistent publication style
     set_publication_style()
@@ -734,8 +745,12 @@ def visualize_time_series_prediction(temporal_data, earth_vectors, model_compari
     ax1 = fig.add_subplot(gs[0, :])
     ax1.scatter(days, obs_ratios, c='#2C3E50', s=60, alpha=0.7, 
                 edgecolor='white', linewidth=0.5, label='Observed', zorder=3)
+    ax1.plot(days, best_preds, '-', color='#2ECC71', linewidth=2.8,
+             label=(f'Best-fit annual phase (RA={best_direction["best_ra"]}°, '
+                    f'Dec={best_direction["best_dec"]:+}°, '
+                    f'r={best_direction["best_correlation"]:.3f})'), zorder=3)
     ax1.plot(days, cmb_preds, '-', color='#3498DB', linewidth=2.5, 
-             label=f'CMB model (R²={model_comparison["cmb_dipole"]["r_squared"]:.3f})', zorder=2)
+             label=f'CMB-apex control — anti-phase (r={model_comparison["cmb_dipole"]["r"]:.3f})', zorder=2)
     ax1.plot(days, apex_preds, '--', color='#E74C3C', linewidth=2.2, alpha=0.8,
              label=f'Solar apex model (R²={model_comparison["solar_apex"]["r_squared"]:.3f})', zorder=1)
     ax1.set_xlabel('Day of year', fontsize=11)
@@ -745,7 +760,7 @@ def visualize_time_series_prediction(temporal_data, earth_vectors, model_compari
     ax1.spines['top'].set_visible(False)
     ax1.spines['right'].set_visible(False)
     
-    # Panel 2: Residuals (CMB)
+    # Panel 2: Residuals (CMB-apex control)
     ax2 = fig.add_subplot(gs[1, 0])
     residuals_cmb = obs_ratios - cmb_preds
     ax2.scatter(days, residuals_cmb, c='#3498DB', s=45, alpha=0.6, edgecolor='white', linewidth=0.3)
@@ -755,7 +770,7 @@ def visualize_time_series_prediction(temporal_data, earth_vectors, model_compari
                      color='gray', alpha=0.15, label='±1σ')
     ax2.set_xlabel('Day of year', fontsize=10)
     ax2.set_ylabel('Residual', fontsize=10)
-    ax2.set_title(f'CMB residuals (σ={np.std(residuals_cmb):.3f})', fontsize=11)
+    ax2.set_title(f'CMB-apex control residuals (σ={np.std(residuals_cmb):.3f})', fontsize=11)
     ax2.grid(True, alpha=0.2, linestyle=':', linewidth=0.5)
     ax2.spines['top'].set_visible(False)
     ax2.spines['right'].set_visible(False)
@@ -775,7 +790,7 @@ def visualize_time_series_prediction(temporal_data, earth_vectors, model_compari
     ax3.spines['top'].set_visible(False)
     ax3.spines['right'].set_visible(False)
     
-    # Panel 4: Predicted vs Observed (CMB)
+    # Panel 4: Predicted vs Observed (CMB-apex control)
     ax4 = fig.add_subplot(gs[2, 0])
     ax4.scatter(cmb_preds, obs_ratios, c='#3498DB', s=55, alpha=0.65, 
                 edgecolor='white', linewidth=0.5)
@@ -783,9 +798,9 @@ def visualize_time_series_prediction(temporal_data, earth_vectors, model_compari
     max_val = max(cmb_preds.max(), obs_ratios.max())
     ax4.plot([min_val, max_val], [min_val, max_val], 'k--', linewidth=1.2, 
              alpha=0.6, label='1:1 line')
-    ax4.set_xlabel('Predicted (CMB)', fontsize=10)
+    ax4.set_xlabel('Predicted (CMB-apex control)', fontsize=10)
     ax4.set_ylabel('Observed', fontsize=10)
-    ax4.set_title(f'CMB model (r={model_comparison["cmb_dipole"]["r"]:.3f})', fontsize=11)
+    ax4.set_title(f'CMB-apex control: anti-phase (r={model_comparison["cmb_dipole"]["r"]:.3f})', fontsize=11)
     ax4.legend(fontsize=9, loc='lower right')
     ax4.grid(True, alpha=0.2, linestyle=':', linewidth=0.5)
     ax4.spines['top'].set_visible(False)
@@ -862,9 +877,10 @@ def calculate_bootstrap_confidence(obs_ratios, preds, n_bootstrap=1000, confiden
     }
 
 
-def permutation_test_alignment(obs_ratios, earth_vectors, best_ra, best_dec, n_permutations=10000):
+def permutation_test_alignment(obs_ratios, earth_vectors, best_ra, best_dec,
+                               n_permutations=10000, random_seed=42):
     """
-    Permutation test: Is the CMB alignment better than random directions?
+    Directional-rank test: Is the observed best-fit direction stronger than random directions?
     
     Tests the null hypothesis that the best-fit direction is no better than
     a random direction in the sky.
@@ -899,11 +915,12 @@ def permutation_test_alignment(obs_ratios, earth_vectors, best_ra, best_dec, n_p
     
     # Generate random directions and test
     random_rs = []
+    rng = np.random.default_rng(random_seed)
     
     for _ in range(n_permutations):
         # Random point on sphere
-        rand_ra = np.random.uniform(0, 360)
-        rand_dec = np.degrees(np.arcsin(np.random.uniform(-1, 1)))
+        rand_ra = rng.uniform(0, 360)
+        rand_dec = np.degrees(np.arcsin(rng.uniform(-1, 1)))
         
         ra_rad = np.radians(rand_ra)
         dec_rad = np.radians(rand_dec)
@@ -921,13 +938,16 @@ def permutation_test_alignment(obs_ratios, earth_vectors, best_ra, best_dec, n_p
         r_rand = np.corrcoef(rand_preds, obs_ratios)[0, 1]
         random_rs.append(abs(r_rand))  # Use absolute value for two-tailed test
     
-    # Calculate p-value (proportion of random r's >= observed r)
-    p_value = np.mean(np.array(random_rs) >= abs(r_best))
+    # Reproducible finite-Monte-Carlo plus-one estimate.
+    n_exceedances = int(np.sum(np.array(random_rs) >= abs(r_best)))
+    p_value = (n_exceedances + 1) / (n_permutations + 1)
     
     return {
         'r_observed': float(r_best),
         'p_value': float(p_value),
+        'n_exceedances': n_exceedances,
         'n_permutations': n_permutations,
+        'random_seed': random_seed,
         'random_r_mean': float(np.mean(random_rs)),
         'random_r_std': float(np.std(random_rs)),
         'random_r_95th': float(np.percentile(random_rs, 95))
@@ -936,7 +956,7 @@ def permutation_test_alignment(obs_ratios, earth_vectors, best_ra, best_dec, n_p
 
 def compare_models(obs_ratios, earth_vectors, days):
     """
-    Head-to-head comparison: CMB Dipole vs Solar Apex vs Ecliptic Controls vs Null models.
+    Head-to-head comparison: fixed-frame controls, ecliptic controls, and null models.
     
     Tests whether CMB alignment is genuine or just detecting ecliptic-plane preference.
     Includes ecliptic-plane control directions to discriminate:
@@ -1089,17 +1109,24 @@ def compare_models(obs_ratios, earth_vectors, days):
     results['cmb_dipole']['improvement_over_null_pct'] = float(improvement_cmb)
     results['solar_apex']['improvement_over_null_pct'] = float(improvement_apex)
     
-    # Winner
-    if results['cmb_dipole']['r_squared'] > results['solar_apex']['r_squared']:
+    # Winner — must use signed r: a negative correlation means the data follow
+    # the antipodal template (anti-phase), not the named direction itself.
+    # R^2 alone is sign-blind and would mislabel an anti-aligned template a "winner".
+    r_cmb_signed = results['cmb_dipole']['r']
+    r_apex_signed = results['solar_apex']['r']
+    best_named = max(r_cmb_signed, r_apex_signed)
+    if best_named < 0.1:
+        results['winner'] = 'neither_named_template'
+        results['winner_advantage'] = 0.0
+    elif r_cmb_signed > r_apex_signed:
         results['winner'] = 'cmb_dipole'
-        results['winner_advantage'] = float(
-            (results['cmb_dipole']['r_squared'] - results['solar_apex']['r_squared']) * 100
-        )
+        results['winner_advantage'] = float((r_cmb_signed - r_apex_signed) * 100)
     else:
         results['winner'] = 'solar_apex'
-        results['winner_advantage'] = float(
-            (results['solar_apex']['r_squared'] - results['cmb_dipole']['r_squared']) * 100
-        )
+        results['winner_advantage'] = float((r_apex_signed - r_cmb_signed) * 100)
+    results['winner_note'] = (
+        'Signed-r comparison: r < 0 indicates anti-alignment (the antipodal direction fits, not the named direction)'
+    )
     
     print_status(f"  CMB Dipole (RA=168°, Dec=-7°): R²={r2_cmb:.4f} ({r2_cmb*100:.1f}% variance explained)", 
                  "SUCCESS")
@@ -1121,7 +1148,11 @@ def compare_models(obs_ratios, earth_vectors, days):
     results['ecliptic_discrimination'] = {
         'cmb_vs_east_ratio': float(cmb_vs_east_ratio),
         'cmb_vs_west_ratio': float(cmb_vs_west_ratio),
-        'interpretation': 'CMB-specific' if min(cmb_vs_east_ratio, cmb_vs_west_ratio) > 2.0 else 'Generic ecliptic'
+        'cmb_signed_r': float(results['cmb_dipole']['r']),
+        'interpretation': (
+            'CMB-antipodal (anti-phase vs dipole apex)' if results['cmb_dipole']['r'] < 0
+            else ('CMB-specific' if min(cmb_vs_east_ratio, cmb_vs_west_ratio) > 2.0 else 'Generic ecliptic')
+        )
     }
     
     return results
@@ -1151,17 +1182,18 @@ def perform_galactic_vector_search(temporal_data):
         # Orbit angle (0 at Vernal Equinox)
         orbit_progress = (d - 80) / 365.25 * 2 * np.pi
         
-        # Velocity in Ecliptic (tangent)
-        v_ecl_x = -s * np.sin(orbit_progress)
-        v_ecl_y = s * np.cos(orbit_progress)
-        
+        # Velocity in Ecliptic (tangent): at vernal equinox v points to
+        # ecliptic longitude 270 deg, i.e. (0, -1, 0) * speed
+        v_ecl_x = s * np.sin(orbit_progress)
+        v_ecl_y = -s * np.cos(orbit_progress)
+
         # Rotate to Equatorial
         v_orb_x = v_ecl_x
         v_orb_y = v_ecl_y * np.cos(epsilon)
         v_orb_z = v_ecl_y * np.sin(epsilon)
-        
+
         earth_vectors.append([v_orb_x, v_orb_y, v_orb_z])
-        
+
     earth_vectors = np.array(earth_vectors) # Shape (N, 3)
     
     # 3. Grid Search
@@ -1305,14 +1337,14 @@ def analyze_dual_motion(data):
     earth_vectors = []
     for d, s in zip(days, speeds):
         orbit_progress = (d - 80) / 365.25 * 2 * np.pi
-        v_ecl_x = -s * np.sin(orbit_progress)
-        v_ecl_y = s * np.cos(orbit_progress)
+        v_ecl_x = s * np.sin(orbit_progress)
+        v_ecl_y = -s * np.cos(orbit_progress)
         v_orb_x = v_ecl_x
         v_orb_y = v_ecl_y * np.cos(epsilon)
         v_orb_z = v_ecl_y * np.sin(epsilon)
         earth_vectors.append([v_orb_x, v_orb_y, v_orb_z])
     earth_vectors = np.array(earth_vectors)
-    
+
     permutation_result = permutation_test_alignment(
         obs_ratios, 
         earth_vectors, 
@@ -1379,18 +1411,20 @@ def analyze_dual_motion(data):
     
     search_corr = vector_search['best_correlation']
     
-    # CHECK FOR CMB ALIGNMENT (RA ~168, Dec ~-7)
+    # Check whether the signed annual-phase direction is near the aphelion
+    # orbital-velocity tangent. Undirected CMB-axis proximity is not evidence
+    # for the directed CMB-apex template.
     best_ra = vector_search['best_ra']
     best_dec = vector_search['best_dec']
     
-    ra_diff = abs(best_ra - 168)
+    ra_diff = abs(best_ra - 11.9)
     if ra_diff > 180: ra_diff = 360 - ra_diff
-    dec_diff = abs(best_dec - (-7))
-    cmb_aligned = (ra_diff < 30) and (dec_diff < 30) and (search_corr > 0.5)
+    dec_diff = abs(best_dec - 5.1)
+    annual_phase_recovered = (ra_diff < 30) and (dec_diff < 30) and (search_corr > 0.5)
 
     # Assessment criteria (conservative scientific language)
-    if cmb_aligned:
-        assessment = "Strong Evidence: CMB Frame Alignment"
+    if annual_phase_recovered:
+        assessment = "Annual-Phase Direction Recovered; Fixed CMB Frame Not Detected"
     elif n_sig_tests >= 3 and (r_angle > 0.3 or search_corr > 0.5):
         assessment = "Strong Confirmation"
     elif n_sig_tests >= 2:
@@ -1405,7 +1439,8 @@ def analyze_dual_motion(data):
         'n_significant_tests': n_sig_tests,
         'angle_prediction_correlation': r_angle,
         'vector_search_best_correlation': search_corr,
-        'cmb_frame_aligned': cmb_aligned,
+        'annual_phase_recovered': annual_phase_recovered,
+        'cmb_frame_aligned': False,
         'dual_motion_supported': (
             tests['test_2_orbital_correlation']['significant'] and
             tests['test_1_w_e_asymmetry']['significant'] and
@@ -1483,7 +1518,7 @@ def main():
     if 'permutation_test' in results:
         perm = results['permutation_test']
         print(f"\n{'=' * 70}")
-        print(f"PERMUTATION TEST (10,000 random directions):")
+        print(f"DIRECTIONAL-RANK TEST ({perm['n_permutations']:,} random directions):")
         print(f"  Observed correlation: r={perm['r_observed']:.4f}")
         print(f"  Random mean: {perm['random_r_mean']:.4f}")
         print(f"  Random 95th percentile: {perm['random_r_95th']:.4f}")
@@ -1552,8 +1587,8 @@ def main():
         earth_vectors = []
         for d, s in zip(days, speeds):
             orbit_progress = (d - 80) / 365.25 * 2 * np.pi
-            v_ecl_x = -s * np.sin(orbit_progress)
-            v_ecl_y = s * np.cos(orbit_progress)
+            v_ecl_x = s * np.sin(orbit_progress)
+            v_ecl_y = -s * np.cos(orbit_progress)
             v_orb_x = v_ecl_x
             v_orb_y = v_ecl_y * np.cos(epsilon)
             v_orb_z = v_ecl_y * np.sin(epsilon)
@@ -1561,7 +1596,7 @@ def main():
         earth_vectors = np.array(earth_vectors)
         
         timeseries_path = figures_dir / "step_2_5_model_comparison_timeseries.png"
-        visualize_time_series_prediction(temporal_data, earth_vectors, mc, timeseries_path)
+        visualize_time_series_prediction(temporal_data, earth_vectors, mc, search, timeseries_path)
     
     # Save results
     output_dir = Path("results/outputs/code_longspan")

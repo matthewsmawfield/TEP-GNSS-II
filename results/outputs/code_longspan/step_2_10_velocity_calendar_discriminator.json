@@ -1,0 +1,458 @@
+{
+  "step": "2.10",
+  "title": "Velocity-tracking vs calendar-phase discriminator",
+  "timestamp": "2026-09-30T17:55:48.347940Z",
+  "method": {
+    "estimand": "EW/NS anisotropy ratio vs orbital-phase templates",
+    "models": {
+      "M_v": "a + b\u00b7|v_orb(t)| (Keplerian waveform, phase/shape fixed)",
+      "M_v2": "a + b\u00b7|v_orb(t)|\u00b2 (kinetic proxy)",
+      "M_sin": "annual sinusoid, free phase/amplitude",
+      "M_sin2": "annual + semiannual sinusoids (seasonal baseline)",
+      "M_v_sin2": "velocity + semiannual hybrid"
+    },
+    "cv": "5-fold contiguous-block held-out RMSE",
+    "calibration": "20000 circular phase-shift permutations"
+  },
+  "buckets": {
+    "GLOBAL": {
+      "label": "GLOBAL",
+      "n_bins": 34,
+      "fits": {
+        "M_v": {
+          "r2": 0.788212302671874,
+          "adj_r2": 0.7745485802636078,
+          "aic": -154.94284480044186,
+          "bic": -151.89012375120953,
+          "rss": 0.31713458769774455,
+          "durbin_watson": 0.6477468188828368
+        },
+        "M_v2": {
+          "r2": 0.7887327856809978,
+          "adj_r2": 0.7751026428217074,
+          "aic": -155.02650500979829,
+          "bic": -151.97378396056595,
+          "rss": 0.3163552073721422,
+          "durbin_watson": 0.6488271131693629
+        },
+        "M_sin": {
+          "r2": 0.8562857939659123,
+          "adj_r2": 0.8419143733625035,
+          "aic": -166.1266065338468,
+          "bic": -161.54752495999833,
+          "rss": 0.21520015587268207,
+          "durbin_watson": 0.94781529427287
+        },
+        "M_sin2": {
+          "r2": 0.8677380900246768,
+          "adj_r2": 0.8441198918147976,
+          "aic": -164.9500523485444,
+          "bic": -157.3182497254636,
+          "rss": 0.19805128823490886,
+          "durbin_watson": 1.0149765028472337
+        },
+        "M_v_sin2": {
+          "r2": 0.7973865216326574,
+          "adj_r2": 0.7694398349612999,
+          "aic": -152.44850857362744,
+          "bic": -146.3430664751628,
+          "rss": 0.30339695239464565,
+          "durbin_watson": 0.6696845687462334
+        }
+      },
+      "cv_rmse_contiguous_5fold": {
+        "M_v": 0.12538386775942947,
+        "M_v2": 0.12528139122043508,
+        "M_sin": 0.10496594453773717,
+        "M_sin2": 0.15039960023643323,
+        "M_v_sin2": 0.18281075526124332
+      },
+      "delta_aic_sin_minus_v": -11.183761733404936,
+      "delta_bic_sin_minus_v": -9.657401208788798,
+      "nested_f_tests": {
+        "v_given_annual_basis": {
+          "F": 1.6118612801224446,
+          "df1": 1,
+          "df2": 30,
+          "p": 0.21399091844537443
+        },
+        "annual_basis_given_v": {
+          "F": 8.292767964723254,
+          "df1": 2,
+          "df2": 30,
+          "p": 0.0013584772812633705
+        }
+      },
+      "keplerian_asymmetry_probe": {
+        "v_non_sinusoidal_variance_fraction": 6.871864279877589e-05,
+        "data_projection_coef": -6.436229817394666,
+        "t_statistic": -1.257244211057266
+      },
+      "permutation_calibration": {
+        "n_permutations": 20000,
+        "method": "circular phase-shift of the seasonal series (preserves autocorrelation)",
+        "delta_aic_observed": -11.183761733404936,
+        "perm_delta_aic_median": -38.895745555626476,
+        "perm_delta_aic_95pct": 0.6320758093956726,
+        "p_delta_aic_ge_observed": 0.24113794310284486
+      },
+      "waveform_skewness": {
+        "data": -0.055458594836107995,
+        "v_model_prediction": -0.0801270511882257,
+        "sinusoid_model_prediction": -0.07791742728527373
+      }
+    },
+    "N_HEMI": {
+      "label": "N_HEMI",
+      "n_bins": 34,
+      "fits": {
+        "M_v": {
+          "r2": 0.06030179515938294,
+          "adj_r2": -0.0003238954754956058,
+          "aic": -57.767069636539816,
+          "bic": -54.71434858730749,
+          "rss": 5.5272035799794,
+          "durbin_watson": 0.40791409105486776
+        },
+        "M_v2": {
+          "r2": 0.058756225643506244,
+          "adj_r2": -0.001969179153686884,
+          "aic": -57.711194042345056,
+          "bic": -54.65847299311273,
+          "rss": 5.536294453322836,
+          "durbin_watson": 0.40743531926396437
+        },
+        "M_sin": {
+          "r2": 0.06915612711853547,
+          "adj_r2": -0.023928260169610915,
+          "aic": -56.088954440642766,
+          "bic": -51.50987286679428,
+          "rss": 5.475123353529191,
+          "durbin_watson": 0.4112910332947595
+        },
+        "M_sin2": {
+          "r2": 0.6542466475760503,
+          "adj_r2": 0.592504977500345,
+          "aic": -85.76139498360914,
+          "bic": -78.12959236052833,
+          "rss": 2.033683960939,
+          "durbin_watson": 0.8968842075052964
+        },
+        "M_v_sin2": {
+          "r2": 0.6504751622179104,
+          "adj_r2": 0.6022648397652084,
+          "aic": -87.39253037169632,
+          "bic": -81.28708827323167,
+          "rss": 2.055867431404272,
+          "durbin_watson": 0.8885264216416684
+        }
+      },
+      "cv_rmse_contiguous_5fold": {
+        "M_v": 0.5378630381635646,
+        "M_v2": 0.5381501627535349,
+        "M_sin": 0.6563300021667349,
+        "M_sin2": 0.3851359091967772,
+        "M_v_sin2": 0.30962965800529985
+      },
+      "delta_aic_sin_minus_v": 1.6781151958970497,
+      "delta_bic_sin_minus_v": 3.2044757205132086,
+      "nested_f_tests": {
+        "v_given_annual_basis": {
+          "F": 49.2250960702415,
+          "df1": 1,
+          "df2": 30,
+          "p": 8.492663816639379e-08
+        },
+        "annual_basis_given_v": {
+          "F": 24.989348764316777,
+          "df1": 2,
+          "df2": 30,
+          "p": 4.0945286261528935e-07
+        }
+      },
+      "keplerian_asymmetry_probe": {
+        "v_non_sinusoidal_variance_fraction": 6.871864279877589e-05,
+        "data_projection_coef": -113.32619507193891,
+        "t_statistic": -4.3887692347511456
+      },
+      "permutation_calibration": {
+        "n_permutations": 20000,
+        "method": "circular phase-shift of the seasonal series (preserves autocorrelation)",
+        "delta_aic_observed": 1.6781151958970497,
+        "perm_delta_aic_median": 0.9646419084628519,
+        "perm_delta_aic_95pct": 2.0501958788327954,
+        "p_delta_aic_ge_observed": 0.20758962051897406
+      },
+      "waveform_skewness": {
+        "data": 0.8473700407737622,
+        "v_model_prediction": 0.001695546513315568,
+        "sinusoid_model_prediction": 0.0017915505305026015
+      }
+    },
+    "S_HEMI": {
+      "label": "S_HEMI",
+      "n_bins": 34,
+      "fits": {
+        "M_v": {
+          "r2": 0.6265573409710063,
+          "adj_r2": 0.6024642661949422,
+          "aic": -77.23456366823336,
+          "bic": -74.18184261900105,
+          "rss": 3.1177408469302903,
+          "durbin_watson": 0.51483145134037
+        },
+        "M_v2": {
+          "r2": 0.6244262431431105,
+          "adj_r2": 0.6001956781846014,
+          "aic": -77.04108988012956,
+          "bic": -73.98836883089724,
+          "rss": 3.1355326299154243,
+          "durbin_watson": 0.5126195541993711
+        },
+        "M_sin": {
+          "r2": 0.6308839147542054,
+          "adj_r2": 0.5939723062296258,
+          "aic": -75.63077521235083,
+          "bic": -71.05169363850234,
+          "rss": 3.0816198107149555,
+          "durbin_watson": 0.5195910257317387
+        },
+        "M_sin2": {
+          "r2": 0.7455410776766405,
+          "adj_r2": 0.700101984404612,
+          "aic": -84.27781543226949,
+          "bic": -76.64601280918868,
+          "rss": 2.124387658486028,
+          "durbin_watson": 0.7027264428897435
+        },
+        "M_v_sin2": {
+          "r2": 0.7454665058923589,
+          "adj_r2": 0.7103584377395809,
+          "aic": -86.26785284500151,
+          "bic": -80.16241074653686,
+          "rss": 2.125010231971574,
+          "durbin_watson": 0.7025550352678379
+        }
+      },
+      "cv_rmse_contiguous_5fold": {
+        "M_v": 0.3527269657852945,
+        "M_v2": 0.3540980812424665,
+        "M_sin": 0.3860815878379476,
+        "M_sin2": 0.5022323651283606,
+        "M_v_sin2": 0.44490958316995627
+      },
+      "delta_aic_sin_minus_v": 1.6037884558825368,
+      "delta_bic_sin_minus_v": 3.130148980498703,
+      "nested_f_tests": {
+        "v_given_annual_basis": {
+          "F": 10.983431671206958,
+          "df1": 1,
+          "df2": 30,
+          "p": 0.002408942324117036
+        },
+        "annual_basis_given_v": {
+          "F": 5.731908349700789,
+          "df1": 2,
+          "df2": 30,
+          "p": 0.007794346019071141
+        }
+      },
+      "keplerian_asymmetry_probe": {
+        "v_non_sinusoidal_variance_fraction": 6.871864279877589e-05,
+        "data_projection_coef": 55.837485062456956,
+        "t_statistic": 2.882343346613914
+      },
+      "permutation_calibration": {
+        "n_permutations": 20000,
+        "method": "circular phase-shift of the seasonal series (preserves autocorrelation)",
+        "delta_aic_observed": 1.6037884558825368,
+        "perm_delta_aic_median": -19.506707382321252,
+        "perm_delta_aic_95pct": 1.6037884558825368,
+        "p_delta_aic_ge_observed": 0.06109694515274236
+      },
+      "waveform_skewness": {
+        "data": 0.5443070592054311,
+        "v_model_prediction": -0.056787870138222674,
+        "sinusoid_model_prediction": -0.04793566203896468
+      }
+    },
+    "N_QUIET": {
+      "label": "N_QUIET",
+      "n_bins": 34,
+      "fits": {
+        "M_v": {
+          "r2": 0.03908807226761779,
+          "adj_r2": -0.0229062456506004,
+          "aic": -52.45215542007103,
+          "bic": -49.399434370838705,
+          "rss": 6.462414517372162,
+          "durbin_watson": 0.4403189366909473
+        },
+        "M_v2": {
+          "r2": 0.03787295597547902,
+          "adj_r2": -0.024199756542232054,
+          "aic": -52.409188054315194,
+          "bic": -49.35646700508287,
+          "rss": 6.4705865307898165,
+          "durbin_watson": 0.43990616774590785
+        },
+        "M_sin": {
+          "r2": 0.04338783330725693,
+          "adj_r2": -0.05227338336201748,
+          "aic": -50.60463550707248,
+          "bic": -46.025553933223996,
+          "rss": 6.433497363404297,
+          "durbin_watson": 0.4419026286651603
+        },
+        "M_sin2": {
+          "r2": 0.6161915039632626,
+          "adj_r2": 0.5476542725281309,
+          "aic": -77.65528272350846,
+          "bic": -70.02348010042766,
+          "rss": 2.581224694058922,
+          "durbin_watson": 0.9162588064770621
+        },
+        "M_v_sin2": {
+          "r2": 0.6130468888510121,
+          "adj_r2": 0.5596740459339103,
+          "aic": -79.37784932243756,
+          "bic": -73.2724072239729,
+          "rss": 2.602373152899383,
+          "durbin_watson": 0.9081050977625007
+        }
+      },
+      "cv_rmse_contiguous_5fold": {
+        "M_v": 0.5822663744375322,
+        "M_v2": 0.5823781846914482,
+        "M_sin": 0.72626562946089,
+        "M_sin2": 0.4334837777818752,
+        "M_v_sin2": 0.33178778957846267
+      },
+      "delta_aic_sin_minus_v": 1.8475199129985498,
+      "delta_bic_sin_minus_v": 3.3738804376147087,
+      "nested_f_tests": {
+        "v_given_annual_basis": {
+          "F": 41.993123674032326,
+          "df1": 1,
+          "df2": 30,
+          "p": 3.673120826386267e-07
+        },
+        "annual_basis_given_v": {
+          "F": 21.158358455882404,
+          "df1": 2,
+          "df2": 30,
+          "p": 1.8545489398613668e-06
+        }
+      },
+      "keplerian_asymmetry_probe": {
+        "v_non_sinusoidal_variance_fraction": 6.871864279877589e-05,
+        "data_projection_coef": -119.02511232457348,
+        "t_statistic": -4.252305211924123
+      },
+      "permutation_calibration": {
+        "n_permutations": 20000,
+        "method": "circular phase-shift of the seasonal series (preserves autocorrelation)",
+        "delta_aic_observed": 1.8475199129985498,
+        "perm_delta_aic_median": 1.1735358500179416,
+        "perm_delta_aic_95pct": 2.037178286057369,
+        "p_delta_aic_ge_observed": 0.23973801309934503
+      },
+      "waveform_skewness": {
+        "data": 0.8858762899355143,
+        "v_model_prediction": 0.0008848725549893975,
+        "sinusoid_model_prediction": 0.0010017406233339796
+      }
+    },
+    "S_QUIET": {
+      "label": "S_QUIET",
+      "n_bins": 34,
+      "fits": {
+        "M_v": {
+          "r2": 0.6006383507739281,
+          "adj_r2": 0.5748730830819235,
+          "aic": -76.42716770977415,
+          "bic": -73.37444666054184,
+          "rss": 3.19266372533905,
+          "durbin_watson": 0.5539104475590056
+        },
+        "M_v2": {
+          "r2": 0.5986799154411502,
+          "adj_r2": 0.5727882970825147,
+          "aic": -76.26084211173605,
+          "bic": -73.20812106250374,
+          "rss": 3.2083202748787953,
+          "durbin_watson": 0.5518148062762533
+        },
+        "M_sin": {
+          "r2": 0.6051300728171176,
+          "adj_r2": 0.5656430800988295,
+          "aic": -74.81174113197068,
+          "bic": -70.2326595581222,
+          "rss": 3.1567550243924574,
+          "durbin_watson": 0.559201479465083
+        },
+        "M_sin2": {
+          "r2": 0.7022504409717919,
+          "adj_r2": 0.6490808768596119,
+          "aic": -80.4100664280437,
+          "bic": -72.7782638049629,
+          "rss": 2.3803342614075884,
+          "durbin_watson": 0.7047517226504108
+        },
+        "M_v_sin2": {
+          "r2": 0.7017909567068072,
+          "adj_r2": 0.6606586748732635,
+          "aic": -82.35763839682083,
+          "bic": -76.25219629835618,
+          "rss": 2.3840075704196666,
+          "durbin_watson": 0.7037569374863044
+        }
+      },
+      "cv_rmse_contiguous_5fold": {
+        "M_v": 0.35200798261440713,
+        "M_v2": 0.35301099773456907,
+        "M_sin": 0.37796637286987006,
+        "M_sin2": 0.5534774362952183,
+        "M_v_sin2": 0.49561186977440774
+      },
+      "delta_aic_sin_minus_v": 1.6154265778034755,
+      "delta_bic_sin_minus_v": 3.1417871024196415,
+      "nested_f_tests": {
+        "v_given_annual_basis": {
+          "F": 8.434748970120202,
+          "df1": 1,
+          "df2": 30,
+          "p": 0.006847055429917592
+        },
+        "annual_basis_given_v": {
+          "F": 4.435975848815212,
+          "df1": 2,
+          "df2": 30,
+          "p": 0.020524549092093447
+        }
+      },
+      "keplerian_asymmetry_probe": {
+        "v_non_sinusoidal_variance_fraction": 6.871864279877589e-05,
+        "data_projection_coef": 51.140615566749794,
+        "t_statistic": 2.6082841569589155
+      },
+      "permutation_calibration": {
+        "n_permutations": 20000,
+        "method": "circular phase-shift of the seasonal series (preserves autocorrelation)",
+        "delta_aic_observed": 1.6154265778034755,
+        "perm_delta_aic_median": -17.886534877201058,
+        "perm_delta_aic_95pct": 1.6154265778034755,
+        "p_delta_aic_ge_observed": 0.057147142642867854
+      },
+      "waveform_skewness": {
+        "data": 0.5637141080310294,
+        "v_model_prediction": -0.053300825367843266,
+        "sinusoid_model_prediction": -0.04474162232165072
+      }
+    }
+  },
+  "headline_interpretation": [
+    "Annual sinusoid preferred over velocity template (\u0394AIC>2)",
+    "Annual basis adds information beyond velocity (F=8.3, p=0.00136)"
+  ]
+}

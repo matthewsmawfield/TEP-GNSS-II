@@ -1,0 +1,530 @@
+
+======================================================================
+MULTI-RESOLUTION VERIFICATION MODE
+Testing resolutions: 10°, 5°, 2.5°, 1°
+======================================================================
+
+Grid sizes:
+  10° → ~700 directions
+  5° → ~2,700 directions
+  2.5° → ~10,500 directions
+  1° → ~65,000 directions
+
+⚠️  1° resolution may take 5-10 minutes depending on hardware
+======================================================================
+
+
+======================================================================
+Running analysis at 10.0° resolution...
+======================================================================
+
+======================================================================
+STEP 2.5: DUAL-MOTION GEOMETRIC VALIDATION
+======================================================================
+
+Leveraging existing Step 2.2 computations...
+Adding geometric validation layer...
+
+[0;37m[00:40:54] [INFO] Loading: results/outputs/code_longspan/step_2_2_geospatial_temporal_analysis_code.json[0m
+[0;37m[00:40:54] [INFO] Extracting existing Step 2.2 results...[0m
+[0;37m[00:40:54] [INFO]   ✓ Extracted 8 sectors[0m
+[0;37m[00:40:54] [INFO]   ✓ Extracted 34 temporal windows[0m
+[0;37m[00:40:54] [INFO]   ✓ Hemisphere data: N=34, S=34[0m
+[0;37m[00:40:54] [INFO] Performing 'Clever' Galactic Vector Search...[0m
+Grid search resolution: 10.0°
+  RA steps: 37 (0° to 360° in 10.0° increments)
+  Dec steps: 19 (-90° to +90° in 10.0° increments)
+  Total directions: 703
+[1;32m[00:40:54] [SUCCESS]   Best Fit: RA=360.0°, Dec=0.0° (r=0.7072)[0m
+[0;37m[00:40:54] [INFO]   Known Apex: RA=271°, Dec=30°[0m
+[0;37m[00:40:54] [INFO]   Calculating bootstrap confidence intervals...[0m
+[0;37m[00:40:54] [INFO]   95% CI: [0.4582, 0.8857][0m
+[0;37m[00:40:54] [INFO]   Running permutation test (100000 samples)...[0m
+[0;37m[00:40:57] [INFO] Comparing competing models (including ecliptic controls)...[0m
+[1;32m[00:40:57] [SUCCESS]   CMB Dipole (RA=168°, Dec=-7°): R²=0.2976 (29.8% variance explained)[0m
+[0;37m[00:40:57] [INFO]   Ecliptic East (RA=90°, Dec=0°): R²=0.0026 (0.3% variance explained)[0m
+[0;37m[00:40:57] [INFO]   Ecliptic West (RA=270°, Dec=0°): R²=0.0026 (0.3% variance explained)[0m
+[0;37m[00:40:57] [INFO]   Solar Apex (RA=272°, Dec=+30°): R²=0.0000 (0.0% variance explained)[0m
+[0;37m[00:40:57] [INFO] 
+Ecliptic Control Discrimination:[0m
+[0;37m[00:40:57] [INFO]   CMB / Ecliptic East variance ratio: 112.9×[0m
+[0;37m[00:40:57] [INFO]   CMB / Ecliptic West variance ratio: 113.3×[0m
+[0;37m[00:40:57] [INFO] Comparing background models...[0m
+[0;37m[00:40:57] [INFO]   Solar Apex               : r =  0.0059, p = 0.973582[0m
+[1;32m[00:40:57] [SUCCESS]   Best Fit (Grid Search)   : r =  0.7072, p = 0.000003[0m
+[1;32m[00:40:57] [SUCCESS]   CMB Dipole               : r = -0.5455, p = 0.000848[0m
+[0;37m[00:40:57] [INFO]   Null (Orbital Only)      : r =  0.0053, p = 0.976107[0m
+[0;37m[00:40:57] [INFO] Performing geometric angle validation...[0m
+[0;37m[00:40:57] [INFO]   Time-averaged EW/NS ratio: 0.540[0m
+[0;37m[00:40:57] [INFO]   Predicted vs Observed EW/NS: r = 0.0405, p = 0.820256[0m
+[0;37m[00:40:57] [INFO]   Velocity angle vs Observed: r = 0.1868, p = 0.290202[0m
+[0;37m[00:40:57] [INFO] Running statistical tests...[0m
+[0;37m[00:40:57] [INFO]   1/4 tests significant[0m
+[0;37m[00:40:57] [INFO] Assessment: Weak to Moderate Support[0m
+
+======================================================================
+VECTOR SEARCH RESULT:
+  Best Fit Vector: RA=360°, Dec=0°
+  Known Solar Apex: RA=271°, Dec=30°
+    -> Separation from Apex: 88.3°
+  Known CMB Dipole: RA=167°, Dec=-6°
+    -> Separation from CMB:  166.1°
+  Correlation: r=0.7072
+  95% CI: [0.4582, 0.8857]
+======================================================================
+
+
+======================================================================
+PERMUTATION TEST (10,000 random directions):
+  Observed correlation: r=0.7072
+  Random mean: 0.2957
+  Random 95th percentile: 0.5439
+  P-value: 0.002570
+  -> SIGNIFICANT (p < 0.01)
+======================================================================
+
+
+======================================================================
+MODEL COMPARISON:
+  CMB Dipole Model:
+    R² = 0.2976 (29.8% variance explained)
+    RMSE = 0.5252
+    Improvement over null: -150.2%
+  Solar Apex Model:
+    R² = 0.0000 (0.0% variance explained)
+    RMSE = 0.6259
+    Improvement over null: -198.2%
+  Winner: CMB_DIPOLE (advantage: 29.8%)
+======================================================================
+
+
+======================================================================
+BACKGROUND COMPARISON (Geometric Validation Fixed):
+  Testing multiple reference frames with same predictor:
+
+  ✗ FAILED  Solar Apex                    
+       RA=271.96°, Dec= 30.00°
+       r= 0.0059, p=0.973582, R²=0.0000
+       Angular separation from best: 93.0°
+
+  ✓ STRONG  Best Fit (Grid Search)        
+       RA=360.00°, Dec=  0.00°
+       r= 0.7072, p=0.000003, R²=0.5001
+       Angular separation from best: 0.0°
+
+  ○ WEAK  CMB Dipole                    
+       RA=167.94°, Dec= -6.94°
+       r=-0.5455, p=0.000848, R²=0.2976
+       Angular separation from best: 192.2°
+
+  ✗ FAILED  Null (Orbital Only)           
+       RA=  0.00°, Dec= 90.00°
+       r= 0.0053, p=0.976107, R²=0.0000
+       Angular separation from best: 371.1°
+
+======================================================================
+
+[1;32m[00:40:59] [SUCCESS] Saved ultra-minimal heatmap: results/figures/code_longspan/step_2_5_vector_search_heatmap.png[0m
+[0;37m[00:40:59] [INFO] Figure caption: (a) Best fit, (b) CMB dipole, (c) Solar apex[0m
+[0;37m[00:40:59] [INFO] Extracting existing Step 2.2 results...[0m
+[0;37m[00:40:59] [INFO]   ✓ Extracted 8 sectors[0m
+[0;37m[00:40:59] [INFO]   ✓ Extracted 34 temporal windows[0m
+[0;37m[00:40:59] [INFO]   ✓ Hemisphere data: N=34, S=34[0m
+/Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-GNSS-II/scripts/steps/step_2_5_dual_motion_geometry.py:808: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+  plt.tight_layout(pad=1.5)
+[1;32m[00:40:59] [SUCCESS] Saved enhanced model comparison: results/figures/code_longspan/step_2_5_model_comparison_timeseries.png[0m
+Results saved: results/outputs/code_longspan/step_2_5_dual_motion_geometry.json
+Assessment: Weak to Moderate Support
+
+======================================================================
+Running analysis at 5.0° resolution...
+======================================================================
+
+======================================================================
+STEP 2.5: DUAL-MOTION GEOMETRIC VALIDATION
+======================================================================
+
+Leveraging existing Step 2.2 computations...
+Adding geometric validation layer...
+
+[0;37m[00:40:59] [INFO] Loading: results/outputs/code_longspan/step_2_2_geospatial_temporal_analysis_code.json[0m
+[0;37m[00:41:00] [INFO] Extracting existing Step 2.2 results...[0m
+[0;37m[00:41:00] [INFO]   ✓ Extracted 8 sectors[0m
+[0;37m[00:41:00] [INFO]   ✓ Extracted 34 temporal windows[0m
+[0;37m[00:41:00] [INFO]   ✓ Hemisphere data: N=34, S=34[0m
+[0;37m[00:41:00] [INFO] Performing 'Clever' Galactic Vector Search...[0m
+Grid search resolution: 5.0°
+  RA steps: 73 (0° to 360° in 5.0° increments)
+  Dec steps: 37 (-90° to +90° in 5.0° increments)
+  Total directions: 2701
+[1;32m[00:41:00] [SUCCESS]   Best Fit: RA=10.0°, Dec=5.0° (r=0.7436)[0m
+[0;37m[00:41:00] [INFO]   Known Apex: RA=271°, Dec=30°[0m
+[0;37m[00:41:00] [INFO]   Calculating bootstrap confidence intervals...[0m
+[0;37m[00:41:00] [INFO]   95% CI: [0.5674, 0.8707][0m
+[0;37m[00:41:00] [INFO]   Running permutation test (100000 samples)...[0m
+[0;37m[00:41:02] [INFO] Comparing competing models (including ecliptic controls)...[0m
+[1;32m[00:41:02] [SUCCESS]   CMB Dipole (RA=168°, Dec=-7°): R²=0.2976 (29.8% variance explained)[0m
+[0;37m[00:41:02] [INFO]   Ecliptic East (RA=90°, Dec=0°): R²=0.0026 (0.3% variance explained)[0m
+[0;37m[00:41:02] [INFO]   Ecliptic West (RA=270°, Dec=0°): R²=0.0026 (0.3% variance explained)[0m
+[0;37m[00:41:02] [INFO]   Solar Apex (RA=272°, Dec=+30°): R²=0.0000 (0.0% variance explained)[0m
+[0;37m[00:41:02] [INFO] 
+Ecliptic Control Discrimination:[0m
+[0;37m[00:41:02] [INFO]   CMB / Ecliptic East variance ratio: 112.9×[0m
+[0;37m[00:41:02] [INFO]   CMB / Ecliptic West variance ratio: 113.3×[0m
+[0;37m[00:41:02] [INFO] Comparing background models...[0m
+[0;37m[00:41:02] [INFO]   Solar Apex               : r =  0.0059, p = 0.973582[0m
+[1;32m[00:41:02] [SUCCESS]   Best Fit (Grid Search)   : r =  0.7436, p = 0.000000[0m
+[1;32m[00:41:02] [SUCCESS]   CMB Dipole               : r = -0.5455, p = 0.000848[0m
+[0;37m[00:41:02] [INFO]   Null (Orbital Only)      : r =  0.0053, p = 0.976107[0m
+[0;37m[00:41:02] [INFO] Performing geometric angle validation...[0m
+[0;37m[00:41:02] [INFO]   Time-averaged EW/NS ratio: 0.540[0m
+[0;37m[00:41:02] [INFO]   Predicted vs Observed EW/NS: r = 0.0405, p = 0.820256[0m
+[0;37m[00:41:02] [INFO]   Velocity angle vs Observed: r = 0.1868, p = 0.290202[0m
+[0;37m[00:41:02] [INFO] Running statistical tests...[0m
+[0;37m[00:41:02] [INFO]   1/4 tests significant[0m
+[0;37m[00:41:02] [INFO] Assessment: Weak to Moderate Support[0m
+
+======================================================================
+VECTOR SEARCH RESULT:
+  Best Fit Vector: RA=10°, Dec=5°
+  Known Solar Apex: RA=271°, Dec=30°
+    -> Separation from Apex: 94.4°
+  Known CMB Dipole: RA=167°, Dec=-6°
+    -> Separation from CMB:  158.0°
+  Correlation: r=0.7436
+  95% CI: [0.5674, 0.8707]
+======================================================================
+
+
+======================================================================
+PERMUTATION TEST (10,000 random directions):
+  Observed correlation: r=0.7436
+  Random mean: 0.2956
+  Random 95th percentile: 0.5423
+  P-value: 0.000250
+  -> HIGHLY SIGNIFICANT (p < 0.001)
+======================================================================
+
+
+======================================================================
+MODEL COMPARISON:
+  CMB Dipole Model:
+    R² = 0.2976 (29.8% variance explained)
+    RMSE = 0.5252
+    Improvement over null: -150.2%
+  Solar Apex Model:
+    R² = 0.0000 (0.0% variance explained)
+    RMSE = 0.6259
+    Improvement over null: -198.2%
+  Winner: CMB_DIPOLE (advantage: 29.8%)
+======================================================================
+
+
+======================================================================
+BACKGROUND COMPARISON (Geometric Validation Fixed):
+  Testing multiple reference frames with same predictor:
+
+  ✗ FAILED  Solar Apex                    
+       RA=271.96°, Dec= 30.00°
+       r= 0.0059, p=0.973582, R²=0.0000
+       Angular separation from best: 263.2°
+
+  ✓ STRONG  Best Fit (Grid Search)        
+       RA= 10.00°, Dec=  5.00°
+       r= 0.7436, p=0.000000, R²=0.5529
+       Angular separation from best: 0.0°
+
+  ○ WEAK  CMB Dipole                    
+       RA=167.94°, Dec= -6.94°
+       r=-0.5455, p=0.000848, R²=0.2976
+       Angular separation from best: 158.4°
+
+  ✗ FAILED  Null (Orbital Only)           
+       RA=  0.00°, Dec= 90.00°
+       r= 0.0053, p=0.976107, R²=0.0000
+       Angular separation from best: 85.6°
+
+======================================================================
+
+[1;32m[00:41:04] [SUCCESS] Saved ultra-minimal heatmap: results/figures/code_longspan/step_2_5_vector_search_heatmap.png[0m
+[0;37m[00:41:04] [INFO] Figure caption: (a) Best fit, (b) CMB dipole, (c) Solar apex[0m
+[0;37m[00:41:04] [INFO] Extracting existing Step 2.2 results...[0m
+[0;37m[00:41:04] [INFO]   ✓ Extracted 8 sectors[0m
+[0;37m[00:41:04] [INFO]   ✓ Extracted 34 temporal windows[0m
+[0;37m[00:41:04] [INFO]   ✓ Hemisphere data: N=34, S=34[0m
+/Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-GNSS-II/scripts/steps/step_2_5_dual_motion_geometry.py:808: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+  plt.tight_layout(pad=1.5)
+[1;32m[00:41:04] [SUCCESS] Saved enhanced model comparison: results/figures/code_longspan/step_2_5_model_comparison_timeseries.png[0m
+Results saved: results/outputs/code_longspan/step_2_5_dual_motion_geometry.json
+Assessment: Weak to Moderate Support
+
+======================================================================
+Running analysis at 2.5° resolution...
+======================================================================
+
+======================================================================
+STEP 2.5: DUAL-MOTION GEOMETRIC VALIDATION
+======================================================================
+
+Leveraging existing Step 2.2 computations...
+Adding geometric validation layer...
+
+[0;37m[00:41:04] [INFO] Loading: results/outputs/code_longspan/step_2_2_geospatial_temporal_analysis_code.json[0m
+[0;37m[00:41:04] [INFO] Extracting existing Step 2.2 results...[0m
+[0;37m[00:41:04] [INFO]   ✓ Extracted 8 sectors[0m
+[0;37m[00:41:04] [INFO]   ✓ Extracted 34 temporal windows[0m
+[0;37m[00:41:04] [INFO]   ✓ Hemisphere data: N=34, S=34[0m
+[0;37m[00:41:04] [INFO] Performing 'Clever' Galactic Vector Search...[0m
+Grid search resolution: 2.5°
+  RA steps: 145 (0° to 360° in 2.5° increments)
+  Dec steps: 73 (-90° to +90° in 2.5° increments)
+  Total directions: 10585
+[1;32m[00:41:05] [SUCCESS]   Best Fit: RA=7.5°, Dec=5.0° (r=0.7440)[0m
+[0;37m[00:41:05] [INFO]   Known Apex: RA=271°, Dec=30°[0m
+[0;37m[00:41:05] [INFO]   Calculating bootstrap confidence intervals...[0m
+[0;37m[00:41:05] [INFO]   95% CI: [0.5656, 0.8854][0m
+[0;37m[00:41:05] [INFO]   Running permutation test (100000 samples)...[0m
+[0;37m[00:41:08] [INFO] Comparing competing models (including ecliptic controls)...[0m
+[1;32m[00:41:08] [SUCCESS]   CMB Dipole (RA=168°, Dec=-7°): R²=0.2976 (29.8% variance explained)[0m
+[0;37m[00:41:08] [INFO]   Ecliptic East (RA=90°, Dec=0°): R²=0.0026 (0.3% variance explained)[0m
+[0;37m[00:41:08] [INFO]   Ecliptic West (RA=270°, Dec=0°): R²=0.0026 (0.3% variance explained)[0m
+[0;37m[00:41:08] [INFO]   Solar Apex (RA=272°, Dec=+30°): R²=0.0000 (0.0% variance explained)[0m
+[0;37m[00:41:08] [INFO] 
+Ecliptic Control Discrimination:[0m
+[0;37m[00:41:08] [INFO]   CMB / Ecliptic East variance ratio: 112.9×[0m
+[0;37m[00:41:08] [INFO]   CMB / Ecliptic West variance ratio: 113.3×[0m
+[0;37m[00:41:08] [INFO] Comparing background models...[0m
+[0;37m[00:41:08] [INFO]   Solar Apex               : r =  0.0059, p = 0.973582[0m
+[1;32m[00:41:08] [SUCCESS]   Best Fit (Grid Search)   : r =  0.7430, p = 0.000000[0m
+[1;32m[00:41:08] [SUCCESS]   CMB Dipole               : r = -0.5455, p = 0.000848[0m
+[0;37m[00:41:08] [INFO]   Null (Orbital Only)      : r =  0.0053, p = 0.976107[0m
+[0;37m[00:41:08] [INFO] Performing geometric angle validation...[0m
+[0;37m[00:41:08] [INFO]   Time-averaged EW/NS ratio: 0.540[0m
+[0;37m[00:41:08] [INFO]   Predicted vs Observed EW/NS: r = 0.0405, p = 0.820256[0m
+[0;37m[00:41:08] [INFO]   Velocity angle vs Observed: r = 0.1868, p = 0.290202[0m
+[0;37m[00:41:08] [INFO] Running statistical tests...[0m
+[0;37m[00:41:08] [INFO]   1/4 tests significant[0m
+[0;37m[00:41:08] [INFO] Assessment: Weak to Moderate Support[0m
+
+======================================================================
+VECTOR SEARCH RESULT:
+  Best Fit Vector: RA=7°, Dec=5°
+  Known Solar Apex: RA=271°, Dec=30°
+    -> Separation from Apex: 91.8°
+  Known CMB Dipole: RA=167°, Dec=-6°
+    -> Separation from CMB:  160.9°
+  Correlation: r=0.7440
+  95% CI: [0.5656, 0.8854]
+======================================================================
+
+
+======================================================================
+PERMUTATION TEST (10,000 random directions):
+  Observed correlation: r=0.7430
+  Random mean: 0.2957
+  Random 95th percentile: 0.5428
+  P-value: 0.000280
+  -> HIGHLY SIGNIFICANT (p < 0.001)
+======================================================================
+
+
+======================================================================
+MODEL COMPARISON:
+  CMB Dipole Model:
+    R² = 0.2976 (29.8% variance explained)
+    RMSE = 0.5252
+    Improvement over null: -150.2%
+  Solar Apex Model:
+    R² = 0.0000 (0.0% variance explained)
+    RMSE = 0.6259
+    Improvement over null: -198.2%
+  Winner: CMB_DIPOLE (advantage: 29.8%)
+======================================================================
+
+
+======================================================================
+BACKGROUND COMPARISON (Geometric Validation Fixed):
+  Testing multiple reference frames with same predictor:
+
+  ✗ FAILED  Solar Apex                    
+       RA=271.96°, Dec= 30.00°
+       r= 0.0059, p=0.973582, R²=0.0000
+       Angular separation from best: 266.1°
+
+  ✓ STRONG  Best Fit (Grid Search)        
+       RA=  7.00°, Dec=  5.00°
+       r= 0.7430, p=0.000000, R²=0.5521
+       Angular separation from best: 0.0°
+
+  ○ WEAK  CMB Dipole                    
+       RA=167.94°, Dec= -6.94°
+       r=-0.5455, p=0.000848, R²=0.2976
+       Angular separation from best: 161.4°
+
+  ✗ FAILED  Null (Orbital Only)           
+       RA=  0.00°, Dec= 90.00°
+       r= 0.0053, p=0.976107, R²=0.0000
+       Angular separation from best: 85.3°
+
+======================================================================
+
+[1;32m[00:41:10] [SUCCESS] Saved ultra-minimal heatmap: results/figures/code_longspan/step_2_5_vector_search_heatmap.png[0m
+[0;37m[00:41:10] [INFO] Figure caption: (a) Best fit, (b) CMB dipole, (c) Solar apex[0m
+[0;37m[00:41:10] [INFO] Extracting existing Step 2.2 results...[0m
+[0;37m[00:41:10] [INFO]   ✓ Extracted 8 sectors[0m
+[0;37m[00:41:10] [INFO]   ✓ Extracted 34 temporal windows[0m
+[0;37m[00:41:10] [INFO]   ✓ Hemisphere data: N=34, S=34[0m
+/Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-GNSS-II/scripts/steps/step_2_5_dual_motion_geometry.py:808: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+  plt.tight_layout(pad=1.5)
+[1;32m[00:41:11] [SUCCESS] Saved enhanced model comparison: results/figures/code_longspan/step_2_5_model_comparison_timeseries.png[0m
+Results saved: results/outputs/code_longspan/step_2_5_dual_motion_geometry.json
+Assessment: Weak to Moderate Support
+
+======================================================================
+Running analysis at 1.0° resolution...
+======================================================================
+
+======================================================================
+STEP 2.5: DUAL-MOTION GEOMETRIC VALIDATION
+======================================================================
+
+Leveraging existing Step 2.2 computations...
+Adding geometric validation layer...
+
+[0;37m[00:41:11] [INFO] Loading: results/outputs/code_longspan/step_2_2_geospatial_temporal_analysis_code.json[0m
+[0;37m[00:41:11] [INFO] Extracting existing Step 2.2 results...[0m
+[0;37m[00:41:11] [INFO]   ✓ Extracted 8 sectors[0m
+[0;37m[00:41:11] [INFO]   ✓ Extracted 34 temporal windows[0m
+[0;37m[00:41:11] [INFO]   ✓ Hemisphere data: N=34, S=34[0m
+[0;37m[00:41:11] [INFO] Performing 'Clever' Galactic Vector Search...[0m
+Grid search resolution: 1.0°
+  RA steps: 361 (0° to 360° in 1.0° increments)
+  Dec steps: 181 (-90° to +90° in 1.0° increments)
+  Total directions: 65341
+[1;32m[00:41:12] [SUCCESS]   Best Fit: RA=6.0°, Dec=4.0° (r=0.7465)[0m
+[0;37m[00:41:12] [INFO]   Known Apex: RA=271°, Dec=30°[0m
+[0;37m[00:41:12] [INFO]   Calculating bootstrap confidence intervals...[0m
+[0;37m[00:41:12] [INFO]   95% CI: [0.5720, 0.8859][0m
+[0;37m[00:41:12] [INFO]   Running permutation test (100000 samples)...[0m
+[0;37m[00:41:15] [INFO] Comparing competing models (including ecliptic controls)...[0m
+[1;32m[00:41:15] [SUCCESS]   CMB Dipole (RA=168°, Dec=-7°): R²=0.2976 (29.8% variance explained)[0m
+[0;37m[00:41:15] [INFO]   Ecliptic East (RA=90°, Dec=0°): R²=0.0026 (0.3% variance explained)[0m
+[0;37m[00:41:15] [INFO]   Ecliptic West (RA=270°, Dec=0°): R²=0.0026 (0.3% variance explained)[0m
+[0;37m[00:41:15] [INFO]   Solar Apex (RA=272°, Dec=+30°): R²=0.0000 (0.0% variance explained)[0m
+[0;37m[00:41:15] [INFO] 
+Ecliptic Control Discrimination:[0m
+[0;37m[00:41:15] [INFO]   CMB / Ecliptic East variance ratio: 112.9×[0m
+[0;37m[00:41:15] [INFO]   CMB / Ecliptic West variance ratio: 113.3×[0m
+[0;37m[00:41:15] [INFO] Comparing background models...[0m
+[0;37m[00:41:15] [INFO]   Solar Apex               : r =  0.0059, p = 0.973582[0m
+[1;32m[00:41:15] [SUCCESS]   Best Fit (Grid Search)   : r =  0.7465, p = 0.000000[0m
+[1;32m[00:41:15] [SUCCESS]   CMB Dipole               : r = -0.5455, p = 0.000848[0m
+[0;37m[00:41:15] [INFO]   Null (Orbital Only)      : r =  0.0053, p = 0.976107[0m
+[0;37m[00:41:15] [INFO] Performing geometric angle validation...[0m
+[0;37m[00:41:15] [INFO]   Time-averaged EW/NS ratio: 0.540[0m
+[0;37m[00:41:15] [INFO]   Predicted vs Observed EW/NS: r = 0.0405, p = 0.820256[0m
+[0;37m[00:41:15] [INFO]   Velocity angle vs Observed: r = 0.1868, p = 0.290202[0m
+[0;37m[00:41:15] [INFO] Running statistical tests...[0m
+[0;37m[00:41:15] [INFO]   1/4 tests significant[0m
+[0;37m[00:41:15] [INFO] Assessment: Weak to Moderate Support[0m
+
+======================================================================
+VECTOR SEARCH RESULT:
+  Best Fit Vector: RA=6°, Dec=4°
+  Known Solar Apex: RA=271°, Dec=30°
+    -> Separation from Apex: 91.5°
+  Known CMB Dipole: RA=167°, Dec=-6°
+    -> Separation from CMB:  161.8°
+  Correlation: r=0.7465
+  95% CI: [0.5720, 0.8859]
+======================================================================
+
+
+======================================================================
+PERMUTATION TEST (10,000 random directions):
+  Observed correlation: r=0.7465
+  Random mean: 0.2969
+  Random 95th percentile: 0.5445
+  P-value: 0.000000
+  -> HIGHLY SIGNIFICANT (p < 0.001)
+======================================================================
+
+
+======================================================================
+MODEL COMPARISON:
+  CMB Dipole Model:
+    R² = 0.2976 (29.8% variance explained)
+    RMSE = 0.5252
+    Improvement over null: -150.2%
+  Solar Apex Model:
+    R² = 0.0000 (0.0% variance explained)
+    RMSE = 0.6259
+    Improvement over null: -198.2%
+  Winner: CMB_DIPOLE (advantage: 29.8%)
+======================================================================
+
+
+======================================================================
+BACKGROUND COMPARISON (Geometric Validation Fixed):
+  Testing multiple reference frames with same predictor:
+
+  ✗ FAILED  Solar Apex                    
+       RA=271.96°, Dec= 30.00°
+       r= 0.0059, p=0.973582, R²=0.0000
+       Angular separation from best: 267.2°
+
+  ✓ STRONG  Best Fit (Grid Search)        
+       RA=  6.00°, Dec=  4.00°
+       r= 0.7465, p=0.000000, R²=0.5572
+       Angular separation from best: 0.0°
+
+  ○ WEAK  CMB Dipole                    
+       RA=167.94°, Dec= -6.94°
+       r=-0.5455, p=0.000848, R²=0.2976
+       Angular separation from best: 162.3°
+
+  ✗ FAILED  Null (Orbital Only)           
+       RA=  0.00°, Dec= 90.00°
+       r= 0.0053, p=0.976107, R²=0.0000
+       Angular separation from best: 86.2°
+
+======================================================================
+
+[1;32m[00:41:17] [SUCCESS] Saved ultra-minimal heatmap: results/figures/code_longspan/step_2_5_vector_search_heatmap.png[0m
+[0;37m[00:41:17] [INFO] Figure caption: (a) Best fit, (b) CMB dipole, (c) Solar apex[0m
+[0;37m[00:41:17] [INFO] Extracting existing Step 2.2 results...[0m
+[0;37m[00:41:17] [INFO]   ✓ Extracted 8 sectors[0m
+[0;37m[00:41:17] [INFO]   ✓ Extracted 34 temporal windows[0m
+[0;37m[00:41:17] [INFO]   ✓ Hemisphere data: N=34, S=34[0m
+/Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-GNSS-II/scripts/steps/step_2_5_dual_motion_geometry.py:808: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+  plt.tight_layout(pad=1.5)
+[1;32m[00:41:17] [SUCCESS] Saved enhanced model comparison: results/figures/code_longspan/step_2_5_model_comparison_timeseries.png[0m
+Results saved: results/outputs/code_longspan/step_2_5_dual_motion_geometry.json
+Assessment: Weak to Moderate Support
+
+======================================================================
+MULTI-RESOLUTION COMPARISON
+======================================================================
+Resolution   Points     r          RA       Dec      p-value      CMB Sep   
+----------------------------------------------------------------------
+      10.0°  703        0.7072     360.0    0.0      0.002570     192.2     °
+       5.0°  2701       0.7436     10.0     5.0      0.000250     158.4     °
+       2.5°  10585      0.7440     7.0      5.0      0.000280     161.4     °
+       1.0°  65341      0.7465     6.0      4.0      0.000000     162.3     °
+======================================================================
+
+Convergence Analysis:
+  10° → 5°:   +5.14% change in correlation
+  5° → 2.5°:  +0.05% change in correlation
+  2.5° → 1°:  +0.34% change in correlation
+
+  Asymptotic behavior: Changes decreasing (5.1% → 0.1% → 0.3%)
+  Final best-fit: RA=6°, Dec=4°
+  Final correlation: r = 0.7465
+
+Comparison saved: results/outputs/code_longspan/step_2_5_multi_resolution_comparison.json
+
+======================================================================
+MULTI-RESOLUTION ANALYSIS COMPLETE
+Total elapsed time: 0.4 minutes
+======================================================================

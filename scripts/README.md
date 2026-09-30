@@ -4,7 +4,7 @@
 
 The pipeline analyses 25.3 years of CODE precise clock products (2000-2025)
 to detect distance-structured correlations, anisotropy, orbital velocity
-coupling, CMB frame alignment, planetary event responses, and geophysical
+coupling, annual-phase directional structure, planetary event responses, and geophysical
 couplings in GNSS timing data.
 
 ## Prerequisites
@@ -41,7 +41,7 @@ All steps write outputs to `results/outputs/` and logs to `logs/`.
 | 2.2 | `step_2_2_code_longspan.py` | Geospatial-temporal analysis (main results) |
 | 2.3 | `step_2_3_code_longspan.py` | Physical interpretation |
 | 2.4 | `step_2_4_code_longspan.py` | Supplementary analysis |
-| 2.5 | `step_2_5_dual_motion_geometry.py` | CMB frame / dual-motion geometry |
+| 2.5 | `step_2_5_dual_motion_geometry.py` | Directional grid search and fixed-frame controls |
 | 2.6 | `step_2_6_null_control.py` | Null control validation |
 | 2.8 | `step_2_8_draconitic_falsification.py` | Draconitic falsification test |
 | 2.9 | `step_2_9_dependence_pricing.py` | Dependence & cycle-count pricing (planetary-event effective independence; nutation cycle-limited uncertainty) |

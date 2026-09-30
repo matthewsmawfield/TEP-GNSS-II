@@ -6,67 +6,8 @@ authors:
 - family-names: Smawfield
   given-names: Matthew Lukin
   orcid: https://orcid.org/0009-0003-8219-3159
-abstract: 'Analysis of 25.3 years of global GNSS timing data (165.2 million station-
-  pair observations) documents persistent velocity-dependent correlations in
-  atomic clock networks. Critically, this work proposes that standard GNSS
-  processing algorithms, designed to remove energetic (common-mode) errors
-  via datum constraints, inadvertently preserve the subtle, geometry-
-  dependent (differential) correlations that are the focus of this work.
-  Building on the multi-centre study''s validation (R²=0.92-0.97 between
-  CODE, IGS, ESA), the extended temporal baseline confirms long-baseline
-  recovery and enables investigation of long-period geophysical phenomena
-  inaccessible in shorter baselines.
-  
-  Seven convergent signatures are identified: (1) Spatial anisotropy persists
-  with EW>NS (global ratio=2.16, strength=1.981, p<10⁻¹⁵), (2) anisotropy
-  ratio correlates with orbital velocity (r=-0.888; surrogate p < 2×10⁻⁷,
-  0/5M exceeded; t-test p≈2.6×10⁻⁴ with N_eff≈11) across a 25.3-year baseline
-  with ≈19% annual geometric ratio modulation, (3) the annual modulation
-  peaks coincide with Earth''s maximal projection onto its motion vector
-  relative to the Cosmic Microwave Background (CMB) dipole direction
-  (correlation r=0.747, directional-rank p < 0.001), suggesting the GNSS
-  network reveals a secondary covariance-frame signature (~10,300× variance
-  ratio over the Solar Apex directional template), (4) 35.9% of planetary
-  events show significant response (56/156 ≥2σ; Mercury leading with 34/80),
-  (5) preliminary coupling to 18.6-year lunar nutation (R²=0.641, observed
-  over 1.4 cycles; p=0.010 pending red-noise surrogate validation) and
-  semiannual nutation (R²=0.904, p=2.7×10⁻⁵), (6) network covariance score
-  (0.582) replicates multi-centre range, (7) null results for solar rotation
-  (27-day) and lunar standstill are consistent with selectivity for orbital-
-  gravitational phenomena over surface features. The 19% modulation describes
-  changes in the geometric shape of the correlation field (ratio of spatial
-  correlation lengths), not clock frequency variations; individual clock-rate
-  effects remain at standard GR-modelled fractional-frequency levels.
-  
-  Observed patterns are compatible with key a priori TEP predictions:
-  Temporal Topology correlation length λ T =1,000-10,000 km (observed:
-  4,201±1,967 km), the Gaussian and squared-exponential kernels are preferred
-  by AIC/BIC, while the exponential model is retained for cross-paper
-  comparability (exponential ΔAIC=12.8 relative to the Gaussian) and strongly
-  outperforms simple power-law forms (power-law ΔAIC > 30), velocity-
-  dependent anisotropy (r=-0.888), and geometric alignment (EW/NS=2.16). The
-  absence of GM/r² scaling is physically consistent with the datum-projection
-  mechanism in which common-mode components are absorbed by GNSS estimation
-  while geometric information is transmitted; this mechanism requires
-  validation via synthetic signal injection through the actual processing
-  chain. Raw data validation and multi-constellation replication represent
-  critical next steps.
-  
-  The empirically derived spatial correlation length $\lambda_T$ (the
-  Temporal Topology covariance scale) is a GNSS-sector covariance scale
-  obtained after environmental projection and processing transfer. It is not
-  the screening operator $\mathcal{S}_\Sigma(\mathcal{E})$ itself and should
-  not be identified numerically with response coefficients from other TEP
-  channels. In the near-Earth environment, this correlation length acts as
-  the macroscopic geometric proxy for the continuous saturation of Temporal
-  Topology, anchoring the differential clock correlations without committing
-  to specific subatomic microphysics.
-  
-  The primary result is 25.3-year aggregate consistency of distance-
-  structured covariance and EW/NS anisotropy. CMB dipole-direction alignment,
-  planetary event response, and nutation couplings are secondary covariance-
-  structure signatures requiring held-out replication.
-  '
+abstract: |
+  Analysis of 25.3 years of global GNSS timing data (165.2 million station-pair observations) documents persistent velocity-dependent correlations in atomic clock networks. Critically, this work proposes that standard GNSS processing algorithms, designed to remove energetic (common-mode) errors via datum constraints, inadvertently preserve the subtle, geometry-dependent (differential) correlations that are the focus of this work. Building on the multi-centre study's validation (R²=0.92-0.97 between CODE, IGS, ESA), the extended temporal baseline confirms long-baseline recovery and enables investigation of long-period geophysical phenomena inaccessible in shorter baselines. Seven convergent signatures are identified: (1) Spatial anisotropy persists with EW>NS (global EW/NS ratio=2.16, strength=1.981 ± 0.23 resampling SE, integrated 25.3-year aggregate), (2) anisotropy ratio correlates with orbital velocity (r=-0.888; surrogate p < 2 × 10⁻⁷, 0/5M exceeded; t-test p ≈ 2.6 × 10⁻⁴ with N_eff ≈ 11) across a 25.3-year baseline with ≈ 19% annual geometric ratio modulation, (3) a full-sky multi-resolution directional search (79,330 tested directions across four grids, with 65,341 at 1°) recovers a stable preferred direction at RA=6°, Dec=+4° (r=0.746; exploratory directional-rank p < 10⁻⁵; global sky-search significance not yet evaluated) coincident with Earth's orbital velocity tangent at aphelion (~6°) and ~162° from the CMB dipole — a heliocentric-orbital-phase signature that excludes the Solar Apex template at ~16,000 ×  variance ratio (R²=55.7% vs 0.003%), (4) planetary event catalogue (56/156 ≥ 2σ under the free-centre pulse statistic reflects repeatable estimator behaviour on the seasonal curve; true event specificity is reserved for the 40-event outer-planet opposition subset validated at 5.5 ×  over random dates, p < 10⁻¹⁷, with continuous potential correlation r = +0.116, p = 0.012), (5) preliminary coupling to 18.6-year lunar nutation (R²=0.641 ± 0.10 over 1.36 cycles; permutation p=0.0016 — the point estimate sits above the 99th percentile of phase-shuffled nulls, with amplitude and phase single-cycle-dominated) and a semiannual coherence component (R²=0.904, p=2.7 × 10⁻⁵; permutation p=0.00027, with fitted phase peaked near the orbital apsides), (6) network covariance score (0.582) replicates multi-centre range, (7) null results for solar rotation (27-day) and lunar standstill are consistent with selectivity for orbital-gravitational phenomena over surface features. The 19% modulation describes changes in the geometric shape of the correlation field (ratio of spatial correlation lengths), not clock frequency variations; individual clock-rate effects remain at standard GR-modelled fractional-frequency levels. On the held-out MGEX product the distance-structured coherence replicates (λ ≈ 1,862 km), while the anisotropy and primary orbital-velocity metrics do not replicate robustly. In-sample, a free-phase annual sinusoid is preferred over the velocity template (ΔAIC = 11.2); the signature is therefore reported as an annual modulation phased near the apsides. Observed patterns are compatible with key TEP expectations: the recovered spatial correlation length (azimuth-averaged isotropic exponential λ = 3,210 ± 389 km, with cross-sector directional dispersion λ̄_T = 4,201 ± 1,967 km across eight azimuthal sectors) lies within the pre-specified 1,000–10,000 km search window (Paper 0 §10.E); across products the fitted scale is conditioned by clock-product construction and estimator settings (reported product-level values ~1.0–4.8 × 10³ km; MGEX λ = 1,862 ± 155 km, Paper 14, Step 3.5), and the same band-ordered profile is recovered in each product; the IGS-final values are consistent with the geometric saturation radius R_T(M_⊕) ≈ 4,150 km, which is itself calibrated on this scale (Paper 6), so this is a consistency statement rather than an independent test. Model discrimination is primarily established through kernel-form selection (Gaussian and squared-exponential kernels preferred by AIC/BIC with R² = 0.965, with exponential ΔAIC = 12.8 and R² = 0.945 relative to Gaussian, strongly ruling out scale-free power-law forms with ΔAIC > 30), velocity-dependent anisotropy (r = -0.888), and geometric alignment (EW/NS = 2.16). Here “kernel” denotes the parametric family fitted to the pair-correlation decay with station separation, and “anisotropy” denotes the directional dependence of correlation strength, quantified by the EW/NS amplitude ratio and its orbital modulation. The absence of GM/r² scaling is physically consistent with the datum-projection mechanism in which common-mode components are absorbed by GNSS estimation while geometric information is transmitted; this mechanism requires validation via synthetic signal injection through the actual processing chain. Raw carrier-phase analysis, separately processed per-constellation tests, synthetic end-to-end injection, and independent external replication represent the critical next steps. The empirically derived spatial correlation length λ_T (the Temporal Topology covariance scale) is a GNSS-sector covariance scale obtained after environmental projection and processing transfer. It is not the screening operator S_Σ(E) itself and should not be identified numerically with response coefficients from other TEP channels. In the near-Earth environment, this correlation length acts as the macroscopic geometric proxy for the continuous saturation of Temporal Topology, anchoring the differential clock correlations without committing to specific subatomic microphysics. The primary result is 25.3-year aggregate consistency of distance-structured covariance and EW/NS anisotropy. The in-ecliptic orbital-phase direction, planetary event response, and nutation couplings are secondary covariance-structure signatures requiring held-out replication.
 license: CC-BY-4.0
 repository-code: https://github.com/matthewsmawfield/TEP-GNSS-II
 url: https://mlsmawfield.com/tep/gnss-ii

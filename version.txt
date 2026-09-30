@@ -1,12 +1,13 @@
-v0.20 (Cairo) — 13 September 2026 — Theoretical Reporting Corrections and Statistical Honesty
+v0.20 (Cairo) — 30 September 2026 — Theoretical Reporting Corrections, Statistical Honesty, and Planetary Reframing
 
-- Corrected theoretical reporting: metric prefactor (A → A²), exact scalar field
-  equation source, and conformal coupling definition aligned with Jakarta
-- Clarified that GNSS covariance measures open-path conformal Temporal Shear, not
-  synchronization non-integrability (conformal holonomy vanishes; disformal sector
-  reserved for closed-loop experiments)
-- Separated surrogate and parametric p-values throughout, removed the combined joint
-  p-value, and reframed the processing mechanism as a testable hypothesis rather than
-  a resolved explanation
-- Reframed CMB result as directional alignment with the dipole, not a speed-magnitude
-  measurement, and updated dates and metadata to August 13, 2026
+- Corrected theoretical reporting: metric prefactor (A → A²), exact scalar field equation source, and conformal coupling definition aligned with Jakarta
+- Clarified that GNSS covariance measures open-path conformal clock-sector covariance C_A, not synchronization non-integrability (conformal holonomy vanishes; disformal sector reserved for closed-loop experiments)
+- Corrected orbital sign convention in Discussion §4.1.2 to match §3.2.1: r = -0.888 means EW/NS decreases near perihelion (≈1.03) and increases near aphelion (≈1.51)
+- Corrected the celestial preferred direction: RA=6°, Dec=+4°, coincident with Earth's aphelion-velocity tangent (~6°); the CMB-apex template is anti-phase (r = -0.546) and no CMB-rest-frame detection is claimed
+- Directional search caveat: explicitly annotated p < 10⁻⁵ as an exploratory directional-rank statistic within the observed dataset, noting that global full-sky-search surrogate significance has not yet been evaluated
+- Cross-centre independence reframing: replaced claims of "three fundamentally independent software implementations" with software- and estimator-diverse corroboration within the shared IGS tracking ecosystem
+- Draconitic overclaim cleanup: removed "5/5 FALSIFIED" and "cosmic in origin"; reframed as 25.3-year suppression of stationary draconitic contaminants, leaving nonstationary orbit-model systematics open
+- Planetary-event channel reframing: 56/156 hits reclassified as descriptive estimator repeatability on the seasonal curve; event specificity reserved for the 40-event opposition subset (5.5× over random dates, p < 10⁻¹⁷); retained continuous planetary potential correlation (r = +0.116, p = 0.012)
+- Semiannual harmonic reframing: renamed to semiannual coherence component (R² = 0.904, p = 2.7×10⁻⁵), acknowledging compatibility with orbital second harmonics and nutation; removed post-hoc power calculations (§2.4.4)
+- Standardized MGEX correlation scale to λ = 1,862 ± 155 km and documented CODE 30-s clock product lineage (2000–2025)
+- Separated surrogate (p < 2×10⁻⁷, 0/5M) and autocorrelation-corrected parametric (p ≈ 2.6×10⁻⁴, N_eff ≈ 11) p-values throughout, removed the combined joint p-value, and updated all metadata and manuscript dates to 30 September 2026

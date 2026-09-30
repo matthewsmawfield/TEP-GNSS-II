@@ -19,6 +19,7 @@ import os
 import re
 from pathlib import Path
 import argparse
+import json
 import tempfile
 
 from compress_pdf import compress_pdf as _compress_pdf
@@ -93,7 +94,19 @@ def parse_citation_cff():
         return None
 
 
-def build_metadata(cff_data):
+def parse_modified_date():
+    """Read the current revision date from VERSION.json when available."""
+    version_file = Path(__file__).parent.parent.parent / 'VERSION.json'
+    if not version_file.exists():
+        return ''
+
+    try:
+        return str(json.loads(version_file.read_text()).get('date', ''))
+    except (OSError, ValueError, TypeError):
+        return ''
+
+
+def build_metadata(cff_data, modified_date=''):
     """Build PDF metadata dict from parsed CFF data."""
     title = cff_data.get('title', '')
 
@@ -148,7 +161,10 @@ def build_metadata(cff_data):
 
     if date_pdf:
         metadata['CreationDate'] = f'{date_pdf} 00:00:00'
-        metadata['ModifyDate'] = f'{date_pdf} 00:00:00'
+
+    modified_date_pdf = str(modified_date).replace('-', ':') if modified_date else date_pdf
+    if modified_date_pdf:
+        metadata['ModifyDate'] = f'{modified_date_pdf} 00:00:00'
 
     metadata['XMP-dc:Creator'] = author_name
     metadata['XMP-dc:Title'] = title
@@ -240,7 +256,7 @@ def main():
     # Load metadata from CITATION.cff
     cff_data = parse_citation_cff()
     if cff_data:
-        metadata = build_metadata(cff_data)
+        metadata = build_metadata(cff_data, parse_modified_date())
         print(f"Loaded metadata from CITATION.cff")
         print(f"  Title: {metadata.get('Title', 'N/A')[:60]}...")
     else:
