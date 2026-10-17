@@ -149,7 +149,7 @@ async function buildStaticSite() {
         
         console.log('✅ Static site built successfully!');
         console.log(`📁 Output: ${outputPath}`);
-        console.log(`📄 Markdown: 2-TEP-GNSS-II-${manifest.version.replace(/\s*\(([^)]*)\)/, '-$1')}.md (in root)`);
+        console.log(`📄 Markdown: B2-TEP-GNSS-II-${manifest.version.replace(/\s*\(([^)]*)\)/, '-$1')}.md (in root)`);
         console.log(`📊 Generated ${manifest.sections.length} sections`);
         console.log('🚀 Ready for deployment');
         

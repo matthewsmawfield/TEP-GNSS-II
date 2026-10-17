@@ -15,7 +15,7 @@
       <li>Annual orbital-velocity coupling</li>
       <li>Initial planetary-event responses</li>
       <li>Chandler-wobble hints</li>
-      <li>"Mesh dance" dynamics (i.e., the evolving spatial pattern of cross-station coherence, extended to 25 years)</li>
+      <li>Collective network dynamics (network covariance score, termed "mesh dance" in Paper 1, extended to 25 years)</li>
       <li>Cross-centre agreement (CODE/IGS/ESA)</li>
     </ul>
 
@@ -24,7 +24,7 @@
       <li><strong>In-ecliptic orbital-phase direction</strong>—identified via multi-resolution sky search (79,330 tested directions across four resolutions, with 65,341 at 1°), recovered at Earth's aphelion-velocity tangent with strong geometric discrimination against both the CMB-dipole and Solar-Apex directional templates</li>
       <li>Long-baseline stability confirmed across a 25.3-year baseline</li>
       <li>Long-period geophysical coupling (18.6-year lunar nutation: R² = 0.641 &plusmn; 0.10; 1.36 cycles observed—cycle-limited, detection priced by phase-permutation null p = 0.0016)</li>
-      <li>High-statistics planetary event survey (156 events, 56 significant; 13 hits in the 29 non-overlapping windows vs ~1.3 expected)</li>
+      <li>Matched-null outer-planet opposition validation (40-event opposition subset at 5.5× over random dates, p $\lt$ 10⁻¹⁷; accompanied by a 156-event baseline pulse-estimator audit)</li>
       <li>Stronger orbital-velocity tracking (r = −0.888, surrogate p $\lt$ 2×10⁻⁷)</li>
     </ul>
     <p style="font-size: 0.9em; color: #495773; margin-top: 10px;"><em>Trade-off:</em> Single-centre temporal depth (25 years) over multi-centre breadth, justified by Paper 1's established cross-centre reproducibility (R² = 0.92–0.97). This is Paper 2 in the TEP-GNSS series.</p>
@@ -58,7 +58,7 @@
 
     <div style="margin-bottom: 20px;">
       <h4 style="color: #495773; margin-bottom: 8px;">5. Planetary Event Responses</h4>
-      <p>56 of 156 planetary alignments show statistically significant responses (≥2σ), with 19 surviving family-wide Bonferroni correction (α = 0.05/156). Absolute coherence amplitudes range from 0.3% to 4.0% (median ≈1.1%), with normalized modulation depths of 36.7–85.1% and σ levels spanning 2.0σ to 7.0σ. Mercury shows the highest detection rate (34/80, 42.5%) including a 7.0σ event. Because adjacent ±120-day inference windows share the same coherence series, the effective independence count is smaller than 156: a maximal non-overlapping-window subset contains 29 events, of which 13 are significant against a null expectation of 1.3 (binomial tail p ≈ 10⁻¹⁰; Step 2.9). A matched-null control validates the 40-event outer-planet opposition subset at 5.5× over random dates (p $\lt$ 10⁻¹⁷), though unconstrained Gaussian fits and season-destroying nulls bound rather than prove single-event specificity. The absence of GM/r² scaling is consistent with the datum-projection mechanism: common-mode classical gravitational signatures are absorbed by GNSS datum estimation.</p>
+      <p>A matched-null control under a focused ±15-day model-free window validates the 40-event outer-planet opposition subset (Jupiter and Saturn) at 5.5× larger effect sizes than 155 random dates (Mann-Whitney p = 4.0×10⁻¹⁸, Cohen's d = 1.41), complemented by a continuous daily planetary-potential correlation (r = +0.116, autocorrelation-corrected p = 0.012). Across the broader 156-event alignment catalogue evaluated with an unconstrained ±120-day Gaussian pulse estimator, 56 events exceed 2σ (19 surviving family-wide Bonferroni correction at α = 0.05/156, and 13 hits across 29 non-overlapping windows), with coherence amplitudes of 0.3–4.0% (median ≈1.1%); as demonstrated by the season-preserving controls in Paper 3 (Step 2.6b), free-centre pulse fits on an autocorrelated seasonal curve reflect calendar-position sampling rather than single-event specificity, so the 156-event counts serve as a descriptive estimator baseline and a scaling-null control. The complete absence of GM/r² or GM/r³ scaling across all tested events is consistent with the datum-projection mechanism: common-mode classical gravitational signatures are absorbed by GNSS datum estimation.</p>
     </div>
 
     <div style="margin-bottom: 20px;">
@@ -71,9 +71,9 @@
     </div>
 
     <div>
-      <h4 style="color: #495773; margin-bottom: 8px;">7. Mesh Dance Dynamics</h4>
-      <p>Network exhibits coordinated "mesh dance" behavior (mesh coherence score = 0.582) with constructive interference
-      dominant across windows. This confirms long-baseline recovery of Paper 1's mesh dance findings (CODE: 0.624,
+      <h4 style="color: #495773; margin-bottom: 8px;">7. Collective Network Dynamics (Network Covariance Score)</h4>
+      <p>The network exhibits coordinated collective behavior (network covariance score = 0.582, termed "mesh dance" in Paper 1) with constructive interference
+      dominant across windows. This confirms long-baseline recovery of Paper 1's multi-centre network covariance findings (CODE: 0.624,
       IGS: 0.579, ESA: 0.602) over 25.3 years.</p>
     </div>
 
@@ -141,7 +141,7 @@
     <h3 style="color: #220126; margin-top: 0;">Conclusions</h3>
     
     <p style="line-height: 1.6;">
-      Seven convergent signatures—orbital velocity coupling (r = −0.888, surrogate p $\lt$ 2×10⁻⁷), the in-ecliptic orbital-phase direction (r = 0.746), the semiannual coherence component (R² = 0.904), 18.6-year nutation (R² = 0.641), 56 planetary event-window responses (catalogue descriptive; opposition subset null-validated), mesh dance dynamics, and persistent spatial anisotropy—provide multi-signature convergence. Because the orbital and semiannual signals share annual structure, their probabilities are not combined into a single joint p-value. Combined with 25.3-year aggregate consistency and Paper 1's multi-centre validation (R² = 0.92–0.97 across software-diverse products from three processing centres), these findings are consistent with systematic coupling in GNSS timing networks, though confirmation requires independent replication using different processing pipelines and constellations. Raw carrier-phase analysis and separately processed per-constellation tests represent essential next steps.
+      Seven convergent signatures—orbital velocity coupling (r = −0.888, surrogate p $\lt$ 2×10⁻⁷), the in-ecliptic orbital-phase direction (r = 0.746), the semiannual coherence component (R² = 0.904), 18.6-year nutation (R² = 0.641), null-validated outer-planet opposition responses (5.5× over matched random dates; 156-event free-centre catalogue descriptive), collective network dynamics (score = 0.582), and persistent spatial anisotropy—provide multi-signature convergence. Because the orbital and semiannual signals share annual structure, their probabilities are not combined into a single joint p-value. Combined with 25.3-year aggregate consistency and Paper 1's multi-centre validation (R² = 0.92–0.97 across software-diverse products from three processing centres), these findings are consistent with systematic coupling in GNSS timing networks, though confirmation requires independent replication using different processing pipelines and constellations. Raw carrier-phase analysis and separately processed per-constellation tests represent essential next steps.
     </p>
   </div>
 </div>

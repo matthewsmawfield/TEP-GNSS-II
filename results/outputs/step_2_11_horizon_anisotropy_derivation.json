@@ -1,0 +1,18 @@
+{
+  "step": "2_11_horizon_anisotropy_derivation",
+  "description": "Zero-parameter spherical-horizon projection of Earth ecliptic velocity vector across the 474-station IGS network",
+  "n_stations": 474,
+  "mean_abs_latitude_deg": 36.87896835443038,
+  "median_abs_latitude_deg": 38.334,
+  "obliquity_deg": 23.4392911,
+  "formula": "R_EW_NS(phi) = (1 - 0.5 sin^2 eps) / (sin^2 eps cos^2 phi + (1 - 0.5 sin^2 eps) sin^2 phi)",
+  "predicted_ratio_at_mean_lat": 2.1272494364939503,
+  "observed_ew_ns_ratio": 2.16,
+  "relative_agreement_mean_lat_pct": 1.5162297919467536,
+  "predicted_ensemble_strength": 2.0246709072464126,
+  "observed_anisotropy_strength": 1.981,
+  "observed_anisotropy_strength_se": 0.23,
+  "tension_sigma_ensemble": 0.18987350976701103,
+  "predicted_annual_rms_modulation_fraction": 0.1271972532904468,
+  "observed_annual_modulation_fraction": 0.19
+}

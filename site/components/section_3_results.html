@@ -38,14 +38,14 @@
                     <td style="padding:8px; border:1px solid #495773;">p = 0.010 (permutation p = 0.0016)</td>
                 </tr>
                 <tr>
-                    <td style="padding:8px; border:1px solid #495773;">Mesh Dance Score</td>
+                    <td style="padding:8px; border:1px solid #495773;">Network Covariance Score</td>
                     <td style="padding:8px; border:1px solid #495773;">0.582 (3 components)</td>
                     <td style="padding:8px; border:1px solid #495773;">p $\lt$ 0.001</td>
                 </tr>
                 <tr style="background-color: rgba(73,87,115,0.03);">
-                    <td style="padding:8px; border:1px solid #495773;">Planetary Events (≥2σ)</td>
-                    <td style="padding:8px; border:1px solid #495773;">56/156 under free-centre statistic (30 ≥3σ)</td>
-                    <td style="padding:8px; border:1px solid #495773;">35.9% nominal detection rate; 19 Bonferroni/Holm, 38 BH-FDR, 28 BY-FDR survivors across all 156 tests; 13/29 hits among non-overlapping windows (null expectation 1.3, binomial p ≈ 10⁻¹⁰); counts descriptive — see §3.3 estimator caveats</td>
+                    <td style="padding:8px; border:1px solid #495773;">Planetary Alignment Coupling</td>
+                    <td style="padding:8px; border:1px solid #495773;">40-event opposition subset: 5.5× over random dates (p $\lt$ 10⁻¹⁷)</td>
+                    <td style="padding:8px; border:1px solid #495773;">Model-free ±15-day matched-null validation (Cohen's d = 1.41); continuous potential r = +0.116 (p = 0.012); broader 156-event free-centre scan (56/156 ≥2σ, 19 Bonferroni) descriptive of seasonal-curve sampling — see §3.3</td>
                 </tr>
             </tbody>
         </table>
@@ -578,11 +578,11 @@ The best-fit seasonal model has amplitude 0.24 about a mean of 1.274 (amplitude/
 <p><strong>Finding:</strong> Under the corrected orbital-velocity convention, the anisotropy modulation's best-fit direction is RA = 6°, Dec = +4° at 1° resolution (r = +0.746, permutation p $\lt$ 10⁻⁵, explaining R² = 55.7% of the variance) — 6° from Earth's orbital velocity tangent at aphelion, 162° from the CMB dipole, and 92° from the Solar Apex (r = 0.006, R² ≈ 0.003%). The CMB-dipole template anti-correlates (r = −0.546): the measured annual phase is anti-aligned with the dipole apex. The direction therefore encodes the heliocentric-orbital phase of the modulation rather than a cosmological rest frame, while the ~16,000× variance ratio over the Solar Apex excludes the galactic hypothesis outright. The finest 1° grid resolution (65,341 directions tested) refines the primary 5° grid scan (2,701 directions tested: r = 0.744, RA = 10°, Dec = +5°). This finding is a directional characterization of the same anisotropy-modulation series analyzed in §3.2.1–3.2.4, not an independent data stream (the dependence map is given in §4.1.6). The grid scan fixes background speed and uses a direction-only predictor, so it identifies a preferred direction but does not establish any physical speed scale (§2.3.5). Because Earth's orbital velocity is confined to the ecliptic plane, dot-product regression constrains the in-ecliptic annual phase projection rather than a unique three-dimensional vector — on the MGEX product the same scan is projection-degenerate (61 of 703 grid directions match or exceed the direct CMB-labelled template; CMB and nominal-best predictors correlate at r = 0.984; Paper 14, §4.4). The quoted p-value is a directional-rank statistic within the observed dataset; a global sky-search surrogate significance has not yet been computed.</p>
 
 <h3>3.3 Planetary Event Responses</h3>
-<p><strong>Objective</strong>: Test whether the coherence field responds to transient gravitational configurations (Claim D, secondary evidence).</p>
-<p><strong>Note</strong>: A phenomenological anomaly is reported in processed GNSS clock products: coherence modulations that are statistically associated with planetary alignments. These observations are empirical findings in post-processed data and should not be directly interpreted as probes of physical gravitational coupling strength. Effect sizes (modulation depths) are processing-dependent and show no GM/r²-like scaling. Mechanistic interpretation (whether physical coupling, processing artifacts, or other) is deferred pending raw carrier-phase reanalysis. Two statistical caveats bound the catalogue-level claim: (i) the ±120-day Gaussian fit permits a free pulse centre, so on autocorrelated noise it can latch onto excursions displaced tens of days from the event; (ii) a date-shuffling null destroys the seasonal autocorrelation and therefore under-controls for calendar-position effects — the season-preserving controls of Paper 3 (Step 2.6b) demonstrate that, in the 3-year RINEX channel, the apparent event-rate excess is fully reproduced by same-day-of-year calendar twins. Catalogue detection counts are therefore reported as descriptive; the defensible continuous channel is the long-baseline correlation with the composite planetary field (§3.5.2). The multi-centre study tested a small, predeclared set and found 6/8 Bonferroni‑significant responses; that set is reproduced here in the present pipeline and then scaled to 156 events with dependence‑aware corrections.</p>
-<h4>3.3.1 Detection Statistics</h4>
-<p><strong>Inference policy:</strong> All planetary event detection counts and p-values follow the canonical policy in §2.3.3 (primary ±120-day window; robustness-only additional windows; multiplicity correction across the 156 primary-window event tests).</p>
-<p>An analysis of 156 planetary alignment events (oppositions/conjunctions) was performed using the ±120-day window with Gaussian pulse fitting. This yielded 56 statistically significant responses (≥2σ). Family-wide multiple-testing corrections were applied across all 156 tested events: 19 survive Bonferroni correction (α = 0.05/156 = 0.000321), 19 survive Holm step-down correction, 38 survive BH-FDR, and 28 survive dependence-aware BY-FDR. Under the complete null, only 0.05 Bonferroni survivors are expected. These counts characterize the catalogue under the free-centre pulse statistic; they quantify repeatability of the estimator rather than event-locked physics (see caveats above):</p>
+<p><strong>Objective</strong>: Test whether the coherence field responds to transient gravitational configurations and evaluate estimator specificity on the seasonal series (Claim D, secondary evidence).</p>
+<p><strong>Note</strong>: Planetary alignment testing in processed GNSS clock products separates into two distinct regimes: (1) a model-free ±15-day matched-null test on the 40 outer-planet opposition events (Jupiter and Saturn, 2000–2025), which validates event-locked specificity at 5.5× over 155 random dates (p = 4.0×10⁻¹⁸, Cohen's d = 1.41), complemented by the continuous planetary-potential correlation (§3.5.2, r = +0.116, p = 0.012); and (2) the broader 156-event alignment catalogue (including 80 rapid Mercury conjunctions) evaluated with an unconstrained ±120-day Gaussian pulse estimator. Two methodological properties govern the 156-event free-centre scan: (i) the ±120-day Gaussian fit permits a free pulse centre that can latch onto seasonal excursions displaced tens of days from the nominal alignment; and (ii) a date-shuffling null destroys seasonal autocorrelation and therefore under-controls for calendar-position sampling — as proven by the season-preserving controls of Paper 3 (Step 2.6b), where same-day-of-year calendar twins in non-event years reproduce the free-centre pulse rate. Accordingly, the 40-event outer-planet opposition test and continuous field correlation carry the primary planetary inference, while the 156-event free-centre scan is reported as a descriptive estimator baseline and as the testbed for the GM/r² and GM/r³ gravitational scaling null (§3.3.3).</p>
+<h4>3.3.1 Baseline Free-Centre Catalogue Audit (156 Events) and Matched-Null Validation</h4>
+<p><strong>Inference policy:</strong> All baseline catalogue counts follow the pre-specified policy in §2.3.3 (primary ±120-day window; robustness-only additional windows; multiplicity accounting across the 156 primary-window tests).</p>
+<p>Across the full 156-event alignment catalogue evaluated under the ±120-day free-centre Gaussian pulse estimator, 56 events exceed 2σ (19 meeting the nominal Bonferroni threshold α = 0.05/156 = 0.000321, 19 Holm step-down, 38 BH-FDR, and 28 dependence-aware BY-FDR). As noted above, these counts quantify the repeatability of the free-centre estimator on the seasonal coherence curve rather than discrete event-locked impulses:</p>
 
 <div style="overflow-x: auto; margin: 20px 0;">
     <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
@@ -716,35 +716,25 @@ The best-fit seasonal model has amplitude 0.24 about a mean of 1.274 (amplitude/
 </div>
 
 <div class="experimental-section" style="background-color: rgba(73, 87, 115, 0.05); border: 2px solid #495773; padding: 20px; margin: 20px 0;">
-    <h4 style="margin-top: 0; color: #220126;">Multiple Testing Survival</h4>
+    <h4 style="margin-top: 0; color: #220126;">Matched-Null Validation vs. Free-Centre Catalogue Multiplicity</h4>
     <ul style="line-height: 1.7;">
-        <li><strong>Bonferroni</strong> (α = 0.05/156 = 0.000321): 19/156 survive family-wise correction
+        <li><strong>Matched-Null Event Control (Primary Event-Specificity Test, Mann-Whitney U):</strong> 40 outer-planet oppositions vs 155 random dates — p = 4×10⁻¹⁸, Cohen's d = 1.41
             <ul style="margin-top: 5px; font-size: 0.95em;">
-                <li><em>Interpretation: Bonferroni controls family-wise error across all 156 tested events. 19 survivors vs 0.05 expected under the complete null—overwhelmingly significant.</em></li>
+                <li><em>Interpretation: Under the focused ±15-day model-free control (identical ±15-day window, identical min-pairs threshold), outer-planet oppositions produce 5.5× larger coherence changes than random dates, establishing event specificity for the 40-event opposition subset.</em></li>
             </ul>
         </li>
-        <li><strong>Holm step-down</strong> (FWER ≤ 0.05): 19/156 survive
+        <li><strong>Bonferroni / Holm step-down</strong> (α = 0.05/156 = 0.000321, FWER ≤ 0.05): 19/156 nominal survivors under the ±120-day free-centre pulse statistic
             <ul style="margin-top: 5px; font-size: 0.95em;">
-                <li><em>Interpretation: Holm is uniformly at least as powerful as Bonferroni while maintaining the same family-wise error guarantee. 19 events survive under both corrections.</em></li>
+                <li><em>Interpretation: Quantifies estimator repeatability on the seasonal series under an uncorrelated white-noise baseline; does not establish single-event locking across the 156-event catalogue because free pulse centres can latch onto seasonal excursions.</em></li>
             </ul>
         </li>
-        <li><strong>Benjamini-Hochberg FDR</strong> (q = 0.05): 38/156 survive standard FDR control
+        <li><strong>Benjamini-Hochberg (BH-FDR) &amp; Benjamini-Yekutieli (BY-FDR)</strong> (q = 0.05): 38/156 (BH) and 28/156 (BY) nominal survivors
             <ul style="margin-top: 5px; font-size: 0.95em;">
-                <li><em>Interpretation: BH-FDR controls expected false discovery rate across all 156 events. 38 survivors indicates robust detections under standard FDR.</em></li>
-            </ul>
-        </li>
-        <li><strong>Benjamini-Yekutieli (BY-FDR)</strong> (q = 0.05): 28/156 survive dependence-aware correction
-            <ul style="margin-top: 5px; font-size: 0.95em;">
-                <li><em>Interpretation: BY-FDR accounts for arbitrary dependence between tests (appropriate for temporally correlated orbital dynamics). 28 surviving events represents the most robust core dataset.</em></li>
-            </ul>
-        </li>
-        <li><strong>Null Event Control</strong> (Mann-Whitney U): Planetary effect sizes vs 155 random dates — p = 4×10⁻¹⁸, Cohen's d = 1.41
-            <ul style="margin-top: 5px; font-size: 0.95em;">
-                <li><em>Interpretation: For the 40-event outer-planet opposition subset under the ±15-day model-free control, planetary events produce 5.5× larger coherence changes than random dates. This matched-null comparison (identical ±15-day window, identical min-pairs threshold) confirms event specificity for that subset only; it does not extend to the full 156-event catalogue (see caveat below).</em></li>
+                <li><em>Interpretation: Descriptive multiplicity accounting for the free-centre estimator prior to season-preserving calendar-twin controls (Paper 3, Step 2.6b).</em></li>
             </ul>
         </li>
     </ul>
-    <p style="margin-top: 12px; font-size: 0.95em; font-style: italic;"><strong>Summary:</strong> The multiplicity corrections establish repeatability of the free-centre pulse estimator on this series, and the matched-null control validates event specificity for the 40-event opposition subset. Catalogue-wide event-locked inference additionally requires a season-preserving null: on the autocorrelated seasonal series, date-shuffled nulls under-control for calendar position, and free-centre Gaussian fits can latch onto off-event excursions tens of days from the event. The catalogue counts are accordingly reported as descriptive pending the season-preserving control applied in Paper 3 (Step 2.6b).</p>
+    <p style="margin-top: 12px; font-size: 0.95em; font-style: italic;"><strong>Summary:</strong> Event-locked specificity is established for the 40-event outer-planet opposition subset under the ±15-day model-free matched-null control, whereas the 156-event free-centre Gaussian catalogue counts reflect repeatable calendar-position sampling of the autocorrelated seasonal curve (as confirmed by the season-preserving controls in Paper 3, Step 2.6b).</p>
 </div>
 
 <div class="experimental-section" style="background-color: rgba(73, 87, 115, 0.05); border: 1px solid #495773; padding: 20px; margin: 20px 0; border-radius: 4px;">
@@ -866,7 +856,7 @@ The best-fit seasonal model has amplitude 0.24 about a mean of 1.274 (amplitude/
 
 <p><strong>Potential Impact:</strong> If analysis centres detect and partially correct for planetary gravitational effects without recognizing their physical origin, observed amplitudes could represent residuals from incomplete correction rather than the full physical effect.</p>
 
-<p><strong>Critical Next Step:</strong> Raw carrier phase analysis is essential to distinguish between genuine gravitational coupling and processing artifacts. The statistical significance of detections (σ levels, R² values) remains valid, but absolute amplitude estimates require validation with raw observations under independent minimal processing.</p>
+<p><strong>Critical Next Step:</strong> Building on the raw-RINEX pseudorange confirmation (Paper 3) and synthetic injection / product-conditioned kernel controls (Paper 1 Steps 3.9, 5.1, 5.2), raw carrier-phase analysis provides the next discriminator between genuine gravitational coupling and processing conditioning. The statistical significance of detections (σ levels, R² values) remains valid, while absolute amplitude estimates are further testable with raw carrier-phase observations under independent minimal processing.</p>
 
 <h4>3.3.4 Modulation Depth Analysis</h4>
 <p><strong>Methodology:</strong> Modulation depth quantifies the relative amplitude of the Gaussian pulse as a fraction of total signal: modulation_depth = |amplitude| / (|baseline| + |amplitude|) × 100%. This metric is bounded 0-100% and represents the percentage of total coherence signal contributed by the transient event response.</p>
@@ -982,13 +972,13 @@ The best-fit seasonal model has amplitude 0.24 about a mean of 1.274 (amplitude/
 <p><strong>Description:</strong> Maximum lunar declination (±28.7°)</p>
 <p><strong>Significance:</strong> Not significant</p>
 <p><strong>Finding</strong>: No significant Lunar Standstill signals detected.</p>
-<h3>3.5 Network-Wide Phenomena ("Mesh Dance")</h3>
-<p><strong>Objective</strong>: Replicate the multi-centre study's network coordination finding (mesh score = 0.58-0.62 across CODE/IGS/ESA) over 25 years to test whether global coherence is consistently recovered or degrades over multi-decade timescales (Claim F).</p>
+<h3>3.5 Collective Network Dynamics (Network Covariance Score)</h3>
+<p><strong>Objective</strong>: Replicate the multi-centre study's network coordination finding (network covariance score = 0.58-0.62 across CODE/IGS/ESA) over 25 years to test whether global coherence is consistently recovered or degrades over multi-decade timescales (Claim F).</p>
 
 <p><strong>Why Network Coherence Matters:</strong> If GNSS clock correlations were driven primarily by independent, station-specific effects (equipment noise, local multipath), the network would show incoherent, spatially random patterns. A coherence index of 0.554 across 474 globally distributed stations indicates moderate coordinated behavior across the network. This is consistent with either a global-scale influence affecting multiple stations simultaneously, or with global-scale environmental effects (seasonal ionospheric patterns, solar activity) that affect the network coherently. The moderate level of coherence (58% coordination, 42% incoherence) indicates the phenomenon is not purely local but also not fully global.</p>
 
-<h4>3.5.1 "Mesh Dance" Dynamics</h4>
-<p>Following the multi-centre study's terminology, network-wide coordination (referred to metaphorically as the "mesh dance") was analyzed across 102 non-overlapping 90-day windows (104 pipeline bins spanning days 0 to 9,270+ from the January 1, 2000 epoch through June 30, 2025). This analysis quantifies global coherence as a unified detector system through individual component metrics:</p>
+<h4>3.5.1 Network Covariance Components</h4>
+<p>Following the multi-centre study's methodology, collective network coordination (termed the "mesh dance" score in Paper 1 pipeline outputs) was analyzed across 102 non-overlapping 90-day windows (104 pipeline bins spanning days 0 to 9,270+ from the January 1, 2000 epoch through June 30, 2025). This analysis quantifies global coherence as a unified detector system through individual component metrics:</p>
 
 <div style="overflow-x: auto; margin: 20px 0;">
     <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
@@ -1021,7 +1011,7 @@ The best-fit seasonal model has amplitude 0.24 about a mean of 1.274 (amplitude/
             </tr>
             <tr style="background-color: rgba(73, 87, 115, 0.03);">
                 <td style="padding: 8px; border: 1px solid #495773;"><strong>Overall Score</strong></td>
-                <td style="padding: 8px; border: 1px solid #495773;">Mesh Dance Score</td>
+                <td style="padding: 8px; border: 1px solid #495773;">Network Covariance Score</td>
                 <td style="padding: 8px; border: 1px solid #495773;">0.582</td>
                 <td style="padding: 8px; border: 1px solid #495773;">Composite coordination metric</td>
             </tr>
@@ -1030,17 +1020,17 @@ The best-fit seasonal model has amplitude 0.24 about a mean of 1.274 (amplitude/
 </div>
 
 <div style="background-color: rgba(240,248,255,0.6); border: 1px solid #4682B4; padding: 15px; margin: 15px 0; border-radius: 4px; font-size: 13px;">
-  <strong>What the "Mesh Dance" Physically Represents</strong><br>
+  <strong>Physical Interpretation of the Network Covariance Components</strong><br>
   <br>
-  Like a pirouetting ballerina maintaining her pose, the global network holds synchronization while the correlation pattern rotates through its geometry.<br>
+  Across the global station array, the network maintains a stable mean phase-synchronization baseline while the principal axis of spatial covariance rotates through the station geometry over the orbital cycle.<br>
   <br>
-  <strong>Base Mesh Coherence (0.582):</strong> The average "tightness" of synchronization—how well 474 stations maintain phase alignment. A score of 0.58 means ~58% coordinated, ~42% incoherent. This baseline persists stably across 25 years.<br>
+  <strong>Base Mesh Coherence (0.582):</strong> The mean network phase synchronization across 474 stations (~58% coherent variance vs ~42% incoherent background), which remains stationary over the 25.3-year baseline.<br>
   <br>
-  <strong>Spiral Motion:</strong> The correlation structure rotates through the network geometry as Earth orbits. Station pairs that are strongly correlated at Phase 0° become weakly correlated at Phase 180°, and vice versa—like a rotating spotlight sweeping through the network, the coherence pattern shape-shifts while the average remains stable.<br>
+  <strong>Spiral Motion:</strong> The directional correlation structure rotates through the network geometry as Earth orbits. Station pairs that are strongly correlated at orbital phase 0° become weakly correlated at phase 180°, and vice versa, shifting the spatial covariance distribution while preserving the global mean.<br>
   <br>
-  <strong>Collective Oscillation:</strong> The uniformity of synchronization modulates: sometimes the network is homogeneously coherent (all pairs synchronized similarly), other times heterogeneous (some pairs tight, others loose). This modulation in uniformity—not the average coherence—responds to planetary influence (r = 0.116, autocorrelation-corrected p = 0.012 with N_eff ≈ 472; raw uncorrected p = 3.69 × 10⁻²⁹).<br>
+  <strong>Collective Oscillation:</strong> The spatial uniformity of synchronization modulates over time between homogeneous network-wide coherence and greater inter-pair dispersion. This variance modulation—rather than the mean coherence—couples weakly to the composite planetary potential (r = 0.116, autocorrelation-corrected p = 0.012 with N_eff ≈ 472; raw uncorrected p = 3.69 × 10⁻²⁹).<br>
   <br>
-  The composite score (0.582) captures this choreography: a spinning correlation pattern that shape-shifts in response to gravitational configurations.
+  The composite network covariance score (0.582) summarizes this stationary baseline and its rotational and variance modulations.
 </div>
 
 <ul>
@@ -1049,7 +1039,7 @@ The best-fit seasonal model has amplitude 0.24 about a mean of 1.274 (amplitude/
   <li><b>Leave-one-station-out stability:</b> Effect persists with any single station removed</li>
 </ul>
 
-<p><strong>Finding</strong>: The network exhibits globally coordinated behavior with "mesh dance" score = 0.582 (p $\lt$ 0.001 vs spatially shuffled null), supporting Claim F. This is consistent with the multi-centre study's range (CODE: 0.624, IGS: 0.579, ESA: 0.602) and confirms long-baseline recovery of "mesh dance" dynamics over 25.3 years. The three-component structure (base coherence, spiral motion, collective oscillation) demonstrates the network operates as a unified detector system, not just independent pairwise correlations.</p>
+<p><strong>Finding</strong>: The network exhibits globally coordinated behavior with a network covariance score = 0.582 (p $\lt$ 0.001 vs spatially shuffled null), supporting Claim F. This is consistent with the multi-centre study's range (CODE: 0.624, IGS: 0.579, ESA: 0.602) and confirms long-baseline recovery of collective network dynamics over 25.3 years. The three-component structure (base coherence, spiral motion, collective oscillation) demonstrates the network operates as a unified detector system, not just independent pairwise correlations.</p>
 
 <div style="margin: 30px 0; text-align: center;">
   <img src="figures/step_2_2_longspan_code_25year_timeseries.png" alt="25-Year Temporal Evolution of Global Coherence" style="max-width: 100%; height: auto; border: 1px solid #ddd; padding: 10px; background: white;">
@@ -1127,9 +1117,9 @@ The best-fit seasonal model has amplitude 0.24 about a mean of 1.274 (amplitude/
       <td>§3.2</td>
     </tr>
     <tr>
-      <td><strong>Planetary Event Responses</strong></td>
-      <td>Detected</td>
-      <td>56 significant (≥2σ), 19 Bonferroni-significant under free-centre statistic; 40-event opposition subset null-validated</td>
+      <td><strong>Planetary Alignment Responses</strong></td>
+      <td>Detected (Opposition Subset)</td>
+      <td>40-event opposition subset validated at 5.5× over random dates (p $\lt$ 10⁻¹⁷); 156-event free-centre scan (56/156 ≥2σ) descriptive</td>
       <td>§3.3</td>
     </tr>
     <tr>
@@ -1139,7 +1129,7 @@ The best-fit seasonal model has amplitude 0.24 about a mean of 1.274 (amplitude/
       <td>§3.4.1</td>
     </tr>
     <tr>
-      <td><strong>Mesh Dance (Network Coherence)</strong></td>
+      <td><strong>Network Covariance Score (Collective Coherence)</strong></td>
       <td>Detected</td>
       <td>Score = 0.582, p $\lt$ 0.001</td>
       <td>§3.5</td>

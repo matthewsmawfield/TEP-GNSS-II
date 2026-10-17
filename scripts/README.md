@@ -21,7 +21,7 @@ pyproj, statsmodels, scikit-learn, cartopy, h5py, pyarrow.
 ### Full pipeline (Steps 1.1 -> 2.2)
 
 ```bash
-cd "/Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-GNSS-II"
+cd "TEP-GNSS-II"
 python scripts/steps/code_longspan_steps_1_1_to_2_2.py \
     --namespace code_longspan_2000_2025 \
     --date-start 2000-03-01 \

@@ -3,7 +3,7 @@
 **Publication website for TEP-GNSS-II (Paper 2)**
 
 **Author:** Matthew Lukin Smawfield  
-**Version:** v0.20 (Cairo)  
+**Version:** v0.21 (Cairo)  
 **Date:** 29 September 2026
 **Status:** Preprint
 

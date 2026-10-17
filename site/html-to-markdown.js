@@ -294,7 +294,7 @@ class HTMLToMarkdownConverter {
             .replace(/<[^>]+>/g, '')
             .replace(/^Version:\s*/i, '')
             .replace(/\n/g, ' ')
-            .trim() : 'v0.20 (Cairo)';
+            .trim() : 'v0.21 (Cairo)';
 
         const dateMatch = html.match(/<div[^>]*class=["'][^"']*date[^"']*["'][^>]*>(.*?)<\/div>/i);
         const date = dateMatch ? dateMatch[1]
@@ -365,7 +365,7 @@ class HTMLToMarkdownConverter {
             const versionMatch = metadata.version.match(/v([\d.]+)\s*\(([^)]+)\)/);
             const versionNum = versionMatch ? versionMatch[1] : '0.17';
             const codename = versionMatch ? versionMatch[2] : 'Cairo';
-            const outputFilename = `2-TEP-GNSS-II-v${versionNum}-${codename}.md`;
+            const outputFilename = `B2-TEP-GNSS-II-v${versionNum}-${codename}.md`;
             const outputPath = path.join(__dirname, '..', outputFilename);
             fs.writeFileSync(outputPath, markdown, 'utf8');
 

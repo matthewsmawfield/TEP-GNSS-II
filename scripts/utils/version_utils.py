@@ -58,7 +58,7 @@ def get_zenodo_record():
     return version_data.get('zenodo_record', '17517141')
 
 def get_pdf_filename():
-    """Get PDF filename (e.g., '2-TEP-GNSS-II-v0.19-Dubai.pdf')"""
+    """Get PDF filename (e.g., 'B2-TEP-GNSS-II-v0.21-Cairo.pdf')"""
     version_data = get_version_info()
     return version_data.get('pdf_filename', f'2-TEP-GNSS-II-v{get_version_number()}-{get_codename()}.pdf')
 

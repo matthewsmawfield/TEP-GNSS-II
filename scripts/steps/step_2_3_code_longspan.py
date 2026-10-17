@@ -11,7 +11,7 @@ from astropy.time import Time
 import astropy.units as u
 
 # Configure paths
-BASE_DIR = "/Users/matthewsmawfield/www/TEP-GNSS"
+BASE_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "TEP-GNSS")
 RESULTS_DIR = os.path.join(BASE_DIR, "results/outputs/code_longspan")
 FIGURES_DIR = os.path.join(BASE_DIR, "results/figures")
 INPUT_FILE = os.path.join(RESULTS_DIR, "step_2_2_geospatial_temporal_analysis_code.json")

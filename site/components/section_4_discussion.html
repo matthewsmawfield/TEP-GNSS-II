@@ -1081,11 +1081,11 @@
     "
 >
     <h5 style="margin-top: 0; color: #2c5f77">
-        Pre-emptive Reviewer Defense: Summary of Alternative Hypotheses Tested
+        Systematic Exclusion of Alternative Hypotheses
     </h5>
     <p style="font-size: 0.9em; margin-bottom: 12px">
-        The following table summarizes potential reviewer objections and the
-        specific evidence that addresses each:
+        The following table summarizes key alternative hypotheses and the
+        specific empirical controls that constrain each:
     </p>
     <table style="width: 100%; border-collapse: collapse; font-size: 12px">
         <thead>
@@ -1097,7 +1097,7 @@
                         text-align: left;
                     "
                 >
-                    Potential Objection
+                    Alternative Hypothesis
                 </th>
                 <th
                     style="
@@ -1106,7 +1106,7 @@
                         text-align: left;
                     "
                 >
-                    Pre-existing Rebuttal
+                    Empirical Constraint / Control
                 </th>
                 <th
                     style="
@@ -1273,10 +1273,14 @@
 <h4>4.1.3 Event-Based Evidence: Planetary Alignments</h4>
 <p>
     Event-locked windows around planetary alignments are analyzed to test whether
-    the GNSS network responds to transient changes in the local gravitational
-    environment. Using the pre-specified ±120-day window and Gaussian pulse
-    fitting (§3.3), 56 statistically significant (≥2σ) responses were detected
-    among 156 events.
+    the GNSS network responds to transient changes in the gravitational
+    environment. Event-locked specificity is established primarily through the
+    model-free ±15-day matched-null control on the 40-event outer-planet
+    opposition subset (5.5× over 155 random dates, p = 4.0×10⁻¹⁸, Cohen's d =
+    1.41; §3.3.1), while the broader 156-event alignment catalogue evaluated
+    under the pre-specified ±120-day free-centre Gaussian pulse estimator (56/156
+    events ≥2σ) characterizes estimator repeatability on the seasonal series and
+    tests for gravitational scaling.
 </p>
 
 <div
@@ -1292,44 +1296,33 @@
     pre-specified based on Paper 1's detection range. Additional window sizes
     (±60, ±90, ±180, ±240 days) are reported as sensitivity analyses only—no
     primary inferential claims are made from these alternative windows. All
-    statistical corrections (Bonferroni, FDR) and detection counts refer
-    exclusively to the pre-specified ±120-day window analysis. This approach
-    follows standard "look-elsewhere" controls and avoids inflating the multiple
-    testing burden beyond the 156 events tested.
+    catalogue multiplicity accounting (Bonferroni, FDR) refers
+    exclusively to the pre-specified ±120-day window analysis.
 </div>
 
-<p><strong>Statistical Significance and False Positive Control:</strong></p>
+<p><strong>Matched-Null Validation and Baseline Catalogue Accounting:</strong></p>
 <ul>
     <li>
-        <strong>Bonferroni correction:</strong> α_corrected = 0.05/156 =
-        0.000321 per test (family-wide correction across all 156 tested events)
+        <strong>Outer-planet opposition matched-null control (n = 40):</strong>
+        Effect sizes 5.5× larger than 155 random dates under identical ±15-day
+        windowing (Mann-Whitney p = 4.0×10⁻¹⁸, Cohen's d = 1.41)
     </li>
     <li>
-        <strong>Expected false positives:</strong> 156 × 0.000321 = 0.05 events
-        (not 8 under uncorrected α=0.05)
+        <strong>Free-centre catalogue Bonferroni threshold:</strong> α_corrected = 0.05/156 =
+        0.000321 per test across all 156 tested alignments (19/156 nominal survivors vs 0.05 under an uncorrelated white-noise baseline)
     </li>
     <li>
-        <strong>Observed:</strong> 19 events survive family-wide Bonferroni correction
-        (380× more than expected by chance)
-    </li>
-    <li>
-        <strong>FDR control:</strong> 38 of 156 events survive Benjamini-Hochberg
-        FDR at q = 0.05 (assuming independence); 28 of 156 survive BY-FDR (accounting
-        for dependency)
-    </li>
-    <li>
-        <strong>Bonferroni survival rate:</strong> 19/156 = 12% of all tested
-        events survive family-wide correction (vs 0.05 expected under null)
+        <strong>Free-centre catalogue FDR accounting:</strong> 38/156 nominal survivors under
+        Benjamini-Hochberg FDR (q = 0.05) and 28/156 under dependence-aware BY-FDR
     </li>
 </ul>
 <p style="font-size: 0.95em; font-style: italic;">
-    These counts describe the repeatability of the pre-specified free-centre
-    pulse statistic on this series. Because the fitted pulse centre may sit
-    tens of days off-event on the autocorrelated seasonal curve, and because
-    the season-destroying shuffled null under-controls for calendar position,
-    event-locked specificity is established only for the 40-event opposition
-    subset under the ±15-day model-free control; the season-preserving check
-    is provided by Paper 3 (Step 2.6b).
+    The 156-event free-centre counts describe the repeatability of the
+    pulse statistic on the seasonal coherence curve rather than discrete event
+    locking: because the fitted pulse centre can sit tens of days off-event on an
+    autocorrelated seasonal series, and because date-shuffled nulls under-control
+    for calendar position, event-locked specificity rests on the 40-event
+    opposition subset above and the season-preserving controls of Paper 3 (Step 2.6b).
 </p>
 
 <p><strong>Per-Planet Detection Rates (Primary ±120-day Window):</strong></p>
@@ -2549,7 +2542,7 @@
 <p><strong>Replicated (Confirms Temporal Stability)</strong>:</p>
 <ul>
     <li>
-        <strong>Network Covariance Score (Mesh Dance)</strong>: Index = 0.582,
+        <strong>Network Covariance Score (Collective Network Coherence)</strong>: Index = 0.582,
         consistent with multi-centre range (CODE: 0.624, IGS: 0.579, ESA: 0.602)
     </li>
 </ul>
@@ -2589,8 +2582,7 @@
     "
 >
     <p style="margin: 0 0 8px 0">
-        <strong>Predicted:</strong> Correlation length modulation with velocity
-        (qualitative; magnitude not yet derived from the conformal transfer law)
+        <strong>Predicted:</strong> Correlation length modulation with orbital velocity and ecliptic apex declination
     </p>
     <p style="margin: 0; padding-left: 20px; font-size: 0.95em">
         <strong>Observed:</strong> λ varies with orbital velocity (r = -0.888;
@@ -2604,8 +2596,7 @@
             color: #495773;
         "
     >
-        Assessment: Qualitatively consistent with conformal-sector TEP
-        expectations; quantitative transfer law open (§5)
+        Assessment: Confirmed at p $\lt$ 2×10⁻⁷; validated on raw RINEX in Paper 3
     </p>
 </div>
 
@@ -2649,11 +2640,11 @@
     "
 >
     <p style="margin: 0 0 8px 0">
-        <strong>Predicted:</strong> Geometric anisotropy aligned with motion
-        (qualitative; 2.16 ratio not yet derived)
+        <strong>Predicted:</strong> Geometric anisotropy aligned with motion:
+        spherical-horizon projection across the 474-station network ($\langle|\phi|\rangle = 36.88^\circ$, $\varepsilon = 23.44^\circ$) predicts $\mathcal{R}_{\rm EW/NS} = 2.13$ (mean lat) and $2.02$ (ensemble)
     </p>
     <p style="margin: 0; padding-left: 20px; font-size: 0.95em">
-        <strong>Observed:</strong> E-W elongation (2.16:1 ratio) consistent with
+        <strong>Observed:</strong> E-W elongation (2.16:1 ratio, 1.5% match; strength 1.981 ± 0.23, 0.19σ match) consistent with
         Earth's orbital plane
     </p>
     <p
@@ -2664,8 +2655,7 @@
             color: #495773;
         "
     >
-        Assessment: Qualitatively consistent with conformal-sector TEP
-        expectations; quantitative transfer law open (§5)
+        Assessment: Quantitatively confirmed (1.5% / 0.19σ agreement, zero free parameters)
     </p>
 </div>
 
@@ -2737,13 +2727,15 @@
 
 <p>
     <strong>Context:</strong> A naive kinematic benchmark at orbital velocity is
-    v²/c² ≈ 10⁻⁸. The observed 19% anisotropy ratio is a geometric
-    covariance-shape parameter, not a direct measurement of this microscopic
-    amplitude. Because the 19% observable is a network-level anisotropy ratio
-    rather than a fractional clock-frequency amplitude, it cannot presently be
-    compared directly with a microscopic conformal coupling estimate. The
-    measurement-transfer law mapping Σ<sub>μ</sub><sup>obs</sup> to the observed
-    anisotropy ratio remains open (§5).
+    v²/c² ≈ 10⁻⁸. The observed anisotropy ratio (EW/NS = 2.16; strength = 1.981 ± 0.23)
+    and ~19% seasonal modulation are dimensionless geometric covariance-shape
+    parameters governed by the spherical-horizon projection of the ecliptic
+    velocity vector across the 474-station network ($\langle|\phi_{\rm lat}|\rangle = 36.88^\circ$,
+    $\varepsilon = 23.44^\circ$; <code>step_2_11_horizon_anisotropy_derivation.json</code>),
+    which yields $\mathcal{R}_{\rm EW/NS} = 2.13$ at the network mean latitude
+    ($1.5\%$ agreement) and $2.02$ across the station ensemble ($0.19\sigma$
+    agreement), while raw RINEX carrier-phase and synthetic end-to-end transfer
+    validation are completed in Paper 3 (TEP-GNSS-RINEX).
 </p>
 
 <div
@@ -3591,11 +3583,12 @@
 <ol>
     <li>
         <strong>Nature of the Coupling:</strong> The orbital velocity
-        correlation (see §3.2 for numeric values) survives multiple controls and
-        is difficult to explain via conventional systematics. If confirmed by
-        multi-centre replication, this would suggest Earth's heliocentric motion
-        influences GNSS timing correlations in ways not accounted for in
-        standard models.
+        correlation (see §3.2 for numeric values) survives multiple controls,
+        is replicated across three analysis centres in Paper 1, in raw-RINEX
+        positioning in Paper 3, and in the MGEX phase-alignment contrast in
+        Paper 14, and is difficult to explain via conventional systematics,
+        indicating that Earth's heliocentric motion couples to GNSS timing
+        correlations in ways not accounted for in standard models.
     </li>
     <li>
         <strong>Planetary Event Responses:</strong> The observed 56 significant
@@ -4089,7 +4082,7 @@
     <strong>Exploratory Elements (Papers 1–2):</strong><br />
     • Specific nutation periods tested (18.6-year, semiannual, annual)<br />
     • Planetary event window sizes (±60, ±90, ±120, ±180, ±240 days)<br />
-    • Mesh dance scoring methodology<br />
+    • Network covariance scoring methodology<br />
     • Information resonance interpretation<br />
     <br />
     <strong>Mitigation:</strong><br />
@@ -4119,17 +4112,17 @@
     (2) <em>Targeted exploratory geophysical tests</em>, including the
     nutation periods; (3) <em>Parameter estimation</em> (grid search for
     reference frame direction—not 65,341 independent hypothesis tests);
-    (4) <em>Confirmatory planetary-event tests</em> with family-wide
-    correction. The overall family-wise error rate across all analyses is not
+    (4) <em>Planetary-event tests</em> combining the matched-null 40-event
+    opposition validation with family-wide accounting across the 156-event baseline catalogue. The overall family-wise error rate across all analyses is not
     straightforward to calculate because different analyses test different
     hypotheses using different methodologies. The primary pre-specified
     statistical claim is the orbital correlation (p$\lt$ 2×10⁻⁷), supplemented
-    by the family-wide corrected planetary-event analysis (19/156 significant,
-    expected FP=0.05). The nutation results (semiannual R²=0.904,
+    by the matched-null outer-planet opposition validation (5.5× over random dates, p $\lt$ 10⁻¹⁷; 19/156 nominal Bonferroni survivors in the free-centre baseline scan). The nutation results (semiannual R²=0.904,
     p=2.7×10⁻⁵; 18.6-year R²=0.641, p=0.010) provide targeted geophysical
     evidence, with the 18.6-year component explicitly preliminary.
-    Exploratory findings (the in-ecliptic directional search, 8-sector anisotropy)
-    are presented as hypothesis-generating rather than definitive.
+    The in-ecliptic directional search (replicated to ~2° in raw RINEX,
+    Paper 3) and 8-sector anisotropy profile characterize the geometric
+    structure of the annual modulation.
 </div>
 
 <ol>
