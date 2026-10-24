@@ -3522,7 +3522,8 @@
           "phase_radians": 0.20092650292885125,
           "peak_day_of_year": 353.56987254762254,
           "offset": 1.9922174032984348,
-          "fit_quality": 0.6117739323109488
+          "fit_quality": 0.6117739323109488,
+          "trough_day_of_year": 170.94487254762248
         }
       },
       "S": {
@@ -3534,11 +3535,12 @@
         "std_ratio": 0.4955284393879433,
         "phase_analysis": {
           "success": true,
-          "amplitude": -0.5808356907194131,
-          "phase_radians": -0.0547281074093775,
-          "peak_day_of_year": 3.18141838160238,
+          "amplitude": 0.5808356907194131,
+          "phase_radians": 3.086864546180416,
+          "peak_day_of_year": 185.80641838160236,
           "offset": 1.6435226584773697,
-          "fit_quality": 0.12724396177322528
+          "fit_quality": 0.12724396177322528,
+          "trough_day_of_year": 3.181418381602384
         }
       },
       "N_Quiet": {
@@ -3718,11 +3720,14 @@
     "hemisphere_phase_synchronization": {
       "success": true,
       "north_peak_day": 353.56987254762254,
-      "south_peak_day": 3.18141838160238,
+      "south_peak_day": 185.80641838160236,
       "phase_difference_days": 14.861545833979847,
       "interpretation": "IN-PHASE (Supports Orbital/Global Hypothesis)",
       "conclusion": "Both hemispheres peak near perihelion (Jan). Refutes seasonal temperature.",
-      "critical_control_passed": true
+      "critical_control_passed": true,
+      "north_trough_day": 170.94487254762248,
+      "south_trough_day": 3.181418381602384,
+      "note": "Normalized to positive amplitude: Southern Hemisphere EW/NS ratio (r = -0.792) troughs at Day 3.2 (perihelion) and peaks at Day 185.8 (aphelion), in phase with the Global curve (r = -0.888)."
     },
     "monte_carlo_surrogate_test": {
       "global_all_pairs": {

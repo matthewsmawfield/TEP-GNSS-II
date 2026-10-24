@@ -14,7 +14,7 @@
 </p>
 <p>
     The theoretical basis for this investigation is the Temporal Equivalence
-    Principle (TEP), in which matter and clocks couple universally to the canonical causal metric $\tilde g_{\mu\nu}=-A_{\rm loc}^2(u_{\rm grav}(\mathbf x))U_\mu U_\nu+A_{\rm sp}^2(u_{\rm drift}(t,\mathbf x))\Pi_{\mu\nu}+B(\phi)\Pi_\mu^\alpha\Pi_\nu^\beta\nabla_\alpha\phi\nabla_\beta\phi$ ($U_\mu\equiv-\nabla_\mu\bar\phi/\sqrt{2\bar X}$, $\Pi_{\mu\nu}=g_{\mu\nu}+U_\mu U_\nu$; Paper 0, §2.2, Step 80), predicting that motion through gravitational fields
+    Principle (TEP), in which matter and clocks couple universally to the canonical causal metric $\tilde g_{\mu\nu}=-A_{\rm loc}^2(u_{\rm grav}(\mathbf x))U_\mu U_\nu+A_{\rm sp}^2(u_{\rm drift}(t,\mathbf x))\Pi_{\mu\nu}+B(\phi)\bigl(\Pi_\mu^\alpha\Pi_\nu^\beta\nabla_\alpha\phi\nabla_\beta\phi-2(U\cdot\nabla\phi)U_{(\mu}\Pi_{\nu)}{}^\alpha\nabla_\alpha\phi\bigr)$ ($U_\mu\equiv-\nabla_\mu\bar\phi/\sqrt{2\bar X}$, $\Pi_{\mu\nu}=g_{\mu\nu}+U_\mu U_\nu$; Paper 0, §2.2, Step 80), predicting that motion through gravitational fields
     should induce measurable modulations in the correlation structure of
     distributed timing networks. Unlike classical relativistic effects that
     manifest as clock rate differences, TEP predicts that the
@@ -151,9 +151,12 @@
     <p>
         <strong>1. Action and Coupling:</strong> The scalar time field φ is
         governed by the Einstein-frame action, where the baseline action displays the
-        canonical kinetic form $X - V(\phi)$ and the operative non-canonical kinetic completion
-        $P(X,\phi) = X - V(\phi) + X|X|/\Lambda_X^4$ (Paper 0 §2.2) provides the screening mechanism
-        in high-acceleration regimes:
+        canonical kinetic form $X - V(\phi)$, the high-gradient unit-term benchmark is
+        $P(X,\phi) = X - V(\phi) + X|X|/\Lambda_X^4$, and the master action selects the
+        zero-free-parameter two-branch kinetic completion
+        $P(X,\phi) = -V(\phi) + \frac{2k}{3\Lambda_X^2}X|X|^{1/2} + \frac{X|X|}{\Lambda_X^4}$
+        ($P_{,X}(\xi) = k\sqrt{\xi} + 2\xi$, $k = 4\sqrt{2}\,g_t/a_0 \simeq 16.03$, Paper 0 §2.2 &amp; §7)
+        providing screening in high-acceleration regimes:
     </p>
     <div
         style="

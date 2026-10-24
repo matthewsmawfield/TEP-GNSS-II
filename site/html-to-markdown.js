@@ -294,7 +294,7 @@ class HTMLToMarkdownConverter {
             .replace(/<[^>]+>/g, '')
             .replace(/^Version:\s*/i, '')
             .replace(/\n/g, ' ')
-            .trim() : 'v0.21 (Cairo)';
+            .trim() : 'v0.22 (Cairo)';
 
         const dateMatch = html.match(/<div[^>]*class=["'][^"']*date[^"']*["'][^>]*>(.*?)<\/div>/i);
         const date = dateMatch ? dateMatch[1]

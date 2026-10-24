@@ -1,7 +1,7 @@
 # Global Time Echoes: 25-Year Analysis of CODE Precise Clock Products
 **Matthew Lukin Smawfield**
-Version: v0.21 (Cairo)
-First published: 3 November 2025 · Last updated: 17 October 2026
+Version: v0.22 (Cairo)
+First published: 3 November 2025 · Last updated: 24 October 2026
 DOI: 10.5281/zenodo.17517141
 
 ---
@@ -10,7 +10,7 @@ DOI: 10.5281/zenodo.17517141
 
 Analysis of 25.3 years of global GNSS timing data (165.2 million station-pair observations) documents persistent velocity-dependent correlations in atomic clock networks. Critically, this work proposes that standard GNSS processing algorithms, designed to remove energetic (common-mode) errors via datum constraints, inadvertently preserve the subtle, geometry-dependent (differential) correlations that are the focus of this work. Building on the multi-centre study's validation (R²=0.92-0.97 between CODE, IGS, ESA), the extended temporal baseline confirms long-baseline recovery and enables investigation of long-period geophysical phenomena inaccessible in shorter baselines.
 
-Seven convergent signatures are identified: (1) Spatial anisotropy persists with EW>NS (global EW/NS ratio=2.16, strength=1.981 ± 0.23 resampling SE, integrated 25.3-year aggregate), (2) anisotropy ratio correlates with orbital velocity (r=-0.888; surrogate p $\lt$ 2×10⁻⁷, 0/5M exceeded; t-test p≈2.6×10⁻⁴ with N_eff≈11) across a 25.3-year baseline with ≈19% annual geometric ratio modulation, (3) a multi-resolution full-sky directional search down to 1° resolution recovers a stable preferred direction at RA=6°, Dec=+4° (r=0.746; exploratory directional-rank p $\lt$ 10⁻⁵; global sky-search significance not yet evaluated) coincident with Earth's orbital velocity tangent at aphelion (~6°) and ~162° from the CMB dipole — a heliocentric-orbital-phase signature that excludes the Solar Apex template at ~16,000× variance ratio (R²=55.7% vs 0.003%), (4) planetary alignment coupling validated in the 40-event outer-planet opposition subset at 5.5× over matched random dates (p $\lt$ 10⁻¹⁷) alongside a continuous planetary-potential correlation (r = +0.116, p = 0.012), whereas the broader 156-event free-centre pulse scan (56/156 ≥2σ) reflects repeatable estimator behaviour on the seasonal curve, (5) preliminary coupling to 18.6-year lunar nutation (R²=0.641±0.10 over 1.36 cycles; permutation p=0.0016, single-cycle-dominated) and a semiannual coherence component (R²=0.904, p=2.7×10⁻⁵; permutation p=0.00027, peaked near the orbital apsides), (6) collective network covariance score (0.582) replicating the multi-centre range, and (7) null results for solar rotation (27-day) and lunar standstill consistent with selectivity for orbital-gravitational phenomena over surface features. The 19% modulation describes changes in the geometric shape of the correlation field (ratio of spatial correlation lengths), not clock frequency variations; individual clock-rate effects remain at standard GR-modelled fractional-frequency levels. On the held-out MGEX product the distance-structured coherence replicates (λ ≈ 1,862 km), while the anisotropy and primary orbital-velocity metrics do not replicate robustly. In-sample, a free-phase annual sinusoid is preferred over the velocity template (ΔAIC = 11.2); the signature is therefore reported as an annual modulation phased near the apsides.
+Seven convergent signatures are identified: (1) Spatial anisotropy persists with EW>NS (global EW/NS ratio=2.16, strength=1.981 ± 0.23 resampling SE, integrated 25.3-year aggregate), (2) anisotropy ratio correlates with orbital velocity (r=-0.888; surrogate p $\lt$ 2×10⁻⁷, 0/5M exceeded; t-test p≈2.6×10⁻⁴ with N_eff≈11) across a 25.3-year baseline with ≈19% annual geometric ratio modulation, (3) a multi-resolution full-sky directional search down to 1° resolution recovers a stable preferred direction at RA=6°, Dec=+4° (r=0.746; exploratory directional-rank p $\lt$ 10⁻⁵; global sky-search significance not yet evaluated) coincident with Earth's orbital velocity tangent at aphelion (~6°) and ~162° from the CMB dipole — a heliocentric-orbital-phase signature that excludes the Solar Apex template at ~16,000× variance ratio (R²=55.7% vs 0.003%), (4) planetary alignment coupling observed in the 40-event outer-planet opposition subset at 5.5× over matched random dates (p $\lt$ 10⁻¹⁷, pre-registered for held-out upcoming outer-planet oppositions) alongside a continuous planetary-potential correlation (r = +0.116, p = 0.012), whereas the broader 156-event free-centre pulse scan (56/156 ≥2σ) reflects repeatable estimator behaviour on the seasonal curve, (5) preliminary coupling to 18.6-year lunar nutation (R²=0.641±0.10 over 1.36 cycles; permutation p=0.0016, single-cycle-dominated) and a semiannual coherence component (R²=0.904, p=2.7×10⁻⁵; permutation p=0.00027, peaked near the orbital apsides), (6) collective network covariance score (0.582) replicating the multi-centre range, and (7) null results for solar rotation (27-day) and lunar standstill consistent with selectivity for orbital-gravitational phenomena over surface features. The 19% modulation describes changes in the geometric shape of the correlation field (ratio of spatial correlation lengths), not clock frequency variations; individual clock-rate effects remain at standard GR-modelled fractional-frequency levels. On the held-out MGEX product the distance-structured coherence replicates (λ ≈ 1,862 km), while the anisotropy and primary orbital-velocity metrics do not replicate robustly. In-sample, a free-phase annual sinusoid is preferred over the velocity template (ΔAIC = 11.2); the signature is therefore reported as an annual modulation phased near the apsides.
 
 Observed patterns are compatible with key TEP expectations: the recovered spatial correlation length (azimuth-averaged isotropic exponential $\lambda = 3,210 \pm 389$ km, with cross-sector directional dispersion $\bar{\lambda}_T = 4,201 \pm 1,967$ km across eight azimuthal sectors) lies within the pre-specified 1,000–10,000 km search window (Paper 0 §10.E); across products the fitted scale is conditioned by clock-product construction and estimator settings (reported product-level values ~1.0–4.8×10$^3$ km; MGEX $\lambda = 1,862 \pm 155$ km, Paper 14), with the same band-ordered profile recovered in each product and consistent with the geometric saturation radius $R_T(M_\oplus) \approx 4,150$ km calibrated on this scale (Paper 6). Model discrimination is primarily established through kernel-form selection (Gaussian and squared-exponential kernels preferred by AIC/BIC with $R^2 = 0.965$, exponential $\Delta$AIC = 12.8 and $R^2 = 0.945$, strongly ruling out scale-free power-law forms with $\Delta$AIC > 30), velocity-dependent anisotropy ($r = -0.888$), and geometric alignment (EW/NS = 2.16). The absence of GM/r² scaling is physically consistent with the datum-projection mechanism in which common-mode components are absorbed by GNSS estimation while differential geometric structure is transmitted (validated via synthetic signal injection and product-conditioned forward kernels in Paper 1, raw-RINEX pseudorange controls in Paper 3, and multi-GNSS MGEX product-error kernels in Paper 14). Raw carrier-phase analysis, separately processed per-constellation solutions, and independent external replication represent the critical next steps.
 
@@ -173,7 +173,7 @@ with high-stability oscillators phase-locked to satellite atomic clocks
 be sensitive to subtle relativistic effects (Ashby, 2003).
 
 The theoretical basis for this investigation is the Temporal Equivalence
-Principle (TEP), in which matter and clocks couple universally to the canonical causal metric $\tilde g_{\mu\nu}=-A_{\rm loc}^2(u_{\rm grav}(\mathbf x))U_\mu U_\nu+A_{\rm sp}^2(u_{\rm drift}(t,\mathbf x))\Pi_{\mu\nu}+B(\phi)\Pi_\mu^\alpha\Pi_\nu^\beta\nabla_\alpha\phi\nabla_\beta\phi$ ($U_\mu\equiv-\nabla_\mu\bar\phi/\sqrt{2\bar X}$, $\Pi_{\mu\nu}=g_{\mu\nu}+U_\mu U_\nu$; Paper 0, §2.2, Step 80), predicting that motion through gravitational fields
+Principle (TEP), in which matter and clocks couple universally to the canonical causal metric $\tilde g_{\mu\nu}=-A_{\rm loc}^2(u_{\rm grav}(\mathbf x))U_\mu U_\nu+A_{\rm sp}^2(u_{\rm drift}(t,\mathbf x))\Pi_{\mu\nu}+B(\phi)\bigl(\Pi_\mu^\alpha\Pi_\nu^\beta\nabla_\alpha\phi\nabla_\beta\phi-2(U\cdot\nabla\phi)U_{(\mu}\Pi_{\nu)}{}^\alpha\nabla_\alpha\phi\bigr)$ ($U_\mu\equiv-\nabla_\mu\bar\phi/\sqrt{2\bar X}$, $\Pi_{\mu\nu}=g_{\mu\nu}+U_\mu U_\nu$; Paper 0, §2.2, Step 80), predicting that motion through gravitational fields
 should induce measurable modulations in the correlation structure of
 distributed timing networks. Unlike classical relativistic effects that
 manifest as clock rate differences, TEP predicts that the
@@ -266,9 +266,12 @@ following explicit field equations:
 
 **1. Action and Coupling:** The scalar time field φ is
 governed by the Einstein-frame action, where the baseline action displays the
-canonical kinetic form $X - V(\phi)$ and the operative non-canonical kinetic completion
-$P(X,\phi) = X - V(\phi) + X|X|/\Lambda_X^4$ (Paper 0 §2.2) provides the screening mechanism
-in high-acceleration regimes:
+canonical kinetic form $X - V(\phi)$, the high-gradient unit-term benchmark is
+$P(X,\phi) = X - V(\phi) + X|X|/\Lambda_X^4$, and the master action selects the
+zero-free-parameter two-branch kinetic completion
+$P(X,\phi) = -V(\phi) + \frac{2k}{3\Lambda_X^2}X|X|^{1/2} + \frac{X|X|}{\Lambda_X^4}$
+($P_{,X}(\xi) = k\sqrt{\xi} + 2\xi$, $k = 4\sqrt{2}\,g_t/a_0 \simeq 16.03$, Paper 0 §2.2 & §7)
+providing screening in high-acceleration regimes:
 
 S = ∫ d⁴x √−g [ (MPl²/2)R − ½K(φ)(∂φ)² − V(φ) ] +
 Sm[ψ, ğμν]
@@ -1263,7 +1266,7 @@ This correlation survives multiple controls:
 
 #### 3.2.2 Physical Interpretation: Orbital Coupling
 
-**Status and Physical Interpretation:** Orbital velocity and Earth-Sun distance are physically coupled by Kepler's laws (r = −1.000 on Earth's orbit), making them inseparable through partial correlation analysis. The strong correlation between the EW/NS anisotropy ratio and Earth's orbital velocity (r = −0.888, p $\lt$ 2×10⁻⁷) provides direct evidence for orbital coupling. Hemisphere stratification (§3.2.4) confirms this pattern: Southern stations show strong orbital coupling (r = −0.79, p = 0.006) while Northern stations show weak correlation (r = +0.25, p = 0.49), with both hemispheres peaking within 15 days of perihelion (IN-PHASE). This identical calendar phasing directly falsifies the hypothesis that the correlation arises from hemisphere-local seasonal effects: a meteorological or hemisphere-scale ionospheric driver reverses sign between hemispheres and cannot produce in-phase perihelion locking on both. The 25.3-year baseline spans a full draconitic–solar beat cycle, cancelling orbit-repeat harmonics (|r| $\lt$ 0.15), and the 104-window series shows steady directional structure and consistent mesh coherence (0.58 ± 0.02) across all three solar cycles — excluding orbit-repeat and activity-driven solar drivers. The surviving degenerate channel is confined to the global annual solar-geometry family sharing the identical annual period and perihelion phase (perihelion insolation, the global annual ionospheric anomaly), which no annual-period regression can separate from orbital velocity by construction.
+**Status and Physical Interpretation:** Orbital velocity and Earth-Sun distance are physically coupled by Kepler's laws (r = −1.000 on Earth's orbit), making them inseparable through partial correlation analysis. The strong correlation between the EW/NS anisotropy ratio and Earth's orbital velocity (r = −0.888, p $\lt$ 2×10⁻⁷) provides direct evidence for orbital coupling. In the intra-hemisphere exponential-fit stratification (§3.2.4), Southern stations strongly reproduce the global orbital-speed anti-correlation (r = −0.79, p = 0.006, troughing at Day 3.2 perihelion and peaking at Day 185.8 aphelion, in phase with the Global curve), whereas the dense Northern Hemisphere intra-hemisphere exponential ratio is attenuated (r = +0.25, p = 0.49, non-significant; extremum near Day 353.6) because Northern summer (July) mid-latitude daytime ionospheric TEC and tropospheric water-vapor variance across short/medium baselines in Europe and North America depress the unconstrained 20,000-km $\lambda_{\rm EW}$ fit at aphelion. When unconstrained exponential-fit dilution is bypassed using direct cross-spectral coherence and phase-alignment estimators in Paper 3 (Step 2.8, 36-month multi-GNSS raw RINEX: Northern $p = 6.8 \times 10^{-7}$ and $0.021$, Southern $p = 4.8 \times 10^{-6}$, in-phase within $\Delta\phi = +8.5^\circ$) and Paper 14 (Step 3.4, 418-station MGEX: Northern $r = -0.45$, Southern $r = -0.88$, cross-hemisphere $r = -0.49$, in-phase within $\Delta\phi = 22^\circ \pm 44^\circ$), both hemispheres trough at perihelion and peak at aphelion in phase, refuting hemisphere-local seasonal temperature drivers. The 25.3-year baseline spans a full draconitic–solar beat cycle, cancelling orbit-repeat harmonics (|r| $\lt$ 0.15), and the 104-window series shows steady directional structure and consistent mesh coherence (0.58 ± 0.02) across all three solar cycles — excluding orbit-repeat and activity-driven solar drivers. The surviving degenerate channel is confined to the global annual solar-geometry family sharing the identical annual period and perihelion phase (perihelion insolation, the global annual ionospheric anomaly), which no annual-period regression can separate from orbital velocity by construction.
 
 **Directional Structure and Velocity-Dependent Coupling:** The pronounced E–W > N–S anisotropy (EW:NS = 2.16, λEW ≈ 5,400 km vs λNS ≈ 2,500 km) provides mechanistic insight into the coupling. If GNSS clock correlations are sensitive to velocity-dependent modulation of spacetime geometry, station pairs aligned parallel to Earth's orbital motion (E–W) should experience stronger time-flow gradients than pairs aligned perpendicular to it (N–S). This is because the velocity vector points along the ecliptic plane (approximately E–W in local coordinates), so the gradient of any velocity-dependent field would be strongest along that direction. Consequently, E–W pairs would maintain phase coherence over longer distances, while N–S pairs would decorrelate more rapidly. This prediction is exactly what is observed: the correlation length is 2–3× longer in the E–W direction. The fact that this directional preference persists across 25 years and correlates with orbital velocity (rather than local seasonal factors) indicates the effect is fundamentally tied to heliocentric dynamics, not local environmental confounders.
 
@@ -1330,9 +1333,8 @@ To rigorously test for environmental confounding, the 25-year dataset was strati
 
 | Control Test | Result | Implication |
 | --- | --- | --- |
-| **Hemisphere Stratification** | Northern: r = +0.25, p = 0.49 (not significant)
-Southern: r = −0.79, p = 0.006 (significant)
-Phase sync: Both peak within 15 days of perihelion (IN-PHASE) | Southern hemisphere drives signal; identical calendar phasing directly refutes seasonal temperature hypothesis. |
+| **Hemisphere Stratification** | Southern: r = −0.79, p = 0.006 (trough Day 3.2 perihelion, peak Day 185.8 aphelion, in-phase with Global r = −0.888)
+Northern (unconstrained λ fit): r = +0.25, p = 0.49 (attenuated by July mid-latitude summer TEC/troposphere; resolved in-phase in Paper 3 Step 2.8, Δφ = 8.5°, and Paper 14 Step 3.4, rN = −0.45, rS = −0.88) | Southern and Global sets lock to perihelion/aphelion; direct phase-alignment estimators confirm in-phase northern and southern modulation. |
 | **Space Weather (Quiet)** | Signal persists in "Quiet" geomagnetic conditions (Kp $\lt$ 3). N_Quiet λEW ≈ 3917 km vs N_Storm λEW ≈ 6227 km. | Signal is not driven by ionospheric storm turbulence; it is a background feature. |
 
 #### 3.2.5 Symmetry Breaking: The Vector vs. Scalar Argument
@@ -1425,7 +1427,7 @@ The observed coupling tracks Earth's orbital-velocity geometry, not the CMB or S
 
 **Geometric Alignment:** The best-fit direction (RA=6°, Dec=+4°) sits in the ecliptic plane 162° from the CMB dipole across 65,341 tested directions at 1° resolution. Multi-resolution analysis shows coordinate stability (RA: 0°→10°→7°→6°; Dec: 0°→+5°→+5°→+4°) across four independent resolutions (10°, 5°, 2.5°, 1°).
 
-**Hemisphere Pattern:** Southern Hemisphere stations show stronger orbital-speed anti-correlation (r=-0.79, p=0.006) than Northern stations (r=+0.25, p=0.49), yielding a 3.2× difference in correlation strength. This asymmetry reflects the hemispheric distribution of the network and orbital-projection geometry rather than a fixed celestial direction (the recovered Dec=+4° is nearly equatorial).
+**Hemisphere Pattern:** In the unconstrained 20,000-km exponential ratio, Southern Hemisphere stations show strong orbital-speed anti-correlation (r = −0.79, p = 0.006; trough at Day 3.2 perihelion, peak at Day 185.8 aphelion) matching the Global series (r = −0.888), while the dense Northern intra-hemisphere exponential fit is attenuated by July summer mid-latitude atmospheric/ionospheric variance (r = +0.25, p = 0.49; resolved in-phase at aphelion by direct phase-alignment estimators in Paper 3 Step 2.8, Δφ = 8.5°, and Paper 14 Step 3.4, rN = −0.45, rS = −0.88).
 
 **Geometric Model Selection:** Two models were tested: (1) Full tilt-angle rotation (anisotropy ellipse rotates to follow velocity direction) → r=-0.029, p=0.87. (2) Vertical modulation (cos(Dec) captures equatorial vs polar flow) → r=0.746, p$\lt$ 10⁻⁵. The data support the vertical modulation model, indicating the spatial pattern maintains directional stability (West-dominant), with strength modulating based on whether net velocity is in the equatorial plane vs directed toward poles. This pattern is consistent with coupling to the orbital velocity field itself rather than to a resolved cosmological rest frame.
 
@@ -1760,7 +1762,7 @@ Daily network coherence metrics correlate weakly but consistently with composite
 | --- | --- | --- | --- |
 | **Spatial Anisotropy** | Detected | Strength = 1.981 ± 0.23 (resampling SE; LOSO/bootstrap stable — no naïve pair-count p-value quoted, §3.1.1) | §3.1 |
 | **Orbital Motion Coupling** | Detected | r = −0.888, surrogate p $\lt$ 2×10⁻⁷ (0/5M) | §3.2 |
-| **Planetary Alignment Responses** | Detected (Opposition Subset) | 40-event opposition subset validated at 5.5× over random dates (p $\lt$ 10⁻¹⁷); 156-event free-centre scan (56/156 ≥2σ) descriptive | §3.3 |
+| **Planetary Alignment Responses** | Detected (Opposition Subset) | 40-event opposition subset observed at 5.5× over random dates (p $\lt$ 10⁻¹⁷; pre-registered for upcoming oppositions); 156-event free-centre scan (56/156 ≥2σ) descriptive | §3.3 |
 | **Nutation/Orbital-Harmonic Coupling** | Semiannual: Detected; 18.6-yr: Preliminary | Semiannual coherence component R² = 0.904, p = 2.7×10⁻⁵; Preliminary: 18.6-yr R² = 0.641, p = 0.010; 1.4 cycles, pending red-noise surrogate validation | §3.4.1 |
 | **Network Covariance Score (Collective Coherence)** | Detected | Score = 0.582, p $\lt$ 0.001 | §3.5 |
 | **Continuous Planetary Correlation** | Detected | Mean: r = −0.099, p = 0.032; Variability: r = +0.116, p = 0.012 (both autocorr-corrected) | §3.5.2 |
@@ -3292,8 +3294,8 @@ velocity (r=-0.888) | No |
 | **Ionospheric (F10.7/Kp)** | Correlation with solar indices | No F10.7 correlation (Paper 1) | No |
 | **Processing batch effects** | Step changes at algorithm updates | Smooth continuous evolution | No |
 | **Random temporal structure** | ~5% false positives under an independent-points null (α=0.05) — invalid on the autocorrelated seasonal series; season-preserving null ~53–66% (Paper 3, Step 2.6b) | 35.9% catalogue detection rate (estimator repeatability);
-40-event opposition subset validated at 5.5× over random
-dates (p $\lt$ 10⁻¹⁷) | Bounded / descriptive (opposition subset distinct) |
+40-event opposition subset observed at 5.5× over random
+dates (p $\lt$ 10⁻¹⁷; pre-registered for upcoming oppositions) | Bounded / descriptive (opposition subset distinct) |
 | **Isotropic noise** | Equal λ all directions | 3.3× range (West/North) | No |
 
 **Conclusion:** All tested conventional models fail to
@@ -3735,8 +3737,8 @@ Statistical significance under the free-centre pulse statistic: 56/156 events �
 Bonferroni correction (α = 0.05/156); dependence-aware count: 13/29
 non-overlapping windows significant (null expectation 1.3, binomial
 p ≈ 10⁻¹⁰). These quantify estimator repeatability; event-locked
-specificity is validated only for the 40-event opposition subset
-under the ±15-day model-free control (§3.3.1).
+specificity is observed in the 40-event opposition subset
+under the ±15-day model-free control (§3.3.1, pre-registered for upcoming oppositions).
 
 Detection rates (primary ±120-day window): Mercury 42.5%, Venus 18.8%,
 Mars 33.3%, Jupiter 34.8%, Saturn 28.0% (§3.3.1)
@@ -4002,9 +4004,9 @@ ground clock stability.
 
 This 25.3-year longitudinal analysis tests the quantitative predictions of the Temporal Equivalence Principle (TEP) across decadal timescales and separates the empirical findings by inferential tier:
 
-**Confirmatory and Replicated Detections:** The distance-structured correlation scale ($\lambda = 3{,}210 \pm 389$ km), 3D spatial anisotropy ($\text{EW/NS} = 2.16$), orbital-velocity coupling ($r = -0.888$, surrogate $p \lt 2\times 10^{-7}$, 0/5M), semiannual apsidal-locked coherence ($R^2 = 0.904$, $p = 2.7\times 10^{-5}$), and the in-ecliptic orbital-phase direction ($\sim 6^\circ$ from Earth's aphelion-velocity tangent, replicated to $\sim 2^\circ$ in raw RINEX, Paper 3) stand as direct observational signatures in the 25.3-year record.
+**Longitudinal Findings and Cross-Product Corroboration:** Within the 25.3-year CODE precise-clock record, the distance-structured correlation scale ($\lambda = 3{,}210 \pm 389$ km), 3D spatial anisotropy ($\text{EW/NS} = 2.16$), orbital-velocity coupling ($r = -0.888$, surrogate $p \lt 2\times 10^{-7}$, 0/5M; in-sample free-phase sinusoid preferred by $\Delta\text{AIC} = 11.2$), semiannual apsidal-locked coherence ($R^2 = 0.904$, $p = 2.7\times 10^{-5}$), and the in-ecliptic orbital-phase direction ($\sim 6^\circ$ from Earth's aphelion-velocity tangent, corroborated to $\sim 2^\circ$ in raw RINEX, Paper 3) stand as primary longitudinal signatures.
 
-**Cross-Pipeline Corroboration:** Companion analyses confirm signal recovery across three software-diverse analysis centres (Paper 1), raw-RINEX single-point positioning without precise-product filtering (Paper 3), and combined multi-constellation MGEX products on a held-out 2025–2026 epoch (Paper 14).
+**Cross-Pipeline Replication Structure:** Companion analyses confirm signal recovery across three software-diverse GPS analysis centres ($R^2 = 0.92\text{--}0.97$, Paper 1) and raw-RINEX single-point positioning without precise-product filtering (Paper 3). In the held-out 2025–2026 combined multi-constellation MGEX product (Paper 14), the isotropic correlation scale replicates directly ($\lambda = 1{,}862 \pm 155$ km) alongside strong short-longitude ($\Delta\text{lon} \lt 30^\circ$) EW phase-alignment dominance ($+0.379$ vs $+0.045$, ratio $8.35\times$; climate-cell-matched EW$-$NS contrast $+0.085$), whereas the unfiltered 15,000-km exponential-fit monthly $\lambda_{\rm EW}/\lambda_{\rm NS}$ series is diluted by $60\text{–}120^\circ$ diurnal solar-zenith anti-phase (station-clustered $p = 0.49$); bypassing that long-baseline fit degeneracy with the model-free PA-difference estimator in MGEX corroborates the negative orbital-velocity coupling sign ($r = -0.716$, $p = 0.0018$; $v_{\rm proj}$ $r = -0.767$, AR(1) surrogate $p = 0.003$; exploratory estimator selection within MGEX).
 
 **Scoped and Preliminary Channels:** The 18.6-year nutation modulation ($R^2 = 0.641$, $p = 0.010$ over 1.4 cycles) is reported as preliminary pending red-noise surrogate validation; raw carrier-phase processing and non-GNSS optical-fiber / two-way satellite time-transfer links provide the next cross-technology tests (see §5.1 for explicit falsification criteria).
 
@@ -4015,10 +4017,10 @@ This study establishes long-baseline recovery of systematic GNSS timing correlat
 | Observable | Key Finding | Status |
 | --- | --- | --- |
 | **Temporal Topology Correlation Length (λT)** | Azimuth-averaged λ = 3,210 ± 389 km (cross-sector dispersion: 4,201 ± 1,967 km, spread 2,314–7,664 km; Gaussian/squared-exponential preferred, R² = 0.965 vs exponential R² = 0.945; consistent with terrestrial saturation anchor *R**T*(*M*⊕) ≈ 4,146 km; cross-product family ~1.0–4.8×10³ km, Paper 14) | Consistent with terrestrial saturation anchor; power-law ruled out |
-| **Spatial Anisotropy** | EW/NS = 2.16, strength = 1.981 ± 0.23 (SE); pair-count isotropic-null statistic p $\lt$ 10⁻¹⁵ (descriptive — pair observations are not independent; clustered resampling interval reported in §3.1.1) | Replicated |
-| **Orbital Velocity Coupling** | r = -0.888 (95% CI: [-0.94, -0.81]); surrogate p $\lt$ 2×10⁻⁷ (0/5M); t-test p ≈ 2.6×10⁻⁴ (N_eff ≈ 11) | Robust Detection |
+| **Spatial Anisotropy** | EW/NS = 2.16, strength = 1.981 ± 0.23 (SE); pair-count isotropic-null statistic p $\lt$ 10⁻¹⁵ (descriptive — pair observations are not independent; clustered resampling interval reported in §3.1.1) | Replicated across GPS centres (Paper 1); in MGEX (Paper 14), corroborated in the $\Delta\text{lon}\lt 30^\circ$ phase-alignment (PA) statistic ($8.35\times$) while the full-range exponential correlation-length fit is diluted ($p=0.49$) |
+| **Orbital Velocity Coupling** | r = -0.888 (95% CI: [-0.94, -0.81]); surrogate p $\lt$ 2×10⁻⁷ (0/5M); t-test p ≈ 2.6×10⁻⁴ (N_eff ≈ 11) | 25.3-yr longitudinal detection (free-phase sinusoid $\Delta\text{AIC}=11.2$); sign corroborated in MGEX via model-free PA estimator ($r=-0.716$, exploratory) |
 | **Directional Search (Orbital Phase)** | r = 0.746 (RA=6°, Dec=+4°), ~6° from aphelion-velocity tangent; 162° from CMB dipole (anti-phase); Solar Apex r=0.006 (~16,000× variance ratio); verified across four resolutions | Strong Directional Discrimination |
-| **Planetary Alignment Coupling** | 40-event opposition subset validated at 5.5× over random dates (p $\lt$ 10⁻¹⁷, Cohen's d = 1.41); continuous potential r = +0.116 (p = 0.012); 156-event free-centre scan (56/156 ≥2σ) descriptive pending season-preserving controls (Paper 3, Step 2.6b) | Opposition subset validated; catalogue descriptive |
+| **Planetary Alignment Coupling** | 40-event opposition subset observed at 5.5× over random dates (p $\lt$ 10⁻¹⁷, Cohen's d = 1.41; pre-registered for upcoming oppositions); continuous potential r = +0.116 (p = 0.012); 156-event free-centre scan (56/156 ≥2σ) descriptive pending season-preserving controls (Paper 3, Step 2.6b) | Opposition subset observed (pre-registered forward test); catalogue descriptive |
 | **18.6-Year Nutation** | R² = 0.641, p = 0.010 (1.4 cycles observed; pending red-noise validation) | Preliminary / requires red-noise validation |
 | **Semiannual Coherence Component** | R² = 0.904, p = 2.7×10⁻⁵ (perm. p = 0.00027, 50 cycles observed; phase aligned with apsides and anti-phase to equinoctial anomaly; compatible with nutation term or orbital second harmonic) | New Detection |
 | **Collective Network Dynamics** | Network covariance score = 0.582; constructive interference dominant | Replicated |
@@ -4050,7 +4052,7 @@ The nutation coupling (R² = 0.904 semiannual coherence component, apsidal-locke
 
 - 3D Spatial Anisotropy: Strength = 1.981 (pair-count null p $\lt$ 10⁻¹⁵; clustered resampling carries the inference)
 
-- Planetary Opposition Subset: 40-event outer-planet opposition subset validated at 5.5× over matched random dates (p $\lt$ 10⁻¹⁷; 156-event free-centre scan descriptive — see §3.3)
+- Planetary Opposition Subset: 40-event outer-planet opposition subset observed at 5.5× over matched random dates (p $\lt$ 10⁻¹⁷, pre-registered for upcoming oppositions; 156-event free-centre scan descriptive — see §3.3)
 
 - Collective Network Dynamics: Network covariance score = 0.582 (replicates multi-centre range)
 
@@ -4348,11 +4350,11 @@ Ashby, N. (2003). Relativity in the Global Positioning System. *Living Reviews i
 Delva, P., Puchades, N., Schönemann, E., et al. (2018). A gravitational redshift test using eccentric Galileo satellites. *Physical Review Letters*, 121(23), 231101.
 Hofmann-Wellenhof, B., Lichtenegger, H., & Wasle, E. (2008). *GNSS–Global Navigation Satellite Systems: GPS, GLONASS, Galileo, and more*. Springer-Verlag Wien.
 Schaer, S., Villiger, A., Arnold, D., et al. (2021). The CODE ambiguity-fixed clock and phase bias analysis products: generation, properties, and performance. *Journal of Geodesy*, 95, 87.
-Smawfield, M. L. (2025). *Temporal Equivalence Principle: Dynamic Time & Emergent Light Speed*. Preprint v0.16 (Jakarta). Zenodo. DOI: [10.5281/zenodo.16921911](https://doi.org/10.5281/zenodo.16921911) (Paper 0)
+Smawfield, M. L. (2025). *Temporal Equivalence Principle: Dynamic Time & Emergent Light Speed*. Preprint v0.18 (Jakarta). Zenodo. DOI: [10.5281/zenodo.16921911](https://doi.org/10.5281/zenodo.16921911) (Paper 0)
 Smawfield, M. L. (2025). *Global Time Echoes: Distance-Structured Correlations in GNSS Clocks*. Preprint v0.28 (Jaipur). Zenodo. DOI: [10.5281/zenodo.17127229](https://doi.org/10.5281/zenodo.17127229) (Paper 1)
-Smawfield, M. L. (2025). *Global Time Echoes: 25-Year Analysis of CODE Precise Clock Products*. Preprint v0.21 (Cairo). Zenodo. DOI: [10.5281/zenodo.17517141](https://doi.org/10.5281/zenodo.17517141) (Paper 2 — this work)
+Smawfield, M. L. (2025). *Global Time Echoes: 25-Year Analysis of CODE Precise Clock Products*. Preprint v0.22 (Cairo). Zenodo. DOI: [10.5281/zenodo.17517141](https://doi.org/10.5281/zenodo.17517141) (Paper 2 — this work)
 Smawfield, M. L. (2025). *Global Time Echoes: Raw RINEX Consistency Test*. Preprint v0.9 (Kathmandu). Zenodo. DOI: [10.5281/zenodo.17860166](https://doi.org/10.5281/zenodo.17860166) (Paper 3)
-Smawfield, M. L. (2025). *Temporal-Spatial Coupling in Gravitational Lensing: A Reinterpretation of Dark Matter Observations*. Preprint v0.9 (Tortola). Zenodo. DOI: [10.5281/zenodo.17982540](https://doi.org/10.5281/zenodo.17982540) (Paper 4)
+Smawfield, M. L. (2025). *Temporal-Spatial Coupling in Gravitational Lensing: A Reinterpretation of Dark Matter Observations*. Preprint v0.10 (Tortola). Zenodo. DOI: [10.5281/zenodo.17982540](https://doi.org/10.5281/zenodo.17982540) (Paper 4)
 Smawfield, M. L. (2025). *Global Time Echoes: Empirical Synthesis*. Preprint v0.8 (Singapore). Zenodo. DOI: [10.5281/zenodo.18004832](https://doi.org/10.5281/zenodo.18004832) (Paper 5)
 Smawfield, M. L. (2025). *Temporal Topology Saturation Scale: Cross-Scale Consistency of ρ_T*. Preprint v0.9 (New Delhi). Zenodo. DOI: [10.5281/zenodo.18064365](https://doi.org/10.5281/zenodo.18064365) (Paper 6)
 Smawfield, M. L. (2025). *The Soliton Wake: Exploring RBH-1 as a Temporal Topology Candidate*. Preprint v0.5 (Blantyre). Zenodo. DOI: [10.5281/zenodo.18059250](https://doi.org/10.5281/zenodo.18059250) (Paper 7)
@@ -4360,9 +4362,9 @@ Smawfield, M. L. (2025). *Global Time Echoes: Optical-Domain Consistency Test vi
 Smawfield, M. L. (2025). *What Do Precision Tests of General Relativity Actually Measure?*. Preprint v0.9 (Istanbul). Zenodo. DOI: [10.5281/zenodo.18109760](https://doi.org/10.5281/zenodo.18109760) (Paper 9)
 Smawfield, M. L. (2026). *Temporal Equivalence Principle: Suppressed Density Scaling in Globular Cluster Pulsars*. Preprint v0.10 (Caracas). Zenodo. DOI: [10.5281/zenodo.18165798](https://doi.org/10.5281/zenodo.18165798) (Paper 10)
 Smawfield, M. L. (2026). *The Cepheid Bias: Resolving the Hubble Tension*. Preprint v0.12 (Kingston upon Hull). Zenodo. DOI: [10.5281/zenodo.18209702](https://doi.org/10.5281/zenodo.18209702) (Paper 11)
-Smawfield, M. L. (2026). *Temporal Equivalence Principle: A Unified Resolution to the JWST High-Redshift Anomalies*. Preprint v0.8 (Kos). Zenodo. DOI: [10.5281/zenodo.19000827](https://doi.org/10.5281/zenodo.19000827) (Paper 12)
+Smawfield, M. L. (2026). *Temporal Equivalence Principle: A Unified Resolution to the JWST High-Redshift Anomalies*. Preprint v0.9 (Kos). Zenodo. DOI: [10.5281/zenodo.19000827](https://doi.org/10.5281/zenodo.19000827) (Paper 12)
 Smawfield, M. L. (2026). *Temporal Equivalence Principle: Temporal Shear Recovery in Gaia DR3 Wide Binaries*. Preprint v0.7 (Kilifi). Zenodo. DOI: [10.5281/zenodo.19102061](https://doi.org/10.5281/zenodo.19102061) (Paper 13)
-Smawfield, M. L. (2026). *Global Time Echoes: MGEX Multi-GNSS Clock Replication, 2025–2026*. Preprint v0.4 (Suva). Zenodo. DOI: [10.5281/zenodo.20572726](https://doi.org/10.5281/zenodo.20572726) (Paper 14)
+Smawfield, M. L. (2026). *Global Time Echoes: MGEX Multi-GNSS Clock Replication, 2025–2026*. Preprint v0.5 (Suva). Zenodo. DOI: [10.5281/zenodo.20572726](https://doi.org/10.5281/zenodo.20572726) (Paper 14)
 Smawfield, M. L. (2026). *TEP-PPP: Operational Time Echoes — Phase-Resolved Spatial Clock Priors for GNSS Outage Bridging*. Preprint v0.1 (Pune). In preparation. (Paper 33)
 Teunissen, P. J., & Montenbruck, O. (Eds.). (2017). *Springer Handbook of Global Navigation Satellite Systems*. Springer International Publishing.
 Villiger, A., Dach, R., Prange, L., et al. (2019). A flexible strategy for handling the datum and initial bias in GNSS clock estimation. *Journal of Geodesy*, 93, 1773–1786.
@@ -4397,14 +4399,14 @@ Astropy Collaboration, Robitaille, T. P., Tollerud, E. J., et al. (2013). Astrop
 
 ## How to cite
 
-**Cite as:** Smawfield, M. L. (2025). Global Time Echoes: 25-Year Analysis of CODE Precise Clock Products. Preprint v0.21 (Cairo). Zenodo. DOI: 10.5281/zenodo.17517141
+**Cite as:** Smawfield, M. L. (2025). Global Time Echoes: 25-Year Analysis of CODE Precise Clock Products. Preprint v0.22 (Cairo). Zenodo. DOI: 10.5281/zenodo.17517141
 
 **BibTeX:**
 
 ```
 @misc{Smawfield_TEP_GNSS_Longspan_2025,
 author = {Matthew Lukin Smawfield},
-title = {Global Time Echoes: 25-Year Analysis of CODE Precise Clock Products (v0.21 Cairo)},
+title = {Global Time Echoes: 25-Year Analysis of CODE Precise Clock Products (v0.22 Cairo)},
 year = {2025},
 publisher = {Zenodo},
 doi = {10.5281/zenodo.17517141},

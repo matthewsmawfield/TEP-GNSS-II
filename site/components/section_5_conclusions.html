@@ -5,9 +5,9 @@
   
   <p style="margin-bottom: 10px;">This 25.3-year longitudinal analysis tests the quantitative predictions of the Temporal Equivalence Principle (TEP) across decadal timescales and separates the empirical findings by inferential tier:</p>
   
-  <p style="margin-bottom: 10px;"><strong>Confirmatory and Replicated Detections:</strong> The distance-structured correlation scale ($\lambda = 3{,}210 \pm 389$ km), 3D spatial anisotropy ($\text{EW/NS} = 2.16$), orbital-velocity coupling ($r = -0.888$, surrogate $p \lt 2\times 10^{-7}$, 0/5M), semiannual apsidal-locked coherence ($R^2 = 0.904$, $p = 2.7\times 10^{-5}$), and the in-ecliptic orbital-phase direction ($\sim 6^\circ$ from Earth's aphelion-velocity tangent, replicated to $\sim 2^\circ$ in raw RINEX, Paper 3) stand as direct observational signatures in the 25.3-year record.</p>
+  <p style="margin-bottom: 10px;"><strong>Longitudinal Findings and Cross-Product Corroboration:</strong> Within the 25.3-year CODE precise-clock record, the distance-structured correlation scale ($\lambda = 3{,}210 \pm 389$ km), 3D spatial anisotropy ($\text{EW/NS} = 2.16$), orbital-velocity coupling ($r = -0.888$, surrogate $p \lt 2\times 10^{-7}$, 0/5M; in-sample free-phase sinusoid preferred by $\Delta\text{AIC} = 11.2$), semiannual apsidal-locked coherence ($R^2 = 0.904$, $p = 2.7\times 10^{-5}$), and the in-ecliptic orbital-phase direction ($\sim 6^\circ$ from Earth's aphelion-velocity tangent, corroborated to $\sim 2^\circ$ in raw RINEX, Paper 3) stand as primary longitudinal signatures.</p>
   
-  <p style="margin-bottom: 10px;"><strong>Cross-Pipeline Corroboration:</strong> Companion analyses confirm signal recovery across three software-diverse analysis centres (Paper 1), raw-RINEX single-point positioning without precise-product filtering (Paper 3), and combined multi-constellation MGEX products on a held-out 2025–2026 epoch (Paper 14).</p>
+  <p style="margin-bottom: 10px;"><strong>Cross-Pipeline Replication Structure:</strong> Companion analyses confirm signal recovery across three software-diverse GPS analysis centres ($R^2 = 0.92\text{--}0.97$, Paper 1) and raw-RINEX single-point positioning without precise-product filtering (Paper 3). In the held-out 2025–2026 combined multi-constellation MGEX product (Paper 14), the isotropic correlation scale replicates directly ($\lambda = 1{,}862 \pm 155$ km) alongside strong short-longitude ($\Delta\text{lon} \lt 30^\circ$) EW phase-alignment dominance ($+0.379$ vs $+0.045$, ratio $8.35\times$; climate-cell-matched EW$-$NS contrast $+0.085$), whereas the unfiltered 15,000-km exponential-fit monthly $\lambda_{\rm EW}/\lambda_{\rm NS}$ series is diluted by $60\text{–}120^\circ$ diurnal solar-zenith anti-phase (station-clustered $p = 0.49$); bypassing that long-baseline fit degeneracy with the model-free PA-difference estimator in MGEX corroborates the negative orbital-velocity coupling sign ($r = -0.716$, $p = 0.0018$; $v_{\rm proj}$ $r = -0.767$, AR(1) surrogate $p = 0.003$; exploratory estimator selection within MGEX).</p>
   
   <p style="margin-bottom: 0;"><strong>Scoped and Preliminary Channels:</strong> The 18.6-year nutation modulation ($R^2 = 0.641$, $p = 0.010$ over 1.4 cycles) is reported as preliminary pending red-noise surrogate validation; raw carrier-phase processing and non-GNSS optical-fiber / two-way satellite time-transfer links provide the next cross-technology tests (see §5.1 for explicit falsification criteria).</p>
 </div>
@@ -35,12 +35,12 @@
         <tr style="background-color: rgba(73, 87, 115, 0.03);">
           <td style="padding: 8px; border: 1px solid #495773;"><strong>Spatial Anisotropy</strong></td>
           <td style="padding: 8px; border: 1px solid #495773;">EW/NS = 2.16, strength = 1.981 ± 0.23 (SE); pair-count isotropic-null statistic p $\lt$ 10⁻¹⁵ (descriptive — pair observations are not independent; clustered resampling interval reported in §3.1.1)</td>
-          <td style="padding: 8px; border: 1px solid #495773;">Replicated</td>
+          <td style="padding: 8px; border: 1px solid #495773;">Replicated across GPS centres (Paper 1); in MGEX (Paper 14), corroborated in the $\Delta\text{lon}\lt 30^\circ$ phase-alignment (PA) statistic ($8.35\times$) while the full-range exponential correlation-length fit is diluted ($p=0.49$)</td>
         </tr>
         <tr>
           <td style="padding:8px; border:1px solid #495773;"><strong>Orbital Velocity Coupling</strong></td>
           <td style="padding:8px; border:1px solid #495773;">r = -0.888 (95% CI: [-0.94, -0.81]); surrogate p $\lt$ 2×10⁻⁷ (0/5M); t-test p ≈ 2.6×10⁻⁴ (N_eff ≈ 11)</td>
-          <td style="padding:8px; border:1px solid #495773;">Robust Detection</td>
+          <td style="padding:8px; border:1px solid #495773;">25.3-yr longitudinal detection (free-phase sinusoid $\Delta\text{AIC}=11.2$); sign corroborated in MGEX via model-free PA estimator ($r=-0.716$, exploratory)</td>
         </tr>
         <tr style="background-color: rgba(73, 87, 115, 0.03);">
           <td style="padding:8px; border:1px solid #495773;"><strong>Directional Search (Orbital Phase)</strong></td>
@@ -49,8 +49,8 @@
         </tr>
         <tr>
           <td style="padding:8px; border:1px solid #495773;"><strong>Planetary Alignment Coupling</strong></td>
-          <td style="padding:8px; border:1px solid #495773;">40-event opposition subset validated at 5.5× over random dates (p $\lt$ 10⁻¹⁷, Cohen's d = 1.41); continuous potential r = +0.116 (p = 0.012); 156-event free-centre scan (56/156 ≥2σ) descriptive pending season-preserving controls (Paper 3, Step 2.6b)</td>
-          <td style="padding:8px; border:1px solid #495773;">Opposition subset validated; catalogue descriptive</td>
+          <td style="padding:8px; border:1px solid #495773;">40-event opposition subset observed at 5.5× over random dates (p $\lt$ 10⁻¹⁷, Cohen's d = 1.41; pre-registered for upcoming oppositions); continuous potential r = +0.116 (p = 0.012); 156-event free-centre scan (56/156 ≥2σ) descriptive pending season-preserving controls (Paper 3, Step 2.6b)</td>
+          <td style="padding:8px; border:1px solid #495773;">Opposition subset observed (pre-registered forward test); catalogue descriptive</td>
         </tr>
         <tr>
           <td style="padding: 8px; border: 1px solid #495773;"><strong>18.6-Year Nutation</strong></td>
@@ -99,7 +99,7 @@
     <li>Semiannual coherence component (nutation/orbital harmonic): R² = 0.904 (90.4% variance explained)</li>
     <li>18.6-Year Nutation: Preliminary — R² = 0.641, p = 0.010 (1.4 cycles; pending red-noise validation)</li>
     <li>3D Spatial Anisotropy: Strength = 1.981 (pair-count null p $\lt$ 10⁻¹⁵; clustered resampling carries the inference)</li>
-    <li>Planetary Opposition Subset: 40-event outer-planet opposition subset validated at 5.5× over matched random dates (p $\lt$ 10⁻¹⁷; 156-event free-centre scan descriptive — see §3.3)</li>
+    <li>Planetary Opposition Subset: 40-event outer-planet opposition subset observed at 5.5× over matched random dates (p $\lt$ 10⁻¹⁷, pre-registered for upcoming oppositions; 156-event free-centre scan descriptive — see §3.3)</li>
     <li>Collective Network Dynamics: Network covariance score = 0.582 (replicates multi-centre range)</li>
     <li>Multi-centre consistency: R² = 0.920-0.970 between CODE/IGS/ESA</li>
   </ul>

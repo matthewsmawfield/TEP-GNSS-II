@@ -1997,16 +1997,22 @@ def fit_seasonal_phase(days: List[float], values: List[float]) -> Dict:
                               p0=[np.std(values), 0, np.mean(values)],
                               bounds=([-np.inf, -2*np.pi, -np.inf], [np.inf, 2*np.pi, np.inf]))
         
-        # Convert phase from radians to days of peak
-        # cos(2π(t + φ)/365) peaks at t = -φ * 365/(2π)
-        phase_rad = popt[1]
+        # Normalize to non-negative amplitude so peak_day is always the maximum
+        # and trough_day is always the minimum (+182.625 days).
+        amp = float(popt[0])
+        phase_rad = float(popt[1])
+        if amp < 0.0:
+            amp = -amp
+            phase_rad += np.pi
         peak_day = (-phase_rad * 365.25 / (2 * np.pi)) % 365.25
+        trough_day = (peak_day + 365.25 / 2.0) % 365.25
         
         return {
             'success': True,
-            'amplitude': float(popt[0]),
+            'amplitude': float(amp),
             'phase_radians': float(phase_rad),
             'peak_day_of_year': float(peak_day),
+            'trough_day_of_year': float(trough_day),
             'offset': float(popt[2]),
             'fit_quality': float(np.sqrt(np.diag(pcov))[1]) if len(pcov) > 1 else np.nan
         }

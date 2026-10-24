@@ -1,5 +1,5 @@
-v0.21 (Cairo) — 17 October 2026 — 25-year long-span network summary, spherical-horizon EW/NS projection, and seasonal controls
+v0.22 (Cairo) — 24 October 2026 — First-principles EW/NS anisotropy derivation, seasonal phase resolution, and cross-product hemisphere alignment
 
-- Updated the 25-year (2000-2025) CODE long-span network-summary tables and spherical-horizon East-West/North-South projection across the global station network (R_EW/NS = 2.13 mean-latitude / 2.02 ensemble)
-- Refined the methodology, results, and discussion sections with season-preserving planetary controls, coupled navigation-solve jitter bounds, and two-branch Solar-System screening consistency
-- Rolled companion citations forward and synchronized the shared core library
+- Derived the 25.3-year global East–West to North–South anisotropy ratio (2.16) analytically with zero free parameters from the horizon projection of Earth's orbital velocity across the tracking network
+- Resolved the seasonal phase sign convention in the Southern Hemisphere, confirming that both the Southern and Global series trough at perihelion and peak at aphelion in phase with raw RINEX and MGEX phase-alignment estimators
+- Framed the 40-event outer-planet opposition response with pre-registered held-out tests for upcoming oppositions

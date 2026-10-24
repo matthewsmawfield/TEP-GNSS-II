@@ -1,8 +1,8 @@
 {
   "name": "tep-gnss-ii-site",
-  "version": "0.21.0",
+  "version": "0.22.0",
   "description": "Global Time Echoes: 25-Year Analysis of CODE Precise Clock Products",
-  "_comment": "Package version matches manuscript version v0.21 (Cairo)",
+  "_comment": "Package version matches manuscript version v0.22 (Cairo)",
   "main": "index.html",
   "scripts": {
     "dev": "node dev-server.js",
